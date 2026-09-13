@@ -190,15 +190,18 @@ def result_distribution(games: pd.DataFrame) -> pd.DataFrame:
 def load_training_history(path: str | Path) -> pd.DataFrame:
     """Load a training-history CSV and normalize optional columns.
 
-    Only ``step`` is mandatory. All other dashboard fields are optional so the
-    logger can grow with the training code without breaking old experiments.
+    ``step`` is preferred; diagnostic exports may provide ``epoch`` instead.
+    All other dashboard fields are optional so the logger can grow with the
+    training code without breaking old experiments.
     """
     p = Path(path)
     if not p.exists():
         return pd.DataFrame(columns=sorted(TRAINING_COLUMNS))
     df = pd.read_csv(p)
+    if "step" not in df.columns and "epoch" in df.columns:
+        df["step"] = df["epoch"]
     if "step" not in df.columns:
-        raise ValueError("training history must contain a 'step' column")
+        raise ValueError("training history must contain a 'step' or 'epoch' column")
     df = df.sort_values("step").reset_index(drop=True)
     for col in sorted(TRAINING_COLUMNS - set(df.columns)):
         df[col] = pd.NA

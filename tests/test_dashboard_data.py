@@ -66,3 +66,17 @@ def test_training_log_round_trip(tmp_path):
     assert list(df.step) == [1, 2]
     assert list(df.elo) == [50.0, 80.0]
     assert "teacher_agreement" in df.columns
+
+
+def test_training_diagnostics_use_epoch_as_step(tmp_path):
+    path = tmp_path / "training_diagnostics.csv"
+    pd.DataFrame([
+        {"epoch": 2, "loss": 0.8, "validation_loss": 0.9},
+        {"epoch": 1, "loss": 1.0, "validation_loss": 1.1},
+    ]).to_csv(path, index=False)
+
+    df = load_training_history(path)
+
+    assert list(df.step) == [1, 2]
+    assert list(df.epoch) == [1, 2]
+    assert list(df.loss) == [1.0, 0.8]
