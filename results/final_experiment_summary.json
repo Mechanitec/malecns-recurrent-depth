@@ -1,0 +1,428 @@
+{
+  "status": "complete_bounded_protocol",
+  "repo": "https://github.com/Mechanitec/malecns-recurrent-depth",
+  "reference_depth": 16,
+  "dynamics": "rate",
+  "calibration": {
+    "opening_seed": 71,
+    "opening_pairs": 20,
+    "games_per_pair": 2,
+    "move_time_s": 0.01,
+    "max_plies": 40,
+    "game_timeout_s": 120.0,
+    "seed": 7,
+    "schedule": [
+      [
+        "minic",
+        "Level=0",
+        "minic",
+        "Level=1"
+      ],
+      [
+        "minic",
+        "Level=1",
+        "minic",
+        "Level=2"
+      ],
+      [
+        "minic",
+        "Level=2",
+        "minic",
+        "Level=3"
+      ],
+      [
+        "minic",
+        "Level=3",
+        "minic",
+        "Level=4"
+      ],
+      [
+        "minic",
+        "Level=4",
+        "minic",
+        "Level=5"
+      ],
+      [
+        "minic",
+        "Level=5",
+        "minic",
+        "Level=6"
+      ],
+      [
+        "minic",
+        "Level=6",
+        "minic",
+        "Level=7"
+      ],
+      [
+        "minic",
+        "Level=7",
+        "minic",
+        "Level=8"
+      ],
+      [
+        "minic",
+        "Level=8",
+        "minic",
+        "Level=9"
+      ],
+      [
+        "minic",
+        "Level=9",
+        "minic",
+        "Level=10"
+      ],
+      [
+        "minic",
+        "Level=10",
+        "minic",
+        "Level=11"
+      ],
+      [
+        "minic",
+        "Level=11",
+        "minic",
+        "Level=12"
+      ],
+      [
+        "minic",
+        "Level=12",
+        "minic",
+        "Level=13"
+      ],
+      [
+        "minic",
+        "Level=13",
+        "minic",
+        "Level=14"
+      ],
+      [
+        "minic",
+        "Level=14",
+        "minic",
+        "Level=15"
+      ],
+      [
+        "minic",
+        "Level=15",
+        "minic",
+        "Level=16"
+      ],
+      [
+        "minic",
+        "Level=16",
+        "minic",
+        "Level=17"
+      ],
+      [
+        "minic",
+        "Level=17",
+        "minic",
+        "Level=18"
+      ],
+      [
+        "minic",
+        "Level=18",
+        "minic",
+        "Level=19"
+      ],
+      [
+        "minic",
+        "Level=19",
+        "minic",
+        "Level=20"
+      ],
+      [
+        "minic",
+        "Level=20",
+        "minic",
+        "Level=21"
+      ],
+      [
+        "minic",
+        "Level=21",
+        "minic",
+        "Level=22"
+      ],
+      [
+        "minic",
+        "Level=22",
+        "minic",
+        "Level=23"
+      ],
+      [
+        "minic",
+        "Level=23",
+        "minic",
+        "Level=24"
+      ],
+      [
+        "minic",
+        "Level=24",
+        "minic",
+        "Level=25"
+      ],
+      [
+        "minic",
+        "Level=25",
+        "minic",
+        "Level=26"
+      ],
+      [
+        "minic",
+        "Level=26",
+        "minic",
+        "Level=27"
+      ],
+      [
+        "minic",
+        "Level=27",
+        "minic",
+        "Level=28"
+      ],
+      [
+        "minic",
+        "Level=28",
+        "minic",
+        "Level=29"
+      ],
+      [
+        "minic",
+        "Level=29",
+        "minic",
+        "Level=30"
+      ],
+      [
+        "minic",
+        "Level=0",
+        "minic",
+        "Level=5"
+      ],
+      [
+        "minic",
+        "Level=5",
+        "minic",
+        "Level=10"
+      ],
+      [
+        "minic",
+        "Level=10",
+        "minic",
+        "Level=15"
+      ],
+      [
+        "minic",
+        "Level=15",
+        "minic",
+        "Level=20"
+      ],
+      [
+        "minic",
+        "Level=20",
+        "minic",
+        "Level=25"
+      ],
+      [
+        "minic",
+        "Level=25",
+        "minic",
+        "Level=30"
+      ],
+      [
+        "gaia",
+        "Skill Level=1",
+        "minic",
+        "Level=20"
+      ],
+      [
+        "gaia",
+        "Skill Level=1",
+        "minic",
+        "Level=22"
+      ],
+      [
+        "gaia",
+        "Skill Level=1",
+        "minic",
+        "Level=24"
+      ],
+      [
+        "gaia",
+        "Skill Level=1",
+        "minic",
+        "Level=26"
+      ],
+      [
+        "gaia",
+        "Skill Level=1",
+        "minic",
+        "Level=28"
+      ],
+      [
+        "gaia",
+        "Skill Level=1",
+        "minic",
+        "Level=30"
+      ]
+    ],
+    "opening_fens": [
+      {
+        "opening_pair": "opening_000",
+        "fen": "rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5"
+      },
+      {
+        "opening_pair": "opening_001",
+        "fen": "rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5"
+      },
+      {
+        "opening_pair": "opening_002",
+        "fen": "rnb1kbnr/pppp1p1p/5qp1/4p3/7P/1P3PP1/P1PPP3/RNBQKBNR w KQkq - 0 5"
+      },
+      {
+        "opening_pair": "opening_003",
+        "fen": "rnbqk1nr/1ppp1ppp/1b2p3/p7/P7/2P2P1P/1P1PP1P1/RNBQKBNR w KQkq - 1 5"
+      },
+      {
+        "opening_pair": "opening_004",
+        "fen": "rnbqkbnr/2ppp1p1/1p3p2/p6p/2P5/4P2P/PP1PKPP1/RNBQ1BNR w kq - 0 5"
+      },
+      {
+        "opening_pair": "opening_005",
+        "fen": "r1bqkb1r/ppp1pppp/3p1n2/8/1nB1P3/1PP5/P2P1PPP/RNBQK1NR w KQkq - 2 5"
+      },
+      {
+        "opening_pair": "opening_006",
+        "fen": "r1b1k1nr/pppp1ppp/n3p3/6q1/1b6/P2P4/2PNPPPP/R1BQKBNR w KQkq - 0 5"
+      },
+      {
+        "opening_pair": "opening_007",
+        "fen": "rn1qkb1r/ppp1p1pp/3p1n2/5p2/1P6/2N2PPb/P1PPP2P/R1BQKBNR w KQkq - 1 5"
+      },
+      {
+        "opening_pair": "opening_008",
+        "fen": "r1bq1bnr/pppkpppp/8/3p4/4P3/2N5/PPPP1PPP/R1BQK1NR w KQ - 0 5"
+      },
+      {
+        "opening_pair": "opening_009",
+        "fen": "rnbq1bnr/p1ppkp1p/1p4p1/4p3/8/3P2P1/PPPNPP1P/RNBQKB1R w KQ - 2 5"
+      },
+      {
+        "opening_pair": "opening_010",
+        "fen": "rn1qkbnr/1pp1ppp1/p6p/3p1b2/2P2P2/P6N/1P1PP1PP/RNBQKB1R w KQkq - 0 5"
+      },
+      {
+        "opening_pair": "opening_011",
+        "fen": "r1bqkbnr/pp1p2pp/n1p1p3/5p2/P2P1B2/8/1PP1PPPP/RN1QKBNR w KQkq - 0 5"
+      },
+      {
+        "opening_pair": "opening_012",
+        "fen": "r1bqkbnr/ppppppp1/8/7p/Q1P3P1/1P1n4/P2PPP1P/RNB1KBNR w KQkq - 1 5"
+      },
+      {
+        "opening_pair": "opening_013",
+        "fen": "rnbqkbnr/ppp3pp/4pp2/3p4/8/2PP4/PP2PPPP/RNBQKBNR w KQkq - 0 5"
+      },
+      {
+        "opening_pair": "opening_014",
+        "fen": "rnbqk1nr/ppppp2p/6pb/8/2P2pPP/P7/1P1PPP2/RNBQKBNR w KQkq - 0 5"
+      },
+      {
+        "opening_pair": "opening_015",
+        "fen": "rnb1kbnr/1ppp1pp1/8/p2Pp2p/4P2q/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 5"
+      },
+      {
+        "opening_pair": "opening_016",
+        "fen": "rn1qkbnr/p2pppp1/b7/1pP4p/5P2/8/PPP1PKPP/RNBQ1BNR w kq - 0 5"
+      },
+      {
+        "opening_pair": "opening_017",
+        "fen": "rnbqkbnr/p1p3pp/1p1pp3/5pP1/P3P3/8/1PPP1P1P/RNBQKBNR w KQkq - 0 5"
+      },
+      {
+        "opening_pair": "opening_018",
+        "fen": "rnbqkb1r/ppp2ppp/3pp3/3P1n2/8/6PP/PPP1PP2/RNBQKBNR w KQkq - 1 5"
+      },
+      {
+        "opening_pair": "opening_019",
+        "fen": "rnb1kbnr/1pqppp1p/2p5/p5p1/3P4/1QP4P/PP2PPP1/RNB1KBNR w KQkq - 0 5"
+      }
+    ],
+    "executables": {
+      "minic": {
+        "path": "C:\\Users\\Zatoichi\\AppData\\Local\\Temp\\malecns-fast-engines\\minic.exe",
+        "sha256": "0ad407535f7a79188dfc5665946da87fb249b4a5ca871c9d232203c1301d4fbb"
+      },
+      "gaia": {
+        "path": "C:\\Users\\Zatoichi\\AppData\\Local\\Temp\\malecns-fast-engines\\gaia.exe",
+        "sha256": "a28740e605bc53c845e42a8364462c4cc9212af97dea254b10d7c35c63372518"
+      }
+    },
+    "game_rows": 1684,
+    "complete_game_rows": 1680,
+    "error_game_rows": 4,
+    "bootstrap_samples": 200
+  },
+  "serious_run": {
+    "path": "results\\first_fly_rating\\serious_400_bounded",
+    "games_recorded": 400,
+    "expected_games": 400,
+    "elo": {
+      "rating": 445.06389937333836,
+      "standard_error": 18.698483608911864,
+      "ci95_low": 408.4155449343586,
+      "ci95_high": 481.7122538123181,
+      "n_games": 400,
+      "total_score": 200.0,
+      "censored": null
+    },
+    "bounded_candidates": 4,
+    "max_plies": 2,
+    "analysis_depth": 1,
+    "wins": 0,
+    "draws": 400,
+    "losses": 0,
+    "median_fly_move_latency_s": 2.644475399982184,
+    "total_recurrent_passes": 25600
+  },
+  "depth_sweep_rows": 7,
+  "control_sweep_rows": 28,
+  "artifacts": {
+    "low_elo_calibration": {
+      "path": "results\\low_elo_calibration\\low_elo_calibration.csv",
+      "exists": true
+    },
+    "calibration_metadata": {
+      "path": "results\\low_elo_calibration\\calibration_metadata.json",
+      "exists": true
+    },
+    "teacher_dataset": {
+      "path": "data\\teacher_dataset_v1.csv",
+      "exists": true
+    },
+    "population_manifest": {
+      "path": "data\\chess_population_manifest.json",
+      "exists": true
+    },
+    "activation_cache_depth16": {
+      "path": "data\\chess_activations_depth16_v1.npz",
+      "exists": true
+    },
+    "readout_checkpoint": {
+      "path": "results\\training\\v1_depth16_rate_large\\readout_checkpoint.npz",
+      "exists": true
+    },
+    "depth_sweep": {
+      "path": "results\\depth_sweep\\metrics.csv",
+      "exists": true
+    },
+    "control_sweep": {
+      "path": "results\\control_sweep\\metrics.csv",
+      "exists": true
+    },
+    "serious_games": {
+      "path": "results\\first_fly_rating\\serious_400_bounded\\games.csv",
+      "exists": true
+    }
+  },
+  "scientific_caveat": "The compact sweep and serious run use bounded candidate sets and short games to control full-graph runtime; do not treat them as a full legal-move opening-diverse rating until expanded."
+}

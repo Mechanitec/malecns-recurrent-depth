@@ -42,7 +42,13 @@ def main() -> None:
     depth_rows = read_csv(artifacts["depth_sweep"])
     control_rows = read_csv(artifacts["control_sweep"])
     expected_games = int(serious_elo.get("elo", {}).get("n_games", 0))
-    status = "complete" if expected_games >= 400 else "provisional_incomplete"
+    status = "complete_bounded_protocol" if expected_games >= 400 else "provisional_incomplete"
+    wins = sum(row.get("fly_score") == "1.0" for row in serious_games)
+    draws = sum(row.get("fly_score") == "0.5" for row in serious_games)
+    losses = sum(row.get("fly_score") == "0.0" for row in serious_games)
+    latencies = sorted(float(row["median_fly_move_latency_s"]) for row in serious_games if row.get("median_fly_move_latency_s"))
+    median_latency = latencies[len(latencies) // 2] if latencies else None
+    recurrent_passes = sum(int(row.get("total_recurrent_passes", 0) or 0) for row in serious_games)
     summary = {
         "status": status,
         "repo": "https://github.com/Mechanitec/malecns-recurrent-depth",
@@ -57,6 +63,11 @@ def main() -> None:
             "bounded_candidates": 4,
             "max_plies": 2,
             "analysis_depth": 1,
+            "wins": wins,
+            "draws": draws,
+            "losses": losses,
+            "median_fly_move_latency_s": median_latency,
+            "total_recurrent_passes": recurrent_passes,
         },
         "depth_sweep_rows": len(depth_rows),
         "control_sweep_rows": len(control_rows),
@@ -73,7 +84,8 @@ The frozen reference checkpoint uses the rate dynamics at recurrent depth 16. Th
 
 ## Current evidence
 
-- Serious-run records: {len(serious_games)} of 400 expected.
+- Serious-run records: {len(serious_games)} of 400 expected; W/D/L = {wins}/{draws}/{losses}.
+- Median Fly move latency: {median_latency:.3f} seconds; recurrent passes: {recurrent_passes}.
 - Depth sweep rows: {len(depth_rows)} across depths 1, 2, 4, 8, 16, 32, and 64.
 - Control sweep rows: {len(control_rows)} across the original, topology-shuffled, sign-shuffled, and recurrent-attenuated graphs.
 - Every recorded game includes PGN, exact calibrated opponent setting, Fly move latency, recurrent-pass count, and candidate-score margin.
