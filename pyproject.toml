@@ -4,14 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "malecns-rd"
-version = "0.4.0"
-description = "Recurrent-depth connectome research prototype with rate, LIF, and hybrid chess Elo benchmarking"
+version = "0.5.0"
+description = "Recurrent-depth connectome research prototype with hybrid chess Elo benchmarking and dashboard"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24", "scipy>=1.10", "pandas>=2.0"]
 
 [project.optional-dependencies]
 malecns = ["pyarrow>=14"]
 chess = ["python-chess>=1.999"]
+dashboard = ["streamlit>=1.39", "altair>=5.4"]
 dev = ["pytest>=8"]
 
 [tool.setuptools.packages.find]
