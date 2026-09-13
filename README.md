@@ -28,10 +28,10 @@ Both support fixed-depth experiments. Both can keep sensory evidence clamped whi
 - MaleCNS v1.0 Feather loader with neurotransmitter-based sign assignment.
 - Downloader for the small official MaleCNS annotation + neurotransmitter files.
 - Synthetic benchmark result files for both rate and LIF dynamics.
-- Chess Elo benchmark layer with Stockfish `UCI_Elo` opponents.
+- Hybrid chess Elo benchmark: Alfil below Stockfish's Elo floor, Stockfish above it.
 - Candidate-move chess encoding and deterministic sensory projection.
 - Multi-opponent maximum-likelihood Elo estimator with approximate 95% interval.
-- Tests for propagation, determinism, adaptive stopping, inhibition, refractory behavior, Elo estimation, and sensory projection.
+- Tests for propagation, determinism, adaptive stopping, inhibition, refractory behavior, Elo estimation, opponent routing, and sensory projection.
 - Experimental protocols in `docs/experiment_protocol.md` and `docs/chess_elo_protocol.md`.
 
 ## Run
@@ -143,9 +143,16 @@ The strongest future result would show that useful depth scaling survives matche
 
 ## Chess Elo benchmark
 
-The project now includes a chess benchmark intended to make improvement easy to interpret quantitatively.
+The project uses a hybrid opponent ladder so very weak fly checkpoints can still receive a useful rating.
 
-Stockfish is configured with `UCI_LimitStrength=true` and an integer `UCI_Elo` target. The harness inspects the installed Stockfish build's actual Elo bounds at runtime instead of hard-coding them. Stockfish's target rating is calibrated/nominal rather than a guarantee of exact realized strength at every time control, so version and time-control settings must remain fixed within an experiment.
+- **Below Stockfish's runtime-advertised Elo floor:** use Alfil.
+- **At and above Stockfish's floor:** use Stockfish.
+
+Current Stockfish builds commonly begin around 1320. Alfil publishes nominal `UCI_Elo` levels `0, 200, 400, ..., 3000`; therefore the default low ladder is `0, 200, 400, 600, 800, 1000, 1200`, followed by Stockfish `1320, 1400, 1500, ...`. The harness detects the installed Stockfish floor at runtime. Unsupported low values such as 1300 are rejected rather than silently rounded.
+
+Every game record stores both `opponent_engine` and `opponent_elo`. Both engines use `UCI_LimitStrength=true` and `UCI_Elo=<target>`.
+
+The Alfil and Stockfish numbers are nominal engine ratings, not guaranteed to lie on one perfectly aligned absolute scale. Serious experiments should cross-calibrate the two engines in their overlap region and freeze the exact binaries, settings, and time control.
 
 The fly does not require one output neuron for every chess move. Instead, every legal move is evaluated as a candidate:
 
@@ -157,13 +164,14 @@ The fly does not require one output neuron for every chess move. Instead, every 
 
 This makes `depth = 1, 2, 4, 8, ...` directly comparable while keeping graph, chess interface, and readout fixed.
 
-Install the optional chess dependency and run a harness smoke test with a local Stockfish binary:
+Install the optional chess dependency and run a harness smoke test with local Alfil and Stockfish binaries:
 
 ```bash
 pip install -e '.[chess]'
 python scripts/run_chess_benchmark.py \
+  --alfil /path/to/alfil \
   --stockfish /path/to/stockfish \
-  --elos 1320,1400,1500 \
+  --elos 0,200,400,600,800,1000,1200,1320,1400,1500 \
   --games-per-elo 20
 ```
 
@@ -178,7 +186,7 @@ The immediate target is the first actual MaleCNS chess checkpoint:
 1. load the signed MaleCNS graph;
 2. select and freeze sensory and readout populations;
 3. train only the chess adapter/readout without changing the graph topology;
-4. run the first Stockfish Elo ladder;
+4. run the first hybrid Alfil + Stockfish Elo ladder;
 5. sweep recurrent depth with the same frozen checkpoint;
 6. compare against shuffled-topology and shuffled-transmitter controls;
 7. optimize for reproducible Elo gain, not isolated wins.
