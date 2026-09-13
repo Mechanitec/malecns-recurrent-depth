@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "malecns-rd"
-version = "0.7.0"
-description = "Recurrent-depth connectome research prototype with hybrid chess Elo benchmarking, training, and live Stockfish analysis"
+version = "0.8.0"
+description = "Recurrent-depth connectome research prototype with fast low-Elo chess benchmarking, training, and live Stockfish analysis"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24", "scipy>=1.10", "pandas>=2.0"]
 
