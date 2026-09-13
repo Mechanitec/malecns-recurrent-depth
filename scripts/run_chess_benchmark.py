@@ -1,4 +1,4 @@
-"""Hybrid Alfil + Stockfish tournament entry point with live position analysis."""
+"""MaleCNS chess benchmark with fast low-Elo opponents and live analysis."""
 from __future__ import annotations
 
 import argparse
@@ -7,6 +7,10 @@ from pathlib import Path
 from malecns_rd.checkpoint_agent import load_fly_agent_from_checkpoint
 from malecns_rd.chess_agent import RandomLegalAgent
 from malecns_rd.chess_benchmark import run_elo_tournament, save_tournament
+from malecns_rd.fast_opponents import (
+    run_fast_elo_tournament,
+    run_fast_elo_tournament_with_analysis,
+)
 from malecns_rd.position_analysis import AnalysisConfig, run_elo_tournament_with_analysis
 
 
@@ -21,13 +25,30 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--stockfish", required=True, help="Path to Stockfish executable")
     parser.add_argument(
+        "--minic",
+        help="Path to Minic executable; used for the fast Elo 0 random-mover anchor",
+    )
+    parser.add_argument(
+        "--gaia",
+        help="Path to Gaia 4 executable; used for fast 580-1300 low-rating anchors",
+    )
+    parser.add_argument(
         "--alfil",
-        help="Path to Alfil executable; required when testing below Stockfish's floor",
+        help="Legacy Alfil executable; used only with --legacy-alfil",
+    )
+    parser.add_argument(
+        "--legacy-alfil",
+        action="store_true",
+        help="Use the old Alfil-below-Stockfish ladder instead of the fast Minic/Gaia ladder",
     )
     parser.add_argument(
         "--elos",
         type=parse_elos,
-        default=parse_elos("0,200,400,600,800,1000,1200,1320,1400,1500"),
+        default=parse_elos("0,580,700,820,940,1060,1180,1300,1320,1400,1500"),
+        help=(
+            "Opponent nominal Elo ladder. Fast mode supports 0, Gaia anchors "
+            "580/700/820/940/1060/1180/1300, and Stockfish ratings at/above its floor."
+        ),
     )
     parser.add_argument(
         "--stockfish-floor",
@@ -111,39 +132,76 @@ def main() -> None:
             f"dynamics={loaded.dynamics} depth={agent.depth} neurons={loaded.graph_neurons}"
         )
 
-    if args.no_position_eval:
-        result = run_elo_tournament(
-            agent,
-            stockfish_executable=args.stockfish,
-            alfil_executable=args.alfil,
-            stockfish_floor=args.stockfish_floor,
-            opponent_elos=args.elos,
-            games_per_elo=args.games_per_elo,
-            move_time_s=args.move_time,
-            live_state_path=live_state,
-            run_id=args.output.name,
-        )
+    if args.legacy_alfil:
+        if args.no_position_eval:
+            result = run_elo_tournament(
+                agent,
+                stockfish_executable=args.stockfish,
+                alfil_executable=args.alfil,
+                stockfish_floor=args.stockfish_floor,
+                opponent_elos=args.elos,
+                games_per_elo=args.games_per_elo,
+                move_time_s=args.move_time,
+                live_state_path=live_state,
+                run_id=args.output.name,
+            )
+        else:
+            analysis_config = AnalysisConfig(
+                executable=args.analysis_stockfish or args.stockfish,
+                depth=args.analysis_depth,
+                threads=args.analysis_threads,
+                hash_mb=args.analysis_hash_mb,
+            )
+            result = run_elo_tournament_with_analysis(
+                agent,
+                stockfish_executable=args.stockfish,
+                alfil_executable=args.alfil,
+                stockfish_floor=args.stockfish_floor,
+                opponent_elos=args.elos,
+                games_per_elo=args.games_per_elo,
+                move_time_s=args.move_time,
+                live_state_path=live_state,
+                evaluation_state_path=args.output / "position_eval.json",
+                evaluation_history_path=args.output / "evaluation_history.csv",
+                analysis_config=analysis_config,
+                run_id=args.output.name,
+            )
     else:
-        analysis_config = AnalysisConfig(
-            executable=args.analysis_stockfish or args.stockfish,
-            depth=args.analysis_depth,
-            threads=args.analysis_threads,
-            hash_mb=args.analysis_hash_mb,
-        )
-        result = run_elo_tournament_with_analysis(
-            agent,
-            stockfish_executable=args.stockfish,
-            alfil_executable=args.alfil,
-            stockfish_floor=args.stockfish_floor,
-            opponent_elos=args.elos,
-            games_per_elo=args.games_per_elo,
-            move_time_s=args.move_time,
-            live_state_path=live_state,
-            evaluation_state_path=args.output / "position_eval.json",
-            evaluation_history_path=args.output / "evaluation_history.csv",
-            analysis_config=analysis_config,
-            run_id=args.output.name,
-        )
+        if args.no_position_eval:
+            result = run_fast_elo_tournament(
+                agent,
+                stockfish_executable=args.stockfish,
+                minic_executable=args.minic,
+                gaia_executable=args.gaia,
+                stockfish_floor=args.stockfish_floor,
+                opponent_elos=args.elos,
+                games_per_elo=args.games_per_elo,
+                move_time_s=args.move_time,
+                live_state_path=live_state,
+                run_id=args.output.name,
+            )
+        else:
+            analysis_config = AnalysisConfig(
+                executable=args.analysis_stockfish or args.stockfish,
+                depth=args.analysis_depth,
+                threads=args.analysis_threads,
+                hash_mb=args.analysis_hash_mb,
+            )
+            result = run_fast_elo_tournament_with_analysis(
+                agent,
+                stockfish_executable=args.stockfish,
+                minic_executable=args.minic,
+                gaia_executable=args.gaia,
+                stockfish_floor=args.stockfish_floor,
+                opponent_elos=args.elos,
+                games_per_elo=args.games_per_elo,
+                move_time_s=args.move_time,
+                live_state_path=live_state,
+                evaluation_state_path=args.output / "position_eval.json",
+                evaluation_history_path=args.output / "evaluation_history.csv",
+                analysis_config=analysis_config,
+                run_id=args.output.name,
+            )
 
     save_tournament(result, args.output)
     print(f"Stockfish floor: {result.stockfish_floor}")
