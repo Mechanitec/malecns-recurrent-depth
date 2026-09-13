@@ -35,6 +35,7 @@ class FlyCandidateMoveAgent:
     readout_weights: np.ndarray
     depth: int = 16
     clamp_sensory: bool = True
+    max_candidates: int | None = None
     name: str = "MaleCNS-RD"
     last_decision: dict[str, object] = field(default_factory=dict, init=False, repr=False)
 
@@ -50,6 +51,8 @@ class FlyCandidateMoveAgent:
             raise ValueError("readout index outside graph")
         if self.depth < 1:
             raise ValueError("depth must be >= 1")
+        if self.max_candidates is not None and self.max_candidates < 1:
+            raise ValueError("max_candidates must be >= 1 when provided")
 
     def score_move(self, board, move) -> float:
         features = encode_board_move(board, move)
@@ -74,21 +77,52 @@ class FlyCandidateMoveAgent:
         legal = list(board.legal_moves)
         if not legal:
             raise ValueError("cannot choose a move in a terminal position")
-        scored = [(self.score_move(board, move), move.uci(), move) for move in legal]
-        scored.sort(key=lambda item: (item[0], item[1]), reverse=True)
-        return scored
+        if self.max_candidates is not None and len(legal) > self.max_candidates:
+            # Preserve tactical candidates in bounded diagnostics. Full
+            # experiments leave this unset and score every legal move.
+            def priority(move):
+                return (
+                    int(move.promotion is not None),
+                    int(board.is_capture(move)),
+                    int(board.gives_check(move)),
+                    int(board.is_castling(move)),
+                    move.uci(),
+                )
 
-    def choose_move(self, board):
-        scored = self.rank_moves(board)
+            legal = sorted(legal, key=priority, reverse=True)[: self.max_candidates]
+        if isinstance(self.engine, RecurrentDepthEngine):
+            sensory = np.column_stack([
+                self.projector.project(encode_board_move(board, move)) for move in legal
+            ])
+            states = self.engine.run_batch(
+                sensory,
+                max_depth=self.depth,
+                clamp_sensory=self.clamp_sensory,
+            )
+            values = states[self.readout_indices, :].T
+            scores = values @ self.readout_weights
+            scored = [(float(score), move.uci(), move) for score, move in zip(scores, legal)]
+        else:
+            scored = [(self.score_move(board, move), move.uci(), move) for move in legal]
+        scored.sort(key=lambda item: (item[0], item[1]), reverse=True)
         self.last_decision = {
             "depth": int(self.depth),
-            "selected_move": scored[0][1],
-            "selected_score": float(scored[0][0]),
+            "candidate_count": len(scored),
+            "recurrent_passes": len(scored) * int(self.depth),
+            "score_margin": (
+                float(scored[0][0] - scored[1][0]) if len(scored) > 1 else None
+            ),
             "candidates": [
                 {"move": uci, "score": float(score)}
                 for score, uci, _ in scored
             ],
         }
+        return scored
+
+    def choose_move(self, board):
+        scored = self.rank_moves(board)
+        self.last_decision["selected_move"] = scored[0][1]
+        self.last_decision["selected_score"] = float(scored[0][0])
         return scored[0][2]
 
 

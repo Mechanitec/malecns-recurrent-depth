@@ -56,6 +56,8 @@ def test_pairwise_training_learns_ranking():
         batch_size=32,
         seed=11,
     )
+    assert result.best_epoch >= 1
+    assert result.best_weights.shape == result.weights.shape
     assert result.train_pair_accuracy > 0.95
     assert result.validation_pair_accuracy > 0.90
     assert result.validation_top1_accuracy > 0.80

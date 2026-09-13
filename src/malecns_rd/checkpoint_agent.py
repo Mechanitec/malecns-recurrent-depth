@@ -39,6 +39,7 @@ def load_fly_agent_from_checkpoint(
     sensory_indices_path: str | Path,
     min_synapses: int = 3,
     depth_override: int | None = None,
+    max_candidates: int | None = None,
 ) -> LoadedFlyAgent:
     """Reconstruct a trained FlyCandidateMoveAgent from a readout checkpoint.
 
@@ -100,6 +101,7 @@ def load_fly_agent_from_checkpoint(
         readout_weights=checkpoint.readout_weights,
         depth=depth,
         clamp_sensory=clamp_sensory,
+        max_candidates=max_candidates,
         name="MaleCNS-RD",
     )
     return LoadedFlyAgent(

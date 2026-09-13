@@ -28,6 +28,7 @@ def extract_candidate_activations(
     recurrent_depth: int,
     clamp_sensory: bool = True,
     max_rows: int | None = None,
+    metadata_extra: dict[str, object] | None = None,
 ) -> ActivationCache:
     """Run frozen connectome dynamics once per teacher-labelled candidate move."""
     if recurrent_depth < 1:
@@ -77,6 +78,9 @@ def extract_candidate_activations(
             "projector_amplitude": float(projector.amplitude),
             "clamp_sensory": bool(clamp_sensory),
             "dynamics": type(engine).__name__,
+            "activation_dtype": "float32",
+            "activation_shape": [int(len(rows)), int(indices.size)],
+            **(metadata_extra or {}),
         },
     )
 

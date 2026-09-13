@@ -33,6 +33,8 @@ class ReadoutCheckpoint:
 @dataclass(frozen=True)
 class PairwiseTrainingResult:
     weights: np.ndarray
+    best_weights: np.ndarray
+    best_epoch: int
     history: pd.DataFrame
     train_pair_accuracy: float
     validation_pair_accuracy: float
@@ -187,6 +189,9 @@ def train_pairwise_readout(
     beta1, beta2, eps = 0.9, 0.999, 1e-8
     step = 0
     history_rows: list[dict[str, float | int]] = []
+    best_weights: np.ndarray | None = None
+    best_epoch = 0
+    best_validation_pair_accuracy = float("-inf")
 
     train_pairs64 = train_pairs.astype(np.float64)
     val_pairs64 = val_pairs.astype(np.float64)
@@ -211,7 +216,7 @@ def train_pairwise_readout(
             w -= learning_rate * m_hat / (np.sqrt(v_hat) + eps)
 
         wf = w.astype(np.float32)
-        history_rows.append({
+        history_row = {
             "epoch": epoch,
             "loss": _logistic_pair_loss(train_pairs64, w, l2),
             "validation_loss": _logistic_pair_loss(val_pairs64, w, l2),
@@ -219,12 +224,20 @@ def train_pairwise_readout(
             "validation_pair_accuracy": pair_accuracy(val_pairs, wf),
             "train_top1_accuracy": top1_accuracy(train_x, train_f, wf),
             "validation_top1_accuracy": top1_accuracy(val_x, val_f, wf),
-        })
+        }
+        history_rows.append(history_row)
+        if history_row["validation_pair_accuracy"] > best_validation_pair_accuracy:
+            best_validation_pair_accuracy = float(history_row["validation_pair_accuracy"])
+            best_weights = wf.copy()
+            best_epoch = epoch
 
     wf = w.astype(np.float32)
+    assert best_weights is not None
     history = pd.DataFrame(history_rows)
     return PairwiseTrainingResult(
         weights=wf,
+        best_weights=best_weights,
+        best_epoch=best_epoch,
         history=history,
         train_pair_accuracy=float(history.iloc[-1]["train_pair_accuracy"]),
         validation_pair_accuracy=float(history.iloc[-1]["validation_pair_accuracy"]),

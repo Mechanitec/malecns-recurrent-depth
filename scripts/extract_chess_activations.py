@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 from pathlib import Path
 import numpy as np
 
@@ -9,6 +10,14 @@ from malecns_rd.activation_extraction import extract_and_save_candidate_activati
 from malecns_rd.chess_features import HashedSensoryProjector
 from malecns_rd.engine import RecurrentDepthEngine
 from malecns_rd.lif import LIFRecurrentDepthEngine
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 from malecns_rd.malecns import load_malecns_feather
 
 
@@ -28,6 +37,7 @@ def main() -> None:
     parser.add_argument("--amplitude", type=float, default=1.0)
     parser.add_argument("--min-synapses", type=int, default=3)
     parser.add_argument("--max-rows", type=int, default=None)
+    parser.add_argument("--population-manifest", type=Path, default=None)
     parser.add_argument("--single-pulse", action="store_true", help="Do not clamp sensory evidence after depth 1")
     args = parser.parse_args()
 
@@ -57,6 +67,25 @@ def main() -> None:
         recurrent_depth=args.depth,
         clamp_sensory=not args.single_pulse,
         max_rows=args.max_rows,
+        metadata_extra={
+            "teacher_dataset": {"path": str(args.teacher_csv), "sha256": _sha256(args.teacher_csv)},
+            "male_cns_inputs": {
+                "annotations_sha256": _sha256(args.annotations),
+                "neurotransmitters_sha256": _sha256(args.neurotransmitters),
+                "weights_sha256": _sha256(args.weights),
+            },
+            "population_indices": {
+                "sensory_sha256": _sha256(args.sensory_indices),
+                "readout_sha256": _sha256(args.readout_indices),
+            },
+            "population_manifest": (
+                {"path": str(args.population_manifest), "sha256": _sha256(args.population_manifest)}
+                if args.population_manifest else None
+            ),
+            "graph_neurons": int(graph.n_neurons),
+            "graph_edges": int(graph.n_edges),
+            "min_synapses": int(args.min_synapses),
+        },
     )
     print(f"cached {len(cache.frame)} candidates x {cache.features.shape[1]} readout neurons")
     print(f"saved to {args.output}")

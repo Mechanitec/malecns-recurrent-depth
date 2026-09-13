@@ -2,12 +2,18 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass
 import csv
+import hashlib
+import json
 import math
+import random
 from pathlib import Path
 from typing import Iterable, Iterator
 
 
-TEACHER_COLUMNS = ("position_id", "fen", "move_uci", "teacher_cp", "teacher_target", "is_best")
+TEACHER_COLUMNS = (
+    "position_id", "source_game_id", "split", "fen", "side_to_move",
+    "move_uci", "teacher_cp", "teacher_target", "is_best", "legal_move_count",
+)
 
 
 def _require_chess():
@@ -35,6 +41,10 @@ class TeacherCandidate:
     teacher_cp: float
     teacher_target: float
     is_best: int
+    source_game_id: str = ""
+    split: str = "train"
+    side_to_move: str = ""
+    legal_move_count: int = 0
 
 
 class StockfishTeacher:
@@ -55,8 +65,11 @@ class StockfishTeacher:
         chess = _require_chess()
         self._chess = chess
         self.nodes = int(nodes)
+        self.threads = int(threads)
+        self.hash_mb = int(hash_mb)
         self.mate_score_cp = int(mate_score_cp)
         self.target_scale_cp = float(target_scale_cp)
+        self.executable = str(executable)
         self._engine = chess.engine.SimpleEngine.popen_uci(executable)
         settings: dict[str, object] = {}
         if "Threads" in self._engine.options:
@@ -65,6 +78,19 @@ class StockfishTeacher:
             settings["Hash"] = int(hash_mb)
         if settings:
             self._engine.configure(settings)
+
+    def metadata(self) -> dict[str, object]:
+        digest = hashlib.sha256(Path(self.executable).read_bytes()).hexdigest()
+        return {
+            "engine": dict(self._engine.id),
+            "executable": self.executable,
+            "executable_sha256": digest,
+            "nodes": self.nodes,
+            "threads": self.threads,
+            "hash_mb": self.hash_mb,
+            "mate_score_cp": self.mate_score_cp,
+            "target_scale_cp": self.target_scale_cp,
+        }
 
     def close(self) -> None:
         self._engine.quit()
@@ -126,6 +152,8 @@ class StockfishTeacher:
                 teacher_cp=cp,
                 teacher_target=centipawn_to_target(cp, scale_cp=self.target_scale_cp),
                 is_best=int(uci == best_uci),
+                side_to_move="white" if board.turn else "black",
+                legal_move_count=len(legal),
             )
             for uci, cp in ranked
         ]
@@ -136,6 +164,28 @@ def iter_fens_from_text(path: str | Path) -> Iterator[str]:
         value = raw.strip()
         if value and not value.startswith("#"):
             yield value
+
+
+def iter_generated_fens(count: int, *, seed: int = 101, plies: int = 12) -> Iterator[str]:
+    """Generate reproducible, diverse positions for a pilot teacher corpus."""
+    if count < 1 or plies < 1:
+        raise ValueError("count and plies must be >= 1")
+    chess = _require_chess()
+    rng = random.Random(seed)
+    seen: set[str] = set()
+    while len(seen) < count:
+        board = chess.Board()
+        for _ in range(plies + rng.randrange(0, 8)):
+            legal = sorted(board.legal_moves, key=lambda move: move.uci())
+            if not legal:
+                break
+            board.push(rng.choice(legal))
+            if board.is_game_over(claim_draw=True):
+                break
+        if board.is_game_over(claim_draw=True) or board.fen() in seen:
+            continue
+        seen.add(board.fen())
+        yield board.fen()
 
 
 def iter_fens_from_pgn(
@@ -175,24 +225,60 @@ def write_teacher_dataset(
     teacher: StockfishTeacher,
     *,
     max_positions: int | None = None,
+    resume: bool = False,
 ) -> tuple[int, int]:
     """Evaluate positions and write candidate labels. Returns positions, rows."""
     chess = _require_chess()
     output = Path(path)
     output.parent.mkdir(parents=True, exist_ok=True)
     positions = rows = 0
-    with output.open("w", newline="", encoding="utf-8") as f:
+    completed_fens: set[str] = set()
+    if resume and output.exists():
+        with output.open(newline="", encoding="utf-8") as existing:
+            completed_fens = {str(row["fen"]) for row in csv.DictReader(existing)}
+    mode = "a" if resume and output.exists() else "w"
+    with output.open(mode, newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=list(TEACHER_COLUMNS))
-        writer.writeheader()
-        for raw_fen in fens:
-            if max_positions is not None and positions >= max_positions:
+        if mode == "w":
+            writer.writeheader()
+        for source_index, raw_fen in enumerate(fens):
+            if max_positions is not None and source_index >= max_positions:
                 break
             board = chess.Board(raw_fen)
-            candidates = teacher.evaluate_position(board, position_id=str(positions))
+            position_id = str(source_index)
+            if str(raw_fen) in completed_fens:
+                positions = source_index + 1
+                continue
+            source_game_id = f"generated_{source_index // 50:04d}"
+            split_bucket = int.from_bytes(hashlib.blake2b(source_game_id.encode(), digest_size=2).digest(), "little") % 10
+            split = "train" if split_bucket < 8 else "validation" if split_bucket == 8 else "test"
+            candidates = teacher.evaluate_position(board, position_id=position_id)
             if not candidates:
+                positions = source_index + 1
                 continue
             for candidate in candidates:
-                writer.writerow(asdict(candidate))
+                row = asdict(candidate)
+                row.update({"source_game_id": source_game_id, "split": split})
+                writer.writerow(row)
                 rows += 1
-            positions += 1
+            positions = source_index + 1
+            completed_fens.add(str(raw_fen))
     return positions, rows
+
+
+def write_teacher_metadata(path: str | Path, *, positions: int, rows: int, metadata: dict[str, object]) -> None:
+    output = Path(path)
+    total_rows = 0
+    position_ids: set[str] = set()
+    with output.open(newline="", encoding="utf-8") as stream:
+        for row in csv.DictReader(stream):
+            total_rows += 1
+            position_ids.add(str(row["position_id"]))
+    payload = {
+        **metadata,
+        "positions": len(position_ids) if position_ids else int(positions),
+        "candidate_rows": total_rows if total_rows else int(rows),
+        "dataset_sha256": hashlib.sha256(output.read_bytes()).hexdigest(),
+        "columns": list(TEACHER_COLUMNS),
+    }
+    output.with_suffix(output.suffix + ".metadata.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")

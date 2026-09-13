@@ -46,10 +46,12 @@ def main() -> None:
     projector_seed = cache.metadata.get("projector_seed")
     checkpoint_path = args.output_dir / "readout_checkpoint.npz"
     metrics = {
-        "train_pair_accuracy": result.train_pair_accuracy,
-        "validation_pair_accuracy": result.validation_pair_accuracy,
-        "train_top1_accuracy": result.train_top1_accuracy,
-        "validation_top1_accuracy": result.validation_top1_accuracy,
+        "train_pair_accuracy": float(result.history.iloc[result.best_epoch - 1]["train_pair_accuracy"]),
+        "validation_pair_accuracy": float(result.history.iloc[result.best_epoch - 1]["validation_pair_accuracy"]),
+        "train_top1_accuracy": float(result.history.iloc[result.best_epoch - 1]["train_top1_accuracy"]),
+        "validation_top1_accuracy": float(result.history.iloc[result.best_epoch - 1]["validation_top1_accuracy"]),
+        "selected_epoch": int(result.best_epoch),
+        "checkpoint_selection_metric": "validation_pair_accuracy",
         "epochs": args.epochs,
         "learning_rate": args.learning_rate,
         "l2": args.l2,
@@ -57,7 +59,7 @@ def main() -> None:
     }
     save_readout_checkpoint(
         checkpoint_path,
-        readout_weights=result.weights,
+        readout_weights=result.best_weights,
         readout_indices=cache.readout_indices,
         recurrent_depth=depth,
         projector_seed=int(projector_seed) if projector_seed is not None else None,

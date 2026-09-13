@@ -6,6 +6,8 @@ import csv
 import json
 import math
 import os
+import statistics
+import time
 from pathlib import Path
 from typing import Iterable
 
@@ -239,10 +241,16 @@ def play_one_game_with_analysis(
     evaluation_history_path: str | Path | None = None,
     games_total: int = 0,
     run_id: str | None = None,
+    requested_elo: float | None = None,
 ) -> ChessGameRecord:
     chess = _require_chess()
     board = chess.Board(start_fen) if start_fen else chess.Board()
     fly_color = "white" if fly_is_white else "black"
+    calibrated_elo = float(getattr(opponent, "calibrated_elo", opponent.elo))
+    opponent_setting = str(getattr(opponent, "setting", ""))
+    fly_move_latencies: list[float] = []
+    recurrent_passes = 0
+    score_margins: list[float] = []
 
     _write_live(
         live_state_path,
@@ -252,7 +260,7 @@ def play_one_game_with_analysis(
         game_index=game_index,
         games_total=games_total,
         opponent_engine=opponent.name,
-        opponent_elo=opponent.elo,
+        opponent_elo=calibrated_elo,
         fly_color=fly_color,
         ply=board.ply(),
         fen=board.fen(),
@@ -275,9 +283,17 @@ def play_one_game_with_analysis(
     while not board.is_game_over(claim_draw=True) and board.ply() < max_plies:
         fly_turn = board.turn == (chess.WHITE if fly_is_white else chess.BLACK)
         if fly_turn:
+            started = time.perf_counter()
             move = fly_agent.choose_move(board)
+            fly_move_latencies.append(time.perf_counter() - started)
             actor = "fly"
             recurrent_depth, candidates = _candidate_snapshot(fly_agent)
+            decision = getattr(fly_agent, "last_decision", {})
+            if isinstance(decision, dict):
+                recurrent_passes += int(decision.get("recurrent_passes", 0) or 0)
+                margin = decision.get("score_margin")
+                if margin is not None:
+                    score_margins.append(float(margin))
         else:
             move = opponent.choose_move(board)
             actor = opponent.name
@@ -296,7 +312,7 @@ def play_one_game_with_analysis(
             game_index=game_index,
             games_total=games_total,
             opponent_engine=opponent.name,
-            opponent_elo=opponent.elo,
+            opponent_elo=calibrated_elo,
             fly_color=fly_color,
             ply=board.ply(),
             fen=board.fen(),
@@ -325,16 +341,30 @@ def play_one_game_with_analysis(
         result = "1/2-1/2"
         termination = "MAX_PLIES_ADJUDICATION"
 
+    game = chess.pgn.Game.from_board(board)
+    game.headers["Result"] = result
+    game.headers["White"] = "MaleCNS-RD" if fly_is_white else opponent.name
+    game.headers["Black"] = opponent.name if fly_is_white else "MaleCNS-RD"
+    game.headers["OpponentElo"] = str(calibrated_elo)
+
     return ChessGameRecord(
         game_index=game_index,
         opponent_engine=opponent.name,
-        opponent_elo=opponent.elo,
+        opponent_elo=calibrated_elo,
         fly_color=fly_color,
         result=result,
         fly_score=_fly_score_from_result(result, fly_is_white),
         plies=board.ply(),
         termination=termination,
         final_fen=board.fen(),
+        opponent_setting=opponent_setting,
+        opponent_requested_elo=requested_elo,
+        opponent_calibrated_elo=calibrated_elo,
+        fly_move_count=len(fly_move_latencies),
+        median_fly_move_latency_s=(statistics.median(fly_move_latencies) if fly_move_latencies else None),
+        total_recurrent_passes=recurrent_passes,
+        mean_candidate_score_margin=(statistics.fmean(score_margins) if score_margins else None),
+        pgn=str(game),
     )
 
 

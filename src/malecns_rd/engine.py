@@ -104,6 +104,32 @@ class RecurrentDepthEngine:
 
         return RunResult(state, max_depth, deltas, norms)
 
+    def run_batch(
+        self,
+        sensory: np.ndarray,
+        *,
+        max_depth: int = 16,
+        clamp_sensory: bool = True,
+    ) -> np.ndarray:
+        """Run fixed-depth rate dynamics for several sensory inputs at once."""
+        sensory = np.asarray(sensory, dtype=np.float32)
+        n = self.graph.n_neurons
+        if sensory.ndim != 2 or sensory.shape[0] != n or sensory.shape[1] == 0:
+            raise ValueError(f"sensory must have shape ({n}, batch)")
+        if max_depth < 1:
+            raise ValueError("max_depth must be >= 1")
+        state = np.zeros_like(sensory)
+        zero_sensory = np.zeros_like(sensory)
+        for depth in range(1, max_depth + 1):
+            step_input = sensory if (clamp_sensory or depth == 1) else zero_sensory
+            recurrent = self.graph.weights @ state
+            drive = self.recurrent_gain * recurrent + self.input_gain * step_input
+            proposal = self._activate(drive)
+            state = (self.leak * state + (1.0 - self.leak) * proposal).astype(
+                np.float32, copy=False
+            )
+        return state
+
     def run_until_confident(
         self,
         sensory: np.ndarray,

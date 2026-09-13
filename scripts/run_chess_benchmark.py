@@ -56,8 +56,15 @@ def main() -> None:
         default=None,
         help="Override Stockfish minimum Elo; by default it is detected from UCI_Elo",
     )
+    parser.add_argument(
+        "--calibration",
+        type=Path,
+        default=None,
+        help="Measured low-Elo calibration CSV used for sub-Stockfish routing",
+    )
     parser.add_argument("--games-per-elo", type=int, default=20)
     parser.add_argument("--move-time", type=float, default=0.05)
+    parser.add_argument("--max-plies", type=int, default=600)
     parser.add_argument("--output", type=Path, default=Path("results/chess_smoke"))
     parser.add_argument(
         "--live-state",
@@ -78,6 +85,12 @@ def main() -> None:
         type=int,
         default=None,
         help="Override checkpoint recurrent depth for inference-depth experiments",
+    )
+    fly.add_argument(
+        "--max-candidates",
+        type=int,
+        default=None,
+        help="Bounded diagnostic only: score at most this many tactical legal moves; unset scores all legal moves",
     )
 
     analysis = parser.add_argument_group("independent Stockfish analysis")
@@ -125,6 +138,7 @@ def main() -> None:
             sensory_indices_path=args.sensory_indices,
             min_synapses=args.min_synapses,
             depth_override=args.fly_depth,
+            max_candidates=args.max_candidates,
         )
         agent = loaded.agent
         print(
@@ -142,6 +156,7 @@ def main() -> None:
                 opponent_elos=args.elos,
                 games_per_elo=args.games_per_elo,
                 move_time_s=args.move_time,
+                max_plies=args.max_plies,
                 live_state_path=live_state,
                 run_id=args.output.name,
             )
@@ -160,6 +175,7 @@ def main() -> None:
                 opponent_elos=args.elos,
                 games_per_elo=args.games_per_elo,
                 move_time_s=args.move_time,
+                max_plies=args.max_plies,
                 live_state_path=live_state,
                 evaluation_state_path=args.output / "position_eval.json",
                 evaluation_history_path=args.output / "evaluation_history.csv",
@@ -177,8 +193,10 @@ def main() -> None:
                 opponent_elos=args.elos,
                 games_per_elo=args.games_per_elo,
                 move_time_s=args.move_time,
+                max_plies=args.max_plies,
                 live_state_path=live_state,
                 run_id=args.output.name,
+                calibration_path=args.calibration,
             )
         else:
             analysis_config = AnalysisConfig(
@@ -196,11 +214,13 @@ def main() -> None:
                 opponent_elos=args.elos,
                 games_per_elo=args.games_per_elo,
                 move_time_s=args.move_time,
+                max_plies=args.max_plies,
                 live_state_path=live_state,
                 evaluation_state_path=args.output / "position_eval.json",
                 evaluation_history_path=args.output / "evaluation_history.csv",
                 analysis_config=analysis_config,
                 run_id=args.output.name,
+                calibration_path=args.calibration,
             )
 
     save_tournament(result, args.output)

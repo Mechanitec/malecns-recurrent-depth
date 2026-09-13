@@ -63,3 +63,24 @@ def test_confidence_controller_uses_more_depth_for_longer_path():
     )
     assert result.depth_used >= 8  # 7 to reach target + 1 stability confirmation
     assert result.depth_used < 20
+
+
+def test_rate_batch_matches_individual_runs():
+    graph = ConnectomeGraph.from_edges(
+        5,
+        np.array([0, 1, 2, 3]),
+        np.array([1, 2, 3, 4]),
+        np.array([0.4, -0.2, 0.3, 0.5], dtype=np.float32),
+        normalize_incoming=False,
+    )
+    engine = RecurrentDepthEngine(graph)
+    batch = np.array(
+        [[1, 0], [0, 1], [0.5, -0.5], [0, 0.25], [0, 0]],
+        dtype=np.float32,
+    )
+    result = engine.run_batch(batch, max_depth=4)
+    expected = np.column_stack([
+        engine.run(batch[:, index], max_depth=4).state
+        for index in range(batch.shape[1])
+    ])
+    assert np.allclose(result, expected, rtol=0, atol=1e-7)

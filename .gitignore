@@ -4,6 +4,7 @@ __pycache__/
 .venv/
 venv/
 .env
+local_config.toml
 .DS_Store
 
 # Large MaleCNS datasets are local-only.

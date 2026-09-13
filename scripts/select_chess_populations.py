@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -27,6 +28,14 @@ READOUT_SUPERCLASSES = (
     "efferent_ascending",
     "efferent_descending",
 )
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def select_populations(
@@ -89,6 +98,16 @@ def select_populations(
         "readout_count": int(len(readout_indices)),
         "sensory_output": str(sensory_output),
         "readout_output": str(readout_output),
+        "selection_strategy": "seeded_uniform_without_replacement_sorted_indices",
+        "input_files": {
+            "annotations": {"path": str(annotations), "sha256": _sha256(annotations)},
+            "neurotransmitters": {"path": str(neurotransmitters), "sha256": _sha256(neurotransmitters)},
+            "weights": {"path": str(weights), "sha256": _sha256(weights)},
+        },
+        "output_sha256": {
+            "sensory_indices": _sha256(sensory_output.with_suffix(sensory_output.suffix + ".npy") if sensory_output.suffix != ".npy" else sensory_output),
+            "readout_indices": _sha256(readout_output.with_suffix(readout_output.suffix + ".npy") if readout_output.suffix != ".npy" else readout_output),
+        },
     }
     manifest_output.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     return manifest

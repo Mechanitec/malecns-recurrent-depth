@@ -15,6 +15,7 @@ from .chess_benchmark import (
     play_one_game,
 )
 from .elo import GameObservation, estimate_elo
+from .low_elo_calibration import CalibratedRating, load_calibration_table
 from .live_state import outcome_counts
 from .position_analysis import (
     AnalysisConfig,
@@ -45,6 +46,8 @@ class MinicConfig:
     search_depth: int = 64
     threads: int = 1
     hash_mb: int = 16
+    setting: str | None = None
+    calibrated_elo: float | None = None
 
     def __post_init__(self) -> None:
         if not 0 <= self.level <= 100:
@@ -60,6 +63,8 @@ class GaiaConfig:
     search_depth: int = 64
     threads: int = 1
     hash_mb: int = 16
+    setting: str | None = None
+    calibrated_elo: float | None = None
 
     def __post_init__(self) -> None:
         if self.rating not in GAIA_RATING_TO_LEVEL:
@@ -81,10 +86,14 @@ class _DepthBoundedUciOpponent:
         nominal_elo: int,
         search_depth: int,
         settings: dict[str, object],
+        calibrated_elo: float | None = None,
+        setting: str = "",
     ) -> None:
         chess = _require_chess()
         self._chess = chess
         self._elo = int(nominal_elo)
+        self._calibrated_elo = float(nominal_elo if calibrated_elo is None else calibrated_elo)
+        self._setting = setting
         self._engine = chess.engine.SimpleEngine.popen_uci(executable)
         options = self._engine.options
         safe_settings = {k: v for k, v in settings.items() if k in options}
@@ -98,6 +107,14 @@ class _DepthBoundedUciOpponent:
     @property
     def elo(self) -> int:
         return self._elo
+
+    @property
+    def calibrated_elo(self) -> float:
+        return self._calibrated_elo
+
+    @property
+    def setting(self) -> str:
+        return self._setting
 
     @property
     def name(self) -> str:
@@ -136,6 +153,8 @@ class MinicOpponent(_DepthBoundedUciOpponent):
                 "Hash": int(config.hash_mb),
                 "nodesBasedLevel": True,
             },
+            calibrated_elo=config.calibrated_elo,
+            setting=config.setting or f"Level={config.level}",
         )
         if "Level" not in self._engine.options:
             self.close()
@@ -159,6 +178,8 @@ class GaiaOpponent(_DepthBoundedUciOpponent):
                 "Threads": int(config.threads),
                 "Hash": int(config.hash_mb),
             },
+            calibrated_elo=config.calibrated_elo,
+            setting=config.setting or f"Skill Level={level}",
         )
         if "Skill Level" not in self._engine.options:
             self.close()
@@ -186,6 +207,19 @@ def select_fast_opponent(elo: int, *, stockfish_floor: int) -> str:
     )
 
 
+def select_calibrated_rating(requested_elo: int, rows: list[CalibratedRating]) -> CalibratedRating:
+    """Select the measured row for a requested low-range benchmark target.
+
+    Target 0 is the explicit Minic Level 0 project anchor. Other targets use
+    the nearest measured common-scale rating.
+    """
+    if int(requested_elo) == 0:
+        for row in rows:
+            if row.engine == "minic" and row.setting == "Level=0":
+                return row
+    return min(rows, key=lambda row: abs(row.calibrated_elo - int(requested_elo)))
+
+
 def _make_fast_opponent(
     engine_name: str,
     opponent_elo: int,
@@ -194,15 +228,26 @@ def _make_fast_opponent(
     minic_executable: str | None,
     gaia_executable: str | None,
     move_time_s: float,
+    calibrated_rating: CalibratedRating | None = None,
 ):
     if engine_name == "minic":
         if not minic_executable:
             raise ValueError("minic_executable is required for the Elo 0 anchor")
-        return MinicOpponent(MinicConfig(str(minic_executable), level=0, nominal_elo=0))
+        level = int(calibrated_rating.setting.split("=", 1)[1]) if calibrated_rating else 0
+        return MinicOpponent(MinicConfig(
+            str(minic_executable), level=level,
+            nominal_elo=round(calibrated_rating.calibrated_elo) if calibrated_rating else 0,
+            setting=calibrated_rating.setting if calibrated_rating else None,
+            calibrated_elo=calibrated_rating.calibrated_elo if calibrated_rating else None,
+        ))
     if engine_name == "gaia":
         if not gaia_executable:
             raise ValueError("gaia_executable is required for Gaia low-rating anchors")
-        return GaiaOpponent(GaiaConfig(str(gaia_executable), rating=int(opponent_elo)))
+        return GaiaOpponent(GaiaConfig(
+            str(gaia_executable), rating=int(opponent_elo),
+            setting=calibrated_rating.setting if calibrated_rating else None,
+            calibrated_elo=calibrated_rating.calibrated_elo if calibrated_rating else None,
+        ))
     return StockfishOpponent(
         StockfishConfig(stockfish_executable, int(opponent_elo), move_time_s)
     )
@@ -214,11 +259,19 @@ def _validate_fast_ladder(
     stockfish_floor: int,
     minic_executable: str | None,
     gaia_executable: str | None,
-) -> list[tuple[int, str]]:
-    routed = [(int(x), select_fast_opponent(int(x), stockfish_floor=stockfish_floor)) for x in ratings]
-    if any(name == "minic" for _, name in routed) and not minic_executable:
+    calibration_rows: list[CalibratedRating] | None = None,
+) -> list[tuple[int, str, CalibratedRating | None]]:
+    routed: list[tuple[int, str, CalibratedRating | None]] = []
+    for value in ratings:
+        requested = int(value)
+        if calibration_rows is not None and requested < int(stockfish_floor):
+            selected = select_calibrated_rating(requested, calibration_rows)
+            routed.append((requested, selected.engine, selected))
+        else:
+            routed.append((requested, select_fast_opponent(requested, stockfish_floor=stockfish_floor), None))
+    if any(name == "minic" for _, name, _ in routed) and not minic_executable:
         raise ValueError("minic_executable is required because the ladder includes Elo 0")
-    if any(name == "gaia" for _, name in routed) and not gaia_executable:
+    if any(name == "gaia" for _, name, _ in routed) and not gaia_executable:
         raise ValueError("gaia_executable is required because the ladder includes Gaia ratings")
     return routed
 
@@ -243,6 +296,7 @@ def run_fast_elo_tournament(
     max_plies: int = 600,
     live_state_path: str | Path | None = None,
     run_id: str | None = None,
+    calibration_path: str | Path | None = None,
 ) -> TournamentResult:
     if games_per_elo < 2:
         raise ValueError("games_per_elo must be >= 2 for color balancing")
@@ -256,6 +310,7 @@ def run_fast_elo_tournament(
         stockfish_floor=int(stockfish_floor),
         minic_executable=minic_executable,
         gaia_executable=gaia_executable,
+        calibration_rows=load_calibration_table(calibration_path) if calibration_path else None,
     )
 
     total_games = len(ratings) * games_per_elo
@@ -283,7 +338,7 @@ def run_fast_elo_tournament(
     records: list[ChessGameRecord] = []
     game_index = 0
     try:
-        for opponent_elo, engine_name in routed:
+        for opponent_elo, engine_name, calibrated_rating in routed:
             opponent_cm = _make_fast_opponent(
                 engine_name,
                 opponent_elo,
@@ -291,6 +346,7 @@ def run_fast_elo_tournament(
                 minic_executable=minic_executable,
                 gaia_executable=gaia_executable,
                 move_time_s=move_time_s,
+                calibrated_rating=calibrated_rating,
             )
             with opponent_cm as opponent:
                 for local_index in range(games_per_elo):
@@ -303,6 +359,7 @@ def run_fast_elo_tournament(
                         live_state_path=live_state_path,
                         games_total=total_games,
                         run_id=resolved_run_id,
+                        requested_elo=opponent_elo,
                     )
                     records.append(record)
                     game_index += 1
@@ -372,6 +429,7 @@ def run_fast_elo_tournament_with_analysis(
     evaluation_state_path: str | Path | None = None,
     evaluation_history_path: str | Path | None = None,
     run_id: str | None = None,
+    calibration_path: str | Path | None = None,
 ) -> TournamentResult:
     if games_per_elo < 2:
         raise ValueError("games_per_elo must be >= 2 for color balancing")
@@ -385,6 +443,7 @@ def run_fast_elo_tournament_with_analysis(
         stockfish_floor=int(stockfish_floor),
         minic_executable=minic_executable,
         gaia_executable=gaia_executable,
+        calibration_rows=load_calibration_table(calibration_path) if calibration_path else None,
     )
 
     for artifact in (evaluation_state_path, evaluation_history_path):
@@ -417,7 +476,7 @@ def run_fast_elo_tournament_with_analysis(
     game_index = 0
     try:
         with StockfishPositionEvaluator(analysis_config) as evaluator:
-            for opponent_elo, engine_name in routed:
+            for opponent_elo, engine_name, calibrated_rating in routed:
                 opponent_cm = _make_fast_opponent(
                     engine_name,
                     opponent_elo,
@@ -425,6 +484,7 @@ def run_fast_elo_tournament_with_analysis(
                     minic_executable=minic_executable,
                     gaia_executable=gaia_executable,
                     move_time_s=move_time_s,
+                    calibrated_rating=calibrated_rating,
                 )
                 with opponent_cm as opponent:
                     for local_index in range(games_per_elo):
@@ -440,6 +500,7 @@ def run_fast_elo_tournament_with_analysis(
                             evaluation_history_path=evaluation_history_path,
                             games_total=total_games,
                             run_id=resolved_run_id,
+                            requested_elo=opponent_elo,
                         )
                         records.append(record)
                         game_index += 1
