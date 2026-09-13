@@ -36,8 +36,16 @@ def main() -> None:
     parser.add_argument("--games-per-elo", type=int, default=20)
     parser.add_argument("--move-time", type=float, default=0.05)
     parser.add_argument("--output", type=Path, default=Path("results/chess_smoke"))
+    parser.add_argument(
+        "--live-state",
+        type=Path,
+        default=None,
+        help="Live JSON path; defaults to <output>/live_state.json",
+    )
     parser.add_argument("--seed", type=int, default=7)
     args = parser.parse_args()
+
+    live_state = args.live_state or (args.output / "live_state.json")
 
     # Harness smoke test. Replace with FlyCandidateMoveAgent once a chess
     # readout checkpoint is trained.
@@ -50,9 +58,12 @@ def main() -> None:
         opponent_elos=args.elos,
         games_per_elo=args.games_per_elo,
         move_time_s=args.move_time,
+        live_state_path=live_state,
+        run_id=args.output.name,
     )
     save_tournament(result, args.output)
     print(f"Stockfish floor: {result.stockfish_floor}")
+    print(f"Live state: {live_state}")
     print(result.elo)
 
 
