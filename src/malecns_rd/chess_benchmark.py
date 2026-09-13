@@ -198,8 +198,6 @@ class StockfishOpponent(_UciEloOpponent):
             settings["Threads"] = int(config.threads)
         if "Hash" in options:
             settings["Hash"] = int(config.hash_mb)
-        if "Ponder" in options:
-            settings["Ponder"] = False
         self._engine.configure(settings)
 
 
