@@ -1,6 +1,7 @@
 from dataclasses import replace
 from pathlib import Path
 
+import malecns_rd.live_state as live_state_module
 from malecns_rd.live_state import (
     CandidateScore,
     LiveBenchmarkState,
@@ -95,6 +96,25 @@ def test_live_state_bad_json_is_tolerated(tmp_path: Path):
     path = tmp_path / "live_state.json"
     path.write_text("{not complete", encoding="utf-8")
     assert read_live_state(path) is None
+
+
+def test_live_state_retries_transient_replace_permission_error(tmp_path: Path, monkeypatch):
+    path = tmp_path / "live_state.json"
+    real_replace = live_state_module.os.replace
+    attempts = 0
+
+    def flaky_replace(source, destination):
+        nonlocal attempts
+        attempts += 1
+        if attempts < 3:
+            raise PermissionError(5, "Access is denied")
+        return real_replace(source, destination)
+
+    monkeypatch.setattr(live_state_module.os, "replace", flaky_replace)
+    write_live_state(path, LiveBenchmarkState(status="running"))
+
+    assert attempts == 3
+    assert read_live_state(path) is not None
 
 
 def test_outcome_counts():
