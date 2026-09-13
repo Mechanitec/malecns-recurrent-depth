@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 import csv
 import json
+import subprocess
 from pathlib import Path
 from typing import Iterable
 
@@ -201,21 +202,117 @@ class StockfishOpponent(_UciEloOpponent):
         self._engine.configure(settings)
 
 
-class AlfilOpponent(_UciEloOpponent):
-    """Alfil opponent for the low-rating portion of the benchmark ladder."""
+class AlfilOpponent:
+    """Alfil opponent with tolerance for its non-standard ``ponder none`` output."""
 
     engine_name = "alfil"
 
     def __init__(self, config: AlfilConfig) -> None:
+        chess = _require_chess()
         if int(config.elo) not in ALFIL_NOMINAL_ELOS:
             raise ValueError(
                 f"Alfil nominal Elo must be one of {ALFIL_NOMINAL_ELOS}; got {config.elo}"
             )
-        super().__init__(config.executable, config.elo, config.move_time_s)
-        self._engine.configure({
-            "UCI_LimitStrength": True,
-            "UCI_Elo": int(config.elo),
-        })
+        lo, hi, values = inspect_uci_elo(config.executable)
+        if values and int(config.elo) not in values:
+            raise ValueError(
+                f"requested Elo {config.elo} is not advertised by Alfil; "
+                f"choices={values}"
+            )
+        if lo is not None and int(config.elo) < lo:
+            raise ValueError(
+                f"requested Elo {config.elo} is below Alfil minimum {lo}"
+            )
+        if hi is not None and int(config.elo) > hi:
+            raise ValueError(
+                f"requested Elo {config.elo} is above Alfil maximum {hi}"
+            )
+
+        self._chess = chess
+        self._elo = int(config.elo)
+        self._limit_ms = max(1, round(float(config.move_time_s) * 1000))
+        self._process = subprocess.Popen(
+            [config.executable],
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            bufsize=1,
+        )
+        try:
+            self._send("uci")
+            self._wait_for("uciok")
+            self._send("setoption name UCI_LimitStrength value true")
+            self._send(f"setoption name UCI_Elo value {self._elo}")
+            self._send("isready")
+            self._wait_for("readyok")
+        except Exception:
+            self.close()
+            raise
+
+    @property
+    def elo(self) -> int:
+        return self._elo
+
+    @property
+    def name(self) -> str:
+        return self.engine_name
+
+    def _send(self, command: str) -> None:
+        if self._process.stdin is None:
+            raise RuntimeError("Alfil process stdin is unavailable")
+        self._process.stdin.write(command + "\n")
+        self._process.stdin.flush()
+
+    def _wait_for(self, expected: str) -> None:
+        if self._process.stdout is None:
+            raise RuntimeError("Alfil process stdout is unavailable")
+        while True:
+            line = self._process.stdout.readline()
+            if not line:
+                raise RuntimeError(
+                    f"Alfil exited before returning {expected}; "
+                    f"exit_code={self._process.poll()}"
+                )
+            if line.strip() == expected:
+                return
+
+    def choose_move(self, board):
+        self._send(f"position fen {board.fen()}")
+        self._send(f"go movetime {self._limit_ms}")
+        if self._process.stdout is None:
+            raise RuntimeError("Alfil process stdout is unavailable")
+        while True:
+            line = self._process.stdout.readline()
+            if not line:
+                raise RuntimeError(
+                    f"Alfil exited while choosing a move; "
+                    f"exit_code={self._process.poll()}"
+                )
+            parts = line.strip().split()
+            if parts and parts[0].lower() == "bestmove":
+                if len(parts) < 2 or parts[1].lower() in {"0000", "none"}:
+                    raise RuntimeError(f"Alfil returned no legal move: {line.strip()}")
+                return self._chess.Move.from_uci(parts[1])
+
+    def close(self) -> None:
+        if self._process.poll() is not None:
+            return
+        try:
+            self._send("quit")
+            self._process.wait(timeout=2)
+        except (OSError, subprocess.TimeoutExpired):
+            self._process.terminate()
+            try:
+                self._process.wait(timeout=2)
+            except subprocess.TimeoutExpired:
+                self._process.kill()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc, tb):
+        self.close()
 
 
 def _fly_score_from_result(result: str, fly_is_white: bool) -> float:
