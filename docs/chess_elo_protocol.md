@@ -4,20 +4,21 @@
 
 Measure whether a frozen MaleCNS-based recurrent system becomes a stronger chess player when we change a controlled variable such as recurrent depth, dynamics, trainable readout, or physiology.
 
-The primary metric is estimated Elo against calibrated Stockfish opponents.
+The primary metric is estimated Elo against a hybrid UCI opponent ladder.
 
-## Opponent
+## Opponents
 
-Use a fixed Stockfish release and record its version. Configure:
+Use **Alfil below Stockfish's minimum Elo** and Stockfish at/above its minimum. Record exact engine binaries/versions for every run.
+
+Both engines are configured with:
 
 - `UCI_LimitStrength = true`
-- `UCI_Elo = <target integer>`
-- fixed Threads and Hash
-- no pondering
+- `UCI_Elo = <target>`
+- the same fixed move-time policy
 
-The harness checks the installed engine's actual `UCI_Elo` min/max at runtime. The target is a calibrated nominal rating, not a mathematical guarantee of realized Elo under arbitrary time controls. Final experiments should use one fixed time control and must not compare runs made with different Stockfish versions/settings.
+Stockfish's minimum `UCI_Elo` is detected from the installed binary at runtime rather than hard-coded. Current builds commonly begin near 1320. Alfil publishes nominal levels `0, 200, 400, ..., 3000`; the benchmark uses Alfil only for requested ratings below the detected Stockfish floor and requires an exact supported Alfil level. It never silently rounds a rating such as 1300.
 
-Current Stockfish builds commonly expose a lower UCI_Elo near 1320. If the fly is weaker than the engine's minimum, report the result as **below the measurable Stockfish range** rather than fabricating a numeric Elo.
+These labels are **nominal engine ratings**, not guaranteed points on one perfectly aligned absolute scale. Before publication-quality claims, cross-calibrate Alfil and Stockfish in their overlap region using head-to-head games and preserve the resulting offset/model with the experiment metadata.
 
 ## Fly move selection
 
@@ -44,7 +45,7 @@ To attribute Elo change to recurrent depth, freeze all of the following:
 - feature-to-sensory projection seed and fanout
 - readout neurons and readout weights
 - training set/checkpoint
-- Stockfish version/settings
+- Alfil and Stockfish versions/settings
 - opening suite and game-count policy
 
 Only the tested depth parameter changes.
@@ -53,7 +54,7 @@ Only the tested depth parameter changes.
 
 Do not test against one Elo only. Use a bracket around the fly's current strength. A typical first ladder is:
 
-`1320, 1400, 1500, 1600, 1700`
+`0, 200, 400, 600, 800, 1000, 1200, 1320, 1400, 1500`
 
 After locating the approximate rating, narrow the ladder around the 30-70% score region. This provides substantially more information per game than playing opponents that always win or always lose.
 
