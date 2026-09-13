@@ -28,8 +28,11 @@ Both support fixed-depth experiments. Both can keep sensory evidence clamped whi
 - MaleCNS v1.0 Feather loader with neurotransmitter-based sign assignment.
 - Downloader for the small official MaleCNS annotation + neurotransmitter files.
 - Synthetic benchmark result files for both rate and LIF dynamics.
-- Tests for propagation, determinism, adaptive stopping, inhibition and refractory behavior.
-- An explicit experimental protocol in `docs/experiment_protocol.md`.
+- Chess Elo benchmark layer with Stockfish `UCI_Elo` opponents.
+- Candidate-move chess encoding and deterministic sensory projection.
+- Multi-opponent maximum-likelihood Elo estimator with approximate 95% interval.
+- Tests for propagation, determinism, adaptive stopping, inhibition, refractory behavior, Elo estimation, and sensory projection.
+- Experimental protocols in `docs/experiment_protocol.md` and `docs/chess_elo_protocol.md`.
 
 ## Run
 
@@ -138,13 +141,44 @@ For the LIF engine, one recurrent pass is also one membrane-integration microste
 
 The strongest future result would show that useful depth scaling survives matched sensory exposure and topology-destroying controls on the **actual MaleCNS graph**.
 
+## Chess Elo benchmark
+
+The project now includes a chess benchmark intended to make improvement easy to interpret quantitatively.
+
+Stockfish is configured with `UCI_LimitStrength=true` and an integer `UCI_Elo` target. The harness inspects the installed Stockfish build's actual Elo bounds at runtime instead of hard-coding them. Stockfish's target rating is calibrated/nominal rather than a guarantee of exact realized strength at every time control, so version and time-control settings must remain fixed within an experiment.
+
+The fly does not require one output neuron for every chess move. Instead, every legal move is evaluated as a candidate:
+
+1. encode the board plus candidate move;
+2. project the features into a frozen sensory population;
+3. run the same connectome for a chosen recurrent depth;
+4. score the candidate from a frozen readout population;
+5. play the highest-scoring legal move.
+
+This makes `depth = 1, 2, 4, 8, ...` directly comparable while keeping graph, chess interface, and readout fixed.
+
+Install the optional chess dependency and run a harness smoke test with a local Stockfish binary:
+
+```bash
+pip install -e '.[chess]'
+python scripts/run_chess_benchmark.py \
+  --stockfish /path/to/stockfish \
+  --elos 1320,1400,1500 \
+  --games-per-elo 20
+```
+
+The current CLI uses a random legal-move agent only to verify tournament plumbing. The next checkpoint will replace that baseline with the real `FlyCandidateMoveAgent` plus trained/frozen chess readout parameters.
+
+See `docs/chess_elo_protocol.md` for the full experimental design.
+
 ## Next milestone
 
-The next target is a real-data experiment rather than another synthetic architecture feature:
+The immediate target is the first actual MaleCNS chess checkpoint:
 
 1. load the signed MaleCNS graph;
-2. select a tractable sensory-to-descending-neuron subnetwork;
-3. define a verifiable readout task;
-4. sweep recurrent depth with frozen-observation and single-pulse conditions;
-5. compare against shuffled-topology and shuffled-transmitter controls;
-6. scale to the full CNS only after the protocol is stable.
+2. select and freeze sensory and readout populations;
+3. train only the chess adapter/readout without changing the graph topology;
+4. run the first Stockfish Elo ladder;
+5. sweep recurrent depth with the same frozen checkpoint;
+6. compare against shuffled-topology and shuffled-transmitter controls;
+7. optimize for reproducible Elo gain, not isolated wins.
