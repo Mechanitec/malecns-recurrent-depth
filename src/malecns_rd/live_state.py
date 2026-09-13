@@ -5,7 +5,12 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+import time
 from typing import Iterable
+
+
+_LIVE_STATE_REPLACE_RETRIES = 20
+_LIVE_STATE_REPLACE_DELAY_SECONDS = 0.05
 
 
 @dataclass(frozen=True)
@@ -73,7 +78,14 @@ def write_live_state(path: str | Path, state: LiveBenchmarkState) -> None:
     tmp = output.with_name(output.name + f".tmp-{os.getpid()}")
     try:
         tmp.write_text(json.dumps(payload, indent=2, allow_nan=False), encoding="utf-8")
-        os.replace(tmp, output)
+        for attempt in range(_LIVE_STATE_REPLACE_RETRIES):
+            try:
+                os.replace(tmp, output)
+                break
+            except PermissionError:
+                if attempt == _LIVE_STATE_REPLACE_RETRIES - 1:
+                    raise
+                time.sleep(_LIVE_STATE_REPLACE_DELAY_SECONDS)
     finally:
         if tmp.exists():
             tmp.unlink(missing_ok=True)
