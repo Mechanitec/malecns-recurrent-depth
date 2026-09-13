@@ -12,7 +12,28 @@ The loss is best-vs-rest pairwise logistic ranking loss. This directly matches t
 
 ## Pipeline
 
-### 1. Build teacher data
+### 1. Select fixed chess populations
+
+The chess adapter injects board-and-move features into a fixed sensory population
+and reads one score from a fixed descending/motor population. Select both from
+the annotated MaleCNS graph with a stable seed:
+
+```bash
+python scripts/select_chess_populations.py \
+  --annotations data/body-annotations-male-cns-v1.0-minconf-0.5.feather \
+  --neurotransmitters data/body-neurotransmitters-male-cns-v1.0.feather \
+  --weights data/connectome-weights-male-cns-v1.0-minconf-0.5.feather \
+  --sensory-output data/chess_sensory_indices.npy \
+  --readout-output data/chess_readout_indices.npy \
+  --manifest-output data/chess_population_manifest.json \
+  --seed 7
+```
+
+The selector samples 1,024 connected sensory neurons and 256 connected
+descending/motor/efferent neurons by default. Keep these files fixed across
+teacher datasets, checkpoints, and recurrent-depth comparisons.
+
+### 2. Build teacher data
 
 From a PGN corpus:
 
@@ -29,7 +50,7 @@ Or supply a text file with one FEN per line using `--fen-file`.
 
 The output contains one row per legal candidate with FEN, UCI move, teacher centipawns, a bounded teacher target, and best-move flag.
 
-### 2. Freeze sensory/readout populations and extract activations
+### 3. Freeze sensory/readout populations and extract activations
 
 Store graph-index vectors as NumPy `.npy` files, then run:
 
@@ -49,7 +70,7 @@ python scripts/extract_chess_activations.py \
 
 The activation cache stores readout-neuron activity once per candidate so readout training can run quickly without repeatedly simulating the full connectome.
 
-### 3. Train the readout
+### 4. Train the readout
 
 ```bash
 python scripts/train_chess_readout.py \

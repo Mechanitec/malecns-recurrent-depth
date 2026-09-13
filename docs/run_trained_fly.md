@@ -12,7 +12,13 @@ The checkpoint supplies the trained readout weights/indices plus the frozen ches
 - MaleCNS connectome weights Feather file
 - the `.npy` sensory-index vector used during activation extraction
 - Stockfish executable
-- Alfil executable when testing below the Stockfish Elo floor
+- Minic executable for the Elo 0 anchor
+- Gaia 4 executable for the 580-1300 anchors
+
+Create the fixed sensory and readout index vectors with
+`scripts/select_chess_populations.py` before running the training pipeline.
+The selector records its seed, graph size, population classes, and candidate
+counts in `data/chess_population_manifest.json`.
 
 ## Example
 
@@ -23,9 +29,10 @@ python scripts/run_chess_benchmark.py \
   --neurotransmitters data/body-neurotransmitters-male-cns-v1.0.feather \
   --connectome-weights data/connectome-weights-male-cns-v1.0-minconf-0.5.feather \
   --sensory-indices data/chess_sensory_indices.npy \
+  --minic /path/to/minic \
+  --gaia /path/to/gaiachess \
   --stockfish /path/to/stockfish \
-  --alfil /path/to/alfil \
-  --elos 0,200,400,600,800,1000,1200,1320,1400 \
+  --elos 0,580,700,820,940,1060,1180,1300,1320,1400 \
   --games-per-elo 20 \
   --analysis-depth 18 \
   --output results/fly_depth16_elo
