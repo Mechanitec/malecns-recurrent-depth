@@ -1,12 +1,20 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 import csv
 import json
+import math
 from pathlib import Path
 from typing import Iterable
 
 from .elo import EloEstimate, GameObservation, estimate_elo
+from .live_state import (
+    CandidateScore,
+    LiveBenchmarkState,
+    outcome_counts,
+    read_live_state,
+    write_live_state,
+)
 
 
 # Alfil's published UCI_Elo ladder. We intentionally require an exact level
@@ -198,6 +206,7 @@ class StockfishOpponent(_UciEloOpponent):
             settings["Threads"] = int(config.threads)
         if "Hash" in options:
             settings["Hash"] = int(config.hash_mb)
+        # Do not configure Ponder explicitly: python-chess manages it internally.
         self._engine.configure(settings)
 
 
@@ -228,6 +237,41 @@ def _fly_score_from_result(result: str, fly_is_white: bool) -> float:
     raise ValueError(f"unsupported result {result!r}")
 
 
+def _write_live(path: str | Path | None, **changes) -> None:
+    if path is None:
+        return
+    current = read_live_state(path) or LiveBenchmarkState()
+    # Force a fresh timestamp on every emitted snapshot.
+    changes["updated_at_utc"] = None
+    write_live_state(path, replace(current, **changes))
+
+
+def _candidate_snapshot(fly_agent, limit: int = 12) -> tuple[int | None, tuple[CandidateScore, ...]]:
+    decision = getattr(fly_agent, "last_decision", None)
+    if not isinstance(decision, dict):
+        return getattr(fly_agent, "depth", None), ()
+    depth = decision.get("depth", getattr(fly_agent, "depth", None))
+    try:
+        depth_value = int(depth) if depth is not None else None
+    except (TypeError, ValueError):
+        depth_value = None
+
+    candidates: list[CandidateScore] = []
+    for item in decision.get("candidates", []) or []:
+        if not isinstance(item, dict):
+            continue
+        try:
+            move = str(item["move"])
+            score = float(item["score"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        if math.isfinite(score):
+            candidates.append(CandidateScore(move, score))
+        if len(candidates) >= limit:
+            break
+    return depth_value, tuple(candidates)
+
+
 def play_one_game(
     fly_agent,
     opponent,
@@ -236,16 +280,64 @@ def play_one_game(
     game_index: int = 0,
     start_fen: str | None = None,
     max_plies: int = 600,
+    live_state_path: str | Path | None = None,
+    games_total: int = 0,
+    run_id: str | None = None,
 ) -> ChessGameRecord:
     chess = _require_chess()
     board = chess.Board(start_fen) if start_fen else chess.Board()
+    fly_color = "white" if fly_is_white else "black"
+
+    _write_live(
+        live_state_path,
+        status="running",
+        message=f"Game {game_index + 1} in progress",
+        run_id=run_id,
+        game_index=game_index,
+        games_total=games_total,
+        opponent_engine=opponent.name,
+        opponent_elo=opponent.elo,
+        fly_color=fly_color,
+        ply=board.ply(),
+        fen=board.fen(),
+        last_move=None,
+        last_actor=None,
+        candidate_scores=(),
+        recurrent_depth=getattr(fly_agent, "depth", None),
+    )
 
     while not board.is_game_over(claim_draw=True) and board.ply() < max_plies:
         fly_turn = board.turn == (chess.WHITE if fly_is_white else chess.BLACK)
-        move = fly_agent.choose_move(board) if fly_turn else opponent.choose_move(board)
+        if fly_turn:
+            move = fly_agent.choose_move(board)
+            actor = "fly"
+            recurrent_depth, candidates = _candidate_snapshot(fly_agent)
+        else:
+            move = opponent.choose_move(board)
+            actor = opponent.name
+            recurrent_depth = getattr(fly_agent, "depth", None)
+            candidates = ()
         if move not in board.legal_moves:
             raise RuntimeError(f"agent returned illegal move: {move}")
+        move_uci = move.uci()
         board.push(move)
+        _write_live(
+            live_state_path,
+            status="running",
+            message=f"Game {game_index + 1} in progress",
+            run_id=run_id,
+            game_index=game_index,
+            games_total=games_total,
+            opponent_engine=opponent.name,
+            opponent_elo=opponent.elo,
+            fly_color=fly_color,
+            ply=board.ply(),
+            fen=board.fen(),
+            last_move=move_uci,
+            last_actor=actor,
+            recurrent_depth=recurrent_depth,
+            candidate_scores=candidates,
+        )
 
     if board.is_game_over(claim_draw=True):
         outcome = board.outcome(claim_draw=True)
@@ -260,7 +352,7 @@ def play_one_game(
         game_index=game_index,
         opponent_engine=opponent.name,
         opponent_elo=opponent.elo,
-        fly_color="white" if fly_is_white else "black",
+        fly_color=fly_color,
         result=result,
         fly_score=_fly_score_from_result(result, fly_is_white),
         plies=board.ply(),
@@ -279,14 +371,18 @@ def run_elo_tournament(
     stockfish_floor: int | None = None,
     move_time_s: float = 0.05,
     max_plies: int = 600,
+    live_state_path: str | Path | None = None,
+    run_id: str | None = None,
 ) -> TournamentResult:
-    """Run a hybrid Elo ladder: Alfil below Stockfish, Stockfish above it."""
+    """Run a hybrid Elo ladder and optionally publish live JSON snapshots."""
     if games_per_elo < 2:
         raise ValueError("games_per_elo must be >= 2 for color balancing")
     if stockfish_floor is None:
         stockfish_floor = detect_stockfish_floor(stockfish_executable)
 
     ratings = [int(x) for x in opponent_elos]
+    if not ratings:
+        raise ValueError("opponent_elos must contain at least one rating")
     routed = [
         select_opponent_engine(x, stockfish_floor=stockfish_floor)
         for x in ratings
@@ -297,32 +393,112 @@ def run_elo_tournament(
             f"below Stockfish floor {stockfish_floor}"
         )
 
+    total_games = len(ratings) * games_per_elo
+    resolved_run_id = run_id
+    if resolved_run_id is None and live_state_path is not None:
+        resolved_run_id = Path(live_state_path).parent.name
+
+    _write_live(
+        live_state_path,
+        status="running",
+        message="Tournament starting",
+        run_id=resolved_run_id,
+        game_index=0,
+        games_completed=0,
+        games_total=total_games,
+        rolling_elo=None,
+        rolling_ci_low=None,
+        rolling_ci_high=None,
+        rolling_censored=None,
+        wins=0,
+        draws=0,
+        losses=0,
+        candidate_scores=(),
+    )
+
     records: list[ChessGameRecord] = []
     game_index = 0
-    for opponent_elo, engine_name in zip(ratings, routed):
-        if engine_name == "alfil":
-            config = AlfilConfig(str(alfil_executable), opponent_elo, move_time_s)
-            opponent_cm = AlfilOpponent(config)
-        else:
-            config = StockfishConfig(stockfish_executable, opponent_elo, move_time_s)
-            opponent_cm = StockfishOpponent(config)
+    try:
+        for opponent_elo, engine_name in zip(ratings, routed):
+            if engine_name == "alfil":
+                config = AlfilConfig(str(alfil_executable), opponent_elo, move_time_s)
+                opponent_cm = AlfilOpponent(config)
+            else:
+                config = StockfishConfig(stockfish_executable, opponent_elo, move_time_s)
+                opponent_cm = StockfishOpponent(config)
 
-        with opponent_cm as opponent:
-            for local_index in range(games_per_elo):
-                fly_is_white = local_index % 2 == 0
-                records.append(play_one_game(
-                    fly_agent,
-                    opponent,
-                    fly_is_white=fly_is_white,
-                    game_index=game_index,
-                    max_plies=max_plies,
-                ))
-                game_index += 1
+            with opponent_cm as opponent:
+                for local_index in range(games_per_elo):
+                    fly_is_white = local_index % 2 == 0
+                    record = play_one_game(
+                        fly_agent,
+                        opponent,
+                        fly_is_white=fly_is_white,
+                        game_index=game_index,
+                        max_plies=max_plies,
+                        live_state_path=live_state_path,
+                        games_total=total_games,
+                        run_id=resolved_run_id,
+                    )
+                    records.append(record)
+                    game_index += 1
+
+                    observations = [
+                        GameObservation(r.opponent_elo, r.fly_score) for r in records
+                    ]
+                    rolling = estimate_elo(observations)
+                    wins, draws, losses = outcome_counts(r.fly_score for r in records)
+                    _write_live(
+                        live_state_path,
+                        status="running",
+                        message=f"{len(records)} / {total_games} games completed",
+                        games_completed=len(records),
+                        games_total=total_games,
+                        rolling_elo=rolling.rating,
+                        rolling_ci_low=rolling.ci95_low,
+                        rolling_ci_high=rolling.ci95_high,
+                        rolling_censored=rolling.censored,
+                        wins=wins,
+                        draws=draws,
+                        losses=losses,
+                    )
+    except KeyboardInterrupt:
+        _write_live(
+            live_state_path,
+            status="stopped",
+            message="Tournament interrupted",
+            games_completed=len(records),
+        )
+        raise
+    except Exception as exc:
+        _write_live(
+            live_state_path,
+            status="error",
+            message=f"{type(exc).__name__}: {exc}",
+            games_completed=len(records),
+        )
+        raise
 
     observations = [GameObservation(r.opponent_elo, r.fly_score) for r in records]
+    final_elo = estimate_elo(observations)
+    wins, draws, losses = outcome_counts(r.fly_score for r in records)
+    _write_live(
+        live_state_path,
+        status="completed",
+        message="Tournament completed",
+        games_completed=len(records),
+        games_total=total_games,
+        rolling_elo=final_elo.rating,
+        rolling_ci_low=final_elo.ci95_low,
+        rolling_ci_high=final_elo.ci95_high,
+        rolling_censored=final_elo.censored,
+        wins=wins,
+        draws=draws,
+        losses=losses,
+    )
     return TournamentResult(
         tuple(records),
-        estimate_elo(observations),
+        final_elo,
         stockfish_floor=int(stockfish_floor),
     )
 
