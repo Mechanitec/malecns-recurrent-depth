@@ -81,7 +81,6 @@ class StockfishOpponent:
             "UCI_Elo": int(config.elo),
             "Threads": int(config.threads),
             "Hash": int(config.hash_mb),
-            "Ponder": False,
         })
         self._limit = chess.engine.Limit(time=float(config.move_time_s))
 
