@@ -1,6 +1,6 @@
 # Chess benchmark and training dashboard
 
-The project includes a Streamlit dashboard for saved chess benchmark runs and training histories.
+The project includes a Streamlit dashboard for saved benchmark runs, live chess games, and training histories.
 
 ## Install and launch
 
@@ -11,9 +11,31 @@ streamlit run dashboard/app.py
 
 By default the app scans `results/`. The directory can be changed from the sidebar.
 
+## Live tab
+
+The benchmark process writes an atomic `live_state.json` after moves and completed games. The dashboard reads that file independently, so the chess engines and UI do not share process state.
+
+`run_chess_benchmark.py` writes `<output>/live_state.json` by default. The path can be overridden with `--live-state`.
+
+The live view shows:
+
+- tournament status and progress;
+- rolling Elo and confidence interval;
+- wins/draws/losses;
+- current opponent and nominal Elo;
+- recurrent depth;
+- current chess position, oriented from the fly's side;
+- last move and actor;
+- the latest fly candidate-move neural scores;
+- latest training step/loss/Elo when a training history is present.
+
+The live panel auto-refreshes using Streamlit fragments. Refresh can be disabled or slowed from the sidebar.
+
+Candidate rankings are persisted across the opponent's reply so a human polling the dashboard every few seconds can still inspect the fly's most recent decision.
+
 ## Benchmark tab
 
-A benchmark run is discovered when one directory contains both:
+A completed benchmark run is discovered when one directory contains both:
 
 - `games.csv`
 - `elo.json`
@@ -73,6 +95,19 @@ append_training_metric(
 ```
 
 The training tab plots optimization loss, held-out loss, move-quality metrics, and periodic measured chess Elo. This keeps visual reporting tied to saved experiment artifacts rather than ephemeral UI state.
+
+## Example live benchmark
+
+```bash
+python scripts/run_chess_benchmark.py \
+  --alfil /path/to/alfil \
+  --stockfish /path/to/stockfish \
+  --elos 0,200,400,600,800,1000,1200,1320,1400 \
+  --games-per-elo 20 \
+  --output results/depth16
+```
+
+Then run the dashboard in a second terminal. The live tab will discover `results/depth16/live_state.json` automatically.
 
 ## Experimental interpretation
 
