@@ -23,6 +23,7 @@ class LiveBenchmarkState:
     """
 
     status: str = "idle"
+    message: str | None = None
     run_id: str | None = None
     game_index: int | None = None
     games_completed: int = 0
