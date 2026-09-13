@@ -1,12 +1,17 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 import csv
 import json
 from pathlib import Path
 from typing import Iterable
 
 from .elo import EloEstimate, GameObservation, estimate_elo
+
+
+# Alfil's published UCI_Elo ladder. We intentionally require an exact level
+# instead of silently rounding a requested rating to the nearest supported one.
+ALFIL_NOMINAL_ELOS: tuple[int, ...] = tuple(range(0, 3001, 200))
 
 
 def _require_chess():
@@ -31,8 +36,16 @@ class StockfishConfig:
 
 
 @dataclass(frozen=True)
+class AlfilConfig:
+    executable: str
+    elo: int
+    move_time_s: float = 0.05
+
+
+@dataclass(frozen=True)
 class ChessGameRecord:
     game_index: int
+    opponent_engine: str
     opponent_elo: int
     fly_color: str
     result: str
@@ -46,47 +59,115 @@ class ChessGameRecord:
 class TournamentResult:
     games: tuple[ChessGameRecord, ...]
     elo: EloEstimate
+    stockfish_floor: int
 
 
 def _option_bounds(option) -> tuple[int | None, int | None]:
     return getattr(option, "min", None), getattr(option, "max", None)
 
 
-class StockfishOpponent:
-    """UCI Stockfish opponent configured through UCI_LimitStrength/UCI_Elo.
+def _option_values(option) -> tuple[int, ...]:
+    raw = getattr(option, "var", None) or ()
+    values: list[int] = []
+    for value in raw:
+        try:
+            values.append(int(value))
+        except (TypeError, ValueError):
+            continue
+    return tuple(values)
 
-    The requested integer is a *nominal calibrated target*, not a guarantee that
-    realized strength is exact under every time control/hardware setup. Runtime
-    option bounds are inspected so the harness follows the installed Stockfish
-    build rather than hard-coding one release's range.
+
+def inspect_uci_elo(executable: str) -> tuple[int | None, int | None, tuple[int, ...]]:
+    """Return advertised UCI_Elo bounds/choices for a local UCI engine."""
+    chess = _require_chess()
+    engine = chess.engine.SimpleEngine.popen_uci(executable)
+    try:
+        options = engine.options
+        if "UCI_LimitStrength" not in options or "UCI_Elo" not in options:
+            raise RuntimeError(
+                f"engine {executable!r} does not expose UCI_LimitStrength/UCI_Elo"
+            )
+        option = options["UCI_Elo"]
+        lo, hi = _option_bounds(option)
+        return lo, hi, _option_values(option)
+    finally:
+        engine.quit()
+
+
+def detect_stockfish_floor(executable: str) -> int:
+    lo, _, values = inspect_uci_elo(executable)
+    if lo is not None:
+        return int(lo)
+    if values:
+        return min(values)
+    raise RuntimeError("could not determine Stockfish UCI_Elo minimum")
+
+
+def select_opponent_engine(
+    elo: int,
+    *,
+    stockfish_floor: int,
+    alfil_elos: Iterable[int] = ALFIL_NOMINAL_ELOS,
+) -> str:
+    """Route ratings below Stockfish's floor to Alfil.
+
+    Alfil's nominal ladder is discrete. Unsupported sub-Stockfish values fail
+    explicitly so the benchmark never pretends that an uncalibrated rounded
+    value is the requested Elo.
     """
+    elo = int(elo)
+    if elo >= int(stockfish_floor):
+        return "stockfish"
+    supported = tuple(int(x) for x in alfil_elos)
+    if elo not in supported:
+        raise ValueError(
+            f"Elo {elo} is below Stockfish floor {stockfish_floor} but is not an "
+            f"Alfil nominal level. Supported low levels: {supported}"
+        )
+    return "alfil"
 
-    def __init__(self, config: StockfishConfig) -> None:
+
+class _UciEloOpponent:
+    engine_name = "uci"
+
+    def __init__(self, executable: str, elo: int, move_time_s: float) -> None:
         chess = _require_chess()
-        self.config = config
-        self._engine = chess.engine.SimpleEngine.popen_uci(config.executable)
+        self._elo = int(elo)
+        self._engine = chess.engine.SimpleEngine.popen_uci(executable)
         options = self._engine.options
         if "UCI_LimitStrength" not in options or "UCI_Elo" not in options:
             self._engine.quit()
-            raise RuntimeError("Stockfish build does not expose UCI_LimitStrength/UCI_Elo")
-        lo, hi = _option_bounds(options["UCI_Elo"])
-        if lo is not None and config.elo < lo:
+            raise RuntimeError(
+                f"{self.engine_name} does not expose UCI_LimitStrength/UCI_Elo"
+            )
+        option = options["UCI_Elo"]
+        lo, hi = _option_bounds(option)
+        values = _option_values(option)
+        if values and self._elo not in values:
             self._engine.quit()
-            raise ValueError(f"requested Elo {config.elo} is below engine minimum {lo}")
-        if hi is not None and config.elo > hi:
+            raise ValueError(
+                f"requested Elo {self._elo} is not advertised by {self.engine_name}; "
+                f"choices={values}"
+            )
+        if lo is not None and self._elo < lo:
             self._engine.quit()
-            raise ValueError(f"requested Elo {config.elo} is above engine maximum {hi}")
-        self._engine.configure({
-            "UCI_LimitStrength": True,
-            "UCI_Elo": int(config.elo),
-            "Threads": int(config.threads),
-            "Hash": int(config.hash_mb),
-        })
-        self._limit = chess.engine.Limit(time=float(config.move_time_s))
+            raise ValueError(
+                f"requested Elo {self._elo} is below {self.engine_name} minimum {lo}"
+            )
+        if hi is not None and self._elo > hi:
+            self._engine.quit()
+            raise ValueError(
+                f"requested Elo {self._elo} is above {self.engine_name} maximum {hi}"
+            )
+        self._limit = chess.engine.Limit(time=float(move_time_s))
 
     @property
     def elo(self) -> int:
-        return self.config.elo
+        return self._elo
+
+    @property
+    def name(self) -> str:
+        return self.engine_name
 
     def choose_move(self, board):
         return self._engine.play(board, self._limit).move
@@ -101,6 +182,44 @@ class StockfishOpponent:
         self.close()
 
 
+class StockfishOpponent(_UciEloOpponent):
+    """Stockfish opponent using its runtime-advertised UCI_Elo range."""
+
+    engine_name = "stockfish"
+
+    def __init__(self, config: StockfishConfig) -> None:
+        super().__init__(config.executable, config.elo, config.move_time_s)
+        options = self._engine.options
+        settings: dict[str, object] = {
+            "UCI_LimitStrength": True,
+            "UCI_Elo": int(config.elo),
+        }
+        if "Threads" in options:
+            settings["Threads"] = int(config.threads)
+        if "Hash" in options:
+            settings["Hash"] = int(config.hash_mb)
+        if "Ponder" in options:
+            settings["Ponder"] = False
+        self._engine.configure(settings)
+
+
+class AlfilOpponent(_UciEloOpponent):
+    """Alfil opponent for the low-rating portion of the benchmark ladder."""
+
+    engine_name = "alfil"
+
+    def __init__(self, config: AlfilConfig) -> None:
+        if int(config.elo) not in ALFIL_NOMINAL_ELOS:
+            raise ValueError(
+                f"Alfil nominal Elo must be one of {ALFIL_NOMINAL_ELOS}; got {config.elo}"
+            )
+        super().__init__(config.executable, config.elo, config.move_time_s)
+        self._engine.configure({
+            "UCI_LimitStrength": True,
+            "UCI_Elo": int(config.elo),
+        })
+
+
 def _fly_score_from_result(result: str, fly_is_white: bool) -> float:
     if result == "1/2-1/2":
         return 0.5
@@ -113,7 +232,7 @@ def _fly_score_from_result(result: str, fly_is_white: bool) -> float:
 
 def play_one_game(
     fly_agent,
-    stockfish: StockfishOpponent,
+    opponent,
     *,
     fly_is_white: bool,
     game_index: int = 0,
@@ -125,7 +244,7 @@ def play_one_game(
 
     while not board.is_game_over(claim_draw=True) and board.ply() < max_plies:
         fly_turn = board.turn == (chess.WHITE if fly_is_white else chess.BLACK)
-        move = fly_agent.choose_move(board) if fly_turn else stockfish.choose_move(board)
+        move = fly_agent.choose_move(board) if fly_turn else opponent.choose_move(board)
         if move not in board.legal_moves:
             raise RuntimeError(f"agent returned illegal move: {move}")
         board.push(move)
@@ -141,7 +260,8 @@ def play_one_game(
 
     return ChessGameRecord(
         game_index=game_index,
-        opponent_elo=stockfish.elo,
+        opponent_engine=opponent.name,
+        opponent_elo=opponent.elo,
         fly_color="white" if fly_is_white else "black",
         result=result,
         fly_score=_fly_score_from_result(result, fly_is_white),
@@ -157,18 +277,41 @@ def run_elo_tournament(
     stockfish_executable: str,
     opponent_elos: Iterable[int],
     games_per_elo: int,
+    alfil_executable: str | None = None,
+    stockfish_floor: int | None = None,
     move_time_s: float = 0.05,
     max_plies: int = 600,
 ) -> TournamentResult:
+    """Run a hybrid Elo ladder: Alfil below Stockfish, Stockfish above it."""
     if games_per_elo < 2:
         raise ValueError("games_per_elo must be >= 2 for color balancing")
+    if stockfish_floor is None:
+        stockfish_floor = detect_stockfish_floor(stockfish_executable)
+
+    ratings = [int(x) for x in opponent_elos]
+    routed = [
+        select_opponent_engine(x, stockfish_floor=stockfish_floor)
+        for x in ratings
+    ]
+    if "alfil" in routed and not alfil_executable:
+        raise ValueError(
+            "alfil_executable is required when opponent_elos include ratings "
+            f"below Stockfish floor {stockfish_floor}"
+        )
+
     records: list[ChessGameRecord] = []
     game_index = 0
-    for opponent_elo in opponent_elos:
-        config = StockfishConfig(stockfish_executable, int(opponent_elo), move_time_s)
-        with StockfishOpponent(config) as opponent:
+    for opponent_elo, engine_name in zip(ratings, routed):
+        if engine_name == "alfil":
+            config = AlfilConfig(str(alfil_executable), opponent_elo, move_time_s)
+            opponent_cm = AlfilOpponent(config)
+        else:
+            config = StockfishConfig(stockfish_executable, opponent_elo, move_time_s)
+            opponent_cm = StockfishOpponent(config)
+
+        with opponent_cm as opponent:
             for local_index in range(games_per_elo):
-                fly_is_white = (local_index % 2 == 0)
+                fly_is_white = local_index % 2 == 0
                 records.append(play_one_game(
                     fly_agent,
                     opponent,
@@ -179,7 +322,11 @@ def run_elo_tournament(
                 game_index += 1
 
     observations = [GameObservation(r.opponent_elo, r.fly_score) for r in records]
-    return TournamentResult(tuple(records), estimate_elo(observations))
+    return TournamentResult(
+        tuple(records),
+        estimate_elo(observations),
+        stockfish_floor=int(stockfish_floor),
+    )
 
 
 def save_tournament(result: TournamentResult, output_dir: str | Path) -> None:
@@ -187,11 +334,18 @@ def save_tournament(result: TournamentResult, output_dir: str | Path) -> None:
     output.mkdir(parents=True, exist_ok=True)
     games_path = output / "games.csv"
     with games_path.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=list(asdict(result.games[0]).keys()) if result.games else [])
+        writer = csv.DictWriter(
+            f,
+            fieldnames=list(asdict(result.games[0]).keys()) if result.games else [],
+        )
         if result.games:
             writer.writeheader()
             for game in result.games:
                 writer.writerow(asdict(game))
+    summary = {
+        "elo": asdict(result.elo),
+        "stockfish_floor": result.stockfish_floor,
+    }
     (output / "elo.json").write_text(
-        json.dumps(asdict(result.elo), indent=2), encoding="utf-8"
+        json.dumps(summary, indent=2), encoding="utf-8"
     )
