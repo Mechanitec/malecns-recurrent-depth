@@ -1,9 +1,4 @@
-"""Tournament entry point.
-
-This file intentionally keeps model construction explicit. The first real MaleCNS
-chess checkpoint will supply sensory/readout populations and trained readout
-weights; the tournament harness itself is already complete.
-"""
+"""Hybrid Alfil + Stockfish tournament entry point."""
 from __future__ import annotations
 
 import argparse
@@ -23,7 +18,21 @@ def parse_elos(text: str) -> list[int]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--stockfish", required=True, help="Path to Stockfish executable")
-    parser.add_argument("--elos", type=parse_elos, default=parse_elos("1320,1400,1500"))
+    parser.add_argument(
+        "--alfil",
+        help="Path to Alfil executable; required when testing below Stockfish's floor",
+    )
+    parser.add_argument(
+        "--elos",
+        type=parse_elos,
+        default=parse_elos("0,200,400,600,800,1000,1200,1320,1400,1500"),
+    )
+    parser.add_argument(
+        "--stockfish-floor",
+        type=int,
+        default=None,
+        help="Override Stockfish minimum Elo; by default it is detected from UCI_Elo",
+    )
     parser.add_argument("--games-per-elo", type=int, default=20)
     parser.add_argument("--move-time", type=float, default=0.05)
     parser.add_argument("--output", type=Path, default=Path("results/chess_smoke"))
@@ -36,11 +45,14 @@ def main() -> None:
     result = run_elo_tournament(
         agent,
         stockfish_executable=args.stockfish,
+        alfil_executable=args.alfil,
+        stockfish_floor=args.stockfish_floor,
         opponent_elos=args.elos,
         games_per_elo=args.games_per_elo,
         move_time_s=args.move_time,
     )
     save_tournament(result, args.output)
+    print(f"Stockfish floor: {result.stockfish_floor}")
     print(result.elo)
 
 
