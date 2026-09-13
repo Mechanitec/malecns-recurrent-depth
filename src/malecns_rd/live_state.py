@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from datetime import datetime, timezone
 import json
 import os
@@ -52,9 +52,21 @@ def utc_now_iso() -> str:
 
 
 def write_live_state(path: str | Path, state: LiveBenchmarkState) -> None:
-    """Atomically replace ``path`` with one JSON snapshot."""
+    """Atomically replace ``path`` with one JSON snapshot.
+
+    Candidate scores are generated only on fly turns. When the opponent moves,
+    preserve the most recent fly candidate ranking so a human dashboard polling
+    every few seconds can still inspect it. Starting a new game clears it because
+    ``last_actor`` is reset to ``None``.
+    """
     output = Path(path)
     output.parent.mkdir(parents=True, exist_ok=True)
+
+    if not state.candidate_scores and state.last_actor not in (None, "fly"):
+        previous = read_live_state(output)
+        if previous is not None and previous.candidate_scores:
+            state = replace(state, candidate_scores=previous.candidate_scores)
+
     payload = asdict(state)
     payload["updated_at_utc"] = state.updated_at_utc or utc_now_iso()
 
