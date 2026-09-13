@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Protocol
 import numpy as np
 
@@ -36,6 +36,7 @@ class FlyCandidateMoveAgent:
     depth: int = 16
     clamp_sensory: bool = True
     name: str = "MaleCNS-RD"
+    last_decision: dict[str, object] = field(default_factory=dict, init=False, repr=False)
 
     def __post_init__(self) -> None:
         self.readout_indices = np.asarray(self.readout_indices, dtype=np.int64)
@@ -68,13 +69,26 @@ class FlyCandidateMoveAgent:
             values += 1e-3 * result.membrane[self.readout_indices]
         return float(np.dot(values, self.readout_weights))
 
-    def choose_move(self, board):
+    def rank_moves(self, board) -> list[tuple[float, str, object]]:
+        """Score and sort all legal candidates, strongest first."""
         legal = list(board.legal_moves)
         if not legal:
             raise ValueError("cannot choose a move in a terminal position")
-        # Stable tie break by UCI string makes runs reproducible.
         scored = [(self.score_move(board, move), move.uci(), move) for move in legal]
         scored.sort(key=lambda item: (item[0], item[1]), reverse=True)
+        return scored
+
+    def choose_move(self, board):
+        scored = self.rank_moves(board)
+        self.last_decision = {
+            "depth": int(self.depth),
+            "selected_move": scored[0][1],
+            "selected_score": float(scored[0][0]),
+            "candidates": [
+                {"move": uci, "score": float(score)}
+                for score, uci, _ in scored
+            ],
+        }
         return scored[0][2]
 
 
@@ -82,6 +96,7 @@ class FlyCandidateMoveAgent:
 class RandomLegalAgent:
     seed: int = 0
     name: str = "RandomLegal"
+    last_decision: dict[str, object] = field(default_factory=dict, init=False, repr=False)
 
     def __post_init__(self) -> None:
         self._rng = np.random.default_rng(self.seed)
@@ -90,4 +105,11 @@ class RandomLegalAgent:
         legal = list(board.legal_moves)
         if not legal:
             raise ValueError("cannot choose a move in a terminal position")
-        return legal[int(self._rng.integers(0, len(legal)))]
+        move = legal[int(self._rng.integers(0, len(legal)))]
+        self.last_decision = {
+            "depth": None,
+            "selected_move": move.uci(),
+            "selected_score": None,
+            "candidates": [],
+        }
+        return move
