@@ -1,96 +1,123 @@
-# Chess Elo experimental protocol
+# Chess rating experimental protocol
 
 ## Goal
 
-Measure whether a frozen MaleCNS-based recurrent system becomes a stronger chess player when we change a controlled variable such as recurrent depth, dynamics, trainable readout, or physiology.
+Measure playing strength of a frozen MaleCNS-derived recurrent system only when the game protocol produces informative outcomes, and use position-quality metrics for rapid recurrent-depth research when full games are too expensive.
 
-The primary metric is estimated Elo against a hybrid UCI opponent ladder.
-
-## Opponents
-
-Use **Alfil below Stockfish's minimum Elo** and Stockfish at/above its minimum. Record exact engine binaries/versions for every run.
-
-Both engines are configured with:
-
-- `UCI_LimitStrength = true`
-- `UCI_Elo = <target>`
-- the same fixed move-time policy
-
-Stockfish's minimum `UCI_Elo` is detected from the installed binary at runtime rather than hard-coded. Current builds commonly begin near 1320. Alfil publishes nominal levels `0, 200, 400, ..., 3000`; the benchmark uses Alfil only for requested ratings below the detected Stockfish floor and requires an exact supported Alfil level. It never silently rounds a rating such as 1300.
-
-These labels are **nominal engine ratings**, not guaranteed points on one perfectly aligned absolute scale. Before publication-quality claims, cross-calibrate Alfil and Stockfish in their overlap region using head-to-head games and preserve the resulting offset/model with the experiment metadata.
-
-## Fly move selection
-
-The fly does not receive one dedicated output neuron per chess move.
-
-For each legal candidate move:
-
-1. Encode the current board and candidate move into a fixed chess feature vector.
-2. Project that vector into a frozen set of sensory neurons.
-3. Run the same connectome for `D` recurrent passes.
-4. Read one scalar score from a frozen readout population.
-5. Play the legal move with the highest score.
-
-The candidate interface makes the number of legal moves irrelevant and keeps the connectome architecture fixed.
-
-## What must be frozen during a depth experiment
-
-To attribute Elo change to recurrent depth, freeze all of the following:
-
-- MaleCNS graph and connection filters
-- neuron dynamics and gains
-- chess feature definition
-- sensory neuron set
-- feature-to-sensory projection seed and fanout
-- readout neurons and readout weights
-- training set/checkpoint
-- Alfil and Stockfish versions/settings
-- opening suite and game-count policy
-
-Only the tested depth parameter changes.
+Chess rating is a benchmark of the **complete artificial system**: connectome + dynamics + encoder + projector + readout. It is not the biological fruit fly's Elo.
 
 ## Opponent ladder
 
-Do not test against one Elo only. Use a bracket around the fly's current strength. A typical first ladder is:
+The preferred high-throughput ladder is now:
 
-`0, 200, 400, 600, 800, 1000, 1200, 1320, 1400, 1500`
+- **Minic** for very weak measured/calibrated settings;
+- **Gaia** for its low published strength anchors and calibration bridge;
+- **Stockfish** at/above the installed build's supported `UCI_Elo` floor.
 
-After locating the approximate rating, narrow the ladder around the 30-70% score region. This provides substantially more information per game than playing opponents that always win or always lose.
+Legacy Alfil support may remain for compatibility, but it is not the default bulk-tournament engine because throughput was inadequate.
 
-## Game counts
+Low-strength Minic settings must not be assigned guessed Elo values. Use the measured calibration table in `results/low_elo_calibration/` and preserve the exact engine setting plus calibrated rating in every game record.
 
-Recommended tiers:
+Stockfish's supported Elo range is detected from the local binary at runtime.
 
-- smoke: 20-40 games total
-- development comparison: 100-200 games total
-- serious estimate: 400+ games total
-- publication-quality comparison: use sequential power analysis and paired openings
+## Calibration convention
 
-Near a 50% score, 400 independent games give a classical-Elo local 95% uncertainty of roughly +/-34 Elo before accounting for correlation and opening effects.
+The weak-engine calibration uses actual games on a connected common scale. Preserve both raw calibration outputs and uncertainty.
 
-## Color and openings
+Do not force two independent arbitrary anchors onto standard Elo. If a zero-based project display scale is useful, label it separately (for example `mcr0`) and do not call it official/FIDE Elo.
 
-At minimum, alternate colors exactly. For serious experiments use paired openings: play each opening twice, once with the fly as White and once as Black. Reuse exactly the same opening suite for every model/depth comparison.
+## Fly move selection
+
+For each legal move:
+
+1. encode board + candidate move;
+2. project to the frozen sensory population;
+3. run the same MaleCNS-derived recurrent system for depth `D`;
+4. read a scalar score from the frozen readout population;
+5. choose the highest-scoring legal move.
+
+This all-legal candidate interface is required for headline strength and position-quality experiments.
+
+## Frozen factors in a depth experiment
+
+Freeze:
+
+- MaleCNS graph/preprocessing;
+- neural dynamics/gains;
+- chess feature definition;
+- sensory population;
+- projector seed/fanout/amplitude;
+- readout population/weights/checkpoint;
+- opponent/evaluator binaries and settings;
+- opening suite;
+- random seeds where applicable;
+- rating/adjudication policy.
+
+Only recurrent depth changes.
+
+## Short-game protocol warning
+
+A game stopped after a tiny number of plies and then assigned `1/2-1/2` is **not an informative normal game result**.
+
+The repository's earlier 2-ply/4-ply compact protocols were useful for plumbing/throughput diagnostics, but their repeated ~410/~445 rating values must not be interpreted as actual chess strength because unresolved games were overwhelmingly or entirely forced draws.
+
+Do not repeat a large forced-draw tournament merely to reduce the numerical confidence interval around a non-informative outcome mechanism.
+
+## Serious rating requirements
+
+A serious rating run should use one of the following predeclared outcome mechanisms:
+
+1. **Natural game completion** with a sufficiently large `max_plies`;
+2. a validated objective adjudication rule based on an independent evaluator, with explicit win/draw thresholds and persistence criteria applied symmetrically;
+3. another documented outcome rule demonstrated not to collapse most games to artificial 0.5 scores.
+
+The independent evaluator must never choose moves or leak analysis into either player.
+
+Use paired openings/color reversal and reuse the same opening suite for model/depth comparisons.
+
+## Recommended game-count tiers
+
+After the outcome protocol is informative:
+
+- smoke: 20-40 games;
+- development: 100-200 games;
+- serious estimate: 400+ games;
+- publication-quality comparisons: paired openings plus bootstrap/sequential-power analysis.
+
+Game count does not compensate for a broken adjudication mechanism.
 
 ## Elo estimator
 
-Given known opponent ratings R_i and fly scores s_i in {0, 0.5, 1}, estimate R by solving:
+Given opponent ratings `R_i` and fly scores `s_i in {0, 0.5, 1}`, estimate `R` from:
 
-`sum_i [s_i - E(R, R_i)] = 0`
+```text
+sum_i [s_i - E(R, R_i)] = 0
+E(R, R_i) = 1 / (1 + 10^((R_i - R)/400))
+```
 
-where
+For serious claims, bootstrap paired openings rather than treating color-swapped games as fully independent.
 
-`E(R, R_i) = 1 / (1 + 10^((R_i - R)/400))`.
+## Position-quality experiment is currently primary
 
-The repository reports a local Fisher-information interval as a quick uncertainty estimate. For final scientific claims, add paired-opening bootstrap intervals.
+Because full all-legal MaleCNS moves are computationally expensive, the current research priority is a paired held-out **position-depth study** rather than another short-game rating run.
 
-## Critical interpretation
+Primary position metric:
 
-Chess Elo is a benchmark for the **complete frozen system**: connectome + dynamics + chess encoder + readout. It is not automatically the biological fly's Elo.
+```text
+regret_cp = teacher_best_cp - teacher_cp(selected_move)
+```
 
-The most informative experiment is differential:
+Use the exact same unseen positions across all depths and graph controls. This directly tests whether recurrent depth improves decisions without requiring thousands of completed games.
 
-`same checkpoint + same adapter + same games, varying only recurrent depth`.
+Once the recurrent-depth optimum and a stronger decoder are established, return to long-game rating with an informative completion/adjudication rule.
 
-If Elo rises reproducibly with depth and beats shuffled-topology / shuffled-sign controls, that is evidence that the connectome is exploiting additional recurrent computation on this task.
+## Interpretation
+
+The strongest eventual rating result is differential:
+
+```text
+same checkpoint + same openings + same opponents + same outcome policy
+vary only recurrent depth
+```
+
+A connectome-specific claim additionally requires the real MaleCNS graph to show a stronger depth benefit than matched topology/sign/recurrent-strength controls.
