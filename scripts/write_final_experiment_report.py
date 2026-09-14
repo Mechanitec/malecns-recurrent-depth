@@ -38,6 +38,7 @@ def main() -> None:
         "readout_checkpoint": root / "results/training/v1_depth16_rate_large/readout_checkpoint.npz",
         "depth_sweep": sweep_root / "depth_sweep/metrics.csv",
         "control_sweep": sweep_root / "control_sweep/metrics.csv",
+        "control_ratings": root / "results/control_sweep/control_ratings.csv",
         "serious_games": root / args.serious_run / "games.csv",
         "diagnostic_games": root / args.diagnostic_run / "games.csv",
     }
@@ -46,6 +47,7 @@ def main() -> None:
     diagnostic_games = read_csv(artifacts["diagnostic_games"])
     depth_rows = read_csv(artifacts["depth_sweep"])
     control_rows = read_csv(artifacts["control_sweep"])
+    control_rating_rows = read_csv(artifacts["control_ratings"])
     expected_games = int(serious_elo.get("elo", {}).get("n_games", 0))
     status = "complete_bounded_protocol" if expected_games >= 400 else "provisional_incomplete"
     wins = sum(row.get("fly_score") == "1.0" for row in serious_games)
@@ -83,6 +85,7 @@ def main() -> None:
         },
         "depth_sweep_rows": len(depth_rows),
         "control_sweep_rows": len(control_rows),
+        "control_rating_rows": len(control_rating_rows),
         "artifacts": {name: {"path": str(path), "exists": path.exists()} for name, path in artifacts.items()},
         "scientific_caveat": "The 400-game run uses bounded candidates and short games to control full-graph runtime. The diagnostic and sweep position metrics use all legal moves; do not treat the bounded 400-game estimate as a long-game playing-strength claim.",
     }
@@ -101,6 +104,7 @@ The frozen reference checkpoint uses the rate dynamics at recurrent depth 16. Th
 - Median Fly move latency: {median_latency:.3f} seconds; recurrent passes: {recurrent_passes}.
 - Depth sweep rows: {len(depth_rows)} across depths 1, 2, 4, 8, 16, 32, and 64.
 - Control sweep rows: {len(control_rows)} across the original, topology-shuffled, sign-shuffled, and recurrent-attenuated graphs.
+- Control rating rows: {len(control_rating_rows)} across the same graph variants and depths.
 - Every recorded game includes PGN, exact calibrated opponent setting, Fly move latency, recurrent-pass count, and candidate-score margin.
 
 ## Interpretation boundary
