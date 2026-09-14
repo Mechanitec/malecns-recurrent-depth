@@ -1,0 +1,54 @@
+{
+  "status": "evaluation/test_only",
+  "positions": 140,
+  "candidate_rows": 4350,
+  "opening_count": 20,
+  "offsets_after_opening": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    20,
+    24
+  ],
+  "source_seed": 23,
+  "source_policy": "seeded RNG over sorted non-captures, falling back to captures",
+  "phases": [
+    "early",
+    "middle",
+    "late"
+  ],
+  "source": "deterministic legal continuations from calibrated opening FENs",
+  "opening_metadata": "results\\low_elo_calibration\\calibration_metadata.json",
+  "opening_metadata_sha256": "a8a9ce27f222d308c7b1f1cf4c436f450025748a3bfdfe58109b5339b81a4709",
+  "teacher_dataset": "data\\teacher_dataset_v1.csv",
+  "teacher_dataset_sha256": "593191c99231b8a86569db5619436f89ebf144db88f1468b3aa437212b446251",
+  "stockfish": {
+    "engine": {
+      "name": "Stockfish 19",
+      "author": "the Stockfish developers (see AUTHORS file)"
+    },
+    "executable": "C:\\Users\\Zatoichi\\AppData\\Local\\Microsoft\\WinGet\\Links\\stockfish.exe",
+    "executable_sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+    "nodes": 1000,
+    "threads": 1,
+    "hash_mb": 128,
+    "mate_score_cp": 100000,
+    "target_scale_cp": 400.0
+  },
+  "columns": [
+    "position_id",
+    "source_game_id",
+    "phase",
+    "ply",
+    "fen",
+    "side_to_move",
+    "move_uci",
+    "teacher_cp",
+    "teacher_target",
+    "is_best",
+    "legal_move_count"
+  ],
+  "corpus_sha256": "be6b417c3438f58e8a984e8c315d6291bc8bef1cda9fd8ee0d14d67b7d7ae3a3"
+}
