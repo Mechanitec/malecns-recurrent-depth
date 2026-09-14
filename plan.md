@@ -1,559 +1,305 @@
-# MaleCNS Recurrent-Depth Chess: Execution Plan
+# MaleCNS Recurrent-Depth Chess: Codex Day Plan
 
-This file is the execution plan for Codex running on the local Windows development machine.
+**Execution target:** one full local workday on the Windows workstation using Codex / Luna High.
 
-## Operating rules
+**Research scope:** `Research Goal.md` is LOCKED. Do not edit or reinterpret it. This plan advances Experiment A (frozen fly + recurrent depth) and prepares a stronger Stage-0 decoder for the next iteration without changing the overall research goal.
 
-1. Start every work session by synchronizing with GitHub:
+## Current state and evidence
+
+The end-to-end real-MaleCNS chess pipeline works: real MaleCNS graph -> fixed chess projection -> recurrent rate dynamics -> trained linear readout -> legal-move ranking -> calibrated weak opponents / Stockfish analysis.
+
+The first full-legal held-out sweep used only 8 positions. Its current original-graph results are:
+
+| Depth | Teacher agreement | Teacher regret (cp) | Stockfish loss (cp) | Approx. position latency |
+|---:|---:|---:|---:|---:|
+| 1 | 0.000 | 756.5 | 685.125 | 1.12 s |
+| 2 | 0.125 | 345.375 | 446.625 | 2.28 s |
+| 4 | 0.125 | 354.875 | 453.0 | 4.67 s |
+| 8 | 0.125 | 316.375 | 463.0 | 9.05 s |
+| 16 | 0.125 | 316.375 | 463.0 | 16.67 s |
+| 32 | 0.125 | 493.0 | 545.375 | 33.20 s |
+| 64 | 0.125 | 519.875 | 520.5 | 69.98 s |
+
+Interpretation: D1 -> D2/D8 shows a potentially large recurrent-compute benefit, but 8 positions are far too few. The degree-preserving shuffled control is sometimes as good as or better than the real graph, and 5%-recurrent-strength attenuation often matches the real graph. Therefore there is **no connectome-specific claim yet**.
+
+The existing short-game rating numbers are diagnostic only. Runs capped after 2-4 plies are adjudicated as draws, so the repeated ~445 rating in compact sweeps and ~410 rating in the 402-game short protocol are not valid long-game chess-strength measurements.
+
+The v1 readout is also weak: pairwise logistic loss remains close to `ln(2) ~= 0.6931`, validation top-1 agreement is usually around 8-23%, and pairwise candidate accuracy is only modestly above 0.5. Treat v1 as the frozen baseline checkpoint, not as the final decoder.
+
+---
+
+# Operating rules
+
+1. Begin by synchronizing exactly:
 
    ```powershell
    git checkout main
    git pull --ff-only origin main
    git status
+   git rev-parse HEAD
    ```
 
-2. Treat `main` as the current source of truth. Do not assume this plan's creation commit is still current.
-3. Do not use GitHub Actions. All tests, calibration runs, training, and benchmarks run locally.
-4. Do not commit engine binaries, large MaleCNS data files, generated activation caches, or large tournament outputs. Keep them under ignored local directories such as `tools/`, `data/`, and `results/local/` unless a small summary artifact is explicitly intended for Git.
-5. Never invent Elo mappings for weak-engine settings. Measure them.
-6. Preserve reproducibility: record engine version, executable hash, dataset hashes, random seeds, graph settings, recurrent depth, opening/FEN source, and all UCI options used for every serious experiment.
-7. Before changing a public interface, inspect existing scripts/tests/docs and preserve compatibility where practical.
-8. After each milestone run the relevant focused tests, then the full local suite with `pytest -q`.
-9. If an experiment fails, save diagnostics and fix the cause before moving to the next milestone. Do not silently skip failed games or malformed positions.
+2. Run all work locally. **Do not use GitHub Actions.**
+3. Do not edit `Research Goal.md`.
+4. Do not overwrite or delete the v1 baseline results. New experiments get new directories/versioned names.
+5. Do not tune on the held-out evaluation corpus. Hyperparameter/model selection uses train/validation only.
+6. Keep graph topology, populations, projector, dynamics, checkpoint and data fixed inside each causal depth comparison. Only `D` may vary.
+7. Use all legal moves for the position-quality experiment. Do not use `max_candidates=4` for headline position metrics.
+8. Every long experiment must be resumable and must append/flush incremental results so an interruption does not discard completed work.
+9. Record code commit, input hashes, checkpoint hash, engine hashes/options, seeds, graph variant, depths and dataset IDs in metadata.
+10. Do not commit engine binaries, Feather files, large NPZ caches or huge raw traces. Commit small CSV/JSON summaries, plots and documentation.
+11. A negative result is valid. Do not reroll controls, positions, seeds or reporting to make MaleCNS look better.
+12. Before each substantive commit run focused tests; before ending the day run `pytest -q`.
 
 ---
 
-# Goal
+# Today's primary question
 
-Obtain the first scientifically meaningful chess-strength measurement for the frozen MaleCNS recurrent-depth system, then test whether increasing recurrent depth improves playing strength when the checkpoint and all other variables are held fixed.
+Using a much larger set of unseen positions, does a fixed MaleCNS-derived system make better chess decisions when the **same recurrent block** is applied more times?
 
-The required path is:
+Primary causal quantity for each depth `D`:
 
 ```text
-engine validation
-    -> low-Elo calibration
-    -> teacher dataset
-    -> reproducible MaleCNS populations
-    -> activation cache
-    -> trained readout checkpoint
-    -> first fly rating
-    -> frozen-checkpoint depth sweep
-    -> shuffled/control sweeps
-    -> consolidated dashboard/report
+Delta_regret(D) = mean[regret(position, D=1) - regret(position, D)]
 ```
 
-The project is not complete when infrastructure works. The first major deliverable is an actual measured fly rating with uncertainty.
+Positive `Delta_regret` means deeper recurrence improves move quality relative to D1.
 
----
-
-# Milestone 0 - Local preflight and inventory
-
-## Tasks
-
-- Pull latest `main`.
-- Create/activate a Python virtual environment.
-- Install local dependencies:
-
-  ```powershell
-  python -m pip install -U pip
-  pip install -e ".[chess,malecns,dashboard,dev]"
-  ```
-
-- Run:
-
-  ```powershell
-  pytest -q
-  ```
-
-- Locate or download local executables for:
-  - Stockfish
-  - Minic
-  - Gaia Chess
-- Verify that no engine binary is tracked by Git.
-- Locate the official MaleCNS Feather data files required by the current loader.
-- Record all resolved local paths in a local-only config file, e.g. `local_config.toml`, and add it to `.gitignore` if needed.
-- Record SHA-256 hashes of engine binaries and MaleCNS input files in the experiment metadata generated by scripts.
-
-## Acceptance criteria
-
-- Full test suite passes before new experimental work begins.
-- All three engines start through UCI locally.
-- MaleCNS files load without column/schema errors.
-- No large binaries/data are staged by Git.
-
----
-
-# Milestone 1 - Engine smoke test and throughput benchmark
-
-The immediate reason for this milestone is that Alfil proved too slow for large tournaments. The replacement path must be measured, not assumed.
-
-## Implement
-
-Add a reusable local engine-smoke/throughput command if one does not already exist. It should test:
-
-- Minic `Level=0`
-- several Minic levels in the weak range, initially 1, 5, 10, 15, 20, 25, 30
-- Gaia levels 1-7
-- Stockfish at its detected minimum `UCI_Elo`
-
-For each configuration record:
-
-- engine name/version
-- UCI options
-- moves/sec or median move latency
-- games/hour on a short fixed test suite
-- crashes/timeouts/restarts
-- deterministic/reproducible behavior where applicable
-
-Use one thread and fixed hash unless the engine requires otherwise. Disable pondering and opening-book variation for benchmark mode.
-
-Add hard per-move and per-game timeouts plus a clean engine restart path. A failed engine process must produce a visible error/diagnostic record.
-
-## Acceptance criteria
-
-- At least 10 complete smoke games per selected weak configuration without hangs.
-- Minic 0 is confirmed effectively instantaneous/random-legal behavior.
-- Gaia 1-7 are fast enough for hundreds/thousands of games.
-- Stockfish floor detection still works.
-- Throughput summary saved as a small CSV/JSON artifact.
-
----
-
-# Milestone 2 - Calibrate the low-strength ladder
-
-## Scientific rating convention
-
-Do not force both `Minic Level 0 = 0` and `Gaia Level 1 = 580` on the same standard Elo scale. Standard Elo has a fixed logistic scale and only one arbitrary additive offset.
-
-Produce two columns:
-
-1. `calibrated_elo`: standard 400-point Elo logistic scale, anchored by fixing Gaia Level 1 to its nominal 580 reference value.
-2. `mcr0`: display-only project offset defined as:
-
-   ```text
-   mcr0(engine) = calibrated_elo(engine) - calibrated_elo(Minic Level 0)
-   ```
-
-   Therefore Minic Level 0 is exactly 0 on `mcr0`, while Gaia Level 1 is whatever empirical separation the games imply. Do not call `mcr0` official/FIDE Elo.
-
-## Implement
-
-Create a calibration module and CLI, preferably:
+Primary biological-specificity quantity for each control `C`:
 
 ```text
-src/malecns_rd/low_elo_calibration.py
-scripts/calibrate_low_elo.py
+Delta_specific(D, C)
+  = (regret_original_D1 - regret_original_D)
+    - (regret_control_D1 - regret_control_D)
 ```
 
-The runner must support resumable experiments and write every individual game incrementally.
-
-Initial participants:
-
-```text
-Minic Level 0..30
-Gaia Level 1 (580 nominal anchor)
-```
-
-Initial schedule:
-
-- adjacent Minic levels: L0-L1, L1-L2, ..., L29-L30
-- bridge matches: L0-L5, L5-L10, L10-L15, L15-L20, L20-L25, L25-L30
-- Gaia bridge matches against the strongest useful Minic levels; begin with L20, L22, L24, L26, L28, L30 and adapt based on saturation
-
-Run paired color-swapped games from the same opening/FEN. Start with 20 opening pairs per matchup (40 games), inspect uncertainty/saturation, then increase important matchups to 40+ opening pairs.
-
-Use a fixed opening suite of ordinary positions several plies into the game. Store the opening ID/FEN in every game record.
-
-## Fit
-
-Fit all game results jointly using a Bradley-Terry/Elo maximum-likelihood model with the normal 400 Elo logistic scale.
-
-Requirements:
-
-- Gaia L1 fixed at 580 for `calibrated_elo`
-- estimate every Minic level jointly
-- bootstrap confidence intervals by opening pair, not by individual game
-- detect disconnected rating components
-- warn on saturated links (e.g. <5% or >95% score)
-- report raw unconstrained ratings
-- optionally compute a monotonic display ladder using weighted isotonic regression, but never overwrite the raw estimates
-
-## Output
-
-Create at least:
-
-```text
-results/low_elo_calibration/games.csv
-results/low_elo_calibration/low_elo_calibration.csv
-results/low_elo_calibration/calibration_metadata.json
-results/low_elo_calibration/calibration_diagnostics.json
-```
-
-`low_elo_calibration.csv` should contain:
-
-```text
-engine
-setting
-raw_calibrated_elo
-monotonic_calibrated_elo
-mcr0
-ci95_low
-ci95_high
-games
-wins
-draws
-losses
-```
-
-## Acceptance criteria
-
-- All Minic levels used by the fly benchmark belong to one connected rating graph containing Gaia L1.
-- No rating is created from a hard-coded guessed Minic->Elo formula.
-- The top Minic region has at least one non-saturated bridge to Gaia.
-- Bootstrap CIs are produced.
-- Results are reproducible from the saved game table and metadata.
+A MaleCNS-specific recurrent-depth claim requires a positive effect that is robust under paired uncertainty and is materially stronger than appropriate controls. If controls improve equally, report a generic recurrent-computation effect instead.
 
 ---
 
-# Milestone 3 - Integrate calibrated low ratings into the normal benchmark
+# Day deliverables
 
-Update opponent selection so the regular fly benchmark can consume `low_elo_calibration.csv`.
+By end of day, aim to have all of the following:
 
-Requirements:
-
-- target low rating selects the nearest measured Minic setting or a documented bracket of neighboring measured settings
-- preserve the exact calibrated opponent rating used in each game record
-- Gaia nominal levels remain available as independent anchors
-- Stockfish native `UCI_Elo` takes over at its detected supported floor
-- never silently round an unsupported request without recording the actual opponent/rating
-- keep legacy Alfil support optional only; it must not be the default high-volume path
-
-Add tests using synthetic calibration tables so the tests do not require local engine binaries.
-
-## Acceptance criteria
-
-A benchmark game record contains enough information to reconstruct exactly which engine/setting/calibrated rating was used.
+1. An exact, tested high-throughput position evaluator that can score all legal candidates and collect **multiple recurrent depths from one trajectory** where mathematically equivalent.
+2. A frozen independent evaluation corpus substantially larger than 8 positions (target 256; minimum useful target 128 if full-MaleCNS runtime is limiting).
+3. A paired depth/control study over `D = 1,2,4,8,16,32,64` for original MaleCNS, degree-preserving topology shuffle, transmitter-sign shuffle, and recurrent edges attenuated to 5%.
+4. Position-level raw results, aggregate CSV, paired bootstrap CIs and difference-in-differences control analysis.
+5. Updated plots that emphasize move quality, not the invalid short-game rating.
+6. A diagnosis of why v1 readout training stays near random pairwise loss.
+7. If time allows, a v2 Stage-0 readout trained with a numerically stronger convex/normalized procedure, selected only on validation data.
+8. Updated final/current-results documentation stating exactly what is and is not supported.
+9. Full local test suite passing.
 
 ---
 
-# Milestone 4 - Build the first real Stockfish teacher dataset
+# Work Block 0 - Preflight and reproducibility snapshot
 
-Use the existing `scripts/generate_teacher_dataset.py` as the starting point rather than replacing the pipeline unnecessarily.
-
-## Dataset v1 target
-
-Start with approximately 5,000-10,000 diverse positions. This is a pilot dataset, not the final scale target.
-
-Sources may include PGNs and/or a reproducible generated opening/position corpus. Avoid near-duplicate positions.
-
-For each position save:
-
-- stable position ID
-- FEN
-- source game/opening ID
-- side to move
-- every legal candidate UCI move
-- Stockfish score for every candidate or enough ranked candidates for the current training objective
-- best teacher move
-- Stockfish version and analysis limit
-
-Use deterministic Stockfish node/depth limits rather than wall-clock limits for teacher labels where practical.
-
-Split by source game/opening into train/validation/test. Never randomly split candidate moves from the same position across partitions.
-
-## Acceptance criteria
-
-- No FEN/candidate leakage between train and validation/test.
-- Dataset generation is resumable.
-- Random sample verification confirms every stored move is legal in its stored FEN.
-- Teacher metadata is complete.
-
----
-
-# Milestone 5 - Freeze reproducible MaleCNS chess populations
-
-Use the population-selection functionality already merged into `main`, including `scripts/select_chess_populations.py`.
-
-Do not manually choose ad hoc neuron indexes after seeing chess results.
-
-Generate and freeze:
-
-- sensory neuron indices
-- readout neuron indices
-- selection strategy and seed
-- input MaleCNS file hashes
-- graph filtering parameters
-
-Save a compact population manifest that subsequent extraction/training/benchmark scripts consume directly.
-
-## Acceptance criteria
-
-Running population selection twice with identical inputs/seed produces identical indices and manifest hashes.
-
----
-
-# Milestone 6 - Generate the first real MaleCNS activation cache
-
-Use `scripts/extract_chess_activations.py` and the frozen population manifest.
-
-Reference experiment:
-
-```text
-Dynamics: current rate model first
-Reference recurrent depth: D=16
-Sensory mapping: frozen
-MaleCNS topology: frozen
-Physiology/dynamics parameters: frozen
-Clamp mode: frozen and recorded
-```
-
-Cache only what training needs. Do not recompute MaleCNS activations every training epoch.
-
-Record:
-
-- teacher dataset hash
-- graph hash/provenance
-- population manifest hash
-- encoder/projector parameters
-- recurrent dynamics parameters
-- depth
-- activation dtype/shape
-
-## Acceptance criteria
-
-- Cache roundtrip test passes.
-- Re-running a small subset reproduces cached activations within the expected numerical tolerance.
-- No NaN/Inf activations.
-
----
-
-# Milestone 7 - Train checkpoint v1
-
-Use `scripts/train_chess_readout.py` and the existing pairwise candidate-ranking objective.
-
-For the first causal experiment, optimize only the linear readout. Do not learn connectome topology, sensory mapping, recurrent weights, or physiology.
-
-Track at least:
-
-- train loss
-- validation loss
-- teacher-best-move agreement
-- candidate ranking accuracy
-- checkpoint step/epoch
-- recurrent depth
-- learning rate
-
-Select the best checkpoint by a predeclared validation metric, not by test Elo.
-
-Save:
-
-```text
-readout_checkpoint.npz
-training_history.csv
-training_diagnostics.csv
-training_metrics.json
-```
-
-## Acceptance criteria
-
-- Training improves held-out ranking performance above initialization/random baseline.
-- Best checkpoint reloads into `FlyCandidateMoveAgent` and produces deterministic scores for a fixed test position.
-- Test positions were not used for checkpoint selection.
-
----
-
-# Milestone 8 - Obtain the first real fly rating
-
-Run a short diagnostic tournament first, then a serious rating run.
-
-## Diagnostic
-
-- 50-100 total games around the apparent fly strength
-- use calibrated Minic/Gaia opponents if below Stockfish's range
-- automatically expand upward/downward depending on score
-
-## Serious run
-
-After the harness is stable:
-
-- minimum ~400 games around informative opponent strengths
-- paired openings/color reversal
-- save PGN/game records
-- independent full-strength Stockfish position evaluator enabled for analysis only
-- dashboard live view enabled
-
-The independent evaluator must never influence move selection by the fly or its opponent.
-
-Report:
-
-```text
-checkpoint
-reference depth
-rating scale used
-estimated fly rating
-95% CI
-games
-W/D/L
-score by opponent
-median move latency
-```
-
-## Acceptance criteria
-
-The result is not merely censored below an engine floor; it contains an actual low-range estimate with a finite useful CI.
-
----
-
-# Milestone 9 - Frozen-checkpoint recurrent-depth experiment
-
-This is the central causal experiment.
-
-Use the exact same trained checkpoint, topology, populations, projector, dynamics, openings, opponent calibration, and benchmark policy. Change only inference recurrent depth.
+**Budget:** 15-30 minutes.
 
 Run:
 
-```text
-D = 1, 2, 4, 8, 16, 32, 64
+```powershell
+git checkout main
+git pull --ff-only origin main
+python -m pip install -e ".[chess,malecns,dashboard,dev]"
+pytest -q
 ```
 
-For each depth measure:
+Verify local paths for Stockfish, Minic, Gaia, the three MaleCNS Feather inputs, `data/chess_sensory_indices.npy`, `data/chess_readout_indices.npy`, and `results/training/v1_depth16_rate_large/readout_checkpoint.npz`.
 
-- calibrated chess rating + 95% CI
-- W/D/L
-- teacher/candidate agreement on held-out positions
-- Stockfish evaluation loss per move
-- fly move latency
-- total recurrent compute
-- candidate score margin
+Write a local run manifest before experimentation, including SHA-256 of all critical inputs. Do not continue silently if the checkpoint or MaleCNS inputs differ from those used for the baseline.
 
-Use the same paired opening set across depths whenever practical to reduce variance.
-
-Primary plot:
-
-```text
-rating vs recurrent depth
-```
-
-Secondary plots:
-
-```text
-position-quality loss vs depth
-latency vs depth
-candidate agreement vs depth
-```
-
-## Acceptance criteria
-
-A depth-scaling conclusion is made only from runs in which all non-depth variables are demonstrably frozen.
+**Acceptance:** baseline tests pass and input hashes are recorded.
 
 ---
 
-# Milestone 10 - Scientific controls
+# Work Block 1 - Make large depth studies computationally feasible
 
-Repeat the depth experiment with controlled graph variants:
+**Budget:** 1-2 hours implementation + tests.
 
-1. original signed MaleCNS graph
-2. degree-preserving shuffled topology
-3. transmitter-sign shuffled graph
-4. recurrent edges removed or strongly attenuated
-5. optional random readout population control at identical size
+The current scalar sweep recomputes every candidate separately at every requested depth. That wastes most recurrent work. Implement an exact evaluation path optimized for the frozen rate engine.
 
-Use identical data, training budget, benchmark openings, and rating procedure.
+## 1A. Multi-depth trajectory reuse
 
-Important: if shuffled/control systems improve with depth as much as the real connectome, do not claim a connectome-specific benefit.
+For one candidate input, run the recurrent state once up to max depth 64 and capture states/readout scores at `1,2,4,8,16,32,64`.
 
-## Acceptance criteria
+Do not independently rerun D1 + D2 + D4 + ... when the deterministic D64 trajectory already contains those intermediate states.
 
-Produce one comparison table and one plot showing the full depth curve for real MaleCNS and controls with uncertainty intervals.
+Add an engine/API helper rather than duplicating recurrent math in an experiment script if practical.
+
+## 1B. Batch legal-candidate evaluation
+
+Investigate and implement a batch path for the rate engine where all legal candidate states are propagated together using sparse-matrix x dense-matrix operations.
+
+Expected state shape is roughly `[n_neurons, n_legal_candidates]`. This is acceptable for ~166k neurons and normal chess branching factors if float32 is used carefully.
+
+Requirements:
+
+- exact same graph and recurrence equations as scalar mode;
+- deterministic ordering of legal moves;
+- no change to chess feature encoding/projector semantics;
+- no training or approximation introduced merely for speed.
+
+## 1C. Equivalence tests
+
+For several positions and graph variants, compare scalar versus optimized scores at every depth.
+
+Acceptance tolerance should be strict, e.g. `np.allclose` with a justified float32 tolerance. Chosen move and complete ranking should match unless differences are below a documented numerical tie threshold.
+
+Add tests for multi-depth snapshots, batch-vs-scalar candidate scores, original plus at least one control graph, all-legal candidate retention, and deterministic repeated runs.
+
+## 1D. Benchmark throughput
+
+Benchmark representative positions before/after optimization at D16 and D64. Save a small JSON/CSV summary.
+
+**Success target:** >=2x total speedup for a complete 1..64 multi-depth position evaluation. If batching is slower on the actual sparse matrix, keep only the safe multi-depth optimization and record that honestly.
+
+Commit code/tests before launching the long experiment.
 
 ---
 
-# Milestone 11 - Dashboard and final experiment summary
+# Work Block 2 - Freeze an independent evaluation corpus
 
-Extend the existing Streamlit dashboard only after the underlying measurements exist.
+**Budget:** 30-90 minutes plus teacher labeling compute.
 
-The final dashboard should show:
+Build a versioned evaluation corpus that is **never used to train or select the readout**.
 
-- live board oriented to the fly
-- fly SVG beside the fly's side
-- current opponent engine/setting/calibrated rating
-- current game and W/D/L
-- rolling rating estimate + CI
-- independent Stockfish evaluation bar
-- Stockfish evaluation history by ply
-- fly candidate moves and neural scores
-- recurrent depth used
-- training loss/validation curves
-- rating vs depth
-- real-connectome vs shuffled-control depth curves
-- experiment metadata/checkpoint identifiers
+Preferred target: `256` unique positions. Minimum for today's full control study: `128`. Stretch target after optimization: `512`.
 
-Generate a small machine-readable summary file for each serious experiment and a concise Markdown report referencing exact artifacts.
+Corpus requirements:
+
+- no FEN overlap with train or validation positions used for v1/v2 readout fitting;
+- no candidate-row leakage;
+- deterministic source/seed;
+- non-terminal legal positions;
+- reasonable early/middle/late spread;
+- exact FEN, side to move, source/game ID, ply, legal move count;
+- Stockfish teacher score for every legal move from side-to-move perspective;
+- exact Stockfish hash and deterministic nodes/depth limit;
+- explicit `evaluation` / `test_only` status.
+
+Prefer a suitable local PGN corpus with source-game grouping. If none exists, create a deterministic ordinary-position corpus using a documented engine/self-play or opening-expansion process. Do not use bizarre uniformly-random legal positions as the primary benchmark.
+
+Programmatically verify all FENs/moves, one deterministic teacher-best move per position, no duplicate FENs, no overlap with fitting data, and correct score orientation. Write compact corpus metadata with hashes.
 
 ---
 
-# Required local artifacts before declaring v1 experiment complete
+# Work Block 3 - Main paired position-depth/control study
 
-The following must exist and be internally consistent:
+**Budget:** largest block of the day.
+
+Create or extend a dedicated resumable runner, preferably `scripts/run_position_depth_study.py`, separate from game tournaments. Resume at `(variant, position_id)` granularity and produce one raw row per position / variant / depth.
+
+Hold fixed the v1 checkpoint, preprocessing, populations, projector, rate dynamics, clamp mode, evaluation corpus and control seeds.
+
+Run all four graph variants:
 
 ```text
-low_elo_calibration.csv
-calibration_metadata.json
-teacher_dataset.*
-population_manifest.*
-chess_activations_depth16.npz
-readout_checkpoint.npz
-training_history.csv
-first_fly_rating/*
-depth_sweep/*
-control_sweep/*
-final_experiment_summary.json
-final_experiment_report.md
+original
+degree_preserving_topology_shuffle
+transmitter_sign_shuffle
+recurrent_edges_attenuated_0.05
 ```
 
-Large artifacts may remain local and ignored. Commit only small summaries, configuration, code, tests, and documentation.
+Use one predeclared control seed. Do not reroll a shuffle because the result is inconvenient.
 
----
-
-# Stop conditions / things Codex must not do
-
-- Do not use GitHub Actions.
-- Do not commit engine binaries or the MaleCNS dataset.
-- Do not call a guessed engine setting an Elo rating.
-- Do not tune the final checkpoint on the held-out test set or final Elo games.
-- Do not change more than recurrent depth during the causal depth sweep.
-- Do not let the independent Stockfish evaluator choose moves or leak analysis into either player.
-- Do not hide failed/timeout games; record and diagnose them.
-- Do not report a connectome-specific result without shuffled/sign controls.
-- Do not force Minic 0 and Gaia 580 to be two anchors on a standard Elo scale. Use the explicit `mcr0` display offset if a zero-based project scale is desired.
-
----
-
-# Immediate Codex task order
-
-Codex should execute in this exact order unless a blocking technical dependency requires a documented deviation:
-
-1. Preflight local environment and run tests.
-2. Validate Minic, Gaia, and Stockfish binaries and measure throughput.
-3. Implement and test `calibrate_low_elo.py` + calibration fitter.
-4. Run a small calibration pilot and inspect saturation/connectivity.
-5. Run the full useful low-range calibration and save `low_elo_calibration.csv`.
-6. Integrate measured calibration into the fly benchmark.
-7. Generate teacher dataset v1.
-8. Freeze real MaleCNS sensory/readout populations.
-9. Extract depth-16 activation cache.
-10. Train readout checkpoint v1.
-11. Run first diagnostic fly tournament.
-12. Run first serious fly rating.
-13. Run frozen-checkpoint depth sweep.
-14. Run graph/sign controls.
-15. Consolidate dashboard and final report.
-
-The next major scientific checkpoint is achieved when the repository can truthfully report something of the form:
+Run depths:
 
 ```text
-MaleCNS-RD checkpoint <id>, depth 16:
-calibrated chess rating = X ± Y (95% CI), N games
+1, 2, 4, 8, 16, 32, 64
 ```
 
-followed by a depth curve produced from the same frozen checkpoint.
+Per-position/per-depth record at least selected move, teacher best, selected/best cp, regret cp, teacher-best agreement, selected teacher rank, fly rank of teacher best, top-3 agreement, candidate count, top1-top2 fly score margin, score dispersion, recurrent passes, latency, graph variant, depth and position ID. Where cheap, add Spearman/Kendall rank correlation between fly scores and teacher scores.
+
+The root-move teacher scores are the primary move-quality metric. Independent post-move Stockfish evaluation is expensive; use a fixed predeclared subset such as 32 or 64 positions unless throughput allows more. It must never influence move selection.
+
+Flush incremental outputs continuously, e.g.:
+
+```text
+results/position_depth_study_v2/raw_position_metrics.csv
+results/position_depth_study_v2/metadata.json
+results/position_depth_study_v2/progress.json
+```
+
+After the first 8 positions, estimate full runtime. If 256 x all variants will finish today, continue to 256. If not, guarantee at least 128 with all four variants and all depths. If 512 becomes feasible, use 512. Reduce position count before dropping depths or controls.
+
+---
+
+# Work Block 4 - Paired statistical analysis
+
+Implement `scripts/analyze_position_depth_study.py` while the long study runs.
+
+For each D > 1 on the original graph, calculate paired `regret_D1 - regret_D` and report mean, median, 95% paired bootstrap CI over positions, improved/unchanged/worsened fraction, teacher-best agreement difference, top-3 difference and rank difference.
+
+For each control, calculate the paired difference-in-differences:
+
+```text
+(original D1 -> D improvement) - (control D1 -> D improvement)
+```
+
+Bootstrap positions and report 95% CIs.
+
+Interpretation rules:
+
+- original improves but controls improve similarly -> **generic recurrent-computation effect**;
+- original materially exceeds controls with robust uncertainty -> evidence toward a **MaleCNS-structure-specific recurrent effect**;
+- shuffled equals/beats original -> state that plainly;
+- high depth worsens -> estimate an empirical optimum; do not assume monotonic scaling.
+
+Generate plots for regret vs depth, paired D1-to-D improvement, original-vs-controls, teacher/top-3 agreement, latency, compute-quality Pareto, and per-position improvement distributions. Do not use compact short-game rating as the headline y-axis.
+
+---
+
+# Work Block 5 - Diagnose the weak v1 readout
+
+**Budget:** 45-90 minutes; avoid competing with timing benchmarks.
+
+Using the existing depth-16 activation cache, compute feature mean/std/dynamic range, zero/near-zero fractions, saturation, within-position candidate distances, readout-neuron variance, effective rank/singular spectrum on a tractable sample, pair balance, gradient norm, weight norm, score-margin distribution and train-vs-validation ranking metrics.
+
+Write small diagnostics under `results/training/v1_depth16_rate_large/`.
+
+Determine whether the main issue is tiny numerical scale, near-constant features, poor linear separability, optimizer behavior, insufficient data, or a label/split/orientation bug. Add tests before retraining if a bug is found.
+
+---
+
+# Work Block 6 - Stage-0 readout v2, if diagnostics justify it
+
+Only the decoder/readout may improve; the MaleCNS graph and dynamics stay frozen.
+
+Because fixed-feature pairwise logistic regression is convex, prefer a numerically robust optimizer rather than simply running Adam longer. Evaluate train-only feature standardization/scaling stored in the checkpoint, L-BFGS/scipy pairwise logistic + L2, a small predeclared L2 grid selected on validation, and best-validation checkpoint preservation.
+
+Do **not** use the frozen evaluation corpus for hyperparameter selection.
+
+v2 should clearly improve at least one validation measure without leakage: pairwise validation loss, pairwise accuracy, top-1 teacher agreement, plus deterministic checkpoint reload/inference. If it does not reliably beat v1, keep v1 and document the negative result.
+
+If v2 succeeds and time remains, run a smaller confirmatory depth sweep on a predeclared subset such as 64 positions to see whether stronger decoding changes the depth optimum. Label it exploratory unless fully powered.
+
+---
+
+# Work Block 7 - Documentation and current-result correction
+
+Before ending the day:
+
+1. Update `README.md` so it no longer says Alfil is the default low-Elo engine or that chess still uses a random agent.
+2. Update `docs/experiment_protocol.md` with the paired large-position recurrent-depth protocol and current interpretation boundary.
+3. Update `docs/chess_training.md` with the observed weakness of v1 and Stage-0 v2 procedure.
+4. Add/update `docs/current_results.md` with exact v1 8-position results, short-game rating caveat, control interpretation, training diagnosis, and latest large-study result if completed.
+5. Update `results/final_experiment_report.md` only through its generator or with matching generator changes.
+6. **Do not alter `Research Goal.md`.**
+
+---
+
+# End-of-day acceptance gate
+
+The day is successful if the optimized evaluator is validated against scalar reference; at least 128 unseen positions have complete original + three-control depth results or there is a documented runtime blocker; all depths 1..64 are represented; raw rows and small summaries are preserved; paired bootstrap analysis is complete; reporting distinguishes generic recurrence from MaleCNS-specific recurrence; short-game pseudo-ratings are not presented as real Elo; v1 weakness is diagnosed; any v2 work uses train/validation only; docs match actual state; and `pytest -q` passes.
+
+End with a concise Markdown summary containing commit SHA, positions completed, runtime, speedup, best original depth by regret, D1->best improvement + 95% CI, best control effect, MaleCNS-vs-control difference-in-differences + 95% CI, whether H1 received support, whether a MaleCNS-specific effect received support, v1 diagnosis, v2 status, and next recommended experiment.
+
+---
+
+# Do not spend today's compute on these
+
+Unless the large position study and analysis are already complete, do not spend substantial time on another 400-game 2-ply/4-ply rating run, unrelated UI polish, arbitrary biological parameter training, topology-changing training, uncalibrated engine ladders, larger teacher-training jobs before diagnosing v1, or changing the locked research goal.
+
+The highest-value use of today's workstation time is **better statistical evidence about recurrent depth and controls**, followed by a better Stage-0 decoder.
