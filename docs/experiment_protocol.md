@@ -2,80 +2,214 @@
 
 ## Goal
 
-Test whether additional applications of the same connectome dynamics block improve task performance under controlled conditions, without changing graph topology or model parameters.
+Test whether additional applications of the same MaleCNS-derived recurrent block improve chess decision quality under controlled conditions, and determine whether any benefit is specific to the biological wiring rather than generic recurrence.
 
-The central claim under test is computational, not biological: a connectome may act as an iterative recurrent substrate whose useful computation scales with internal depth.
+The core frozen-system comparison is:
 
-## Primary hypothesis
+```text
+same graph + same dynamics + same projector + same readout + same position
+only recurrent depth changes
+```
 
-For tasks requiring progressively longer graph-mediated computation, accuracy should increase as recurrent depth increases while graph structure and neuron parameters remain fixed.
+The locked research scope is defined in `../Research Goal.md`.
 
-## Critical confound
+## Primary hypotheses
 
-A deeper spiking simulation also represents more membrane-integration time. Therefore, improved performance by itself does **not** establish latent reasoning.
+### H1 — recurrent-depth effect
 
-Experiments must distinguish:
+For the original frozen MaleCNS-derived system, one or more depths `D > 1` produce better held-out chess move quality than `D = 1`.
 
-1. **Biological-time scaling** — run the LIF system for more integration steps while the environment evolves normally.
-2. **Frozen-observation depth** — hold one observation fixed and permit additional internal recurrent passes before action/readout.
-3. **Single-pulse propagation** — present evidence only on the first pass, then remove sensory drive.
-4. **Rate-state recurrence** — use the non-spiking recurrent engine as a computational control.
+### H1-specificity — biological structure
 
-A convincing recurrent-depth effect should survive controls that cannot be explained solely by extra exposure to changing sensory input.
+The improvement from recurrent depth is greater for the original MaleCNS graph than for matched topology/sign/recurrent-strength controls.
 
-## Current synthetic benchmark
+A positive H1 result without H1-specificity is still useful, but it must be described as a **generic recurrent-computation effect**, not a connectome-specific result.
 
-The routing benchmark contains unique directed paths of lengths 2, 4, 8, 16 and 32 plus weak signed distractor connections. The correct target cannot receive causal information until enough applications of the shared dynamics block have occurred.
+## Current evidence motivating the next run
 
-Sweep depths:
+The first all-legal held-out sweep used only 8 positions. On the original graph, teacher regret fell from 756.5 cp at D1 to 345.4 cp at D2 and 316.4 cp at D8/D16. However, controls sometimes matched or exceeded the original graph; for example, the degree-preserving topology shuffle reached 256.1 cp regret at D8. The sample is therefore exploratory only.
 
-`1, 2, 4, 8, 16, 32, 40`
+The next protocol must scale the same paired comparison to at least 128 unseen positions, preferably 256 or more.
 
-Record:
+## Fixed factors
 
-- overall accuracy;
-- accuracy by required path length;
-- depth used by adaptive stopping;
-- total spikes for LIF;
-- state norm/change for rate dynamics;
-- readout margin.
+For the primary frozen-depth experiment keep fixed:
 
-## Controls for MaleCNS experiments
+- MaleCNS input files and preprocessing;
+- neuron set;
+- graph topology for the original condition;
+- edge signs/weights for the original condition;
+- rate dynamics parameters;
+- sensory and readout populations;
+- board/move encoder;
+- sensory projector seed/fanout/amplitude;
+- clamp mode;
+- readout checkpoint;
+- evaluation corpus;
+- Stockfish teacher/evaluator configuration;
+- graph-control seeds;
+- numerical dtype where practical.
 
-When the real MaleCNS graph is introduced, include at least these controls:
+Only recurrent depth changes inside a given graph condition.
 
-- original signed connectome;
-- edge-shuffled graph preserving approximate degree statistics;
-- transmitter-sign shuffled graph;
-- recurrent edges removed or strongly attenuated;
-- fixed-depth versus adaptive-depth compute;
-- clamped observation versus single-pulse observation;
-- matched-compute comparison between rate and LIF dynamics.
+## Required depths
+
+```text
+1, 2, 4, 8, 16, 32, 64
+```
+
+Additional depths may be added later around an empirical optimum, but these seven predeclared depths must remain visible in the main comparison.
+
+## Evaluation corpus
+
+Use an independent corpus that is never used to fit or select the readout.
+
+Target size:
+
+- minimum: 128 unique positions;
+- preferred: 256;
+- stretch: 512+ if optimized inference permits.
+
+Requirements:
+
+- no FEN overlap with train/validation fitting data;
+- no candidate-row leakage;
+- deterministic source/seed;
+- legal nonterminal FENs;
+- reasonable early/middle/late spread;
+- exact source/game/opening ID;
+- all legal candidate moves scored by Stockfish;
+- deterministic teacher tie-breaking;
+- exact engine hash and analysis limit recorded.
+
+Bootstrap/statistical units are **positions**, never candidate rows.
+
+## Primary metric
+
+For position `i` and depth `D`:
+
+```text
+regret_i(D) = teacher_best_cp_i - teacher_cp_i(move_selected_by_fly_at_D)
+```
+
+Lower is better.
+
+The primary paired recurrent-depth effect is:
+
+```text
+Delta_i(D) = regret_i(1) - regret_i(D)
+```
+
+Positive values mean deeper recurrence improved the selected move for that position.
+
+Report mean and median `Delta`, 95% paired bootstrap CI over positions, and improved/unchanged/worsened fractions.
+
+## Secondary position metrics
+
+Record at least:
+
+- teacher-best agreement;
+- top-3 teacher agreement;
+- selected move's teacher rank;
+- fly rank assigned to teacher-best move;
+- candidate-score margin;
+- candidate-score dispersion;
+- optional Spearman/Kendall candidate rank correlation;
+- recurrent passes;
+- wall latency.
+
+Independent post-move Stockfish evaluation is useful but expensive. It may be applied to a fixed predeclared subset while root-move teacher scores remain the primary scalable metric.
+
+## Graph controls
+
+Required matched controls:
+
+1. original signed MaleCNS graph;
+2. degree-preserving topology shuffle;
+3. transmitter/sign shuffle;
+4. recurrent weights attenuated to 5%.
+
+Use a predeclared control seed. Do not reroll controls after seeing results.
+
+For control `C`, the main specificity statistic is the paired difference-in-differences:
+
+```text
+Specificity(D,C)
+  = [regret_original(1) - regret_original(D)]
+    - [regret_C(1) - regret_C(D)]
+```
+
+Bootstrap positions to obtain uncertainty.
+
+Interpretation:
+
+- positive original depth effect + similar controls -> generic recurrence;
+- original depth effect materially larger than controls -> evidence toward MaleCNS-specific use of recurrence;
+- shuffled/control equal or better -> no biological-structure advantage under the tested setup.
+
+## Computational optimization rules
+
+Optimization is allowed only if it preserves the exact tested computation.
+
+Preferred optimizations:
+
+- run once to max depth and snapshot states at requested intermediate depths;
+- batch all legal candidates through sparse-matrix x dense-matrix operations for the rate engine.
+
+Every optimized path must be numerically compared with the scalar reference on multiple positions/depths/graph variants. Chosen move and ranking should match within a documented floating-point tie tolerance.
+
+Do not introduce pruning, approximate candidate sets, learned surrogates or altered dynamics merely to make the headline position experiment faster.
+
+## Critical LIF confound
+
+For LIF, deeper recurrence is also more membrane-integration time. Any future LIF headline result must distinguish:
+
+1. biological-time scaling;
+2. frozen-observation depth;
+3. single-pulse propagation;
+4. rate-state recurrence control.
+
+The current large chess position study should use the rate-state engine first because it is the cleaner computational-depth experiment.
+
+## Short-game rating caveat
+
+A game capped after a small number of plies and then adjudicated as `1/2-1/2` does not provide normal chess outcome information. Ratings derived mostly or entirely from such forced draws are diagnostic harness values only.
+
+Do not present the existing ~410/~445 short-protocol values as actual chess Elo.
+
+A future serious chess rating requires sufficiently long games or a predeclared position-adjudication method that converts objective evaluations into outcomes without assigning every unresolved short game a draw.
 
 ## Success criteria
 
-A useful first result is not "the fly reasons." A useful result is one of the following:
+Evidence for H1 requires a reproducible paired improvement over D1 on a substantially larger held-out position set, with effect size and uncertainty reported.
 
-- task accuracy improves monotonically over a meaningful depth range;
-- longer causal tasks require systematically greater adaptive depth;
-- the effect is stronger in the real connectome than in topology-destroying controls;
-- useful depth scaling persists after matching sensory exposure and compute.
+Evidence for biological specificity additionally requires the original graph's recurrent-depth benefit to exceed matched controls under the same corpus/checkpoint/procedure.
 
-## Failure criteria
+High-depth deterioration is a valid outcome and should be used to estimate an empirical depth optimum rather than hidden.
 
-Treat any of these as evidence against the current formulation:
+## Failure / null criteria
 
-- performance improves only because sensory input is repeatedly injected;
-- deeper recurrence only increases global activity without improving selectivity;
-- adaptive stopping correlates with activity magnitude but not task difficulty;
-- shuffled graphs perform as well as or better than the anatomical graph;
-- results are highly unstable to small threshold/gain changes.
+Treat the following plainly as negative or null evidence:
 
-## Next real-data milestone
+- D > 1 does not improve paired regret on the larger corpus;
+- confidence intervals are too broad to distinguish the effect from zero;
+- shuffled/attenuated controls improve equally or more;
+- apparent gains disappear under all-legal scoring;
+- effect depends on one or a few outlier positions;
+- optimized evaluator fails scalar-equivalence tests;
+- results change materially under trivial numerical perturbations.
 
-1. Load MaleCNS v1.0 signed connectivity.
-2. Select a tractable sensory-to-descending-neuron subnetwork before full-CNS runs.
-3. Define a task with an externally verifiable target readout.
-4. Sweep depth under frozen-observation and single-pulse conditions.
-5. Run topology and transmitter-sign controls.
-6. Only then scale to the full graph.
+## Required artifacts
+
+The next large study should preserve:
+
+```text
+results/position_depth_study_v2/raw_position_metrics.csv
+results/position_depth_study_v2/summary_by_depth.csv
+results/position_depth_study_v2/specificity_by_control.csv
+results/position_depth_study_v2/metadata.json
+results/position_depth_study_v2/progress.json
+results/position_depth_study_v2/*.png
+```
+
+Small result tables/plots should be committed. Large caches/data may remain local if hashes and compact summaries are preserved.
