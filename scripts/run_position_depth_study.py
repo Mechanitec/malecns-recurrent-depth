@@ -189,6 +189,8 @@ def main() -> None:
     parser.add_argument("--evaluation-corpus", type=Path, default=Path("data/chess_evaluation_corpus_v2.csv"))
     parser.add_argument("--output", type=Path, default=Path("results/position_depth_study_v2"))
     parser.add_argument("--limit-positions", type=int, default=0, help="Development limit; 0 uses the full corpus")
+    parser.add_argument("--position-start", type=int, default=0, help="Start index in the selected corpus, inclusive")
+    parser.add_argument("--position-end", type=int, default=0, help="End index in the selected corpus, exclusive; 0 uses the corpus end")
     parser.add_argument("--post-eval-count", type=int, default=32)
     parser.add_argument("--analysis-depth", type=int, default=6)
     parser.add_argument("--analysis-threads", type=int, default=1)
@@ -200,10 +202,17 @@ def main() -> None:
         parser.error("--post-eval-count must be >= 0")
     if args.limit_positions < 0:
         parser.error("--limit-positions must be >= 0")
+    if args.position_start < 0:
+        parser.error("--position-start must be >= 0")
+    if args.position_end < 0:
+        parser.error("--position-end must be >= 0")
+    if args.position_end and args.position_end <= args.position_start:
+        parser.error("--position-end must be greater than --position-start")
 
     positions = load_corpus(args.evaluation_corpus)
     if args.limit_positions:
         positions = positions[:args.limit_positions]
+    positions = positions[args.position_start:args.position_end or None]
     selected_variants = (args.variant,) if args.variant else VARIANTS
     args.output.mkdir(parents=True, exist_ok=True)
     raw_path = args.output / "raw_position_metrics.csv"

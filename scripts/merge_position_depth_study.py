@@ -18,19 +18,20 @@ def main() -> None:
     all_rows = []
     fields = None
     for variant in variants:
-        path = args.input_root / variant / "raw_position_metrics.csv"
-        if not path.exists():
-            raise FileNotFoundError(path)
-        with path.open(newline="", encoding="utf-8") as handle:
-            reader = csv.DictReader(handle)
-            if fields is None:
-                fields = reader.fieldnames
-            elif reader.fieldnames != fields:
-                raise ValueError(f"CSV schema mismatch: {path}")
-            rows = list(reader)
-        if {row["variant"] for row in rows} != {variant}:
-            raise ValueError(f"unexpected variant rows in {path}")
-        all_rows.extend(rows)
+        paths = sorted((args.input_root / variant).rglob("raw_position_metrics.csv"))
+        if not paths:
+            raise FileNotFoundError(args.input_root / variant)
+        for path in paths:
+            with path.open(newline="", encoding="utf-8") as handle:
+                reader = csv.DictReader(handle)
+                if fields is None:
+                    fields = reader.fieldnames
+                elif reader.fieldnames != fields:
+                    raise ValueError(f"CSV schema mismatch: {path}")
+                rows = list(reader)
+            if rows and {row["variant"] for row in rows} != {variant}:
+                raise ValueError(f"unexpected variant rows in {path}")
+            all_rows.extend(rows)
     assert fields is not None
     keys = [(row["variant"], row["position_id"], int(row["depth"])) for row in all_rows]
     if len(keys) != len(set(keys)):
