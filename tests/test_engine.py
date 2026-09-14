@@ -114,3 +114,31 @@ def test_scalar_trajectory_matches_requested_depths():
     snapshots = engine.run_trajectory(x, depths=(1, 3, 6))
     for depth, snapshot in snapshots.items():
         np.testing.assert_allclose(snapshot, engine.run(x, max_depth=depth).state, rtol=0, atol=1e-7)
+
+
+def test_batch_trajectory_observations_are_per_candidate_and_do_not_change_states():
+    graph = ConnectomeGraph.from_edges(
+        3,
+        np.array([0, 1, 2], dtype=np.int64),
+        np.array([1, 2, 0], dtype=np.int64),
+        np.array([0.2, -0.3, 0.4], dtype=np.float32),
+        normalize_incoming=False,
+    )
+    engine = RecurrentDepthEngine(graph, leak=0.0, recurrent_gain=1.0, input_gain=1.0)
+    sensory = np.array([[1.0, 0.5], [0.0, 1.0], [0.2, 0.0]], dtype=np.float32)
+    plain = engine.run_batch_trajectory(sensory, depths=(1, 2), clamp_sensory=True)
+    observed = engine.run_batch_trajectory(
+        sensory, depths=(1, 2), clamp_sensory=True, observe=True
+    )
+    for depth in (1, 2):
+        np.testing.assert_allclose(plain.snapshots[depth], observed.snapshots[depth])
+        metrics = observed.observations[depth]
+        assert set(metrics) == {
+            "state_norm",
+            "delta",
+            "recurrent_drive_norm",
+            "sensory_drive_norm",
+            "recurrent_sensory_ratio",
+            "saturation_fraction",
+        }
+        assert all(value.shape == (2,) for value in metrics.values())

@@ -1,0 +1,151 @@
+{
+  "seed": 23,
+  "requested_swaps": 100000,
+  "corrected_control": "degree_preserving_edge_swap_v2",
+  "original": {
+    "n_neurons": 164620,
+    "n_edges": 10227924,
+    "weight_sum": 11830.37109375,
+    "absolute_weight_sum": 163168.0,
+    "self_loops": 42,
+    "in_degree": {
+      "min": 0.0,
+      "max": 9181.0,
+      "mean": 62.130506621309685,
+      "std": 100.67778450708809,
+      "q25": 20.0,
+      "median": 35.0,
+      "q75": 70.0
+    },
+    "out_degree": {
+      "min": 0.0,
+      "max": 7749.0,
+      "mean": 62.130506621309685,
+      "std": 90.47956634973464,
+      "q25": 27.0,
+      "median": 45.0,
+      "q75": 73.0
+    },
+    "weighted_in_strength": {
+      "min": 0.0,
+      "max": 1.0000003576278687,
+      "mean": 0.9911796859545082,
+      "std": 0.09350141982504263,
+      "q25": 0.9999999403953552,
+      "median": 1.0,
+      "q75": 1.0
+    },
+    "weighted_out_strength": {
+      "min": 0.0,
+      "max": 760.7225341796875,
+      "mean": 0.9911796979086837,
+      "std": 3.6908180086794604,
+      "q25": 0.2772686332464218,
+      "median": 0.5350397527217865,
+      "q75": 1.130420595407486
+    },
+    "weak_components": 531
+  },
+  "current_shuffle": {
+    "n_neurons": 164620,
+    "n_edges": 10207236,
+    "weight_sum": 11830.37109375,
+    "absolute_weight_sum": 163168.0,
+    "self_loops": 133,
+    "in_degree": {
+      "min": 0.0,
+      "max": 8580.0,
+      "mean": 62.00483537844733,
+      "std": 99.27789366725197,
+      "q25": 20.0,
+      "median": 35.0,
+      "q75": 70.0
+    },
+    "out_degree": {
+      "min": 0.0,
+      "max": 7212.0,
+      "mean": 62.00483537844733,
+      "std": 88.73293505526732,
+      "q25": 27.0,
+      "median": 45.0,
+      "q75": 73.0
+    },
+    "weighted_in_strength": {
+      "min": 0.0,
+      "max": 143.85214233398438,
+      "mean": 0.9911796893767945,
+      "std": 1.6260887674038937,
+      "q25": 0.2743772864341736,
+      "median": 0.5533910095691681,
+      "q75": 1.135694295167923
+    },
+    "weighted_out_strength": {
+      "min": 0.0,
+      "max": 760.724853515625,
+      "mean": 0.9911797141791003,
+      "std": 3.6908207586798274,
+      "q25": 0.2772686332464218,
+      "median": 0.5350397229194641,
+      "q75": 1.1304205656051636
+    },
+    "weak_components": 530
+  },
+  "corrected_shuffle": {
+    "n_neurons": 164620,
+    "n_edges": 10227924,
+    "weight_sum": 11830.3701171875,
+    "absolute_weight_sum": 163168.0,
+    "self_loops": 42,
+    "in_degree": {
+      "min": 0.0,
+      "max": 9181.0,
+      "mean": 62.130506621309685,
+      "std": 100.67778450708809,
+      "q25": 20.0,
+      "median": 35.0,
+      "q75": 70.0
+    },
+    "out_degree": {
+      "min": 0.0,
+      "max": 7749.0,
+      "mean": 62.130506621309685,
+      "std": 90.47956634973464,
+      "q25": 27.0,
+      "median": 45.0,
+      "q75": 73.0
+    },
+    "weighted_in_strength": {
+      "min": 0.0,
+      "max": 3.7603609561920166,
+      "mean": 0.9911796880410532,
+      "std": 0.11167856764650849,
+      "q25": 0.9926899671554565,
+      "median": 1.0,
+      "q75": 1.0000001192092896
+    },
+    "weighted_out_strength": {
+      "min": 0.0,
+      "max": 760.7228393554688,
+      "mean": 0.9911796993406706,
+      "std": 3.69081840600285,
+      "q25": 0.2772686332464218,
+      "median": 0.5350397527217865,
+      "q75": 1.1304205656051636
+    },
+    "weak_components": 531
+  },
+  "current_shuffle_invariants": {
+    "in_degree_sequence_exact": false,
+    "out_degree_sequence_exact": false,
+    "weighted_in_strength_sequence_exact": false,
+    "weighted_out_strength_sequence_exact": false,
+    "duplicate_coordinate_collisions": 20770
+  },
+  "corrected_shuffle_invariants": {
+    "in_degree_sequence_exact": true,
+    "out_degree_sequence_exact": true,
+    "weighted_in_strength_sequence_exact": false,
+    "weighted_out_strength_sequence_exact": false,
+    "duplicate_coordinate_collisions": 0
+  }
+}

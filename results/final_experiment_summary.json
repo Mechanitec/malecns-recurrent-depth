@@ -366,6 +366,16 @@
     "path": "results\\first_fly_rating\\serious_400_bounded",
     "games_recorded": 400,
     "expected_games": 400,
+    "max_plies": 2,
+    "max_plies_source": "MAX_PLIES_ADJUDICATION observed",
+    "full_legal_candidates": false,
+    "bounded_candidates": true,
+    "termination_counts": {
+      "MAX_PLIES_ADJUDICATION": 400
+    },
+    "candidate_evaluations": 1600,
+    "legal_candidates_from_pgn": 8000,
+    "recurrent_passes_per_candidate_depth": 1600,
     "elo": {
       "rating": 445.06389937333836,
       "standard_error": 18.698483608911864,
@@ -375,9 +385,6 @@
       "total_score": 200.0,
       "censored": null
     },
-    "bounded_candidates": null,
-    "full_legal_candidates": true,
-    "max_plies": null,
     "analysis_depth": 1,
     "wins": 0,
     "draws": 400,
@@ -542,5 +549,5 @@
       "exists": true
     }
   },
-  "scientific_caveat": "The serious rating protocol uses short games from prepared openings to control full-graph runtime. The position-depth study uses all legal moves and paired bootstrap statistics; do not treat a short-game estimate as a long-game playing-strength claim."
+  "scientific_caveat": "The serious rating protocol uses short games from prepared openings and bounded candidate scoring, as derived from the raw PGN and recurrent-pass telemetry. The position-depth study uses all legal moves and paired bootstrap statistics; do not treat a short-game estimate as a long-game playing-strength claim."
 }

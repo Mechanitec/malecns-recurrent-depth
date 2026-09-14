@@ -1,0 +1,93 @@
+{
+  "selection_policy": "every other source group, middle phase when available",
+  "selected_position_ids": [
+    "dev_source_000_offset_12",
+    "dev_source_002_offset_12",
+    "dev_source_004_offset_12",
+    "dev_source_006_offset_12",
+    "dev_source_008_offset_12",
+    "dev_source_010_offset_12",
+    "dev_source_012_offset_12",
+    "dev_source_014_offset_12",
+    "dev_source_016_offset_12",
+    "dev_source_018_offset_12",
+    "dev_source_020_offset_12",
+    "dev_source_022_offset_12",
+    "dev_source_024_offset_12",
+    "dev_source_026_offset_12",
+    "dev_source_028_offset_12",
+    "dev_source_030_offset_12",
+    "dev_source_032_offset_12",
+    "dev_source_034_offset_12",
+    "dev_source_036_offset_12",
+    "dev_source_038_offset_12",
+    "dev_source_040_offset_12",
+    "dev_source_042_offset_12",
+    "dev_source_044_offset_12",
+    "dev_source_046_offset_12",
+    "dev_source_048_offset_12",
+    "dev_source_050_offset_12",
+    "dev_source_052_offset_12",
+    "dev_source_054_offset_12",
+    "dev_source_056_offset_12",
+    "dev_source_058_offset_12",
+    "dev_source_060_offset_12",
+    "dev_source_062_offset_12"
+  ],
+  "node_budgets": [
+    1000,
+    10000,
+    50000
+  ],
+  "threads": 1,
+  "hash_mb": 128,
+  "teacher": {
+    "1000": {
+      "engine": {
+        "name": "Stockfish 19",
+        "author": "the Stockfish developers (see AUTHORS file)"
+      },
+      "executable": "C:\\Users\\Zatoichi\\AppData\\Local\\Microsoft\\WinGet\\Links\\stockfish.exe",
+      "executable_sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+      "nodes": 1000,
+      "threads": 1,
+      "hash_mb": 128,
+      "mate_score_cp": 100000,
+      "target_scale_cp": 400.0
+    },
+    "10000": {
+      "engine": {
+        "name": "Stockfish 19",
+        "author": "the Stockfish developers (see AUTHORS file)"
+      },
+      "executable": "C:\\Users\\Zatoichi\\AppData\\Local\\Microsoft\\WinGet\\Links\\stockfish.exe",
+      "executable_sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+      "nodes": 10000,
+      "threads": 1,
+      "hash_mb": 128,
+      "mate_score_cp": 100000,
+      "target_scale_cp": 400.0
+    },
+    "50000": {
+      "engine": {
+        "name": "Stockfish 19",
+        "author": "the Stockfish developers (see AUTHORS file)"
+      },
+      "executable": "C:\\Users\\Zatoichi\\AppData\\Local\\Microsoft\\WinGet\\Links\\stockfish.exe",
+      "executable_sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+      "nodes": 50000,
+      "threads": 1,
+      "hash_mb": 128,
+      "mate_score_cp": 100000,
+      "target_scale_cp": 400.0
+    }
+  },
+  "positions": 32,
+  "rows": 96,
+  "max_node_budget": 50000,
+  "best_move_agreement_by_nodes": {
+    "1000": 0.5,
+    "10000": 0.625,
+    "50000": 1.0
+  }
+}

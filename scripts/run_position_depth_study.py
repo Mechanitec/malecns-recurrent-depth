@@ -17,6 +17,7 @@ from malecns_rd.checkpoint_agent import load_fly_agent_from_checkpoint
 from malecns_rd.chess_agent import FlyCandidateMoveAgent
 from malecns_rd.engine import RecurrentDepthEngine
 from malecns_rd.graph import ConnectomeGraph
+from malecns_rd.graph_controls import degree_preserving_edge_swap_v2
 from malecns_rd.position_analysis import AnalysisConfig, StockfishPositionEvaluator
 
 
@@ -24,6 +25,7 @@ DEPTHS = (1, 2, 4, 8, 16, 32, 64)
 VARIANTS = (
     "original",
     "degree_preserving_topology_shuffle",
+    "degree_preserving_edge_swap_v2",
     "transmitter_sign_shuffle",
     "recurrent_edges_attenuated_0.05",
 )
@@ -111,6 +113,8 @@ def graph_variant(graph: ConnectomeGraph, variant: str, seed: int) -> Connectome
         return graph
     if variant == "recurrent_edges_attenuated_0.05":
         return ConnectomeGraph(graph.body_ids.copy(), (graph.weights * np.float32(0.05)).tocsr())
+    if variant == "degree_preserving_edge_swap_v2":
+        return degree_preserving_edge_swap_v2(graph, seed)
     rng = np.random.default_rng(seed)
     weights = graph.weights.tocoo(copy=True)
     if variant == "degree_preserving_topology_shuffle":

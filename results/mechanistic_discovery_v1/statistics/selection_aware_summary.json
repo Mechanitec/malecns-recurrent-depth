@@ -1,0 +1,26 @@
+{
+  "best_observed_depth": 2,
+  "best_observed_mean_regret_cp": 570.5071428571429,
+  "best_observed_paired_improvement_cp": 10.878571428571428,
+  "best_observed_nominal_position_ci_cp": [
+    -59.40392857142857,
+    80.25017857142858
+  ],
+  "best_observed_cluster_ci_cp": [
+    -92.48410714285714,
+    106.32982142857138
+  ],
+  "selection_aware_bootstrap_ci_cp": [
+    0.0,
+    104.90767857142858
+  ],
+  "selected_depth_frequency": {
+    "1": 760,
+    "2": 1149,
+    "4": 9,
+    "8": 82
+  },
+  "interpretation": "D2 was selected after inspecting the same corpus; selection-aware values are exploratory and not confirmatory.",
+  "bootstrap_samples": 2000,
+  "bootstrap_seed": 23
+}

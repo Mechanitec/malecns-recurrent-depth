@@ -1,0 +1,51 @@
+{
+  "status": "development_only",
+  "positions": 256,
+  "candidate_rows": 7496,
+  "source_groups": 64,
+  "expected_positions": 256,
+  "offsets_after_source_start": [
+    4,
+    12,
+    20,
+    28
+  ],
+  "source_seed": 1001,
+  "source_policy": "independent seeded random legal continuations from the standard initial position",
+  "phases": [
+    "early",
+    "middle",
+    "late"
+  ],
+  "teacher_dataset": "data\\teacher_dataset_v1.csv",
+  "teacher_dataset_sha256": "593191c99231b8a86569db5619436f89ebf144db88f1468b3aa437212b446251",
+  "old_evaluation_corpus": "data\\chess_evaluation_corpus_v2.csv",
+  "old_evaluation_corpus_sha256": "be6b417c3438f58e8a984e8c315d6291bc8bef1cda9fd8ee0d14d67b7d7ae3a3",
+  "stockfish": {
+    "engine": {
+      "name": "Stockfish 19",
+      "author": "the Stockfish developers (see AUTHORS file)"
+    },
+    "executable": "C:\\Users\\Zatoichi\\AppData\\Local\\Microsoft\\WinGet\\Links\\stockfish.exe",
+    "executable_sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+    "nodes": 10000,
+    "threads": 1,
+    "hash_mb": 128,
+    "mate_score_cp": 100000,
+    "target_scale_cp": 400.0
+  },
+  "columns": [
+    "position_id",
+    "source_game_id",
+    "phase",
+    "ply",
+    "fen",
+    "side_to_move",
+    "move_uci",
+    "teacher_cp",
+    "teacher_target",
+    "is_best",
+    "legal_move_count"
+  ],
+  "corpus_sha256": "50e7234301e2b1db2acb4c7eec7b205ebe09a0ab6994942a19419a5503ec0be9"
+}

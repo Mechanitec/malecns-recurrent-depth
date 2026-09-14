@@ -1,0 +1,8 @@
+{
+  "input": "results\\position_depth_study_v2\\raw_position_metrics.csv",
+  "source_group_field": "source_game_id",
+  "source_groups": 20,
+  "bootstrap_samples": 2000,
+  "bootstrap_seed": 23,
+  "uncertainty_unit": "source_game_id cluster"
+}

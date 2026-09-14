@@ -20,6 +20,7 @@ class BatchTrajectoryResult:
 
     snapshots: dict[int, np.ndarray]
     latency_s: dict[int, float]
+    observations: dict[int, dict[str, np.ndarray]] | None = None
 
 
 class RecurrentDepthEngine:
@@ -145,6 +146,7 @@ class RecurrentDepthEngine:
         *,
         depths: tuple[int, ...] = (1, 2, 4, 8, 16, 32, 64),
         clamp_sensory: bool = True,
+        observe: bool = False,
     ) -> BatchTrajectoryResult:
         """Run one batched trajectory and capture exact intermediate states.
 
@@ -168,6 +170,7 @@ class RecurrentDepthEngine:
         zero_sensory = np.zeros_like(sensory)
         snapshots: dict[int, np.ndarray] = {}
         latency_s: dict[int, float] = {}
+        observations: dict[int, dict[str, np.ndarray]] | None = {} if observe else None
         started = time.perf_counter()
         wanted = set(requested)
         for depth in range(1, requested[-1] + 1):
@@ -175,13 +178,38 @@ class RecurrentDepthEngine:
             recurrent = self.graph.weights @ state
             drive = self.recurrent_gain * recurrent + self.input_gain * step_input
             proposal = self._activate(drive)
+            previous_state = state
             state = (self.leak * state + (1.0 - self.leak) * proposal).astype(
                 np.float32, copy=False
             )
             if depth in wanted:
                 snapshots[depth] = state.copy()
                 latency_s[depth] = time.perf_counter() - started
-        return BatchTrajectoryResult(snapshots=snapshots, latency_s=latency_s)
+                if observations is not None:
+                    state_norm = np.linalg.norm(state, axis=0).astype(np.float32)
+                    denominator = np.maximum(np.linalg.norm(previous_state, axis=0), 1e-6)
+                    delta = (np.linalg.norm(state - previous_state, axis=0) / denominator).astype(
+                        np.float32
+                    )
+                    recurrent_norm = np.linalg.norm(recurrent, axis=0).astype(np.float32)
+                    sensory_norm = np.linalg.norm(self.input_gain * step_input, axis=0).astype(
+                        np.float32
+                    )
+                    observations[depth] = {
+                        "state_norm": state_norm,
+                        "delta": delta,
+                        "recurrent_drive_norm": recurrent_norm,
+                        "sensory_drive_norm": sensory_norm,
+                        "recurrent_sensory_ratio": (
+                            recurrent_norm / np.maximum(sensory_norm, 1e-6)
+                        ).astype(np.float32),
+                        "saturation_fraction": np.mean(np.abs(proposal) >= 0.95, axis=0).astype(
+                            np.float32
+                        ),
+                    }
+        return BatchTrajectoryResult(
+            snapshots=snapshots, latency_s=latency_s, observations=observations
+        )
 
     def run_trajectory(
         self,

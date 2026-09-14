@@ -6,6 +6,8 @@ import csv
 import json
 from pathlib import Path
 
+from malecns_rd.reporting import derive_tournament_artifact_metadata
+
 
 def read_json(path: Path, default=None):
     if not path.exists():
@@ -63,6 +65,9 @@ def main() -> None:
     control_rating_rows = read_csv(artifacts["control_ratings"])
     position_summary = read_json(artifacts["position_study_summary"], {})
     evaluator_benchmark = read_json(artifacts["position_study_evaluator_benchmark"], {})
+    serious_artifact = derive_tournament_artifact_metadata(
+        serious_games, reference_depth=16
+    )
     expected_games = int(args.expected_serious_games or serious_elo.get("elo", {}).get("n_games", 0))
     expected_games = max(expected_games, len(serious_games))
     status = "complete_short_game_protocol" if expected_games >= 400 else "provisional_incomplete"
@@ -82,10 +87,17 @@ def main() -> None:
             "path": str(args.serious_run),
             "games_recorded": len(serious_games),
             "expected_games": expected_games,
+            "max_plies": serious_artifact["max_plies"],
+            "max_plies_source": serious_artifact["max_plies_source"],
+            "full_legal_candidates": serious_artifact["full_legal_candidates"],
+            "bounded_candidates": serious_artifact["bounded_candidates"],
+            "termination_counts": serious_artifact["termination_counts"],
+            "candidate_evaluations": serious_artifact["candidate_evaluations"],
+            "legal_candidates_from_pgn": serious_artifact["legal_candidates_from_pgn"],
+            "recurrent_passes_per_candidate_depth": serious_artifact[
+                "recurrent_passes_per_candidate_depth"
+            ],
             "elo": serious_elo.get("elo"),
-            "bounded_candidates": args.serious_max_candidates,
-            "full_legal_candidates": args.serious_max_candidates is None,
-            "max_plies": args.serious_max_plies,
             "analysis_depth": 1,
             "wins": wins,
             "draws": draws,
@@ -106,7 +118,7 @@ def main() -> None:
         "position_depth_study": position_summary,
         "position_depth_evaluator_benchmark": evaluator_benchmark,
         "artifacts": {name: {"path": str(path), "exists": path.exists()} for name, path in artifacts.items()},
-        "scientific_caveat": "The serious rating protocol uses short games from prepared openings to control full-graph runtime. The position-depth study uses all legal moves and paired bootstrap statistics; do not treat a short-game estimate as a long-game playing-strength claim.",
+        "scientific_caveat": "The serious rating protocol uses short games from prepared openings and bounded candidate scoring, as derived from the raw PGN and recurrent-pass telemetry. The position-depth study uses all legal moves and paired bootstrap statistics; do not treat a short-game estimate as a long-game playing-strength claim.",
     }
     output = root / "results/final_experiment_summary.json"
     output.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")

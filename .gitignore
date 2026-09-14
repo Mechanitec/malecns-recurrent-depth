@@ -10,3 +10,6 @@ local_config.toml
 # Large MaleCNS datasets are local-only.
 data/
 *.feather
+!data/
+!data/chess_development_corpus_v1.csv
+!data/chess_development_corpus_v1.csv.metadata.json
