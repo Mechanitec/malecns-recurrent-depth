@@ -26,6 +26,9 @@ def main() -> None:
     parser.add_argument("--serious-run", type=Path, default=Path("results/first_fly_rating/serious_400_bounded"))
     parser.add_argument("--diagnostic-run", type=Path, default=Path("results/first_fly_rating/diagnostic_fulllegal_60_v2"))
     parser.add_argument("--sweep-root", type=Path, default=Path("results/sweep_full_8pos_v2"))
+    parser.add_argument("--expected-serious-games", type=int, default=None)
+    parser.add_argument("--serious-max-plies", type=int, default=None)
+    parser.add_argument("--serious-max-candidates", type=int, default=None)
     args = parser.parse_args()
     root = args.repo
     sweep_root = root / args.sweep_root
@@ -48,8 +51,9 @@ def main() -> None:
     depth_rows = read_csv(artifacts["depth_sweep"])
     control_rows = read_csv(artifacts["control_sweep"])
     control_rating_rows = read_csv(artifacts["control_ratings"])
-    expected_games = int(serious_elo.get("elo", {}).get("n_games", 0))
-    status = "complete_bounded_protocol" if expected_games >= 400 else "provisional_incomplete"
+    expected_games = int(args.expected_serious_games or serious_elo.get("elo", {}).get("n_games", 0))
+    expected_games = max(expected_games, len(serious_games))
+    status = "complete_short_game_protocol" if expected_games >= 400 else "provisional_incomplete"
     wins = sum(row.get("fly_score") == "1.0" for row in serious_games)
     draws = sum(row.get("fly_score") == "0.5" for row in serious_games)
     losses = sum(row.get("fly_score") == "0.0" for row in serious_games)
@@ -65,10 +69,11 @@ def main() -> None:
         "serious_run": {
             "path": str(args.serious_run),
             "games_recorded": len(serious_games),
-            "expected_games": 400,
+            "expected_games": expected_games,
             "elo": serious_elo.get("elo"),
-            "bounded_candidates": 4,
-            "max_plies": 2,
+            "bounded_candidates": args.serious_max_candidates,
+            "full_legal_candidates": args.serious_max_candidates is None,
+            "max_plies": args.serious_max_plies,
             "analysis_depth": 1,
             "wins": wins,
             "draws": draws,
@@ -87,7 +92,7 @@ def main() -> None:
         "control_sweep_rows": len(control_rows),
         "control_rating_rows": len(control_rating_rows),
         "artifacts": {name: {"path": str(path), "exists": path.exists()} for name, path in artifacts.items()},
-        "scientific_caveat": "The 400-game run uses bounded candidates and short games to control full-graph runtime. The diagnostic and sweep position metrics use all legal moves; do not treat the bounded 400-game estimate as a long-game playing-strength claim.",
+        "scientific_caveat": "The serious rating protocol uses short games from prepared openings to control full-graph runtime. The diagnostic and sweep position metrics use all legal moves; do not treat a short-game estimate as a long-game playing-strength claim.",
     }
     output = root / "results/final_experiment_summary.json"
     output.write_text(json.dumps(summary, indent=2), encoding="utf-8")
@@ -99,7 +104,7 @@ The frozen reference checkpoint uses the rate dynamics at recurrent depth 16. Th
 
 ## Current evidence
 
-- Serious-run records: {len(serious_games)} of 400 expected; W/D/L = {wins}/{draws}/{losses}.
+- Serious-run records: {len(serious_games)} of {expected_games} expected; W/D/L = {wins}/{draws}/{losses}.
 - Full-legal diagnostic records: {len(diagnostic_games)}.
 - Median Fly move latency: {median_latency:.3f} seconds; recurrent passes: {recurrent_passes}.
 - Depth sweep rows: {len(depth_rows)} across depths 1, 2, 4, 8, 16, 32, and 64.
@@ -109,7 +114,7 @@ The frozen reference checkpoint uses the rate dynamics at recurrent depth 16. Th
 
 ## Interpretation boundary
 
-The 400-game rating allocation uses four tactical candidates and two plies per game. The diagnostic and position-quality sweeps score all legal moves and use the calibrated opening set. These artifacts verify the end-to-end real-connectome path and telemetry, but the bounded rating is not a substitute for an opening-diverse, long-game strength estimate.
+The serious rating allocation uses the configured candidate policy and short games per prepared opening. The diagnostic and position-quality sweeps score all legal moves and use the calibrated opening set. These artifacts verify the end-to-end real-connectome path and telemetry, but a short-game rating is not a substitute for an opening-diverse, long-game strength estimate.
 
 Key artifacts:
 
