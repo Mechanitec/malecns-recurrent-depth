@@ -1,0 +1,203 @@
+{
+  "cache": "data\\chess_activations_depth16_v1.npz",
+  "cache_shape": [
+    2000,
+    256
+  ],
+  "cache_metadata": {
+    "activation_dtype": "float32",
+    "activation_shape": [
+      2000,
+      256
+    ],
+    "clamp_sensory": true,
+    "dynamics": "RecurrentDepthEngine",
+    "graph_edges": 10227924,
+    "graph_neurons": 164620,
+    "male_cns_inputs": {
+      "annotations_sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+      "neurotransmitters_sha256": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621",
+      "weights_sha256": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1"
+    },
+    "min_synapses": 3,
+    "population_indices": {
+      "readout_sha256": "29d1f49bc569f0b77732edd5ee609846b079709a168aeb8c61974b21fe4f54c9",
+      "sensory_sha256": "3184ffdff7cc11243af0443cb7348027f2bd08cc390a7723ef8da3524b6a7706"
+    },
+    "population_manifest": {
+      "path": "data\\chess_population_manifest.json",
+      "sha256": "99127f96cc26d2a2e8f6befbdcea7240e335f48c99c4cab99d564f783f59d361"
+    },
+    "projector_amplitude": 1.0,
+    "projector_fanout": 4,
+    "projector_seed": 0,
+    "recurrent_depth": 16,
+    "teacher_dataset": {
+      "path": "data\\teacher_dataset_v1.csv",
+      "sha256": "593191c99231b8a86569db5619436f89ebf144db88f1468b3aa437212b446251"
+    }
+  },
+  "checkpoint": "results\\training\\v1_depth16_rate_large\\readout_checkpoint.npz",
+  "checkpoint_metadata": {
+    "activation_dtype": "float32",
+    "activation_shape": [
+      2000,
+      256
+    ],
+    "checkpoint_selection_metric": "validation_pair_accuracy",
+    "clamp_sensory": true,
+    "dynamics": "RecurrentDepthEngine",
+    "epochs": 200,
+    "graph_edges": 10227924,
+    "graph_neurons": 164620,
+    "l2": 0.0001,
+    "learning_rate": 0.03,
+    "male_cns_inputs": {
+      "annotations_sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+      "neurotransmitters_sha256": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621",
+      "weights_sha256": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1"
+    },
+    "min_synapses": 3,
+    "population_indices": {
+      "readout_sha256": "29d1f49bc569f0b77732edd5ee609846b079709a168aeb8c61974b21fe4f54c9",
+      "sensory_sha256": "3184ffdff7cc11243af0443cb7348027f2bd08cc390a7723ef8da3524b6a7706"
+    },
+    "population_manifest": {
+      "path": "data\\chess_population_manifest.json",
+      "sha256": "99127f96cc26d2a2e8f6befbdcea7240e335f48c99c4cab99d564f783f59d361"
+    },
+    "projector_amplitude": 1.0,
+    "projector_fanout": 4,
+    "projector_seed": 0,
+    "recurrent_depth": 16,
+    "selected_epoch": 178,
+    "teacher_dataset": {
+      "path": "data\\teacher_dataset_v1.csv",
+      "sha256": "593191c99231b8a86569db5619436f89ebf144db88f1468b3aa437212b446251"
+    },
+    "train_pair_accuracy": 0.7702100572883513,
+    "train_top1_accuracy": 0.09615384615384616,
+    "validation_pair_accuracy": 0.5824175824175825,
+    "validation_top1_accuracy": 0.23076923076923078
+  },
+  "positions": 65,
+  "train_positions": 52,
+  "validation_positions": 13,
+  "features": {
+    "global": {
+      "min": -0.032774753868579865,
+      "max": 0.031302522867918015,
+      "mean": 0.0001055084958349297,
+      "std": 0.0019054047732463553,
+      "p01": -0.0030269624083302917,
+      "p50": -2.557044695095101e-06,
+      "p99": 0.008211302477866476
+    },
+    "per_feature_mean_stats": {
+      "min": -0.006276654528960535,
+      "max": 0.014602940289009013,
+      "mean": 0.00010550849583492971,
+      "std": 0.0014411159040133247,
+      "p01": -0.0023241640212273056,
+      "p50": 3.89758435413512e-06,
+      "p99": 0.0067558192651512305
+    },
+    "per_feature_std_stats": {
+      "min": 1.7310010371404092e-05,
+      "max": 0.011246158577474316,
+      "mean": 0.000505581916630945,
+      "std": 0.0011393591298118574,
+      "p01": 3.773544973771238e-05,
+      "p50": 0.00018389361592695275,
+      "p99": 0.005497878032312747
+    },
+    "near_zero_fraction": 0.0007734375,
+    "saturated_fraction_abs_ge_0_99": 0.0
+  },
+  "within_position_feature_distance": {
+    "mean_l2": 0.0043130382296251825,
+    "median_l2": 0.0025399204694837112,
+    "pairs": 1935
+  },
+  "readout": {
+    "weight_stats": {
+      "min": -1.5068931579589844,
+      "max": 1.2589136362075806,
+      "mean": 0.004281160723792254,
+      "std": 0.208965402720137,
+      "p01": -0.9879048079252243,
+      "p50": 0.0008032084151636809,
+      "p99": 0.5933822870254509
+    },
+    "weight_l2_norm": 3.3441480492062228,
+    "score_stats": {
+      "min": -0.026823057365162606,
+      "max": 0.024007849614990615,
+      "mean": 0.003521008872234772,
+      "std": 0.008409622823169994,
+      "p01": -0.018306052859325003,
+      "p50": 0.004693808748758573,
+      "p99": 0.01915943968090977
+    },
+    "score_variance": 7.072175602798166e-05,
+    "gradient_l2_norm_at_checkpoint": 0.00014590060342894215
+  },
+  "teacher": {
+    "target_stats": {
+      "min": -1.0,
+      "max": 1.0,
+      "mean": -0.42078138470300475,
+      "std": 0.5488044287402795,
+      "p01": -0.9905041980743409,
+      "p50": -0.5874406397342682,
+      "p99": 0.9904096788167953
+    },
+    "pair_count": 1935,
+    "pair_position_count": 65,
+    "best_margin_stats": {
+      "min": 0.0007774829864501953,
+      "max": 1.5254587531089783,
+      "mean": 0.22077561518034108,
+      "std": 0.33565489988452196,
+      "p01": 0.0016423702239990235,
+      "p50": 0.10163429379463196,
+      "p99": 1.5082974219322205
+    },
+    "candidate_count_stats": {
+      "min": 18.0,
+      "max": 45.0,
+      "mean": 30.76923076923077,
+      "std": 6.040298593661718,
+      "p01": 18.64,
+      "p50": 30.0,
+      "p99": 43.72
+    }
+  },
+  "spectrum": {
+    "sample_rows": 2000,
+    "singular_values_top10": [
+      0.7137197555467104,
+      0.2793185270309417,
+      0.25459255265805075,
+      0.1732768046833422,
+      0.1642695222417542,
+      0.1320693968465829,
+      0.1047472629041981,
+      0.10048747216055379,
+      0.08380239663922791,
+      0.07547680218934981
+    ],
+    "effective_rank": 4.552172291611998,
+    "nonzero_singular_values": 242
+  },
+  "train_validation": {
+    "checkpoint_train_pair_accuracy": 0.7702100572883513,
+    "checkpoint_validation_pair_accuracy": 0.5824175824175825,
+    "checkpoint_train_top1_accuracy": 0.09615384615384616,
+    "checkpoint_validation_top1_accuracy": 0.23076923076923078,
+    "recomputed_all_pair_accuracy": 0.7348837209302326,
+    "recomputed_all_top1_accuracy": 0.12307692307692308,
+    "split_seed": 0,
+    "note": "The cache contains the frozen v1 activation subset; no independent evaluation positions are used here."
+  }
+}

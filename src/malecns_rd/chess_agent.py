@@ -38,6 +38,9 @@ class FlyCandidateMoveAgent:
     max_candidates: int | None = None
     name: str = "MaleCNS-RD"
     last_decision: dict[str, object] = field(default_factory=dict, init=False, repr=False)
+    last_decisions_by_depth: dict[int, dict[str, object]] = field(
+        default_factory=dict, init=False, repr=False
+    )
 
     def __post_init__(self) -> None:
         self.readout_indices = np.asarray(self.readout_indices, dtype=np.int64)
@@ -118,6 +121,72 @@ class FlyCandidateMoveAgent:
             ],
         }
         return scored
+
+    def rank_moves_by_depth(
+        self,
+        board,
+        depths: tuple[int, ...] = (1, 2, 4, 8, 16, 32, 64),
+    ) -> dict[int, list[tuple[float, str, object]]]:
+        """Rank one position at several depths from one rate trajectory.
+
+        This method is intended for frozen depth studies. It preserves legal
+        move ordering and scoring semantics while reusing each candidate's
+        recurrent trajectory across all requested depths.
+        """
+        if not isinstance(self.engine, RecurrentDepthEngine):
+            raise TypeError("multi-depth ranking requires RecurrentDepthEngine")
+        legal = list(board.legal_moves)
+        if not legal:
+            raise ValueError("cannot choose a move in a terminal position")
+        requested = tuple(int(depth) for depth in depths)
+        if not requested or tuple(sorted(set(requested))) != requested:
+            raise ValueError("depths must be sorted and unique")
+        if any(depth < 1 for depth in requested):
+            raise ValueError("depths must be >= 1")
+        if self.max_candidates is not None and len(legal) > self.max_candidates:
+            def priority(move):
+                return (
+                    int(move.promotion is not None),
+                    int(board.is_capture(move)),
+                    int(board.gives_check(move)),
+                    int(board.is_castling(move)),
+                    move.uci(),
+                )
+
+            legal = sorted(legal, key=priority, reverse=True)[: self.max_candidates]
+
+        sensory = np.column_stack([
+            self.projector.project(encode_board_move(board, move)) for move in legal
+        ])
+        trajectory = self.engine.run_batch_trajectory(
+            sensory,
+            depths=requested,
+            clamp_sensory=self.clamp_sensory,
+        )
+        result: dict[int, list[tuple[float, str, object]]] = {}
+        self.last_decisions_by_depth = {}
+        for depth in requested:
+            values = trajectory.snapshots[depth][self.readout_indices, :].T
+            scores = values @ self.readout_weights
+            scored = [(float(score), move.uci(), move) for score, move in zip(scores, legal)]
+            scored.sort(key=lambda item: (item[0], item[1]), reverse=True)
+            result[depth] = scored
+            decision = {
+                "depth": depth,
+                "candidate_count": len(scored),
+                "recurrent_passes": len(scored) * depth,
+                "score_margin": (
+                    float(scored[0][0] - scored[1][0]) if len(scored) > 1 else None
+                ),
+                "latency_s": trajectory.latency_s[depth],
+                "candidates": [
+                    {"move": uci, "score": float(score)}
+                    for score, uci, _ in scored
+                ],
+            }
+            self.last_decisions_by_depth[depth] = decision
+            self.last_decision = decision
+        return result
 
     def choose_move(self, board):
         scored = self.rank_moves(board)

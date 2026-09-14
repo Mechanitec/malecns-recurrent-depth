@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import time
 import numpy as np
 from .graph import ConnectomeGraph
 
@@ -11,6 +12,14 @@ class RunResult:
     depth_used: int
     deltas: list[float]
     state_norms: list[float]
+
+
+@dataclass
+class BatchTrajectoryResult:
+    """Intermediate rate states and cumulative wall time by recurrent depth."""
+
+    snapshots: dict[int, np.ndarray]
+    latency_s: dict[int, float]
 
 
 class RecurrentDepthEngine:
@@ -129,6 +138,79 @@ class RecurrentDepthEngine:
                 np.float32, copy=False
             )
         return state
+
+    def run_batch_trajectory(
+        self,
+        sensory: np.ndarray,
+        *,
+        depths: tuple[int, ...] = (1, 2, 4, 8, 16, 32, 64),
+        clamp_sensory: bool = True,
+    ) -> BatchTrajectoryResult:
+        """Run one batched trajectory and capture exact intermediate states.
+
+        The state at each requested depth is the same state that independent
+        calls to :meth:`run_batch` would produce.  ``latency_s`` is cumulative
+        wall time from the first recurrent pass through the requested depth.
+        """
+        sensory = np.asarray(sensory, dtype=np.float32)
+        n = self.graph.n_neurons
+        if sensory.ndim != 2 or sensory.shape[0] != n or sensory.shape[1] == 0:
+            raise ValueError(f"sensory must have shape ({n}, batch)")
+        requested = tuple(int(depth) for depth in depths)
+        if not requested or any(depth < 1 for depth in requested):
+            raise ValueError("depths must contain positive integers")
+        if len(set(requested)) != len(requested):
+            raise ValueError("depths must be unique")
+        if tuple(sorted(requested)) != requested:
+            raise ValueError("depths must be sorted")
+
+        state = np.zeros_like(sensory)
+        zero_sensory = np.zeros_like(sensory)
+        snapshots: dict[int, np.ndarray] = {}
+        latency_s: dict[int, float] = {}
+        started = time.perf_counter()
+        wanted = set(requested)
+        for depth in range(1, requested[-1] + 1):
+            step_input = sensory if (clamp_sensory or depth == 1) else zero_sensory
+            recurrent = self.graph.weights @ state
+            drive = self.recurrent_gain * recurrent + self.input_gain * step_input
+            proposal = self._activate(drive)
+            state = (self.leak * state + (1.0 - self.leak) * proposal).astype(
+                np.float32, copy=False
+            )
+            if depth in wanted:
+                snapshots[depth] = state.copy()
+                latency_s[depth] = time.perf_counter() - started
+        return BatchTrajectoryResult(snapshots=snapshots, latency_s=latency_s)
+
+    def run_trajectory(
+        self,
+        sensory: np.ndarray,
+        *,
+        depths: tuple[int, ...] = (1, 2, 4, 8, 16, 32, 64),
+        clamp_sensory: bool = True,
+    ) -> dict[int, np.ndarray]:
+        """Capture scalar intermediate states using the same recurrent block."""
+        sensory = np.asarray(sensory, dtype=np.float32)
+        n = self.graph.n_neurons
+        if sensory.shape != (n,):
+            raise ValueError(f"sensory must have shape {(n,)}")
+        requested = tuple(int(depth) for depth in depths)
+        if not requested or any(depth < 1 for depth in requested):
+            raise ValueError("depths must contain positive integers")
+        if len(set(requested)) != len(requested) or tuple(sorted(requested)) != requested:
+            raise ValueError("depths must be sorted and unique")
+
+        state = np.zeros(n, dtype=np.float32)
+        zero_sensory = np.zeros_like(sensory)
+        snapshots: dict[int, np.ndarray] = {}
+        wanted = set(requested)
+        for depth in range(1, requested[-1] + 1):
+            step_input = sensory if (clamp_sensory or depth == 1) else zero_sensory
+            state = self.step(state, step_input)
+            if depth in wanted:
+                snapshots[depth] = state.copy()
+        return snapshots
 
     def run_until_confident(
         self,

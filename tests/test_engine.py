@@ -84,3 +84,33 @@ def test_rate_batch_matches_individual_runs():
         for index in range(batch.shape[1])
     ])
     assert np.allclose(result, expected, rtol=0, atol=1e-7)
+
+
+def test_rate_batch_trajectory_matches_each_requested_depth():
+    graph = ConnectomeGraph.from_edges(
+        5,
+        np.array([0, 1, 2, 3]),
+        np.array([1, 2, 3, 4]),
+        np.array([0.4, -0.2, 0.3, 0.5], dtype=np.float32),
+        normalize_incoming=False,
+    )
+    engine = RecurrentDepthEngine(graph)
+    batch = np.array(
+        [[1, 0], [0, 1], [0.5, -0.5], [0, 0.25], [0, 0]],
+        dtype=np.float32,
+    )
+    trajectory = engine.run_batch_trajectory(batch, depths=(1, 2, 4, 8))
+    for depth, snapshot in trajectory.snapshots.items():
+        expected = engine.run_batch(batch, max_depth=depth)
+        np.testing.assert_allclose(snapshot, expected, rtol=0, atol=1e-7)
+        assert trajectory.latency_s[depth] >= 0.0
+
+
+def test_scalar_trajectory_matches_requested_depths():
+    graph = chain_graph(4)
+    engine = RecurrentDepthEngine(graph, activation="tanh")
+    x = np.zeros(graph.n_neurons, dtype=np.float32)
+    x[0] = 0.5
+    snapshots = engine.run_trajectory(x, depths=(1, 3, 6))
+    for depth, snapshot in snapshots.items():
+        np.testing.assert_allclose(snapshot, engine.run(x, max_depth=depth).state, rtol=0, atol=1e-7)
