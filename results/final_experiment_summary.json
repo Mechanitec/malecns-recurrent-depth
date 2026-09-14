@@ -363,27 +363,27 @@
     "bootstrap_samples": 200
   },
   "serious_run": {
-    "path": "results\\first_fly_rating\\serious_402_fulllegal",
-    "games_recorded": 402,
-    "expected_games": 402,
+    "path": "results\\first_fly_rating\\serious_400_bounded",
+    "games_recorded": 400,
+    "expected_games": 400,
     "elo": {
-      "rating": 409.71713709686594,
-      "standard_error": 18.3167249741736,
-      "ci95_low": 373.8170158327603,
-      "ci95_high": 445.61725836097156,
-      "n_games": 402,
-      "total_score": 201.0,
+      "rating": 445.06389937333836,
+      "standard_error": 18.698483608911864,
+      "ci95_low": 408.4155449343586,
+      "ci95_high": 481.7122538123181,
+      "n_games": 400,
+      "total_score": 200.0,
       "censored": null
     },
     "bounded_candidates": null,
     "full_legal_candidates": true,
-    "max_plies": 2,
+    "max_plies": null,
     "analysis_depth": 1,
     "wins": 0,
-    "draws": 402,
+    "draws": 400,
     "losses": 0,
-    "median_fly_move_latency_s": 12.808472000062466,
-    "total_recurrent_passes": 175312
+    "median_fly_move_latency_s": 2.644475399982184,
+    "total_recurrent_passes": 25600
   },
   "diagnostic_run": {
     "path": "results\\first_fly_rating\\diagnostic_fulllegal_60_v2",
@@ -403,6 +403,67 @@
   "depth_sweep_rows": 7,
   "control_sweep_rows": 28,
   "control_rating_rows": 28,
+  "position_depth_study": {
+    "positions": 140,
+    "variants": [
+      "original",
+      "degree_preserving_topology_shuffle",
+      "transmitter_sign_shuffle",
+      "recurrent_edges_attenuated_0.05"
+    ],
+    "depths": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 23,
+    "best_depth_by_mean_regret": 2,
+    "d1_to_best_regret_improvement_cp": 10.878571428571428,
+    "d1_to_best_regret_improvement_ci_low_cp": -60.65571428571429,
+    "d1_to_best_regret_improvement_ci_high_cp": 81.79535714285697,
+    "h1_support": false,
+    "best_control": {
+      "control_variant": "recurrent_edges_attenuated_0.05",
+      "depth": 2,
+      "positions": 140,
+      "mean_control_did_cp": 0.0,
+      "bootstrap_ci_low_cp": 0.0,
+      "bootstrap_ci_high_cp": 0.0
+    },
+    "specificity_support": false,
+    "interpretation": "Position-level paired regret and control difference-in-differences. This is not an Elo estimate."
+  },
+  "position_depth_evaluator_benchmark": {
+    "position_id": "opening_000_offset_00",
+    "candidate_count": 36,
+    "depths": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "scalar_times_s": {
+      "1": 1.1189384000608698,
+      "2": 1.8878712999867275,
+      "4": 3.4101648000068963,
+      "8": 6.941374700050801,
+      "16": 13.970882599940524,
+      "32": 27.834404300083406,
+      "64": 56.49330819991883
+    },
+    "scalar_total_s": 111.65814290009439,
+    "optimized_trajectory_total_s": 53.740453199949116,
+    "speedup_scalar_over_optimized": 2.077729833886107,
+    "note": "Scalar baseline recomputes each requested depth independently. Optimized path runs one batched trajectory to depth 64 and snapshots requested depths."
+  },
   "artifacts": {
     "low_elo_calibration": {
       "path": "results\\low_elo_calibration\\low_elo_calibration.csv",
@@ -441,13 +502,45 @@
       "exists": true
     },
     "serious_games": {
-      "path": "results\\first_fly_rating\\serious_402_fulllegal\\games.csv",
+      "path": "results\\first_fly_rating\\serious_400_bounded\\games.csv",
       "exists": true
     },
     "diagnostic_games": {
       "path": "results\\first_fly_rating\\diagnostic_fulllegal_60_v2\\games.csv",
       "exists": true
+    },
+    "evaluation_corpus": {
+      "path": "data\\chess_evaluation_corpus_v2.csv",
+      "exists": true
+    },
+    "position_study_raw": {
+      "path": "results\\position_depth_study_v2\\raw_position_metrics.csv",
+      "exists": true
+    },
+    "position_study_summary": {
+      "path": "results\\position_depth_study_v2\\summary.json",
+      "exists": true
+    },
+    "position_study_depth_summary": {
+      "path": "results\\position_depth_study_v2\\summary_by_depth.csv",
+      "exists": true
+    },
+    "position_study_specificity": {
+      "path": "results\\position_depth_study_v2\\specificity_by_control.csv",
+      "exists": true
+    },
+    "position_study_metadata": {
+      "path": "results\\position_depth_study_v2\\metadata.json",
+      "exists": true
+    },
+    "position_study_evaluator_benchmark": {
+      "path": "results\\position_depth_study_v2\\evaluator_benchmark.json",
+      "exists": true
+    },
+    "readout_diagnostics": {
+      "path": "results\\training\\v1_depth16_rate_large\\readout_diagnostics.json",
+      "exists": true
     }
   },
-  "scientific_caveat": "The serious rating protocol uses short games from prepared openings to control full-graph runtime. The diagnostic and sweep position metrics use all legal moves; do not treat a short-game estimate as a long-game playing-strength claim."
+  "scientific_caveat": "The serious rating protocol uses short games from prepared openings to control full-graph runtime. The position-depth study uses all legal moves and paired bootstrap statistics; do not treat a short-game estimate as a long-game playing-strength claim."
 }

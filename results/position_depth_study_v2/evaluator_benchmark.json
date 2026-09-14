@@ -1,0 +1,26 @@
+{
+  "position_id": "opening_000_offset_00",
+  "candidate_count": 36,
+  "depths": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "scalar_times_s": {
+    "1": 1.1189384000608698,
+    "2": 1.8878712999867275,
+    "4": 3.4101648000068963,
+    "8": 6.941374700050801,
+    "16": 13.970882599940524,
+    "32": 27.834404300083406,
+    "64": 56.49330819991883
+  },
+  "scalar_total_s": 111.65814290009439,
+  "optimized_trajectory_total_s": 53.740453199949116,
+  "speedup_scalar_over_optimized": 2.077729833886107,
+  "note": "Scalar baseline recomputes each requested depth independently. Optimized path runs one batched trajectory to depth 64 and snapshots requested depths."
+}

@@ -24,6 +24,8 @@ def main() -> None:
         for path in paths:
             with path.open(newline="", encoding="utf-8") as handle:
                 reader = csv.DictReader(handle)
+                if reader.fieldnames is None:
+                    continue
                 if fields is None:
                     fields = reader.fieldnames
                 elif reader.fieldnames != fields:

@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "positions": 140,
+  "variants": [
+    "original",
+    "degree_preserving_topology_shuffle",
+    "transmitter_sign_shuffle",
+    "recurrent_edges_attenuated_0.05"
+  ],
+  "depths": [1, 2, 4, 8, 16, 32, 64],
+  "evaluation_corpus": "data/chess_evaluation_corpus_v2.csv",
+  "evaluation_corpus_sha256": "be6b417c3438f58e8a984e8c315d6291bc8bef1cda9fd8ee0d14d67b7d7ae3a3",
+  "checkpoint": "results/training/v1_depth16_rate_large/readout_checkpoint.npz",
+  "checkpoint_sha256": "985956216129b9e5604ade03edd22778c9ba0e7aedb174d0d67a1016c44ef017",
+  "seed": 23,
+  "post_eval_positions": 32,
+  "raw_rows": 3920,
+  "raw_sha256": "1a8227e9f2fa422d31c22656ad88a7b3d06b7a4982435d1dc47055f3550d9704",
+  "summary": "results/position_depth_study_v2/summary.json",
+  "evaluator_benchmark": "results/position_depth_study_v2/evaluator_benchmark.json",
+  "evaluator_scalar_total_s": 111.65814290009439,
+  "evaluator_optimized_trajectory_total_s": 53.740453199949116,
+  "evaluator_speedup": 2.077729833886107,
+  "note": "All four variant runs completed on the independent corpus. Post-move Stockfish evaluation is an observer metric on a fixed subset; root-move teacher regret is the primary metric."
+}

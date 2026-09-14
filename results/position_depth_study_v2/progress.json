@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "positions": 140,
+  "variants_completed": 4,
+  "depths_completed": [1, 2, 4, 8, 16, 32, 64],
+  "raw_rows": 3920,
+  "post_eval_positions_per_variant": 32,
+  "note": "All requested original and control variant runs completed."
+}

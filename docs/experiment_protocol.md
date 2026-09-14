@@ -31,6 +31,16 @@ The first all-legal held-out sweep used only 8 positions. On the original graph,
 
 The next protocol must scale the same paired comparison to at least 128 unseen positions, preferably 256 or more.
 
+## Completed v2 position study
+
+The first completed scaled study used 140 independent positions generated from the calibrated opening corpus with seed 23. It evaluated all legal candidate moves for the original graph and the three required controls at depths 1, 2, 4, 8, 16, 32 and 64. Each variant produced 980 rows, and the merged raw file contains 3,920 rows with no duplicate variant-position-depth keys. Stockfish post-move evaluation was restricted to the predeclared 32-position subset.
+
+The original graph reached its lowest mean regret at D2: 570.51 cp versus 581.39 cp at D1. The paired improvement was 10.88 cp with a 95% bootstrap CI of -60.66 to 81.80 cp. Mean regret increased substantially from D4 onward. The analysis therefore marks H1 unsupported for this checkpoint and corpus.
+
+The control DID values at D2 were 86.62 cp [19.08, 157.57] for the topology shuffle, 27.73 cp [-35.36, 94.58] for the transmitter-sign shuffle, and 0.00 cp [0.00, 0.00] for recurrent-edge attenuation. The mixed control results do not support a robust MaleCNS-specific effect.
+
+The optimized evaluator passed scalar-equivalence tests and reduced one 36-candidate D1-D64 benchmark from 111.658 s of independent scalar calls to 53.740 s for one batched trajectory, a 2.078x speedup.
+
 ## Fixed factors
 
 For the primary frozen-depth experiment keep fixed:
@@ -211,5 +221,7 @@ results/position_depth_study_v2/metadata.json
 results/position_depth_study_v2/progress.json
 results/position_depth_study_v2/*.png
 ```
+
+The current root metadata is `results/position_depth_study_v2/metadata.json`; per-variant metadata remains under `results/position_depth_study_v2/variants/`.
 
 Small result tables/plots should be committed. Large caches/data may remain local if hashes and compact summaries are preserved.

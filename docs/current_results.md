@@ -30,6 +30,16 @@ Relative to D1, teacher regret improves strongly at D2-D16. The best observed te
 
 This is **exploratory only** because 8 positions give extremely coarse agreement statistics: one position changes agreement by 12.5 percentage points.
 
+## Completed 140-position recurrent-depth study
+
+The independent corpus contains 140 legal, nonterminal positions with early, middle and late phases. The frozen v1 checkpoint was evaluated on all legal moves at D1, D2, D4, D8, D16, D32 and D64 for the original graph and three predeclared controls. The study produced 3,920 raw rows: 140 positions x 4 variants x 7 depths. The corpus and checkpoint hashes are recorded in the per-variant metadata and reproducibility manifest.
+
+For the original graph, mean teacher regret was 581.39 cp at D1 and 570.51 cp at D2. D2 was the empirical minimum, with a paired D1-to-D2 improvement of 10.88 cp, but the 95% paired bootstrap CI was -60.66 to 81.80 cp. Regret worsened at D4 and remained higher through D64. Therefore this run does not support H1.
+
+The control difference-in-differences did not establish MaleCNS-specificity. At D2, the topology shuffle was 86.62 cp [19.08, 157.57], the transmitter-sign shuffle was 27.73 cp [-35.36, 94.58], and the recurrent-attenuation control was 0.00 cp [0.00, 0.00]. Because the controls do not show a consistent robust separation from the original graph, the result does not support a MaleCNS-specific recurrent effect.
+
+The optimized evaluator was validated against the scalar reference. On one 36-candidate position across D1-D64, independent scalar evaluation took 111.658 s and one batched trajectory with snapshots took 53.740 s, a 2.078x speedup.
+
 ## Control comparison
 
 Selected D8 values from `results/sweep_full_8pos_v2/control_sweep/metrics.csv`:
@@ -73,12 +83,12 @@ This does not invalidate the frozen-depth experiment, but it means the current c
 
 ## Immediate next experiment
 
-The next headline experiment is a much larger paired held-out position study, not another forced-short-game tournament.
+The next experiment should improve the frozen Stage-0 decoder using train/validation data only. Do not select decoder settings from the completed evaluation corpus. If v2 produces a clear validation improvement, run a predeclared confirmatory depth study on a fresh held-out corpus; otherwise preserve v1 and report the negative decoder result.
 
-Target:
+The completed position study remains available as the frozen v1 reference. A future confirmatory study can use:
 
 ```text
-128-256+ unseen positions
+128-256+ fresh unseen positions
 x 7 recurrent depths
 x 4 graph variants
 x all legal moves

@@ -52,6 +52,7 @@ def main() -> None:
         "position_study_depth_summary": position_study_root / "summary_by_depth.csv",
         "position_study_specificity": position_study_root / "specificity_by_control.csv",
         "position_study_metadata": position_study_root / "metadata.json",
+        "position_study_evaluator_benchmark": position_study_root / "evaluator_benchmark.json",
         "readout_diagnostics": root / "results/training/v1_depth16_rate_large/readout_diagnostics.json",
     }
     serious_elo = read_json(root / args.serious_run / "elo.json", {})
@@ -61,6 +62,7 @@ def main() -> None:
     control_rows = read_csv(artifacts["control_sweep"])
     control_rating_rows = read_csv(artifacts["control_ratings"])
     position_summary = read_json(artifacts["position_study_summary"], {})
+    evaluator_benchmark = read_json(artifacts["position_study_evaluator_benchmark"], {})
     expected_games = int(args.expected_serious_games or serious_elo.get("elo", {}).get("n_games", 0))
     expected_games = max(expected_games, len(serious_games))
     status = "complete_short_game_protocol" if expected_games >= 400 else "provisional_incomplete"
@@ -102,6 +104,7 @@ def main() -> None:
         "control_sweep_rows": len(control_rows),
         "control_rating_rows": len(control_rating_rows),
         "position_depth_study": position_summary,
+        "position_depth_evaluator_benchmark": evaluator_benchmark,
         "artifacts": {name: {"path": str(path), "exists": path.exists()} for name, path in artifacts.items()},
         "scientific_caveat": "The serious rating protocol uses short games from prepared openings to control full-graph runtime. The position-depth study uses all legal moves and paired bootstrap statistics; do not treat a short-game estimate as a long-game playing-strength claim.",
     }
@@ -123,6 +126,7 @@ The frozen reference checkpoint uses the rate dynamics at recurrent depth 16. Th
 - Control rating rows: {len(control_rating_rows)} across the same graph variants and depths.
 - Independent position-depth study: {position_summary.get("positions", 0)} positions, {len(read_csv(artifacts["position_study_depth_summary"]))} summary rows, and {len(read_csv(artifacts["position_study_specificity"]))} control comparisons.
 - Best original depth by mean regret: {position_summary.get("best_depth_by_mean_regret", "pending")}; D1-to-best improvement: {position_summary.get("d1_to_best_regret_improvement_cp", "pending")} cp (95% CI {position_summary.get("d1_to_best_regret_improvement_ci_low_cp", "pending")} to {position_summary.get("d1_to_best_regret_improvement_ci_high_cp", "pending")}); H1 support: {position_summary.get("h1_support", "pending")}.
+- Evaluator validation: {evaluator_benchmark.get("scalar_total_s", "pending")} s scalar versus {evaluator_benchmark.get("optimized_trajectory_total_s", "pending")} s optimized trajectory; speedup: {evaluator_benchmark.get("speedup_scalar_over_optimized", "pending")}x.
 - Every recorded game includes PGN, exact calibrated opponent setting, Fly move latency, recurrent-pass count, and candidate-score margin.
 
 ## Interpretation boundary

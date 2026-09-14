@@ -160,6 +160,8 @@ Use three distinct roles:
 
 The large position-depth study in `plan.md` must not be used to tune v2.
 
+The completed v1 position-depth study used 140 held-out positions and all seven predeclared depths. It found D2 as the lowest mean-regret depth, but the paired improvement over D1 had a 95% bootstrap interval crossing zero. Use this result as the frozen v1 baseline. Any v2 decoder selection must use only the existing train/validation split, followed by a fresh held-out confirmation.
+
 ## Two different depth-training questions
 
 There are two scientifically different experiments:

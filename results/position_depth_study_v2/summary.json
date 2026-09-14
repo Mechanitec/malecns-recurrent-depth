@@ -1,0 +1,35 @@
+{
+  "positions": 140,
+  "variants": [
+    "original",
+    "degree_preserving_topology_shuffle",
+    "transmitter_sign_shuffle",
+    "recurrent_edges_attenuated_0.05"
+  ],
+  "depths": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "bootstrap_samples": 2000,
+  "bootstrap_seed": 23,
+  "best_depth_by_mean_regret": 2,
+  "d1_to_best_regret_improvement_cp": 10.878571428571428,
+  "d1_to_best_regret_improvement_ci_low_cp": -60.65571428571429,
+  "d1_to_best_regret_improvement_ci_high_cp": 81.79535714285697,
+  "h1_support": false,
+  "best_control": {
+    "control_variant": "recurrent_edges_attenuated_0.05",
+    "depth": 2,
+    "positions": 140,
+    "mean_control_did_cp": 0.0,
+    "bootstrap_ci_low_cp": 0.0,
+    "bootstrap_ci_high_cp": 0.0
+  },
+  "specificity_support": false,
+  "interpretation": "Position-level paired regret and control difference-in-differences. This is not an Elo estimate."
+}
