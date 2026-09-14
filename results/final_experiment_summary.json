@@ -1,5 +1,5 @@
 {
-  "status": "complete_bounded_protocol",
+  "status": "complete_short_game_protocol",
   "repo": "https://github.com/Mechanitec/malecns-recurrent-depth",
   "reference_depth": 16,
   "dynamics": "rate",
@@ -363,29 +363,46 @@
     "bootstrap_samples": 200
   },
   "serious_run": {
-    "path": "results\\first_fly_rating\\serious_400_bounded",
-    "games_recorded": 400,
-    "expected_games": 400,
+    "path": "results\\first_fly_rating\\serious_402_fulllegal",
+    "games_recorded": 402,
+    "expected_games": 402,
     "elo": {
-      "rating": 445.06389937333836,
-      "standard_error": 18.698483608911864,
-      "ci95_low": 408.4155449343586,
-      "ci95_high": 481.7122538123181,
-      "n_games": 400,
-      "total_score": 200.0,
+      "rating": 409.71713709686594,
+      "standard_error": 18.3167249741736,
+      "ci95_low": 373.8170158327603,
+      "ci95_high": 445.61725836097156,
+      "n_games": 402,
+      "total_score": 201.0,
       "censored": null
     },
-    "bounded_candidates": 4,
+    "bounded_candidates": null,
+    "full_legal_candidates": true,
     "max_plies": 2,
     "analysis_depth": 1,
     "wins": 0,
-    "draws": 400,
+    "draws": 402,
     "losses": 0,
-    "median_fly_move_latency_s": 2.644475399982184,
-    "total_recurrent_passes": 25600
+    "median_fly_move_latency_s": 12.808472000062466,
+    "total_recurrent_passes": 175312
+  },
+  "diagnostic_run": {
+    "path": "results\\first_fly_rating\\diagnostic_fulllegal_60_v2",
+    "games_recorded": 60,
+    "elo": {
+      "rating": 409.71713709686594,
+      "standard_error": 47.411667048552125,
+      "ci95_low": 316.79197723469935,
+      "ci95_high": 502.64229695903254,
+      "n_games": 60,
+      "total_score": 30.0,
+      "censored": null
+    },
+    "full_legal_candidates": true,
+    "opening_pairs": 10
   },
   "depth_sweep_rows": 7,
   "control_sweep_rows": 28,
+  "control_rating_rows": 28,
   "artifacts": {
     "low_elo_calibration": {
       "path": "results\\low_elo_calibration\\low_elo_calibration.csv",
@@ -412,17 +429,25 @@
       "exists": true
     },
     "depth_sweep": {
-      "path": "results\\depth_sweep\\metrics.csv",
+      "path": "results\\sweep_full_8pos_v2\\depth_sweep\\metrics.csv",
       "exists": true
     },
     "control_sweep": {
-      "path": "results\\control_sweep\\metrics.csv",
+      "path": "results\\sweep_full_8pos_v2\\control_sweep\\metrics.csv",
+      "exists": true
+    },
+    "control_ratings": {
+      "path": "results\\control_sweep\\control_ratings.csv",
       "exists": true
     },
     "serious_games": {
-      "path": "results\\first_fly_rating\\serious_400_bounded\\games.csv",
+      "path": "results\\first_fly_rating\\serious_402_fulllegal\\games.csv",
+      "exists": true
+    },
+    "diagnostic_games": {
+      "path": "results\\first_fly_rating\\diagnostic_fulllegal_60_v2\\games.csv",
       "exists": true
     }
   },
-  "scientific_caveat": "The compact sweep and serious run use bounded candidate sets and short games to control full-graph runtime; do not treat them as a full legal-move opening-diverse rating until expanded."
+  "scientific_caveat": "The serious rating protocol uses short games from prepared openings to control full-graph runtime. The diagnostic and sweep position metrics use all legal moves; do not treat a short-game estimate as a long-game playing-strength claim."
 }

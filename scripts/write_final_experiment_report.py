@@ -95,7 +95,7 @@ def main() -> None:
         "scientific_caveat": "The serious rating protocol uses short games from prepared openings to control full-graph runtime. The diagnostic and sweep position metrics use all legal moves; do not treat a short-game estimate as a long-game playing-strength claim.",
     }
     output = root / "results/final_experiment_summary.json"
-    output.write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    output.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     report = f"""# MaleCNS recurrent-depth chess experiment
 
 Status: **{status}**
