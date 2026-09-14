@@ -153,7 +153,11 @@ def render_live_analysis() -> None:
     c1.metric("Status", state.status.upper())
     c2.metric("Games", f"{state.games_completed}/{state.games_total}")
     c3.metric("W / D / L", f"{state.wins} / {state.draws} / {state.losses}")
-    c4.metric("Opponent", f"{state.opponent_engine or '—'} {state.opponent_elo if state.opponent_elo is not None else ''}")
+    opponent_value = state.opponent_calibrated_elo if state.opponent_calibrated_elo is not None else state.opponent_elo
+    opponent_detail = f"{opponent_value:.1f}" if opponent_value is not None else "—"
+    if state.opponent_setting:
+        opponent_detail = f"{opponent_detail} · {state.opponent_setting}"
+    c4.metric("Opponent", f"{state.opponent_engine or '—'} {opponent_detail}")
     c5.metric("Depth", state.recurrent_depth if state.recurrent_depth is not None else "—")
 
     left, right = st.columns([1.12, 0.88])

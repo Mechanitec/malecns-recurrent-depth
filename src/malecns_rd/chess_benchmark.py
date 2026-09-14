@@ -72,6 +72,8 @@ class ChessGameRecord:
     total_recurrent_passes: int = 0
     mean_candidate_score_margin: float | None = None
     pgn: str = ""
+    opening_id: str = ""
+    start_fen: str = ""
 
 
 @dataclass(frozen=True)
@@ -411,9 +413,11 @@ def play_one_game(
     games_total: int = 0,
     run_id: str | None = None,
     requested_elo: float | None = None,
+    opening_id: str | None = None,
 ) -> ChessGameRecord:
     chess = _require_chess()
     board = chess.Board(start_fen) if start_fen else chess.Board()
+    initial_ply = board.ply()
     fly_color = "white" if fly_is_white else "black"
     calibrated_elo = float(getattr(opponent, "calibrated_elo", opponent.elo))
     opponent_setting = str(getattr(opponent, "setting", ""))
@@ -430,6 +434,9 @@ def play_one_game(
         games_total=games_total,
         opponent_engine=opponent.name,
         opponent_elo=calibrated_elo,
+        opponent_setting=opponent_setting,
+        opponent_requested_elo=requested_elo,
+        opponent_calibrated_elo=calibrated_elo,
         fly_color=fly_color,
         ply=board.ply(),
         fen=board.fen(),
@@ -439,7 +446,7 @@ def play_one_game(
         recurrent_depth=getattr(fly_agent, "depth", None),
     )
 
-    while not board.is_game_over(claim_draw=True) and board.ply() < max_plies:
+    while not board.is_game_over(claim_draw=True) and (board.ply() - initial_ply) < max_plies:
         fly_turn = board.turn == (chess.WHITE if fly_is_white else chess.BLACK)
         if fly_turn:
             started = time.perf_counter()
@@ -471,6 +478,9 @@ def play_one_game(
             games_total=games_total,
             opponent_engine=opponent.name,
             opponent_elo=calibrated_elo,
+            opponent_setting=opponent_setting,
+            opponent_requested_elo=requested_elo,
+            opponent_calibrated_elo=calibrated_elo,
             fly_color=fly_color,
             ply=board.ply(),
             fen=board.fen(),
@@ -494,6 +504,8 @@ def play_one_game(
     game.headers["White"] = "MaleCNS-RD" if fly_is_white else opponent.name
     game.headers["Black"] = opponent.name if fly_is_white else "MaleCNS-RD"
     game.headers["OpponentElo"] = str(calibrated_elo)
+    if opening_id:
+        game.headers["Opening"] = opening_id
 
     return ChessGameRecord(
         game_index=game_index,
@@ -513,6 +525,8 @@ def play_one_game(
         total_recurrent_passes=recurrent_passes,
         mean_candidate_score_margin=(statistics.fmean(score_margins) if score_margins else None),
         pgn=str(game),
+        opening_id=opening_id or "",
+        start_fen=start_fen or "",
     )
 
 
@@ -528,6 +542,7 @@ def run_elo_tournament(
     max_plies: int = 600,
     live_state_path: str | Path | None = None,
     run_id: str | None = None,
+    opening_fens: Iterable[tuple[str, str]] | None = None,
 ) -> TournamentResult:
     """Run a hybrid Elo ladder and optionally publish live JSON snapshots."""
     if games_per_elo < 2:
@@ -572,6 +587,9 @@ def run_elo_tournament(
     )
 
     records: list[ChessGameRecord] = []
+    openings = list(opening_fens or ())
+    if openings and not all(opening_id and fen for opening_id, fen in openings):
+        raise ValueError("opening_fens entries must contain opening IDs and FENs")
     game_index = 0
     try:
         for opponent_elo, engine_name in zip(ratings, routed):
@@ -590,6 +608,8 @@ def run_elo_tournament(
                         opponent,
                         fly_is_white=fly_is_white,
                         game_index=game_index,
+                        start_fen=(openings[(local_index // 2) % len(openings)][1] if openings else None),
+                        opening_id=(openings[(local_index // 2) % len(openings)][0] if openings else None),
                         max_plies=max_plies,
                         live_state_path=live_state_path,
                         games_total=total_games,

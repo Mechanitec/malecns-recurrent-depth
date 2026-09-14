@@ -3,6 +3,26 @@ from malecns_rd.position_analysis import (
     cp_to_advantage_fraction,
     human_eval,
 )
+from malecns_rd.chess_benchmark import play_one_game
+
+
+class _FirstLegalAgent:
+    name = "test-agent"
+    depth = 1
+    last_decision = {"depth": 1, "recurrent_passes": 1, "candidates": []}
+
+    def choose_move(self, board):
+        return next(iter(board.legal_moves))
+
+
+class _FirstLegalOpponent:
+    name = "test-opponent"
+    elo = 100
+    calibrated_elo = 100.0
+    setting = "test"
+
+    def choose_move(self, board):
+        return next(iter(board.legal_moves))
 
 
 def test_advantage_fraction_is_centered_and_monotonic():
@@ -38,3 +58,20 @@ def test_analysis_config_validates_reproducible_settings():
             pass
         else:
             raise AssertionError(f"expected ValueError for {kwargs}")
+
+
+def test_max_plies_is_relative_to_opening_fen():
+    import chess
+
+    board = chess.Board()
+    board.push_uci("e2e4")
+    record = play_one_game(
+        _FirstLegalAgent(),
+        _FirstLegalOpponent(),
+        fly_is_white=False,
+        start_fen=board.fen(),
+        max_plies=2,
+    )
+    assert record.plies == board.ply() + 2
+    assert record.fly_move_count == 1
+    assert record.start_fen == board.fen()

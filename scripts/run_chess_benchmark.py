@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 from malecns_rd.checkpoint_agent import load_fly_agent_from_checkpoint
@@ -19,6 +20,23 @@ def parse_elos(text: str) -> list[int]:
     if not values:
         raise argparse.ArgumentTypeError("provide at least one Elo")
     return values
+
+
+def load_opening_fens(path: Path | None) -> list[tuple[str, str]]:
+    if path is None:
+        return []
+    if path.suffix.lower() == ".json":
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        entries = payload.get("opening_fens", payload) if isinstance(payload, dict) else payload
+        return [(str(item["opening_pair"]), str(item["fen"])) for item in entries]
+    entries = []
+    for index, line in enumerate(path.read_text(encoding="utf-8").splitlines()):
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split("\t", 1)
+        entries.append((parts[0] if len(parts) == 2 else f"opening_{index:03d}", parts[-1]))
+    return entries
 
 
 def main() -> None:
@@ -65,6 +83,12 @@ def main() -> None:
     parser.add_argument("--games-per-elo", type=int, default=20)
     parser.add_argument("--move-time", type=float, default=0.05)
     parser.add_argument("--max-plies", type=int, default=600)
+    parser.add_argument(
+        "--opening-fens",
+        type=Path,
+        default=None,
+        help="JSON calibration metadata or tab-separated opening_id/FEN file; paired games reuse each opening",
+    )
     parser.add_argument("--output", type=Path, default=Path("results/chess_smoke"))
     parser.add_argument(
         "--live-state",
@@ -116,6 +140,7 @@ def main() -> None:
     args = parser.parse_args()
 
     live_state = args.live_state or (args.output / "live_state.json")
+    opening_fens = load_opening_fens(args.opening_fens)
 
     if args.checkpoint is None:
         agent = RandomLegalAgent(seed=args.seed)
@@ -159,6 +184,7 @@ def main() -> None:
                 max_plies=args.max_plies,
                 live_state_path=live_state,
                 run_id=args.output.name,
+                opening_fens=opening_fens,
             )
         else:
             analysis_config = AnalysisConfig(
@@ -181,6 +207,7 @@ def main() -> None:
                 evaluation_history_path=args.output / "evaluation_history.csv",
                 analysis_config=analysis_config,
                 run_id=args.output.name,
+                opening_fens=opening_fens,
             )
     else:
         if args.no_position_eval:
@@ -197,6 +224,7 @@ def main() -> None:
                 live_state_path=live_state,
                 run_id=args.output.name,
                 calibration_path=args.calibration,
+                opening_fens=opening_fens,
             )
         else:
             analysis_config = AnalysisConfig(
@@ -221,6 +249,7 @@ def main() -> None:
                 analysis_config=analysis_config,
                 run_id=args.output.name,
                 calibration_path=args.calibration,
+                opening_fens=opening_fens,
             )
 
     save_tournament(result, args.output)

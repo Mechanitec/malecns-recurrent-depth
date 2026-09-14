@@ -17,6 +17,7 @@ from malecns_rd.chess_benchmark import save_tournament
 from malecns_rd.engine import RecurrentDepthEngine
 from malecns_rd.fast_opponents import run_fast_elo_tournament
 from malecns_rd.graph import ConnectomeGraph
+from malecns_rd.position_analysis import AnalysisConfig, StockfishPositionEvaluator
 from malecns_rd.readout_training import load_readout_checkpoint
 
 
@@ -66,6 +67,12 @@ def load_test_positions(path: str | Path, count: int, seed: int):
     if not positions:
         raise RuntimeError("teacher dataset contains no test positions")
     return positions
+
+
+def load_opening_fens(path: Path) -> list[tuple[str, str]]:
+    metadata_path = path.parent / "calibration_metadata.json"
+    payload = json.loads(metadata_path.read_text(encoding="utf-8"))
+    return [(str(item["opening_pair"]), str(item["fen"])) for item in payload["opening_fens"]]
 
 
 def graph_variant(graph: ConnectomeGraph, variant: str, seed: int) -> ConnectomeGraph:
@@ -125,9 +132,25 @@ def make_agent(base, graph: ConnectomeGraph, depth: int, max_candidates: int | N
     )
 
 
-def position_metrics(agent, positions):
+def _bootstrap_interval(values, seed: int) -> tuple[float | None, float | None]:
+    numeric = np.asarray([float(value) for value in values if value is not None and np.isfinite(value)], dtype=float)
+    if numeric.size < 2:
+        return (float(numeric[0]), float(numeric[0])) if numeric.size else (None, None)
+    rng = np.random.default_rng(seed)
+    samples = rng.choice(numeric, size=(500, numeric.size), replace=True).mean(axis=1)
+    return float(np.quantile(samples, 0.025)), float(np.quantile(samples, 0.975))
+
+
+def _mean(values) -> float | None:
+    numeric = [float(value) for value in values if value is not None and np.isfinite(value)]
+    return float(np.mean(numeric)) if numeric else None
+
+
+def position_metrics(agent, positions, *, evaluator=None, baseline_evals=None):
+    import chess
+
     rows = []
-    for board, teacher_best, teacher_candidates in positions:
+    for index, (board, teacher_best, teacher_candidates) in enumerate(positions):
         started = time.perf_counter()
         ranked = agent.rank_moves(board)
         latency = time.perf_counter() - started
@@ -135,6 +158,29 @@ def position_metrics(agent, positions):
         decision = agent.last_decision
         predicted_cp = teacher_candidates.get(predicted)
         best_cp = max(teacher_candidates.values())
+        stockfish_loss = None
+        if evaluator is not None:
+            mover_is_white = board.turn == chess.WHITE
+            before = (baseline_evals or {}).get(board.fen())
+            if before is None:
+                before = evaluator.evaluate(
+                    board,
+                    game_index=index,
+                    fly_is_white=mover_is_white,
+                    last_move=None,
+                    last_actor=None,
+                ).fly_cp
+            after_board = board.copy(stack=False)
+            after_board.push_uci(predicted)
+            after = evaluator.evaluate(
+                after_board,
+                game_index=index,
+                fly_is_white=mover_is_white,
+                last_move=predicted,
+                last_actor="fly",
+            ).fly_cp
+            if before is not None and after is not None:
+                stockfish_loss = max(0.0, float(before - after))
         rows.append(
             {
                 "teacher_best_move": teacher_best,
@@ -146,6 +192,7 @@ def position_metrics(agent, positions):
                 "candidate_count": int(decision.get("candidate_count", len(ranked))),
                 "recurrent_passes": int(decision.get("recurrent_passes", 0)),
                 "score_margin": decision.get("score_margin"),
+                "stockfish_eval_loss_cp": stockfish_loss,
             }
         )
     return rows
@@ -166,14 +213,24 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=Path("results"))
     parser.add_argument("--positions", type=int, default=2)
     parser.add_argument("--max-candidates", type=int, default=4)
+    parser.add_argument(
+        "--position-max-candidates",
+        type=int,
+        default=0,
+        help="Candidate cap for held-out position metrics; 0 scores all legal moves",
+    )
     parser.add_argument("--games-per-elo", type=int, default=2)
     parser.add_argument("--max-plies", type=int, default=4)
     parser.add_argument("--move-time", type=float, default=0.01)
+    parser.add_argument("--analysis-depth", type=int, default=6)
+    parser.add_argument("--analysis-threads", type=int, default=1)
+    parser.add_argument("--analysis-hash-mb", type=int, default=64)
     parser.add_argument("--seed", type=int, default=23)
     args = parser.parse_args()
 
     args.output.mkdir(parents=True, exist_ok=True)
     positions = load_test_positions(args.teacher_dataset, args.positions, args.seed)
+    opening_fens = load_opening_fens(args.calibration)
     loaded = load_fly_agent_from_checkpoint(
         args.checkpoint,
         annotations_path=args.annotations,
@@ -184,10 +241,34 @@ def main() -> None:
     )
     base = loaded.agent
     checkpoint = load_readout_checkpoint(args.checkpoint)
+    position_cap = args.position_max_candidates if args.position_max_candidates > 0 else None
+    evaluator = StockfishPositionEvaluator(
+        AnalysisConfig(args.stockfish, depth=args.analysis_depth, threads=args.analysis_threads, hash_mb=args.analysis_hash_mb)
+    )
+    baseline_evals = {}
+    try:
+        import chess
+        for index, (board, _, _) in enumerate(positions):
+            baseline_evals[board.fen()] = evaluator.evaluate(
+                board,
+                game_index=index,
+                fly_is_white=board.turn == chess.WHITE,
+                last_move=None,
+                last_actor=None,
+            ).fly_cp
+    finally:
+        evaluator.close()
     depth_rows: list[dict[str, object]] = []
     for depth in DEPTHS:
         agent = make_agent(base, loaded.agent.engine.graph, depth, args.max_candidates)
-        rows = position_metrics(agent, positions)
+        evaluator = StockfishPositionEvaluator(
+            AnalysisConfig(args.stockfish, depth=args.analysis_depth, threads=args.analysis_threads, hash_mb=args.analysis_hash_mb)
+        )
+        try:
+            metric_agent = make_agent(base, loaded.agent.engine.graph, depth, position_cap)
+            rows = position_metrics(metric_agent, positions, evaluator=evaluator, baseline_evals=baseline_evals)
+        finally:
+            evaluator.close()
         rating_dir = args.output / "depth_sweep" / f"depth_{depth}"
         rating = run_fast_elo_tournament(
             agent,
@@ -200,6 +281,7 @@ def main() -> None:
             max_plies=args.max_plies,
             live_state_path=rating_dir / "live_state.json",
             calibration_path=args.calibration,
+            opening_fens=opening_fens,
             run_id=f"depth_{depth}",
         )
         save_tournament(rating, rating_dir)
@@ -207,11 +289,14 @@ def main() -> None:
             {
                 "depth": depth,
                 "variant": "original",
-                "teacher_agreement": float(np.mean([r["teacher_agreement"] for r in rows])),
-                "quality_loss_cp": float(np.nanmean([r["quality_loss_cp"] for r in rows])),
-                "latency_s": float(np.mean([r["latency_s"] for r in rows])),
-                "recurrent_passes": float(np.mean([r["recurrent_passes"] for r in rows])),
-                "score_margin": float(np.mean([r["score_margin"] for r in rows])),
+                "teacher_agreement": _mean([r["teacher_agreement"] for r in rows]),
+                "teacher_agreement_ci_low": _bootstrap_interval([r["teacher_agreement"] for r in rows], args.seed + depth)[0],
+                "teacher_agreement_ci_high": _bootstrap_interval([r["teacher_agreement"] for r in rows], args.seed + depth)[1],
+                "quality_loss_cp": _mean([r["quality_loss_cp"] for r in rows]),
+                "stockfish_eval_loss_cp": _mean([r["stockfish_eval_loss_cp"] for r in rows]),
+                "latency_s": _mean([r["latency_s"] for r in rows]),
+                "recurrent_passes": _mean([r["recurrent_passes"] for r in rows]),
+                "score_margin": _mean([r["score_margin"] for r in rows]),
                 "rating": rating.elo.rating,
                 "rating_ci_low": rating.elo.ci95_low,
                 "rating_ci_high": rating.elo.ci95_high,
@@ -224,16 +309,26 @@ def main() -> None:
         graph = graph_variant(loaded.agent.engine.graph, variant, args.seed)
         for depth in DEPTHS:
             agent = make_agent(base, graph, depth, args.max_candidates)
-            rows = position_metrics(agent, positions)
+            evaluator = StockfishPositionEvaluator(
+                AnalysisConfig(args.stockfish, depth=args.analysis_depth, threads=args.analysis_threads, hash_mb=args.analysis_hash_mb)
+            )
+            try:
+                metric_agent = make_agent(base, graph, depth, position_cap)
+                rows = position_metrics(metric_agent, positions, evaluator=evaluator, baseline_evals=baseline_evals)
+            finally:
+                evaluator.close()
             control_rows.append(
                 {
                     "depth": depth,
                     "variant": variant,
-                    "teacher_agreement": float(np.mean([r["teacher_agreement"] for r in rows])),
-                    "quality_loss_cp": float(np.nanmean([r["quality_loss_cp"] for r in rows])),
-                    "latency_s": float(np.mean([r["latency_s"] for r in rows])),
-                    "recurrent_passes": float(np.mean([r["recurrent_passes"] for r in rows])),
-                    "score_margin": float(np.mean([r["score_margin"] for r in rows])),
+                    "teacher_agreement": _mean([r["teacher_agreement"] for r in rows]),
+                    "teacher_agreement_ci_low": _bootstrap_interval([r["teacher_agreement"] for r in rows], args.seed + depth)[0],
+                    "teacher_agreement_ci_high": _bootstrap_interval([r["teacher_agreement"] for r in rows], args.seed + depth)[1],
+                    "quality_loss_cp": _mean([r["quality_loss_cp"] for r in rows]),
+                    "stockfish_eval_loss_cp": _mean([r["stockfish_eval_loss_cp"] for r in rows]),
+                    "latency_s": _mean([r["latency_s"] for r in rows]),
+                    "recurrent_passes": _mean([r["recurrent_passes"] for r in rows]),
+                    "score_margin": _mean([r["score_margin"] for r in rows]),
                 }
             )
 
@@ -271,7 +366,12 @@ def main() -> None:
     plt.figure(figsize=(8, 4))
     for variant in CONTROL_VARIANTS:
         rows = [r for r in control_rows if r["variant"] == variant]
-        plt.plot([r["depth"] for r in rows], [r["teacher_agreement"] for r in rows], marker="o", label=variant)
+        x = [r["depth"] for r in rows]
+        y = [r["teacher_agreement"] for r in rows]
+        low = [r["teacher_agreement_ci_low"] for r in rows]
+        high = [r["teacher_agreement_ci_high"] for r in rows]
+        plt.plot(x, y, marker="o", label=variant)
+        plt.fill_between(x, low, high, alpha=0.12)
     plt.xscale("symlog", linthresh=1)
     plt.xlabel("Recurrent depth")
     plt.ylabel("Teacher-best agreement")
@@ -279,6 +379,20 @@ def main() -> None:
     plt.tight_layout()
     plt.savefig(control_dir / "control_depth_curves.png", dpi=140)
     plt.close()
+
+    figure, axes = plt.subplots(1, 3, figsize=(12, 4))
+    axes[0].plot([r["depth"] for r in depth_rows], [r["quality_loss_cp"] for r in depth_rows], marker="o")
+    axes[0].set_ylabel("Teacher quality loss (cp)")
+    axes[1].plot([r["depth"] for r in depth_rows], [r["latency_s"] for r in depth_rows], marker="o")
+    axes[1].set_ylabel("Fly move latency (s)")
+    axes[2].plot([r["depth"] for r in depth_rows], [r["teacher_agreement"] for r in depth_rows], marker="o")
+    axes[2].set_ylabel("Teacher-best agreement")
+    for axis in axes:
+        axis.set_xscale("symlog", linthresh=1)
+        axis.set_xlabel("Recurrent depth")
+    figure.tight_layout()
+    figure.savefig(depth_dir / "position_metrics_vs_depth.png", dpi=140)
+    plt.close(figure)
 
     metadata = {
         "checkpoint": str(args.checkpoint),
@@ -289,9 +403,12 @@ def main() -> None:
         "control_variants": list(CONTROL_VARIANTS),
         "positions": len(positions),
         "max_candidates": args.max_candidates,
+        "position_max_candidates": position_cap,
+        "analysis_depth": args.analysis_depth,
         "games_per_elo": args.games_per_elo,
         "max_plies": args.max_plies,
         "opponent_elos": [310, 580],
+        "opening_pairs": [opening_id for opening_id, _ in opening_fens],
         "seed": args.seed,
         "checkpoint_recurrent_depth": checkpoint.recurrent_depth,
         "note": "Compact bounded sweep. Full legal-move and 400-game runs require a longer compute allocation.",

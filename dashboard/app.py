@@ -3,6 +3,7 @@ from __future__ import annotations
 from html import escape
 from pathlib import Path
 import sys
+import json
 
 import altair as alt
 import pandas as pd
@@ -154,7 +155,10 @@ with live_tab:
         c2.metric("95% interval", ci)
         c3.metric("Games", f"{state.games_completed}/{state.games_total}")
         c4.metric("W / D / L", f"{state.wins} / {state.draws} / {state.losses}")
-        opp = "—" if state.opponent_elo is None else f"{state.opponent_engine} {state.opponent_elo}"
+        opponent_value = state.opponent_calibrated_elo if state.opponent_calibrated_elo is not None else state.opponent_elo
+        opp = "—" if opponent_value is None else f"{state.opponent_engine} {opponent_value:.1f}"
+        if state.opponent_setting:
+            opp = f"{opp} · {state.opponent_setting}"
         c5.metric("Opponent", opp)
         c6.metric("Recurrent depth", state.recurrent_depth if state.recurrent_depth is not None else "—")
 
@@ -385,9 +389,45 @@ with training_tab:
         st.dataframe(history, use_container_width=True, hide_index=True)
 
 with experiment_tab:
+    summary_path = results_root / "final_experiment_summary.json"
+    if summary_path.exists():
+        try:
+            st.subheader("Experiment summary")
+            st.json(json.loads(summary_path.read_text(encoding="utf-8")))
+        except (OSError, json.JSONDecodeError):
+            st.warning("Final experiment summary is not readable yet.")
+
+    depth_path = results_root / "depth_sweep" / "metrics.csv"
+    control_path = results_root / "control_sweep" / "metrics.csv"
+    if depth_path.exists():
+        depth_frame = pd.read_csv(depth_path)
+        st.subheader("Frozen-checkpoint depth sweep")
+        st.altair_chart(
+            alt.Chart(depth_frame).mark_line(point=True).encode(
+                x=alt.X("depth:Q", title="Recurrent depth"),
+                y=alt.Y("rating:Q", title="Diagnostic rating"),
+                tooltip=["depth", "rating", "rating_ci_low", "rating_ci_high", "latency_s", "recurrent_passes"],
+            ),
+            use_container_width=True,
+        )
+        st.dataframe(depth_frame, use_container_width=True, hide_index=True)
+    if control_path.exists():
+        control_frame = pd.read_csv(control_path)
+        st.subheader("Connectome controls")
+        st.altair_chart(
+            alt.Chart(control_frame).mark_line(point=True).encode(
+                x=alt.X("depth:Q", title="Recurrent depth"),
+                y=alt.Y("teacher_agreement:Q", title="Teacher-best agreement", scale=alt.Scale(domain=[0, 1])),
+                color=alt.Color("variant:N", title="Graph variant"),
+                tooltip=["variant", "depth", "teacher_agreement", "quality_loss_cp", "latency_s"],
+            ),
+            use_container_width=True,
+        )
+        st.dataframe(control_frame, use_container_width=True, hide_index=True)
+
     st.subheader("Benchmark design")
     st.markdown(
-        "- **Alfil** is used for nominal Elo levels below the detected Stockfish floor.\n"
+        "- **Measured Minic/Gaia** settings are used below the detected Stockfish floor; legacy Alfil remains optional.\n"
         "- **Stockfish** is used at and above its runtime-reported minimum.\n"
         "- The **Live** tab reads an atomic `live_state.json` written after each move/game.\n"
         "- Each saved game stores opponent engine, nominal Elo, color, result, plies, termination, and final FEN.\n"

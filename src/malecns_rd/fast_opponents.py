@@ -297,6 +297,7 @@ def run_fast_elo_tournament(
     live_state_path: str | Path | None = None,
     run_id: str | None = None,
     calibration_path: str | Path | None = None,
+    opening_fens: Iterable[tuple[str, str]] | None = None,
 ) -> TournamentResult:
     if games_per_elo < 2:
         raise ValueError("games_per_elo must be >= 2 for color balancing")
@@ -336,6 +337,9 @@ def run_fast_elo_tournament(
     )
 
     records: list[ChessGameRecord] = []
+    openings = list(opening_fens or ())
+    if openings and not all(opening_id and fen for opening_id, fen in openings):
+        raise ValueError("opening_fens entries must contain opening IDs and FENs")
     game_index = 0
     try:
         for opponent_elo, engine_name, calibrated_rating in routed:
@@ -355,6 +359,8 @@ def run_fast_elo_tournament(
                         opponent,
                         fly_is_white=local_index % 2 == 0,
                         game_index=game_index,
+                        start_fen=(openings[(local_index // 2) % len(openings)][1] if openings else None),
+                        opening_id=(openings[(local_index // 2) % len(openings)][0] if openings else None),
                         max_plies=max_plies,
                         live_state_path=live_state_path,
                         games_total=total_games,
@@ -430,6 +436,7 @@ def run_fast_elo_tournament_with_analysis(
     evaluation_history_path: str | Path | None = None,
     run_id: str | None = None,
     calibration_path: str | Path | None = None,
+    opening_fens: Iterable[tuple[str, str]] | None = None,
 ) -> TournamentResult:
     if games_per_elo < 2:
         raise ValueError("games_per_elo must be >= 2 for color balancing")
@@ -473,6 +480,9 @@ def run_fast_elo_tournament_with_analysis(
     )
 
     records: list[ChessGameRecord] = []
+    openings = list(opening_fens or ())
+    if openings and not all(opening_id and fen for opening_id, fen in openings):
+        raise ValueError("opening_fens entries must contain opening IDs and FENs")
     game_index = 0
     try:
         with StockfishPositionEvaluator(analysis_config) as evaluator:
@@ -494,6 +504,8 @@ def run_fast_elo_tournament_with_analysis(
                             evaluator,
                             fly_is_white=local_index % 2 == 0,
                             game_index=game_index,
+                            start_fen=(openings[(local_index // 2) % len(openings)][1] if openings else None),
+                            opening_id=(openings[(local_index // 2) % len(openings)][0] if openings else None),
                             max_plies=max_plies,
                             live_state_path=live_state_path,
                             evaluation_state_path=evaluation_state_path,

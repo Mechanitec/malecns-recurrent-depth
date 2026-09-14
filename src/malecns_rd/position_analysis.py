@@ -242,9 +242,11 @@ def play_one_game_with_analysis(
     games_total: int = 0,
     run_id: str | None = None,
     requested_elo: float | None = None,
+    opening_id: str | None = None,
 ) -> ChessGameRecord:
     chess = _require_chess()
     board = chess.Board(start_fen) if start_fen else chess.Board()
+    initial_ply = board.ply()
     fly_color = "white" if fly_is_white else "black"
     calibrated_elo = float(getattr(opponent, "calibrated_elo", opponent.elo))
     opponent_setting = str(getattr(opponent, "setting", ""))
@@ -261,6 +263,9 @@ def play_one_game_with_analysis(
         games_total=games_total,
         opponent_engine=opponent.name,
         opponent_elo=calibrated_elo,
+        opponent_setting=opponent_setting,
+        opponent_requested_elo=requested_elo,
+        opponent_calibrated_elo=calibrated_elo,
         fly_color=fly_color,
         ply=board.ply(),
         fen=board.fen(),
@@ -280,7 +285,7 @@ def play_one_game_with_analysis(
         history_path=evaluation_history_path,
     )
 
-    while not board.is_game_over(claim_draw=True) and board.ply() < max_plies:
+    while not board.is_game_over(claim_draw=True) and (board.ply() - initial_ply) < max_plies:
         fly_turn = board.turn == (chess.WHITE if fly_is_white else chess.BLACK)
         if fly_turn:
             started = time.perf_counter()
@@ -313,6 +318,9 @@ def play_one_game_with_analysis(
             games_total=games_total,
             opponent_engine=opponent.name,
             opponent_elo=calibrated_elo,
+            opponent_setting=opponent_setting,
+            opponent_requested_elo=requested_elo,
+            opponent_calibrated_elo=calibrated_elo,
             fly_color=fly_color,
             ply=board.ply(),
             fen=board.fen(),
@@ -346,6 +354,8 @@ def play_one_game_with_analysis(
     game.headers["White"] = "MaleCNS-RD" if fly_is_white else opponent.name
     game.headers["Black"] = opponent.name if fly_is_white else "MaleCNS-RD"
     game.headers["OpponentElo"] = str(calibrated_elo)
+    if opening_id:
+        game.headers["Opening"] = opening_id
 
     return ChessGameRecord(
         game_index=game_index,
@@ -365,6 +375,8 @@ def play_one_game_with_analysis(
         total_recurrent_passes=recurrent_passes,
         mean_candidate_score_margin=(statistics.fmean(score_margins) if score_margins else None),
         pgn=str(game),
+        opening_id=opening_id or "",
+        start_fen=start_fen or "",
     )
 
 
@@ -383,6 +395,7 @@ def run_elo_tournament_with_analysis(
     evaluation_state_path: str | Path | None = None,
     evaluation_history_path: str | Path | None = None,
     run_id: str | None = None,
+    opening_fens: Iterable[tuple[str, str]] | None = None,
 ) -> TournamentResult:
     """Run the usual Elo ladder with an independent Stockfish observer."""
     if games_per_elo < 2:
@@ -430,6 +443,9 @@ def run_elo_tournament_with_analysis(
     )
 
     records: list[ChessGameRecord] = []
+    openings = list(opening_fens or ())
+    if openings and not all(opening_id and fen for opening_id, fen in openings):
+        raise ValueError("opening_fens entries must contain opening IDs and FENs")
     game_index = 0
     try:
         with StockfishPositionEvaluator(analysis_config) as evaluator:
@@ -452,6 +468,8 @@ def run_elo_tournament_with_analysis(
                             evaluator,
                             fly_is_white=fly_is_white,
                             game_index=game_index,
+                            start_fen=(openings[(local_index // 2) % len(openings)][1] if openings else None),
+                            opening_id=(openings[(local_index // 2) % len(openings)][0] if openings else None),
                             max_plies=max_plies,
                             live_state_path=live_state_path,
                             evaluation_state_path=evaluation_state_path,

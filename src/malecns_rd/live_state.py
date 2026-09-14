@@ -34,7 +34,10 @@ class LiveBenchmarkState:
     games_completed: int = 0
     games_total: int = 0
     opponent_engine: str | None = None
-    opponent_elo: int | None = None
+    opponent_elo: float | None = None
+    opponent_setting: str | None = None
+    opponent_requested_elo: float | None = None
+    opponent_calibrated_elo: float | None = None
     fly_color: str | None = None
     ply: int = 0
     fen: str | None = None
