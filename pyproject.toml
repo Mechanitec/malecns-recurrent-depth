@@ -12,7 +12,7 @@ dependencies = ["numpy>=1.24", "scipy>=1.10", "pandas>=2.0"]
 [project.optional-dependencies]
 malecns = ["pyarrow>=14"]
 chess = ["python-chess>=1.999"]
-dashboard = ["streamlit>=1.39", "altair>=5.4"]
+dashboard = ["streamlit>=1.39", "altair>=5.4", "matplotlib>=3.8"]
 dev = ["pytest>=8"]
 
 [tool.setuptools.packages.find]
