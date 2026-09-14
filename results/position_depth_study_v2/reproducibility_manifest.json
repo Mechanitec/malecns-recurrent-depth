@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-09-14T12:51:35.6662309Z",
+  "git_commit": "094054983df14d7562098c72c29e637dd0e6f7b8",
+  "git_branch": "main",
+  "python": "Python 3.11.8",
+  "pytest": "52 passed",
+  "critical_input_sha256": {
+    "C:\\Users\\Zatoichi\\AppData\\Local\\Microsoft\\WinGet\\Links\\stockfish.exe": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+    "data\\body-annotations-male-cns-v1.0-minconf-0.5.feather": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+    "data\\chess_evaluation_corpus_v2.csv": "be6b417c3438f58e8a984e8c315d6291bc8bef1cda9fd8ee0d14d67b7d7ae3a3",
+    "data\\connectome-weights-male-cns-v1.0-minconf-0.5.feather": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1",
+    "data\\teacher_dataset_v1.csv": "593191c99231b8a86569db5619436f89ebf144db88f1468b3aa437212b446251",
+    "data\\body-neurotransmitters-male-cns-v1.0.feather": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621",
+    "results\\training\\v1_depth16_rate_large\\readout_checkpoint.npz": "985956216129b9e5604ade03edd22778c9ba0e7aedb174d0d67a1016c44ef017",
+    "data\\chess_sensory_indices.npy": "3184ffdff7cc11243af0443cb7348027f2bd08cc390a7723ef8da3524b6a7706",
+    "data\\chess_readout_indices.npy": "29d1f49bc569f0b77732edd5ee609846b079709a168aeb8c61974b21fe4f54c9"
+  },
+  "benchmark": "results/position_depth_study_v2",
+  "benchmark_variants": [
+    "original",
+    "degree_preserving_topology_shuffle",
+    "transmitter_sign_shuffle",
+    "recurrent_edges_attenuated_0.05"
+  ],
+  "depths": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "corpus_positions": 140,
+  "post_eval_positions": 32
+}

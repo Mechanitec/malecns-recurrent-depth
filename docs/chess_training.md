@@ -26,6 +26,8 @@ Therefore v1 must be preserved as the baseline checkpoint, but it should not be 
 
 The next step is **diagnosis before more epochs**.
 
+The recorded diagnosis is in `results/training/v1_depth16_rate_large/readout_diagnostics.json`. It covers the 2,000-row activation cache (65 positions) and finds an effective feature rank of about 4.55, no bounded-activation saturation, a 0.00077 near-zero feature fraction, readout weight norm 3.34, and checkpoint gradient norm `1.46e-4`. Recomputed all-cache top-1 agreement is 12.3%; the stored train/validation metrics are 9.6%/23.1% top-1 and 77.0%/58.2% pair accuracy. These results point to a weak or poorly separated fixed-feature decoder, not an activation saturation bug. The independent evaluation corpus is excluded from this diagnosis.
+
 ## v1 diagnostics required
 
 Using the existing activation cache, measure:

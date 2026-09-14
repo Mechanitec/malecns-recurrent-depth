@@ -30,6 +30,8 @@ The repository now includes:
 - independent Stockfish position evaluation that never chooses moves for either player;
 - live Streamlit board/evaluation dashboard;
 - recurrent-depth sweeps and matched graph controls;
+- independent 140-position all-legal evaluation corpus and resumable multi-depth/control study;
+- exact scalar-equivalence tests and trajectory-throughput benchmark tooling;
 - position-quality metrics, short-game diagnostic ratings, PGN/telemetry output and experiment metadata.
 
 Alfil remains legacy/optional support only; it is not the preferred high-throughput weak-opponent path.
@@ -99,6 +101,10 @@ scripts/extract_chess_activations.py
 scripts/train_chess_readout.py
 scripts/run_chess_benchmark.py
 scripts/run_depth_control_sweep.py
+scripts/freeze_evaluation_corpus.py
+scripts/run_position_depth_study.py
+scripts/analyze_position_depth_study.py
+scripts/benchmark_position_evaluator.py
 scripts/run_control_ratings.py
 scripts/calibrate_low_elo.py
 ```
