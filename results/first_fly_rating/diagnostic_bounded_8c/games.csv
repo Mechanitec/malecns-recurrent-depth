@@ -1,0 +1,5 @@
+game_index,opponent_engine,opponent_elo,fly_color,result,fly_score,plies,termination,final_fen,opponent_setting,opponent_requested_elo,opponent_calibrated_elo,fly_move_count,median_fly_move_latency_s,total_recurrent_passes,mean_candidate_score_margin
+0,minic,310.12779874667655,white,1/2-1/2,0.5,20,MAX_PLIES_ADJUDICATION,2bk1bnr/2pBpp2/p7/6p1/4P3/8/PPPP1P1P/RNB1K1NR w KQ - 1 11,Level=0,310,310.12779874667655,10,5.659611799987033,1280,0.0009951472282409668
+1,minic,310.12779874667655,black,1/2-1/2,0.5,20,MAX_PLIES_ADJUDICATION,rnbqkbn1/ppppppp1/8/8/1PP1P3/NQ3p2/P2P1P2/R1B1KB1r w Qq - 8 11,Level=0,310,310.12779874667655,10,5.577739700005623,1280,0.000732842879369855
+2,gaia,580.0,white,1/2-1/2,0.5,20,MAX_PLIES_ADJUDICATION,rnkq1bn1/p3pppr/8/1pp4P/4p3/7R/PPPP1P2/RNBK2N1 w - - 1 11,Skill Level=1,580,580.0,10,5.938408600020921,1280,0.0005180359818041325
+3,gaia,580.0,black,1/2-1/2,0.5,20,MAX_PLIES_ADJUDICATION,rnbqkbn1/ppppppp1/8/5P2/1P4Pr/2NBP2p/P1PPQ2P/R1B1K1NR w KQq - 3 11,Skill Level=1,580,580.0,10,5.53962834997219,1280,0.00012806709855794907

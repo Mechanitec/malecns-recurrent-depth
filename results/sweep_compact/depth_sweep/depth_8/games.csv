@@ -1,0 +1,41 @@
+game_index,opponent_engine,opponent_elo,fly_color,result,fly_score,plies,termination,final_fen,opponent_setting,opponent_requested_elo,opponent_calibrated_elo,fly_move_count,median_fly_move_latency_s,total_recurrent_passes,mean_candidate_score_margin,pgn
+0,minic,310.12779874667655,white,1/2-1/2,0.5,4,MAX_PLIES_ADJUDICATION,rnbqkbnr/p1ppppp1/8/1p5p/6P1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 3,Level=0,310,310.12779874667655,2,1.3275540500180796,64,0.0007429588586091995,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h5 2. g4 b5 1/2-1/2"
+1,minic,310.12779874667655,black,1/2-1/2,0.5,4,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/8/P6p/5P2/1PPPP1PP/RNBQKBNR w KQkq - 0 3,Level=0,310,310.12779874667655,2,1.2270625999954063,64,0.0002129427157342434,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. f3 h5 2. a4 h4 1/2-1/2"
+2,gaia,580.0,white,1/2-1/2,0.5,4,MAX_PLIES_ADJUDICATION,rn1qkbnr/ppp1pppp/8/3p4/6b1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 3,Skill Level=1,580,580.0,2,1.388158449990442,64,0.0007429546676576138,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 2. g4 Bxg4 1/2-1/2"
+3,gaia,580.0,black,1/2-1/2,0.5,4,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/8/5P1p/2N5/PPPPP1PP/R1BQKBNR w KQkq - 0 3,Skill Level=1,580,580.0,2,2.113227550027659,64,0.00021258322522044182,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 2. Nc3 h4 1/2-1/2"

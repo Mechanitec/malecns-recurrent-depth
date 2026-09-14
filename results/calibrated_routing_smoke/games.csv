@@ -1,0 +1,9 @@
+game_index,opponent_engine,opponent_elo,fly_color,result,fly_score,plies,termination,final_fen,opponent_setting,opponent_requested_elo,opponent_calibrated_elo
+0,minic,301.4350120470319,white,0-1,0.0,30,CHECKMATE,1nbqk1nr/1p3pp1/2p1p3/3p3p/1b3PK1/3PP1PP/8/r4qNR w k - 0 16,Level=3,0,301.4350120470319
+1,minic,301.4350120470319,black,1-0,0.0,15,CHECKMATE,1nb1k2r/rp1pQppp/p1p2P2/8/4P3/5N2/PPP2PPP/RNB1KB1R b KQk - 0 8,Level=3,0,301.4350120470319
+2,minic,348.1881990097149,white,0-1,0.0,36,CHECKMATE,r1b1k3/ppp2pp1/5n2/4p3/8/1PB2P2/P1N1q1r1/2R1K1b1 w q - 0 19,Level=21,400,348.1881990097149
+3,minic,348.1881990097149,black,1-0,0.0,27,CHECKMATE,rnbq1k2/1pppnp2/4pN1Q/p3P3/3P4/P2B4/P1PN1PPP/R1B2RK1 b - - 4 14,Level=21,400,348.1881990097149
+4,gaia,580.0,white,0-1,0.0,82,CHECKMATE,r4b2/pp1k1ppr/n2p1p2/1nq3p1/8/4qb2/8/3K4 w - - 2 42,Skill Level=1,580,580.0
+5,gaia,580.0,black,1-0,0.0,31,CHECKMATE,rnb5/p2kQ3/1ppppp2/1B1N4/5P1p/2P1P3/PP1P1NPP/R1B1K2R b KQ - 0 16,Skill Level=1,580,580.0
+6,stockfish,1320.0,white,0-1,0.0,16,CHECKMATE,1n1qkbnr/1pp2ppp/1P6/3pp3/8/2P5/1PbPPPPP/2r1KBNR w Kk - 0 9,UCI_Elo=1320,1320,1320.0
+7,stockfish,1320.0,black,1-0,0.0,59,CHECKMATE,4kb2/8/rN1PpB2/pp2PppQ/4P3/8/B1P3P1/R3K1N1 b - - 5 30,UCI_Elo=1320,1320,1320.0

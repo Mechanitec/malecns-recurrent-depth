@@ -1,0 +1,4001 @@
+game_index,opponent_engine,opponent_elo,fly_color,result,fly_score,plies,termination,final_fen,opponent_setting,opponent_requested_elo,opponent_calibrated_elo,fly_move_count,median_fly_move_latency_s,total_recurrent_passes,mean_candidate_score_margin,pgn
+0,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6455888000200503,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h5 1/2-1/2"
+1,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.701865400013048,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. f3 h5 1/2-1/2"
+2,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/p7/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.5425856999936514,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a6 1/2-1/2"
+3,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/1P6/8/P1PPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6774447000352666,64,0.0003494825214147568,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. b4 h5 1/2-1/2"
+4,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppppp1p/6p1/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.7135553000262007,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 g6 1/2-1/2"
+5,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.510869799996726,64,0.00034948717802762985,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. c4 h5 1/2-1/2"
+6,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppp1pp/5p2/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,4.145338299975265,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 f6 1/2-1/2"
+7,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.3256458999821916,64,0.0003494834527373314,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nc3 h5 1/2-1/2"
+8,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/8/2p5/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.7321651999955066,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c5 1/2-1/2"
+9,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.6901195000391454,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nf3 h5 1/2-1/2"
+10,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/8/4p3/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.3437231000280008,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e5 1/2-1/2"
+11,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/3P4/PPP1PPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.2062706999713555,64,0.00034954817965626717,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. d3 h5 1/2-1/2"
+12,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,r1bqkbnr/pppppppp/2n5/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2,Level=0,310,310.12779874667655,1,3.6636691999738105,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 Nc6 1/2-1/2"
+13,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/7P/PPPPPPP1/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,4.030597799981479,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. h3 h5 1/2-1/2"
+14,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/8/4p3/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.256320599990431,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e5 1/2-1/2"
+15,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.2874519000179134,64,0.00034954585134983063,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. d4 h5 1/2-1/2"
+16,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppppp1p/6p1/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,4.054581300006248,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 g6 1/2-1/2"
+17,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.3998591999989003,64,0.00034948717802762985,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. b3 h5 1/2-1/2"
+18,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/8/2p5/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.4240416000247933,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c5 1/2-1/2"
+19,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.550224700011313,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nf3 h5 1/2-1/2"
+20,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,r1bqkbnr/pppppppp/n7/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2,Level=0,310,310.12779874667655,1,2.5194381000474095,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 Na6 1/2-1/2"
+21,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4872116000042297,64,0.00034947600215673447,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h5 1/2-1/2"
+22,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/8/2p5/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.8506263999734074,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c5 1/2-1/2"
+23,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/N7/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.2914970999700017,64,0.0003494825214147568,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Na3 h5 1/2-1/2"
+24,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/8/4p3/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.3600356999668293,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e5 1/2-1/2"
+25,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/6P1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.2730791000067256,64,0.0003495030105113983,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g4 h5 1/2-1/2"
+26,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppppp1p/6p1/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.3910292999935336,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 g6 1/2-1/2"
+27,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/6P1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.677994400030002,64,0.0003495030105113983,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g4 h5 1/2-1/2"
+28,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkb1r/pppppppp/5n2/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2,Level=0,310,310.12779874667655,1,2.29207739996491,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 Nf6 1/2-1/2"
+29,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/7P/PPPPPPP1/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.40738250000868,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. h3 h5 1/2-1/2"
+30,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/3p4/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.8587980999727733,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 d6 1/2-1/2"
+31,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.8017397999647073,64,0.0003494834527373314,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nc3 h5 1/2-1/2"
+32,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppp1pp/5p2/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6299357000389136,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 f6 1/2-1/2"
+33,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.589525400020648,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nf3 h5 1/2-1/2"
+34,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,r1bqkbnr/pppppppp/n7/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2,Level=0,310,310.12779874667655,1,2.578365599969402,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 Na6 1/2-1/2"
+35,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/P7/8/1PPPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.50771039997926,64,0.00034945737570524216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. a4 h5 1/2-1/2"
+36,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/8/4p3/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.628482999978587,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e5 1/2-1/2"
+37,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.9301883000298403,64,0.00034947600215673447,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h5 1/2-1/2"
+38,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,r1bqkbnr/pppppppp/n7/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2,Level=0,310,310.12779874667655,1,2.4179472000105307,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 Na6 1/2-1/2"
+39,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/7P/8/PPPPPPP1/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.7680828999727964,64,0.00034947972744703293,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. h4 h5 1/2-1/2"
+40,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/8/p7/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.568160099966917,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a5 1/2-1/2"
+41,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.0953444000333548,64,0.0003494834527373314,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nc3 h5 1/2-1/2"
+42,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.442337699991185,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h5 1/2-1/2"
+43,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/P7/8/1PPPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.2921376999584027,64,0.00034945737570524216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. a4 h5 1/2-1/2"
+44,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/3p4/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.620274699991569,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 d6 1/2-1/2"
+45,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/7P/8/PPPPPPP1/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.213314300053753,64,0.00034947972744703293,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. h4 h5 1/2-1/2"
+46,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/2p5/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.540382699982729,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c6 1/2-1/2"
+47,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/N7/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4228463000035845,64,0.0003494825214147568,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Na3 h5 1/2-1/2"
+48,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.908577400026843,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h5 1/2-1/2"
+49,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.448066499957349,64,0.00034977030009031296,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. e4 h5 1/2-1/2"
+50,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.8035536999814212,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 d5 1/2-1/2"
+51,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.921745600004215,64,0.00034948717802762985,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. b3 h5 1/2-1/2"
+52,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/p7/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6038869999465533,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a6 1/2-1/2"
+53,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.792008100019302,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. f4 h5 1/2-1/2"
+54,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/p1pppppp/8/1p6/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6464572999975644,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 b5 1/2-1/2"
+55,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/P7/8/1PPPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.8153789999778382,64,0.00034945737570524216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. a4 h5 1/2-1/2"
+56,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/p7/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.4698165000299923,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a6 1/2-1/2"
+57,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.717307700018864,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. f4 h5 1/2-1/2"
+58,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppppp1p/6p1/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.819491399975959,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 g6 1/2-1/2"
+59,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/2P5/PP1PPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.7865072000422515,64,0.00034944619983434677,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. c3 h5 1/2-1/2"
+60,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/p7/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.7258511999971233,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a6 1/2-1/2"
+61,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.7222700000274926,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nf3 h5 1/2-1/2"
+62,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppp1pp/8/5p2/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.3196390999946743,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 f5 1/2-1/2"
+63,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/7P/PPPPPPP1/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.9828166000079364,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. h3 h5 1/2-1/2"
+64,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/8/2p5/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.126566199993249,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c5 1/2-1/2"
+65,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.5239806000026874,64,0.0003494834527373314,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nc3 h5 1/2-1/2"
+66,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/p1pppppp/8/1p6/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.8146356000215746,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 b5 1/2-1/2"
+67,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.8011862999992445,64,0.0003494834527373314,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nc3 h5 1/2-1/2"
+68,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/8/4p3/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4676355000119656,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e5 1/2-1/2"
+69,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.643226100015454,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nf3 h5 1/2-1/2"
+70,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/7p/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.806774999946356,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h6 1/2-1/2"
+71,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/4P3/PPPP1PPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6812587999738753,64,0.0003497488796710968,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. e3 h5 1/2-1/2"
+72,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppp1pp/8/5p2/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.7509998999885283,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 f5 1/2-1/2"
+73,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/P7/8/1PPPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.5286403000354767,64,0.00034945737570524216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. a4 h5 1/2-1/2"
+74,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/8/2p5/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.416596800030675,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c5 1/2-1/2"
+75,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/3P4/PPP1PPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6755340000381693,64,0.00034954817965626717,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. d3 h5 1/2-1/2"
+76,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/8/p7/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.885070399963297,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a5 1/2-1/2"
+77,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.164150799973868,64,0.00034954585134983063,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. d4 h5 1/2-1/2"
+78,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.308719199965708,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 d5 1/2-1/2"
+79,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/6P1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.2913181000039913,64,0.0003495030105113983,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g4 h5 1/2-1/2"
+80,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/2p5/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.192931499972474,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c6 1/2-1/2"
+81,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/N7/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.2123546000220813,64,0.0003494825214147568,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Na3 h5 1/2-1/2"
+82,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/7p/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.1649414999992587,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h6 1/2-1/2"
+83,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/1P6/8/P1PPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.210541500011459,64,0.0003494825214147568,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. b4 h5 1/2-1/2"
+84,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/p1pppppp/8/1p6/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.2069818999734707,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 b5 1/2-1/2"
+85,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/7N/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.2362897000275552,64,0.00034948810935020447,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nh3 h5 1/2-1/2"
+86,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppp1pp/5p2/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.0573716000071727,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 f6 1/2-1/2"
+87,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.884636099974159,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nf3 h5 1/2-1/2"
+88,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/8/p7/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.1600609999732114,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a5 1/2-1/2"
+89,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,4.111988799995743,64,0.00034977030009031296,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. e4 h5 1/2-1/2"
+90,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/8/p7/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.813700600003358,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a5 1/2-1/2"
+91,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/P7/8/1PPPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.357360999973025,64,0.00034945737570524216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. a4 h5 1/2-1/2"
+92,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,r1bqkbnr/pppppppp/n7/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2,Level=0,310,310.12779874667655,1,3.234585500031244,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 Na6 1/2-1/2"
+93,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.974761200021021,64,0.00034947600215673447,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h5 1/2-1/2"
+94,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,r1bqkbnr/pppppppp/n7/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2,Level=0,310,310.12779874667655,1,3.002773199987132,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 Na6 1/2-1/2"
+95,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/7N/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6303394999704324,64,0.00034948810935020447,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nh3 h5 1/2-1/2"
+96,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/4p3/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4761024999897927,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e6 1/2-1/2"
+97,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.8308153999969363,64,0.0003494834527373314,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nc3 h5 1/2-1/2"
+98,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/8/p7/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.682878800027538,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a5 1/2-1/2"
+99,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/7N/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.485088200017344,64,0.00034948810935020447,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nh3 h5 1/2-1/2"
+100,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/3p4/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.1777826999896206,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 d6 1/2-1/2"
+101,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.5672688000486232,64,0.0003494834527373314,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nc3 h5 1/2-1/2"
+102,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/7p/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4359031000058167,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h6 1/2-1/2"
+103,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/N7/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.514883199997712,64,0.0003494825214147568,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Na3 h5 1/2-1/2"
+104,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/8/p7/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.508115699980408,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a5 1/2-1/2"
+105,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/P7/8/1PPPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.8146097999997437,64,0.00034945737570524216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. a4 h5 1/2-1/2"
+106,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppppp1p/6p1/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.518437599996105,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 g6 1/2-1/2"
+107,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/1P6/8/P1PPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.7066704999888316,64,0.0003494825214147568,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. b4 h5 1/2-1/2"
+108,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkb1r/pppppppp/5n2/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2,Level=0,310,310.12779874667655,1,3.6465292000211775,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 Nf6 1/2-1/2"
+109,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/1P6/8/P1PPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.4060424999915995,64,0.0003494825214147568,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. b4 h5 1/2-1/2"
+110,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppp1pp/5p2/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.404030099976808,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 f6 1/2-1/2"
+111,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/N7/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.833200699998997,64,0.0003494825214147568,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Na3 h5 1/2-1/2"
+112,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/2p5/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.1608101000310853,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c6 1/2-1/2"
+113,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/1P6/8/P1PPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.8743071999633685,64,0.0003494825214147568,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. b4 h5 1/2-1/2"
+114,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/8/2p5/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.83636590000242,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c5 1/2-1/2"
+115,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.5101861000293866,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nf3 h5 1/2-1/2"
+116,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppppp1p/6p1/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.652048999967519,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 g6 1/2-1/2"
+117,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/3P4/PPP1PPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.7138142000185326,64,0.00034954817965626717,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. d3 h5 1/2-1/2"
+118,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/4p3/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6678001999971457,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e6 1/2-1/2"
+119,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4484182999585755,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nf3 h5 1/2-1/2"
+120,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkb1r/pppppppp/5n2/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2,Level=0,310,310.12779874667655,1,2.5901849000365473,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 Nf6 1/2-1/2"
+121,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/6P1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6894287999602966,64,0.0003495030105113983,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g4 h5 1/2-1/2"
+122,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/4p3/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4493936999933794,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e6 1/2-1/2"
+123,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/4P3/PPPP1PPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4697117000469007,64,0.0003497488796710968,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. e3 h5 1/2-1/2"
+124,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/8/p7/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.649504999979399,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a5 1/2-1/2"
+125,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/4P3/PPPP1PPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4052441000239924,64,0.0003497488796710968,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. e3 h5 1/2-1/2"
+126,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/p1pppppp/1p6/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.465894000022672,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 b6 1/2-1/2"
+127,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.969140700006392,64,0.00034977030009031296,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. e4 h5 1/2-1/2"
+128,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.2266470000031404,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h5 1/2-1/2"
+129,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.5307048999820836,64,0.00034948717802762985,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. b3 h5 1/2-1/2"
+130,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/3p4/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.6852209999924526,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 d6 1/2-1/2"
+131,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/4P3/PPPP1PPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.810882700025104,64,0.0003497488796710968,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. e3 h5 1/2-1/2"
+132,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppp1pp/5p2/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.861427299969364,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 f6 1/2-1/2"
+133,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.42365080001764,64,0.0003494834527373314,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nc3 h5 1/2-1/2"
+134,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppp1pp/5p2/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4452524000080302,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 f6 1/2-1/2"
+135,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/6P1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4386406000121497,64,0.0003495030105113983,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g4 h5 1/2-1/2"
+136,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/3p4/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.5876172000425868,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 d6 1/2-1/2"
+137,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/2P5/PP1PPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.02784920000704,64,0.00034944619983434677,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. c3 h5 1/2-1/2"
+138,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/p1pppppp/8/1p6/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.5380750999902375,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 b5 1/2-1/2"
+139,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/7P/8/PPPPPPP1/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6930794999934733,64,0.00034947972744703293,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. h4 h5 1/2-1/2"
+140,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/4p3/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.5207586999749765,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e6 1/2-1/2"
+141,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/7N/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.842567599960603,64,0.00034948810935020447,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nh3 h5 1/2-1/2"
+142,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/2p5/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.5070986000355333,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c6 1/2-1/2"
+143,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/4P3/PPPP1PPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.773988000000827,64,0.0003497488796710968,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. e3 h5 1/2-1/2"
+144,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/8/p7/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.577470100019127,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a5 1/2-1/2"
+145,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/4P3/PPPP1PPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.492626199964434,64,0.0003497488796710968,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. e3 h5 1/2-1/2"
+146,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.416117800050415,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h5 1/2-1/2"
+147,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4551625999738462,64,0.0003494834527373314,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nc3 h5 1/2-1/2"
+148,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.421348500007298,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 d5 1/2-1/2"
+149,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.3466078999917954,64,0.00034947600215673447,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h5 1/2-1/2"
+150,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/p7/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.382709400029853,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a6 1/2-1/2"
+151,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.0575960999703966,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. f3 h5 1/2-1/2"
+152,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/8/4p3/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.3790124999941327,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e5 1/2-1/2"
+153,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.372118600003887,64,0.00034977030009031296,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. e4 h5 1/2-1/2"
+154,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/7p/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4854087000130676,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h6 1/2-1/2"
+155,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/P7/8/1PPPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6074111000052653,64,0.00034945737570524216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. a4 h5 1/2-1/2"
+156,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.606748200021684,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h5 1/2-1/2"
+157,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/6P1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.501902699994389,64,0.0003495030105113983,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g4 h5 1/2-1/2"
+158,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.3774307999992743,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 d5 1/2-1/2"
+159,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.550090899982024,64,0.0003494834527373314,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nc3 h5 1/2-1/2"
+160,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/8/4p3/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.5018038999987766,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e5 1/2-1/2"
+161,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6151750999852084,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nf3 h5 1/2-1/2"
+162,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,r1bqkbnr/pppppppp/2n5/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2,Level=0,310,310.12779874667655,1,3.5357022000243887,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 Nc6 1/2-1/2"
+163,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/3P4/PPP1PPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.361620599986054,64,0.00034954817965626717,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. d3 h5 1/2-1/2"
+164,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.974384500004817,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 d5 1/2-1/2"
+165,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.5605351999984123,64,0.00034954585134983063,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. d4 h5 1/2-1/2"
+166,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/2p5/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.794415400014259,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c6 1/2-1/2"
+167,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/7P/8/PPPPPPP1/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.858287399983965,64,0.00034947972744703293,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. h4 h5 1/2-1/2"
+168,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/7p/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.8866873999941163,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h6 1/2-1/2"
+169,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.6607976999948733,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. f4 h5 1/2-1/2"
+170,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/8/4p3/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.531332799990196,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e5 1/2-1/2"
+171,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/P7/8/1PPPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.45064579998143,64,0.00034945737570524216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. a4 h5 1/2-1/2"
+172,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppp1pp/5p2/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.5868577000219375,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 f6 1/2-1/2"
+173,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.528536500001792,64,0.00034948717802762985,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. b3 h5 1/2-1/2"
+174,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/p1pppppp/1p6/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.468338400009088,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 b6 1/2-1/2"
+175,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.644475399982184,64,0.00034948717802762985,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. b3 h5 1/2-1/2"
+176,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/p7/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.834562400006689,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a6 1/2-1/2"
+177,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.114862999995239,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. f3 h5 1/2-1/2"
+178,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/8/p7/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.8793594999588095,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a5 1/2-1/2"
+179,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.86974910000572,64,0.00034948717802762985,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. c4 h5 1/2-1/2"
+180,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/4p3/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.0125187000376172,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e6 1/2-1/2"
+181,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/P7/1PPPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.947830699966289,64,0.00034949276596307755,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. a3 h5 1/2-1/2"
+182,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/8/4p3/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.9110716999857686,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e5 1/2-1/2"
+183,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.798062200017739,64,0.00034948717802762985,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. c4 h5 1/2-1/2"
+184,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppp1ppp/8/4p3/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.2249521000194363,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 e5 1/2-1/2"
+185,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/7N/PPPPPPPP/RNBQKB1R w KQkq - 0 2,Level=0,310,310.12779874667655,1,3.1529312999919057,64,0.00034948810935020447,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. Nh3 h5 1/2-1/2"
+186,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/8/2p5/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.561680899991188,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c5 1/2-1/2"
+187,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.4881400000303984,64,0.00034977030009031296,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. e4 h5 1/2-1/2"
+188,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pppppp1p/6p1/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.3388696999754757,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 g6 1/2-1/2"
+189,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/1P6/8/P1PPPPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.2861387000302784,64,0.0003494825214147568,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. b4 h5 1/2-1/2"
+190,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkb1r/pppppppp/5n2/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2,Level=0,310,310.12779874667655,1,2.2508810000144877,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 Nf6 1/2-1/2"
+191,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/7P/8/PPPPPPP1/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.8363798000500537,64,0.00034947972744703293,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. h4 h5 1/2-1/2"
+192,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkb1r/pppppppp/7n/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 1 2,Level=0,310,310.12779874667655,1,2.191031700000167,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 Nh6 1/2-1/2"
+193,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.3184087999979965,64,0.00034947600215673447,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 h5 1/2-1/2"
+194,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/1ppppppp/8/p7/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.2192973000346683,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 a5 1/2-1/2"
+195,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.398748399980832,64,0.00034948159009218216,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. f3 h5 1/2-1/2"
+196,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/p1pppppp/1p6/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.459089200012386,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 b6 1/2-1/2"
+197,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.452572299982421,64,0.00034954585134983063,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. d4 h5 1/2-1/2"
+198,minic,310.12779874667655,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/pp1ppppp/8/2p5/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.1502754000248387,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. g3 c5 1/2-1/2"
+199,minic,310.12779874667655,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2,Level=0,310,310.12779874667655,1,2.170756900042761,64,0.00034977030009031296,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""310.12779874667655""]
+
+1. e4 h5 1/2-1/2"
+200,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.877911999996286,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+201,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.6907047999557108,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+202,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5166146000265144,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+203,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5334221000084653,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+204,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.1386044999817386,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+205,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.9635987000074238,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+206,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.0971917000133544,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+207,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.7060985999996774,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+208,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.13486659998307,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+209,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.91909590002615,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+210,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.7148307999596,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+211,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.451726700004656,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+212,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.4552025999873877,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+213,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.597327600000426,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+214,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.656794100010302,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+215,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.8935144999995828,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+216,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.5327520999708213,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+217,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,4.208891799964476,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+218,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.936236999987159,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+219,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5202145000221208,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+220,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.4574736999929883,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+221,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.6720316999708302,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+222,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.4895016999798827,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+223,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5906398999504745,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+224,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.000093399954494,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+225,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.551004999957513,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+226,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.7045378999901004,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+227,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.838263899961021,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+228,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5214282000088133,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+229,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.729141099960543,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+230,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.4737921999767423,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+231,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.1942556999856606,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+232,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.8966066000284627,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+233,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5451888000243343,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+234,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.552083600021433,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+235,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.8525072000338696,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+236,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.6825622000033036,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+237,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.6791130999918096,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+238,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5932455000001937,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+239,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.1844118000008166,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+240,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.216567999974359,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+241,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.4409669999731705,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+242,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.678599499980919,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+243,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5469547000247985,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+244,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5031024999916553,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+245,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5216433000168763,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+246,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5053685000166297,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+247,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.2092754999757744,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+248,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.679901900002733,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+249,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.980081399960909,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+250,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.7827886000159197,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+251,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5519241000292823,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+252,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.602489900018554,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+253,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.909726000041701,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+254,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.710152800020296,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+255,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.9243115999852307,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+256,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.7421672999626026,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+257,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5006030999938957,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+258,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.448030599975027,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+259,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.493970300012734,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+260,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.885024200018961,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+261,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.4804587999824435,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+262,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.3471653999877162,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+263,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.562626699975226,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+264,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.8330069000367075,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+265,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.1680749999941327,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+266,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.0300234999740496,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+267,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.1106295000063255,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+268,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.988849100016523,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+269,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.047370700049214,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+270,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.65316410001833,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+271,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.600601200014353,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+272,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.8724069999880157,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+273,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.668894900009036,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+274,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.819774499977939,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+275,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.805282899993472,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+276,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5447929999791086,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+277,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5921401999657974,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+278,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.574340299994219,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+279,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.7957598000066355,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+280,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.7063212000066414,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+281,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.6125602000392973,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+282,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5658595000277273,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+283,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.9529129000147805,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+284,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.3772279000259005,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+285,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.362824100011494,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+286,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.268222499988042,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+287,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.37511539994739,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+288,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.4771711999783292,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+289,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.3399426999967545,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+290,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.122031299979426,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+291,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.2564955999841914,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+292,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.217579799995292,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+293,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.398716100025922,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+294,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.2788014999823645,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+295,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.2357439000043087,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+296,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.1037563999998383,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+297,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.260649600008037,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+298,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.372949000040535,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+299,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.082852399966214,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+300,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.4554185000015423,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+301,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5905160999973305,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+302,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5950069000246003,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+303,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.6545820999890566,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+304,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.767715699970722,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+305,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.7358196999994107,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+306,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.02250019996427,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+307,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.926397699979134,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+308,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5506942000356503,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+309,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.691995000001043,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+310,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.7857564999721944,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+311,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.898445700004231,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+312,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.48757369996747,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+313,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.9415432999958284,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+314,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.8396014000172727,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+315,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.4398157999967225,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+316,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.688059800013434,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+317,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.2085095000220463,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+318,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.0506069000111893,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+319,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.987985000014305,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+320,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.529449299967382,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+321,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.774219099956099,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+322,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5642695000278763,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+323,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.818695200025104,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+324,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5458072999608703,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+325,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.393836899951566,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+326,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.139146299974527,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+327,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.8142419999931008,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+328,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.796258099959232,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+329,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.609652199957054,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+330,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.916660600050818,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+331,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.065828100021463,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+332,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.9084076000144705,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+333,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.733150999993086,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+334,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.600738100009039,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+335,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.838321499992162,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+336,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.415470500010997,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+337,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.4869138000067323,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+338,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.544664399989415,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+339,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.403030600049533,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+340,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.466896200028714,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+341,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.203613599995151,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+342,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.308129299955908,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+343,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.317016799992416,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+344,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.207450099987909,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+345,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.305195100023411,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+346,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.501190300041344,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+347,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5075090000173077,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+348,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.162957899970934,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+349,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.2533734000171535,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+350,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.2494550999836065,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+351,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.3150060000480153,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+352,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.261420499999076,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+353,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.6093723000376485,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+354,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.845068499969784,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+355,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.4809788000420667,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+356,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.6217304000165313,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+357,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.937667300051544,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+358,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.3083457999746315,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+359,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.9336752999806777,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+360,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.1296961999614723,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+361,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.895820099976845,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+362,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.8414687999757007,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+363,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.791722399997525,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+364,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.5141601000213996,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+365,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.617399699985981,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+366,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.573513599985745,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+367,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.529687499976717,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+368,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.571452100004535,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+369,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.6745300000184216,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+370,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,3.1665401000063866,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+371,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.7585253000142984,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+372,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.493703700019978,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+373,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.46340720000444,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+374,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.5069255999987945,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+375,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.598748499993235,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+376,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.661366700020153,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+377,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.2642457999754697,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+378,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.2141047999612056,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+379,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.1522557999705896,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+380,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.3963733999989927,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+381,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.460099999967497,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+382,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.7608001999906264,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+383,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.35491459997138,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+384,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.434083500003908,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+385,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.3540039000217803,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+386,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.2004333000513725,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+387,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.280518999963533,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+388,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.183818500023335,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+389,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.260736399970483,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+390,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.2715462999767624,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+391,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.2228354000253603,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+392,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.3860677999909967,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+393,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.248072799993679,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+394,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.28080880001653,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+395,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.3136622000019997,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+396,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.424648199987132,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+397,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.513299099984579,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"
+398,gaia,580.0,white,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppp1pppp/8/3p4/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.6927954999846406,64,0.0013455897569656372,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. g3 d5 1/2-1/2"
+399,gaia,580.0,black,1/2-1/2,0.5,2,MAX_PLIES_ADJUDICATION,rnbqkbnr/ppppppp1/8/7p/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2,Skill Level=1,580,580.0,1,2.2258190999855287,64,0.00034948065876960754,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[OpponentElo ""580.0""]
+
+1. f4 h5 1/2-1/2"

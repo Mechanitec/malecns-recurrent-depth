@@ -1,0 +1,53 @@
+game_index,opponent_engine,opponent_elo,fly_color,result,fly_score,plies,termination,final_fen,opponent_setting,opponent_requested_elo,opponent_calibrated_elo,fly_move_count,median_fly_move_latency_s,total_recurrent_passes,mean_candidate_score_margin,pgn,opening_id,start_fen
+0,minic,310.12779874667655,white,1/2-1/2,0.5,12,MAX_PLIES_ADJUDICATION,rn1qkb2/2pppppr/bp3n2/p6p/4B2P/3PP3/PPP2PPR/RNBQK1N1 w Qq - 2 7,Level=0,310,310.12779874667655,2,2.7741429500165395,128,0.0006008371710777283,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""minic""]
+[Result ""1/2-1/2""]
+[FEN ""rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5""]
+[SetUp ""1""]
+[OpponentElo ""310.12779874667655""]
+[Opening ""opening_000""]
+
+5. h4 h5 6. Rh2 Rh7 1/2-1/2",opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5
+1,minic,310.12779874667655,black,1/2-1/2,0.5,12,MAX_PLIES_ADJUDICATION,rn1qkb2/2pppppr/bp3n1p/p7/4B3/3PP3/PPPBQPPP/RN2K1NR w KQq - 2 7,Level=0,310,310.12779874667655,2,4.350385650031967,128,5.225464701652527e-05,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""minic""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[FEN ""rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5""]
+[SetUp ""1""]
+[OpponentElo ""310.12779874667655""]
+[Opening ""opening_000""]
+
+5. Qe2 h6 6. Bd2 Rh7 1/2-1/2",opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5
+2,gaia,580.0,white,1/2-1/2,0.5,12,MAX_PLIES_ADJUDICATION,rn1qkb1r/3ppppB/1p3n2/pbp5/7P/3PP3/PPP2PP1/RNBQK1NR w KQkq - 1 7,Skill Level=1,580,580.0,2,3.3444435500132386,128,0.0007177479565143585,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""MaleCNS-RD""]
+[Black ""gaia""]
+[Result ""1/2-1/2""]
+[FEN ""rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5""]
+[SetUp ""1""]
+[OpponentElo ""580.0""]
+[Opening ""opening_000""]
+
+5. h4 c5 6. Bxh7 Bb5 1/2-1/2",opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5
+3,gaia,580.0,black,1/2-1/2,0.5,12,MAX_PLIES_ADJUDICATION,Bn1qkb2/2pppppr/bp3n1p/p7/8/3PP3/PPP1NPPP/RNBQK2R w KQ - 2 7,Skill Level=1,580,580.0,2,2.7869166000164114,128,4.392117261886597e-05,"[Event ""?""]
+[Site ""?""]
+[Date ""????.??.??""]
+[Round ""?""]
+[White ""gaia""]
+[Black ""MaleCNS-RD""]
+[Result ""1/2-1/2""]
+[FEN ""rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5""]
+[SetUp ""1""]
+[OpponentElo ""580.0""]
+[Opening ""opening_000""]
+
+5. Bxa8 h6 6. Ne2 Rh7 1/2-1/2",opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5

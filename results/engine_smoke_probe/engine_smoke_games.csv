@@ -1,0 +1,7 @@
+engine,setting,game_index,opening_index,engine_color,status,plies,engine_moves,elapsed_s,median_move_latency_s,error
+minic,Level=0,0,0,white,complete,57,28,0.17799019999802113,0.003038599999854341,
+minic,Level=0,1,1,black,complete,60,27,0.1475448000128381,0.0030001000268384814,
+gaia,Skill Level=1,0,0,white,complete,60,29,0.9113746999646537,0.0025843000039458275,
+gaia,Skill Level=1,1,1,black,complete,60,27,0.10265329998219386,0.001990300021134317,
+stockfish,UCI_Elo=1320,0,0,white,complete,41,20,0.3235916999983601,0.01358834997517988,
+stockfish,UCI_Elo=1320,1,1,black,complete,22,8,0.13177350000478327,0.014305249991593882,

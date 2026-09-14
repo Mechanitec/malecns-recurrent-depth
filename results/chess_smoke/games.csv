@@ -1,0 +1,7 @@
+game_index,opponent_engine,opponent_elo,fly_color,result,fly_score,plies,termination,final_fen
+0,stockfish,1320,white,0-1,0.0,52,CHECKMATE,1r2k2r/1p3p1p/1n2q3/pNb2b2/P4P1p/8/NK1P2P1/R1Bn4 w k - 6 27
+1,stockfish,1320,black,1-0,0.0,47,CHECKMATE,3R2nr/r1P1k3/p2QBp2/6pp/p1p1P1PP/2N2N2/P1P2P2/B3K2R b K - 0 24
+2,stockfish,1400,white,0-1,0.0,22,CHECKMATE,rn2kbn1/pppbppp1/5r2/8/P1pPP1pP/2P5/RP3qPR/1NBQK3 w q - 0 12
+3,stockfish,1400,black,1-0,0.0,57,CHECKMATE,1r4r1/p1q1np1p/1kp2N1b/2N3P1/1QPP1PP1/1p6/P7/R1BB1RK1 b - - 3 29
+4,stockfish,1500,white,0-1,0.0,40,CHECKMATE,r4rk1/ppp2pp1/5n1p/N7/3p3P/6Pb/PP3P2/K4q2 w - - 0 21
+5,stockfish,1500,black,1-0,0.0,35,CHECKMATE,rq3b1r/ppp1pN2/3p2pp/3k1P2/Q2P4/2N3P1/PP2BP2/R1B1K2R b KQ - 3 18

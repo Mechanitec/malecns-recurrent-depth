@@ -1,0 +1,5 @@
+game_index,opponent_engine,opponent_elo,fly_color,result,fly_score,plies,termination,final_fen
+0,alfil,200,white,1/2-1/2,0.5,20,MAX_PLIES_ADJUDICATION,2rqnb1r/pppkppp1/n7/1P1p3p/P3BP2/2P1PN2/3P3P/RNBQK2b w Q - 0 11
+1,alfil,200,black,1/2-1/2,0.5,20,MAX_PLIES_ADJUDICATION,r4b1r/pbqkpp1p/1pn3pn/2p5/P2P4/3P1NP1/1P2PP1P/RNBQK2R w KQ - 0 11
+2,stockfish,1320,white,1/2-1/2,0.5,20,MAX_PLIES_ADJUDICATION,r1q1kb1r/1pp1pppp/p2n4/3p1b2/3P4/P2PB2N/2P2PPP/RNK2B1R w kq - 1 11
+3,stockfish,1320,black,1/2-1/2,0.5,20,MAX_PLIES_ADJUDICATION,1n1qkbnr/r2b1p1p/p5p1/1PP1p3/3QP3/P3B3/1P2BPPP/RN2K1NR w KQk - 0 11

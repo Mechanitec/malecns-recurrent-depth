@@ -1,0 +1,9 @@
+game_index,opponent_engine,opponent_elo,fly_color,result,fly_score,plies,termination,final_fen,opponent_setting,opponent_requested_elo,opponent_calibrated_elo
+0,minic,310.12779874667655,white,1/2-1/2,0.5,434,INSUFFICIENT_MATERIAL,3K4/8/8/8/8/2k5/8/8 w - - 0 218,Level=0,0,310.12779874667655
+1,minic,310.12779874667655,black,1/2-1/2,0.5,303,INSUFFICIENT_MATERIAL,2K5/8/7b/8/6k1/8/8/8 b - - 0 152,Level=0,0,310.12779874667655
+2,minic,348.1881990097149,white,0-1,0.0,46,CHECKMATE,rnb1k2r/pp1p1p1p/4p2p/2pP4/1PP1n3/2K5/4P1PP/1q6 w kq - 8 24,Level=21,400,348.1881990097149
+3,minic,348.1881990097149,black,1-0,0.0,31,CHECKMATE,2bk1QN1/1rpp3p/p7/2p1pp2/2B5/2N5/PPP2PPP/R1B1K2R b KQ - 0 16,Level=21,400,348.1881990097149
+4,gaia,580.0,white,0-1,0.0,40,CHECKMATE,r1b1kb1r/p1pp1pp1/2n5/4p3/PP3n1P/2Pq1P2/3KPq2/RNB2B2 w kq - 0 21,Skill Level=1,580,580.0
+5,gaia,580.0,black,1-0,0.0,43,CHECKMATE,3r2nr/p3p2p/4k2b/1pp2Qp1/P2pN1P1/1P1PP3/1P2K1P1/R1B2BNR b - - 1 22,Skill Level=1,580,580.0
+6,stockfish,1320.0,white,0-1,0.0,52,CHECKMATE,1r1k2nr/ppp5/n5pp/2P1p3/Pb4bP/1P6/Kq4q1/R5N1 w - - 0 27,UCI_Elo=1320,1320,1320.0
+7,stockfish,1320.0,black,1-0,0.0,67,CHECKMATE,7r/4b3/4kp1p/p2Q3p/3P1BP1/1PNB4/2PN1P2/R3K2R b - - 6 34,UCI_Elo=1320,1320,1320.0

@@ -1,0 +1,169 @@
+game_id,matchup_id,opening_pair,opening_fen,game_in_pair,white_engine,white_setting,black_engine,black_setting,result,white_score,plies,elapsed_s,status,error,opening_pair_index
+matchup_000_opening_000_0,matchup_000,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=0,minic,Level=1,1/2-1/2,0.5,80,0.32827489997725934,complete,,0
+matchup_000_opening_000_1,matchup_000,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=1,minic,Level=0,1/2-1/2,0.5,80,0.3424028999870643,complete,,0
+matchup_000_opening_001_0,matchup_000,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=0,minic,Level=1,1/2-1/2,0.5,80,0.2966193000320345,complete,,1
+matchup_000_opening_001_1,matchup_000,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=1,minic,Level=0,1/2-1/2,0.5,80,0.2971701000351459,complete,,1
+matchup_001_opening_000_0,matchup_001,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=1,minic,Level=2,1/2-1/2,0.5,80,0.2881217999965884,complete,,0
+matchup_001_opening_000_1,matchup_001,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=2,minic,Level=1,1/2-1/2,0.5,80,0.2676449000136927,complete,,0
+matchup_001_opening_001_0,matchup_001,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=1,minic,Level=2,0-1,0.0,64,0.1901130999904126,complete,,1
+matchup_001_opening_001_1,matchup_001,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=2,minic,Level=1,1/2-1/2,0.5,80,0.27938050002558157,complete,,1
+matchup_002_opening_000_0,matchup_002,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=2,minic,Level=3,1-0,1.0,65,0.22945619997335598,complete,,0
+matchup_002_opening_000_1,matchup_002,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=3,minic,Level=2,1/2-1/2,0.5,80,0.2868743999861181,complete,,0
+matchup_002_opening_001_0,matchup_002,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=2,minic,Level=3,1/2-1/2,0.5,80,0.3188378000049852,complete,,1
+matchup_002_opening_001_1,matchup_002,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=3,minic,Level=2,1/2-1/2,0.5,80,0.27404119999846444,complete,,1
+matchup_003_opening_000_0,matchup_003,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=3,minic,Level=4,1/2-1/2,0.5,80,0.2998445999692194,complete,,0
+matchup_003_opening_000_1,matchup_003,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=4,minic,Level=3,1/2-1/2,0.5,80,0.27718560001812875,complete,,0
+matchup_003_opening_001_0,matchup_003,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=3,minic,Level=4,1/2-1/2,0.5,80,0.2714327999856323,complete,,1
+matchup_003_opening_001_1,matchup_003,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=4,minic,Level=3,1/2-1/2,0.5,80,0.30074039997998625,complete,,1
+matchup_004_opening_000_0,matchup_004,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=4,minic,Level=5,1/2-1/2,0.5,80,0.3000589999719523,complete,,0
+matchup_004_opening_000_1,matchup_004,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=5,minic,Level=4,1/2-1/2,0.5,80,0.3019810999976471,complete,,0
+matchup_004_opening_001_0,matchup_004,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=4,minic,Level=5,1/2-1/2,0.5,80,0.27934269997058436,complete,,1
+matchup_004_opening_001_1,matchup_004,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=5,minic,Level=4,1/2-1/2,0.5,80,0.28021569998236373,complete,,1
+matchup_005_opening_000_0,matchup_005,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=5,minic,Level=6,1/2-1/2,0.5,80,0.3171841999865137,complete,,0
+matchup_005_opening_000_1,matchup_005,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=6,minic,Level=5,1/2-1/2,0.5,80,0.2710378000047058,complete,,0
+matchup_005_opening_001_0,matchup_005,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=5,minic,Level=6,1/2-1/2,0.5,80,0.27917320001870394,complete,,1
+matchup_005_opening_001_1,matchup_005,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=6,minic,Level=5,1/2-1/2,0.5,80,0.32327260001329705,complete,,1
+matchup_006_opening_000_0,matchup_006,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=6,minic,Level=7,1/2-1/2,0.5,80,0.3960493999766186,complete,,0
+matchup_006_opening_000_1,matchup_006,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=7,minic,Level=6,1/2-1/2,0.5,80,0.3293866000021808,complete,,0
+matchup_006_opening_001_0,matchup_006,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=6,minic,Level=7,1/2-1/2,0.5,80,0.32095149997621775,complete,,1
+matchup_006_opening_001_1,matchup_006,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=7,minic,Level=6,1/2-1/2,0.5,80,0.2725312000256963,complete,,1
+matchup_007_opening_000_0,matchup_007,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=7,minic,Level=8,1/2-1/2,0.5,80,0.31223570002475753,complete,,0
+matchup_007_opening_000_1,matchup_007,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=8,minic,Level=7,1/2-1/2,0.5,80,0.30489480000687763,complete,,0
+matchup_007_opening_001_0,matchup_007,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=7,minic,Level=8,1/2-1/2,0.5,80,0.33725360000971705,complete,,1
+matchup_007_opening_001_1,matchup_007,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=8,minic,Level=7,1/2-1/2,0.5,80,0.3359076999477111,complete,,1
+matchup_008_opening_000_0,matchup_008,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=8,minic,Level=9,1/2-1/2,0.5,80,0.35584799997741356,complete,,0
+matchup_008_opening_000_1,matchup_008,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=9,minic,Level=8,1/2-1/2,0.5,80,0.3005401000264101,complete,,0
+matchup_008_opening_001_0,matchup_008,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=8,minic,Level=9,1/2-1/2,0.5,80,0.35549369995715097,complete,,1
+matchup_008_opening_001_1,matchup_008,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=9,minic,Level=8,1/2-1/2,0.5,80,0.29608199995709583,complete,,1
+matchup_009_opening_000_0,matchup_009,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=9,minic,Level=10,1/2-1/2,0.5,80,0.3676133999833837,complete,,0
+matchup_009_opening_000_1,matchup_009,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=10,minic,Level=9,1/2-1/2,0.5,80,0.2911465999786742,complete,,0
+matchup_009_opening_001_0,matchup_009,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=9,minic,Level=10,1-0,1.0,15,0.018992099969182163,complete,,1
+matchup_009_opening_001_1,matchup_009,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=10,minic,Level=9,1/2-1/2,0.5,80,0.3365125000127591,complete,,1
+matchup_010_opening_000_0,matchup_010,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=10,minic,Level=11,1/2-1/2,0.5,80,0.29349450004519895,complete,,0
+matchup_010_opening_000_1,matchup_010,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=11,minic,Level=10,1/2-1/2,0.5,80,0.2627381000202149,complete,,0
+matchup_010_opening_001_0,matchup_010,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=10,minic,Level=11,1/2-1/2,0.5,80,0.2734706000192091,complete,,1
+matchup_010_opening_001_1,matchup_010,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=11,minic,Level=10,1/2-1/2,0.5,80,0.3030014000250958,complete,,1
+matchup_011_opening_000_0,matchup_011,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=11,minic,Level=12,1/2-1/2,0.5,80,0.3260341000277549,complete,,0
+matchup_011_opening_000_1,matchup_011,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=12,minic,Level=11,1/2-1/2,0.5,80,0.28431660000933334,complete,,0
+matchup_011_opening_001_0,matchup_011,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=11,minic,Level=12,1/2-1/2,0.5,80,0.28767819999484345,complete,,1
+matchup_011_opening_001_1,matchup_011,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=12,minic,Level=11,1/2-1/2,0.5,80,0.2683305999962613,complete,,1
+matchup_012_opening_000_0,matchup_012,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=12,minic,Level=13,1/2-1/2,0.5,80,0.31688719999510795,complete,,0
+matchup_012_opening_000_1,matchup_012,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=13,minic,Level=12,1/2-1/2,0.5,80,0.2924492000020109,complete,,0
+matchup_012_opening_001_0,matchup_012,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=12,minic,Level=13,1/2-1/2,0.5,80,0.25867399998242036,complete,,1
+matchup_012_opening_001_1,matchup_012,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=13,minic,Level=12,1/2-1/2,0.5,80,0.2625838000094518,complete,,1
+matchup_013_opening_000_0,matchup_013,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=13,minic,Level=14,1/2-1/2,0.5,80,0.2996800999972038,complete,,0
+matchup_013_opening_000_1,matchup_013,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=14,minic,Level=13,1/2-1/2,0.5,80,0.2788389000343159,complete,,0
+matchup_013_opening_001_0,matchup_013,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=13,minic,Level=14,1/2-1/2,0.5,80,0.3138951999717392,complete,,1
+matchup_013_opening_001_1,matchup_013,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=14,minic,Level=13,1/2-1/2,0.5,80,0.28787000000011176,complete,,1
+matchup_014_opening_000_0,matchup_014,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=14,minic,Level=15,1/2-1/2,0.5,80,0.42684049997478724,complete,,0
+matchup_014_opening_000_1,matchup_014,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=15,minic,Level=14,1/2-1/2,0.5,80,0.38773689995286986,complete,,0
+matchup_014_opening_001_0,matchup_014,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=14,minic,Level=15,1/2-1/2,0.5,80,0.36842449998948723,complete,,1
+matchup_014_opening_001_1,matchup_014,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=15,minic,Level=14,1/2-1/2,0.5,80,0.3391866000019945,complete,,1
+matchup_015_opening_000_0,matchup_015,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=15,minic,Level=16,1/2-1/2,0.5,80,0.3644719000440091,complete,,0
+matchup_015_opening_000_1,matchup_015,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=16,minic,Level=15,1/2-1/2,0.5,80,0.28872459998819977,complete,,0
+matchup_015_opening_001_0,matchup_015,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=15,minic,Level=16,0-1,0.0,70,0.2294419999816455,complete,,1
+matchup_015_opening_001_1,matchup_015,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=16,minic,Level=15,1/2-1/2,0.5,80,0.2825787999900058,complete,,1
+matchup_016_opening_000_0,matchup_016,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=16,minic,Level=17,1/2-1/2,0.5,80,0.3073378000408411,complete,,0
+matchup_016_opening_000_1,matchup_016,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=17,minic,Level=16,1/2-1/2,0.5,80,0.29410050000296906,complete,,0
+matchup_016_opening_001_0,matchup_016,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=16,minic,Level=17,0-1,0.0,66,0.23407519998727366,complete,,1
+matchup_016_opening_001_1,matchup_016,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=17,minic,Level=16,1/2-1/2,0.5,80,0.3168883000034839,complete,,1
+matchup_017_opening_000_0,matchup_017,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=17,minic,Level=18,1/2-1/2,0.5,80,0.3335706000216305,complete,,0
+matchup_017_opening_000_1,matchup_017,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=18,minic,Level=17,1/2-1/2,0.5,80,0.2837029999936931,complete,,0
+matchup_017_opening_001_0,matchup_017,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=17,minic,Level=18,1/2-1/2,0.5,80,0.2885749999550171,complete,,1
+matchup_017_opening_001_1,matchup_017,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=18,minic,Level=17,1/2-1/2,0.5,80,0.2976651999633759,complete,,1
+matchup_018_opening_000_0,matchup_018,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=18,minic,Level=19,1/2-1/2,0.5,80,0.3870366999763064,complete,,0
+matchup_018_opening_000_1,matchup_018,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=19,minic,Level=18,1/2-1/2,0.5,80,0.32056419999571517,complete,,0
+matchup_018_opening_001_0,matchup_018,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=18,minic,Level=19,1/2-1/2,0.5,80,0.31787179998354986,complete,,1
+matchup_018_opening_001_1,matchup_018,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=19,minic,Level=18,1/2-1/2,0.5,80,0.3115151999518275,complete,,1
+matchup_019_opening_000_0,matchup_019,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=19,minic,Level=20,1/2-1/2,0.5,80,0.33372809999855235,complete,,0
+matchup_019_opening_000_1,matchup_019,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=20,minic,Level=19,1/2-1/2,0.5,80,0.29859249998116866,complete,,0
+matchup_019_opening_001_0,matchup_019,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=19,minic,Level=20,1/2-1/2,0.5,80,0.27430180000374094,complete,,1
+matchup_019_opening_001_1,matchup_019,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=20,minic,Level=19,1/2-1/2,0.5,80,0.2689307000255212,complete,,1
+matchup_020_opening_000_0,matchup_020,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=20,minic,Level=21,1/2-1/2,0.5,80,0.3049879999598488,complete,,0
+matchup_020_opening_000_1,matchup_020,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=21,minic,Level=20,1/2-1/2,0.5,80,0.28277649998199195,complete,,0
+matchup_020_opening_001_0,matchup_020,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=20,minic,Level=21,1/2-1/2,0.5,80,0.2758044999791309,complete,,1
+matchup_020_opening_001_1,matchup_020,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=21,minic,Level=20,1/2-1/2,0.5,80,0.3793555999873206,complete,,1
+matchup_021_opening_000_0,matchup_021,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=21,minic,Level=22,1/2-1/2,0.5,80,0.3201356999925338,complete,,0
+matchup_021_opening_000_1,matchup_021,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=22,minic,Level=21,1/2-1/2,0.5,80,0.287007300008554,complete,,0
+matchup_021_opening_001_0,matchup_021,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=21,minic,Level=22,1/2-1/2,0.5,80,0.3142546000308357,complete,,1
+matchup_021_opening_001_1,matchup_021,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=22,minic,Level=21,1/2-1/2,0.5,80,0.2741029000026174,complete,,1
+matchup_022_opening_000_0,matchup_022,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=22,minic,Level=23,1/2-1/2,0.5,80,0.30444370000623167,complete,,0
+matchup_022_opening_000_1,matchup_022,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=23,minic,Level=22,1/2-1/2,0.5,80,0.27383739996002987,complete,,0
+matchup_022_opening_001_0,matchup_022,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=22,minic,Level=23,1/2-1/2,0.5,80,0.2620669999741949,complete,,1
+matchup_022_opening_001_1,matchup_022,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=23,minic,Level=22,1/2-1/2,0.5,80,0.27082809997955337,complete,,1
+matchup_023_opening_000_0,matchup_023,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=23,minic,Level=24,1/2-1/2,0.5,80,0.3089400999597274,complete,,0
+matchup_023_opening_000_1,matchup_023,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=24,minic,Level=23,1/2-1/2,0.5,80,0.2918568000313826,complete,,0
+matchup_023_opening_001_0,matchup_023,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=23,minic,Level=24,1/2-1/2,0.5,80,0.27125560003332794,complete,,1
+matchup_023_opening_001_1,matchup_023,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=24,minic,Level=23,1/2-1/2,0.5,80,0.2757666999823414,complete,,1
+matchup_024_opening_000_0,matchup_024,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=24,minic,Level=25,1/2-1/2,0.5,80,0.3260080000036396,complete,,0
+matchup_024_opening_000_1,matchup_024,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=25,minic,Level=24,1/2-1/2,0.5,80,0.28009120002388954,complete,,0
+matchup_024_opening_001_0,matchup_024,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=24,minic,Level=25,1/2-1/2,0.5,80,0.27597050002077594,complete,,1
+matchup_024_opening_001_1,matchup_024,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=25,minic,Level=24,1/2-1/2,0.5,80,0.30965939996531233,complete,,1
+matchup_025_opening_000_0,matchup_025,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=25,minic,Level=26,1/2-1/2,0.5,80,0.30507300002500415,complete,,0
+matchup_025_opening_000_1,matchup_025,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=26,minic,Level=25,1/2-1/2,0.5,80,0.3014094000100158,complete,,0
+matchup_025_opening_001_0,matchup_025,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=25,minic,Level=26,1/2-1/2,0.5,80,0.2982783999759704,complete,,1
+matchup_025_opening_001_1,matchup_025,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=26,minic,Level=25,1/2-1/2,0.5,80,0.312071000051219,complete,,1
+matchup_026_opening_000_0,matchup_026,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=26,minic,Level=27,1/2-1/2,0.5,80,0.3351808999432251,complete,,0
+matchup_026_opening_000_1,matchup_026,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=27,minic,Level=26,1/2-1/2,0.5,80,0.2870437999954447,complete,,0
+matchup_026_opening_001_0,matchup_026,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=26,minic,Level=27,1/2-1/2,0.5,80,0.3016238000127487,complete,,1
+matchup_026_opening_001_1,matchup_026,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=27,minic,Level=26,1/2-1/2,0.5,80,0.37399399996502325,complete,,1
+matchup_027_opening_000_0,matchup_027,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=27,minic,Level=28,1/2-1/2,0.5,80,0.27450659999158233,complete,,0
+matchup_027_opening_000_1,matchup_027,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=28,minic,Level=27,1/2-1/2,0.5,80,0.2818521999870427,complete,,0
+matchup_027_opening_001_0,matchup_027,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=27,minic,Level=28,1/2-1/2,0.5,80,0.26595530001213774,complete,,1
+matchup_027_opening_001_1,matchup_027,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=28,minic,Level=27,1/2-1/2,0.5,80,0.2572628000052646,complete,,1
+matchup_028_opening_000_0,matchup_028,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=28,minic,Level=29,1/2-1/2,0.5,80,0.29067969997413456,complete,,0
+matchup_028_opening_000_1,matchup_028,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=29,minic,Level=28,1/2-1/2,0.5,80,0.27626559999771416,complete,,0
+matchup_028_opening_001_0,matchup_028,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=28,minic,Level=29,1/2-1/2,0.5,80,0.27021759998751804,complete,,1
+matchup_028_opening_001_1,matchup_028,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=29,minic,Level=28,1/2-1/2,0.5,80,0.26208620000397786,complete,,1
+matchup_029_opening_000_0,matchup_029,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=29,minic,Level=30,1/2-1/2,0.5,80,0.31294799997704104,complete,,0
+matchup_029_opening_000_1,matchup_029,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=30,minic,Level=29,1/2-1/2,0.5,80,0.28020310000283644,complete,,0
+matchup_029_opening_001_0,matchup_029,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=29,minic,Level=30,1/2-1/2,0.5,80,0.2587620000122115,complete,,1
+matchup_029_opening_001_1,matchup_029,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=30,minic,Level=29,1/2-1/2,0.5,80,0.2642630999907851,complete,,1
+matchup_030_opening_000_0,matchup_030,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=0,minic,Level=5,1/2-1/2,0.5,80,0.3272510999813676,complete,,0
+matchup_030_opening_000_1,matchup_030,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=5,minic,Level=0,1/2-1/2,0.5,80,0.26868580002337694,complete,,0
+matchup_030_opening_001_0,matchup_030,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=0,minic,Level=5,1/2-1/2,0.5,80,0.2883943000342697,complete,,1
+matchup_030_opening_001_1,matchup_030,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=5,minic,Level=0,1/2-1/2,0.5,80,0.29526759998407215,complete,,1
+matchup_031_opening_000_0,matchup_031,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=5,minic,Level=10,1/2-1/2,0.5,80,0.3043694999651052,complete,,0
+matchup_031_opening_000_1,matchup_031,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=10,minic,Level=5,1/2-1/2,0.5,80,0.2897594999521971,complete,,0
+matchup_031_opening_001_0,matchup_031,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=5,minic,Level=10,1/2-1/2,0.5,80,0.28100169997196645,complete,,1
+matchup_031_opening_001_1,matchup_031,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=10,minic,Level=5,1/2-1/2,0.5,80,0.2666606000275351,complete,,1
+matchup_032_opening_000_0,matchup_032,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=10,minic,Level=15,1/2-1/2,0.5,80,0.29550569999264553,complete,,0
+matchup_032_opening_000_1,matchup_032,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=15,minic,Level=10,1/2-1/2,0.5,80,0.26845189998857677,complete,,0
+matchup_032_opening_001_0,matchup_032,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=10,minic,Level=15,1/2-1/2,0.5,80,0.27834630000870675,complete,,1
+matchup_032_opening_001_1,matchup_032,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=15,minic,Level=10,1/2-1/2,0.5,80,0.2792092000017874,complete,,1
+matchup_033_opening_000_0,matchup_033,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=15,minic,Level=20,1/2-1/2,0.5,80,0.31674320000456646,complete,,0
+matchup_033_opening_000_1,matchup_033,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=20,minic,Level=15,1/2-1/2,0.5,80,0.2930029000272043,complete,,0
+matchup_033_opening_001_0,matchup_033,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=15,minic,Level=20,1/2-1/2,0.5,80,0.2732634000130929,complete,,1
+matchup_033_opening_001_1,matchup_033,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=20,minic,Level=15,1/2-1/2,0.5,80,0.27106180001283064,complete,,1
+matchup_034_opening_000_0,matchup_034,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=20,minic,Level=25,1/2-1/2,0.5,80,0.297225599992089,complete,,0
+matchup_034_opening_000_1,matchup_034,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=25,minic,Level=20,1/2-1/2,0.5,80,0.26356310001574457,complete,,0
+matchup_034_opening_001_0,matchup_034,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=20,minic,Level=25,1/2-1/2,0.5,80,0.2624622999574058,complete,,1
+matchup_034_opening_001_1,matchup_034,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=25,minic,Level=20,1/2-1/2,0.5,80,0.2779045000206679,complete,,1
+matchup_035_opening_000_0,matchup_035,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,minic,Level=25,minic,Level=30,1/2-1/2,0.5,80,0.3149270000285469,complete,,0
+matchup_035_opening_000_1,matchup_035,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=30,minic,Level=25,1/2-1/2,0.5,80,0.30244960001436993,complete,,0
+matchup_035_opening_001_0,matchup_035,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,minic,Level=25,minic,Level=30,1/2-1/2,0.5,80,0.2749419999890961,complete,,1
+matchup_035_opening_001_1,matchup_035,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=30,minic,Level=25,1/2-1/2,0.5,80,0.30516370001714677,complete,,1
+matchup_036_opening_000_0,matchup_036,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,gaia,Skill Level=1,minic,Level=20,1/2-1/2,0.5,80,1.000553600024432,complete,,0
+matchup_036_opening_000_1,matchup_036,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=20,gaia,Skill Level=1,1/2-1/2,0.5,80,0.22746780002489686,complete,,0
+matchup_036_opening_001_0,matchup_036,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,gaia,Skill Level=1,minic,Level=20,1/2-1/2,0.5,80,0.22564680001232773,complete,,1
+matchup_036_opening_001_1,matchup_036,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=20,gaia,Skill Level=1,1/2-1/2,0.5,80,0.22164460003841668,complete,,1
+matchup_037_opening_000_0,matchup_037,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,gaia,Skill Level=1,minic,Level=22,1-0,1.0,51,0.7820210999925621,complete,,0
+matchup_037_opening_000_1,matchup_037,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=22,gaia,Skill Level=1,1/2-1/2,0.5,80,0.23422189999837428,complete,,0
+matchup_037_opening_001_0,matchup_037,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,gaia,Skill Level=1,minic,Level=22,1-0,1.0,47,0.11741649999748915,complete,,1
+matchup_037_opening_001_1,matchup_037,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=22,gaia,Skill Level=1,0-1,0.0,48,0.10652859997935593,complete,,1
+matchup_038_opening_000_0,matchup_038,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,gaia,Skill Level=1,minic,Level=24,1-0,1.0,57,0.752034500008449,complete,,0
+matchup_038_opening_000_1,matchup_038,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=24,gaia,Skill Level=1,0-1,0.0,62,0.15041040000505745,complete,,0
+matchup_038_opening_001_0,matchup_038,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,gaia,Skill Level=1,minic,Level=24,1/2-1/2,0.5,80,0.21633890003431588,complete,,1
+matchup_038_opening_001_1,matchup_038,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=24,gaia,Skill Level=1,1/2-1/2,0.5,80,0.20885410002665594,complete,,1
+matchup_039_opening_000_0,matchup_039,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,gaia,Skill Level=1,minic,Level=26,1/2-1/2,0.5,80,0.8464456999790855,complete,,0
+matchup_039_opening_000_1,matchup_039,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=26,gaia,Skill Level=1,0-1,0.0,62,0.18026880000252277,complete,,0
+matchup_039_opening_001_0,matchup_039,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,gaia,Skill Level=1,minic,Level=26,1-0,1.0,79,0.23442330001853406,complete,,1
+matchup_039_opening_001_1,matchup_039,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=26,gaia,Skill Level=1,0-1,0.0,54,0.14532129996223375,complete,,1
+matchup_040_opening_000_0,matchup_040,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,gaia,Skill Level=1,minic,Level=28,1-0,1.0,35,0.6765322999563068,complete,,0
+matchup_040_opening_000_1,matchup_040,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=28,gaia,Skill Level=1,0-1,0.0,78,0.21339129999978468,complete,,0
+matchup_040_opening_001_0,matchup_040,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,gaia,Skill Level=1,minic,Level=28,1/2-1/2,0.5,80,0.23113809997448698,complete,,1
+matchup_040_opening_001_1,matchup_040,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=28,gaia,Skill Level=1,0-1,0.0,48,0.11140689998865128,complete,,1
+matchup_041_opening_000_0,matchup_041,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,0,gaia,Skill Level=1,minic,Level=30,1-0,1.0,49,0.79846700001508,complete,,0
+matchup_041_opening_000_1,matchup_041,opening_000,rn1qkb1r/2pppppp/bp3n2/p7/4B3/3PP3/PPP2PPP/RNBQK1NR w KQkq - 1 5,1,minic,Level=30,gaia,Skill Level=1,0-1,0.0,54,0.12399240001104772,complete,,0
+matchup_041_opening_001_0,matchup_041,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,0,gaia,Skill Level=1,minic,Level=30,1/2-1/2,0.5,80,0.2222796999849379,complete,,1
+matchup_041_opening_001_1,matchup_041,opening_001,rnbqkbnr/1p2pppp/8/p1pp4/6P1/N6P/PPPPPP2/R1BQKBNR w KQkq - 0 5,1,minic,Level=30,gaia,Skill Level=1,1/2-1/2,0.5,80,0.216640800004825,complete,,1
