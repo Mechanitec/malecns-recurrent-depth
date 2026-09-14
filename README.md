@@ -1,192 +1,145 @@
-# MaleCNS-RD prototype
+# MaleCNS recurrent-depth research prototype
 
-An executable research prototype for treating a connectome as a **shared recurrent-depth computational block**.
+This repository studies whether a real biological connectome can function as a **shared recurrent computational block** whose useful capability changes with internal depth.
 
-The central idea is:
+The core computation is:
 
-`state[d+1] = F(state[d], sensory, W_connectome)`
+```text
+state[d+1] = F(state[d], sensory, W_connectome)
+```
 
-where the **same graph and same dynamics are reused at every depth**. Sensory evidence may be held fixed during an internal computation period, and action/readout is taken only after the requested or adaptively selected depth.
+The same graph and same dynamics are reused at every recurrent depth. In the primary frozen-fly experiment, graph, dynamics, sensory mapping, readout population and trained readout checkpoint stay fixed; only recurrent depth changes.
 
-## Implemented dynamics
+The locked scientific scope is in `Research Goal.md`. The current Codex execution plan is in `plan.md`.
 
-Two engines now share the same `ConnectomeGraph`:
+## Implemented system
 
-- **Rate-state recurrent engine** (`RecurrentDepthEngine`) using sparse signed propagation plus `tanh`/ReLU state updates.
-- **Leaky-integrate-and-fire engine** (`LIFRecurrentDepthEngine`) using membrane decay, signed recurrent spike drive, threshold/reset behavior, optional refractory steps, spike-count readout, and adaptive depth.
+The repository now includes:
 
-Both support fixed-depth experiments. Both can keep sensory evidence clamped while recurrent computation continues.
+- sparse signed directed `ConnectomeGraph`;
+- rate-state and LIF recurrent engines;
+- fixed and adaptive recurrent depth;
+- MaleCNS v1.0 Feather loader with transmitter-based sign handling;
+- deterministic chess board+candidate encoding and sensory projection;
+- reproducible sensory/readout population selection;
+- Stockfish teacher-data generation;
+- activation caching on the real MaleCNS graph;
+- linear readout training and reloadable checkpoints;
+- full-legal-move `FlyCandidateMoveAgent` inference;
+- calibrated low-strength Minic/Gaia opponent support, with Stockfish above its supported floor;
+- independent Stockfish position evaluation that never chooses moves for either player;
+- live Streamlit board/evaluation dashboard;
+- recurrent-depth sweeps and matched graph controls;
+- position-quality metrics, short-game diagnostic ratings, PGN/telemetry output and experiment metadata.
 
-## What is implemented
+Alfil remains legacy/optional support only; it is not the preferred high-throughput weak-opponent path.
 
-- Sparse signed directed connectome (`scipy.sparse`).
-- Repeated shared recurrent update blocks.
-- Fixed inference depth.
-- Adaptive test-time depth controllers.
-- Separation between sensory clamping and final readout.
-- Controlled multi-hop benchmarks requiring 2/4/8/16/32-hop propagation.
-- MaleCNS v1.0 Feather loader with neurotransmitter-based sign assignment.
-- Downloader for the small official MaleCNS annotation + neurotransmitter files.
-- Synthetic benchmark result files for both rate and LIF dynamics.
-- Hybrid chess Elo benchmark: Alfil below Stockfish's Elo floor, Stockfish above it.
-- Candidate-move chess encoding and deterministic sensory projection.
-- Multi-opponent maximum-likelihood Elo estimator with approximate 95% interval.
-- Tests for propagation, determinism, adaptive stopping, inhibition, refractory behavior, Elo estimation, opponent routing, and sensory projection.
-- Experimental protocols in `docs/experiment_protocol.md` and `docs/chess_elo_protocol.md`.
+## Current scientific status
 
-## Run
+The full real-connectome path is working. A v1 rate-dynamics checkpoint trained at reference depth 16 has been evaluated at depths:
+
+```text
+1, 2, 4, 8, 16, 32, 64
+```
+
+On the first 8 held-out all-legal positions, the original MaleCNS graph showed a large D1 -> D2/D8 reduction in teacher centipawn regret, but the sample is too small for a strong conclusion. Matched shuffled/attenuated controls sometimes perform as well as or better than the original graph. Therefore the present evidence supports at most a **candidate generic recurrent-computation effect**, not yet a MaleCNS-specific biological advantage.
+
+See `docs/current_results.md` for the exact numbers and interpretation boundary.
+
+The existing 402-game serious-run artifact is a **short-game protocol**, not a real long-game Elo result. Those games were capped after two plies and unresolved games were adjudicated as draws, so the reported ~410 value must not be interpreted as the chess rating of the fly system.
+
+## Current priority
+
+The highest-value next experiment is a much larger paired held-out position study using the exact same checkpoint and graph controls. `plan.md` instructs Codex to:
+
+1. optimize all-legal position evaluation without changing the mathematics;
+2. freeze an independent 128-512 position evaluation corpus;
+3. run all depths on original + three graph controls;
+4. compute paired bootstrap confidence intervals and difference-in-differences;
+5. diagnose the weak v1 readout;
+6. optionally train a stronger Stage-0 readout using only train/validation data.
+
+## Dynamics
+
+### Rate-state engine
+
+`RecurrentDepthEngine` performs sparse signed propagation and a recurrent state update using the same graph at every pass.
+
+### LIF engine
+
+`LIFRecurrentDepthEngine` includes membrane decay, signed recurrent spike drive, threshold/reset behavior, optional refractory steps, spike-count readout and adaptive stopping.
+
+For LIF, recurrent depth is also simulated biological integration time, so matched-time / single-pulse controls are required before interpreting deeper LIF runs as more computation rather than simply more time.
+
+## Real MaleCNS data
+
+Expected official files:
+
+```text
+data/body-annotations-male-cns-v1.0-minconf-0.5.feather
+data/body-neurotransmitters-male-cns-v1.0.feather
+data/connectome-weights-male-cns-v1.0-minconf-0.5.feather
+```
+
+Large MaleCNS data files are intentionally local-only and must not be committed.
+
+## Local setup
 
 ```bash
-cd malecns-recurrent-depth
-pip install -e '.[dev]'
-python scripts/run_demo.py
-python scripts/run_lif_demo.py
+pip install -e '.[chess,malecns,dashboard,dev]'
 pytest -q
 ```
 
-The benchmark scripts write:
+Useful entry points include:
 
-- `results/depth_scaling.csv`
-- `results/lif_depth_scaling.csv`
-
-## Current LIF depth result
-
-On the controlled noisy routing benchmark, the LIF engine produces the following overall accuracy as recurrent depth increases:
-
-| Depth | Accuracy |
-|---:|---:|
-| 1 | 0.8% |
-| 2 | 0.8% |
-| 4 | 20.0% |
-| 8 | 40.0% |
-| 16 | 60.0% |
-| 32 | 80.8% |
-| 40 | 100.0% |
-
-This demonstrates a causal depth effect in the prototype: longer paths cannot affect their target readouts until enough applications of the same recurrent block have occurred.
-
-It does **not** establish that the fly connectome performs abstract reasoning.
-
-## LIF example
-
-```python
-import numpy as np
-from malecns_rd import ConnectomeGraph, LIFRecurrentDepthEngine
-
-src = np.array([0, 1, 2])
-dst = np.array([1, 2, 3])
-weight = np.ones(3, dtype=np.float32)
-graph = ConnectomeGraph.from_edges(4, src, dst, weight)
-
-engine = LIFRecurrentDepthEngine(
-    graph,
-    dt_ms=1.0,
-    tau_membrane_ms=10.0,
-    threshold=0.5,
-)
-
-sensory = np.zeros(4, dtype=np.float32)
-sensory[0] = 1.0
-result = engine.run(sensory, max_depth=4, clamp_sensory=True)
-print(result.spike_counts)
+```text
+scripts/select_chess_populations.py
+scripts/generate_teacher_dataset.py
+scripts/extract_chess_activations.py
+scripts/train_chess_readout.py
+scripts/run_chess_benchmark.py
+scripts/run_depth_control_sweep.py
+scripts/run_control_ratings.py
+scripts/calibrate_low_elo.py
 ```
 
-## Use the real MaleCNS graph
-
-Janelia's official MaleCNS v1.0 flat files are expected:
-
-- `body-annotations-male-cns-v1.0-minconf-0.5.feather`
-- `body-neurotransmitters-male-cns-v1.0.feather`
-- `connectome-weights-male-cns-v1.0-minconf-0.5.feather`
-
-Install the optional Feather dependency:
+Run the dashboard with:
 
 ```bash
-pip install -e '.[malecns]'
-python scripts/download_malecns_metadata.py
+streamlit run dashboard/app.py
 ```
 
-The large connectivity table is deliberately not downloaded automatically. Once placed under `data/`, load it with:
+## Chess architecture
 
-```python
-from malecns_rd.malecns import load_malecns_feather
-from malecns_rd import LIFRecurrentDepthEngine
+The fly does not use one output neuron per chess move. Every legal move is scored as a candidate:
 
-graph, annotations = load_malecns_feather(
-    'data/body-annotations-male-cns-v1.0-minconf-0.5.feather',
-    'data/body-neurotransmitters-male-cns-v1.0.feather',
-    'data/connectome-weights-male-cns-v1.0-minconf-0.5.feather',
-    traced_only=True,
-    min_synapses=3,
-)
-engine = LIFRecurrentDepthEngine(graph)
+1. encode board + candidate move;
+2. project into a fixed sensory population;
+3. run the same MaleCNS-derived recurrent system for depth `D`;
+4. read a scalar candidate score from the fixed readout population;
+5. choose the legal move with highest score.
+
+This makes the central causal comparison possible:
+
+```text
+same checkpoint + same graph + same position
+D = 1, 2, 4, 8, 16, 32, 64
 ```
 
-## Adaptive recurrent depth
+## Scientific controls
 
-The rate engine uses state convergence/readout margin. The LIF engine uses accumulated spike-count margin plus winner stability.
+Core controls currently include:
 
-The intent is **adaptive test-time compute**: easy cases may terminate after few applications of the same graph dynamics, while difficult cases can use more recurrent passes without adding parameters or connections.
+- original signed MaleCNS graph;
+- degree-preserving topology shuffle;
+- transmitter-sign shuffle;
+- recurrent edges strongly attenuated;
+- rate versus LIF dynamics where appropriate.
 
-## Scientific caution: depth is not automatically reasoning
+A claim that the biological wiring is important requires the real MaleCNS graph to benefit from recurrence more than matched controls under the same protocol.
 
-For the LIF engine, one recurrent pass is also one membrane-integration microstep. Therefore, a deeper run also represents more internal simulated time. Improvement with depth alone is not enough to claim latent reasoning.
+## Interpretation boundary
 
-`docs/experiment_protocol.md` defines the controls required to separate:
+This repository tests computation in a MaleCNS-derived artificial recurrent system. It does **not** establish that a living fruit fly understands chess, that the simplified dynamics reproduce biological cognition, or that recurrent depth is equivalent to human conscious thought.
 
-- more biological simulation time;
-- repeated sensory exposure;
-- causal multi-hop propagation;
-- useful extra internal recurrent computation.
-
-The strongest future result would show that useful depth scaling survives matched sensory exposure and topology-destroying controls on the **actual MaleCNS graph**.
-
-## Chess Elo benchmark
-
-The project uses a hybrid opponent ladder so very weak fly checkpoints can still receive a useful rating.
-
-- **Below Stockfish's runtime-advertised Elo floor:** use Alfil.
-- **At and above Stockfish's floor:** use Stockfish.
-
-Current Stockfish builds commonly begin around 1320. Alfil publishes nominal `UCI_Elo` levels `0, 200, 400, ..., 3000`; therefore the default low ladder is `0, 200, 400, 600, 800, 1000, 1200`, followed by Stockfish `1320, 1400, 1500, ...`. The harness detects the installed Stockfish floor at runtime. Unsupported low values such as 1300 are rejected rather than silently rounded.
-
-Every game record stores both `opponent_engine` and `opponent_elo`. Both engines use `UCI_LimitStrength=true` and `UCI_Elo=<target>`.
-
-The Alfil and Stockfish numbers are nominal engine ratings, not guaranteed to lie on one perfectly aligned absolute scale. Serious experiments should cross-calibrate the two engines in their overlap region and freeze the exact binaries, settings, and time control.
-
-The fly does not require one output neuron for every chess move. Instead, every legal move is evaluated as a candidate:
-
-1. encode the board plus candidate move;
-2. project the features into a frozen sensory population;
-3. run the same connectome for a chosen recurrent depth;
-4. score the candidate from a frozen readout population;
-5. play the highest-scoring legal move.
-
-This makes `depth = 1, 2, 4, 8, ...` directly comparable while keeping graph, chess interface, and readout fixed.
-
-Install the optional chess dependency and run a harness smoke test with local Alfil and Stockfish binaries:
-
-```bash
-pip install -e '.[chess]'
-python scripts/run_chess_benchmark.py \
-  --alfil /path/to/alfil \
-  --stockfish /path/to/stockfish \
-  --elos 0,200,400,600,800,1000,1200,1320,1400,1500 \
-  --games-per-elo 20
-```
-
-The current CLI uses a random legal-move agent only to verify tournament plumbing. The next checkpoint will replace that baseline with the real `FlyCandidateMoveAgent` plus trained/frozen chess readout parameters.
-
-See `docs/chess_elo_protocol.md` for the full experimental design.
-
-## Next milestone
-
-The immediate target is the first actual MaleCNS chess checkpoint:
-
-1. load the signed MaleCNS graph;
-2. select and freeze sensory and readout populations;
-3. train only the chess adapter/readout without changing the graph topology;
-4. run the first hybrid Alfil + Stockfish Elo ladder;
-5. sweep recurrent depth with the same frozen checkpoint;
-6. compare against shuffled-topology and shuffled-transmitter controls;
-7. optimize for reproducible Elo gain, not isolated wins.
+The term “recurrent thinking” is shorthand for repeated hidden-state computation through the same network.
