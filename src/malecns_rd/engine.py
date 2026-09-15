@@ -57,7 +57,7 @@ class RecurrentDepthEngine:
         return np.maximum(x, 0.0).astype(np.float32, copy=False)
 
     def step(self, state: np.ndarray, sensory: np.ndarray) -> np.ndarray:
-        recurrent = self.graph.weights @ state
+        recurrent = np.zeros_like(state) if self.recurrent_gain == 0.0 else self.graph.weights @ state
         drive = self.recurrent_gain * recurrent + self.input_gain * sensory
         proposal = self._activate(drive)
         # Leaky residual state gives the recurrent block memory while keeping
@@ -132,7 +132,7 @@ class RecurrentDepthEngine:
         zero_sensory = np.zeros_like(sensory)
         for depth in range(1, max_depth + 1):
             step_input = sensory if (clamp_sensory or depth == 1) else zero_sensory
-            recurrent = self.graph.weights @ state
+            recurrent = np.zeros_like(state) if self.recurrent_gain == 0.0 else self.graph.weights @ state
             drive = self.recurrent_gain * recurrent + self.input_gain * step_input
             proposal = self._activate(drive)
             state = (self.leak * state + (1.0 - self.leak) * proposal).astype(
@@ -175,7 +175,7 @@ class RecurrentDepthEngine:
         wanted = set(requested)
         for depth in range(1, requested[-1] + 1):
             step_input = sensory if (clamp_sensory or depth == 1) else zero_sensory
-            recurrent = self.graph.weights @ state
+            recurrent = np.zeros_like(state) if self.recurrent_gain == 0.0 else self.graph.weights @ state
             drive = self.recurrent_gain * recurrent + self.input_gain * step_input
             proposal = self._activate(drive)
             previous_state = state
