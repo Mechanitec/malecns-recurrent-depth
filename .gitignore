@@ -11,5 +11,6 @@ local_config.toml
 data/
 *.feather
 !data/
+data/*
 !data/chess_development_corpus_v1.csv
 !data/chess_development_corpus_v1.csv.metadata.json
