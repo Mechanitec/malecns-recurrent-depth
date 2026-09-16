@@ -28,6 +28,7 @@ def main() -> None:
     parser.add_argument("--sensory-indices", type=Path, required=True)
     parser.add_argument("--corpus", type=Path, default=Path("data/chess_development_corpus_v1.csv"))
     parser.add_argument("--manifests", type=Path, default=Path("data/populations_v2/manifests"))
+    parser.add_argument("--atlas", type=Path, default=Path("results/population_study/malecns_region_atlas.json"))
     parser.add_argument("--output", type=Path, default=Path("results/population_study"))
     parser.add_argument("--batch-positions", type=int, default=2)
     args = parser.parse_args()
@@ -48,7 +49,11 @@ def main() -> None:
     graph = base.engine.graph
     settings = {"fanout": base.projector.fanout, "seed": base.projector.seed, "amplitude": base.projector.amplitude}
     baseline_input = np.asarray(manifests["input_baseline_a"]["indices"], dtype=np.int64)
-    fb = np.asarray(manifests["readout_fan_shaped_body"]["indices"], dtype=np.int64)
+    if args.atlas.exists():
+        atlas = json.loads(args.atlas.read_text(encoding="utf-8"))
+        fb = np.asarray(atlas["families"]["fan_shaped_body"]["graph_indices"], dtype=np.int64)
+    else:
+        fb = np.asarray(manifests["readout_fan_shaped_body"]["indices"], dtype=np.int64)
     random_readout = np.random.default_rng(8123).choice(graph.n_neurons, 1024, replace=False).astype(np.int64)
     readout_rules = {"fan_shaped_body": fb, "random_matched": random_readout}
     readout_union = np.asarray(sorted(set(random_readout.tolist()) | set(fb.tolist())), dtype=np.int64)
