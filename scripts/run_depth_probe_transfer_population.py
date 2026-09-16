@@ -96,14 +96,19 @@ def main() -> None:
             validation = _standardize(raw[train_mask], raw[validation_mask])[1]
             validation_by_depth[depth] = validation
             distance, rank_value = _geometry(validation, validation_frame)
+            self_depth_weights = fit_probe(standardized[depth], train_frame)
+            self_depth_metrics = _metrics(validation, validation_frame, self_depth_weights)
+            depth_index = DEPTHS.index(depth)
+            previous_depth = DEPTHS[depth_index - 1] if depth_index else None
             information_rows.append({
                 "population_id": name, "anatomical_family": payload["anatomical_family"],
                 "depth": depth, "population_size": payload["actual_count"],
                 "effective_rank": rank_value, "within_position_candidate_distance": distance,
-                "cka_to_depth_1": None, "validation_pair_accuracy": None,
-                "validation_top1_accuracy": None, "validation_mean_teacher_regret_cp": None,
+                "cka_to_depth_1": None,
+                **{f"validation_{key}": value for key, value in self_depth_metrics.items()},
                 "state_norm_mean": float(np.linalg.norm(validation, axis=1).mean()),
-                "delta_norm_mean": None, "saturation_fraction": None,
+                "delta_norm_mean": float(np.linalg.norm(validation - validation_by_depth[previous_depth], axis=1).mean()) if previous_depth is not None else 0.0,
+                "saturation_fraction": float(np.mean(np.abs(validation) >= 3.0)),
             })
         for depth in DEPTHS:
             info_index = (info_index for info_index, row in enumerate(information_rows) if row["population_id"] == name and row["depth"] == depth)
