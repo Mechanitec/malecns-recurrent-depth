@@ -33,6 +33,22 @@ For the original graph, mean teacher regret was 581.39 cp at D1 and 570.51 cp at
 
 The existing control results also do not support biological specificity. The next phase is mechanistic discovery rather than another short-game rating run.
 
+## Plan 2 population-study execution record
+
+Plan 2 preserves the v1 checkpoint, seeded baseline interface and consumed
+evaluation corpus. The completed atlas and baseline-audit phases use actual
+MaleCNS annotations and store reproducible population manifests. The completed
+brain-region and information-flow phases use the development corpus, fixed
+input populations, depths `1, 2, 4, 8, 16, 32, 64`, and the standardized
+linear ranking probe. Their reports include cross-depth transfer, effective
+rank, candidate-state separation, representation similarity, winner switching,
+state norms, saturation and train-validation gaps.
+
+The input-family, H-BIO-1 and population-size sweeps are development-only
+analyses. Do not freeze a population rule or generate the confirmatory corpus
+until those outputs have been written and audited. A fresh confirmation must
+remain source-diverse and must not be used for population or probe tuning.
+
 ## Fixed factors in a causal depth comparison
 
 Within any one frozen causal depth comparison keep fixed:
