@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import gc
 import json
 from pathlib import Path
 
@@ -117,6 +118,11 @@ def main() -> None:
                 metrics = _metrics(validation_x, validation_frame, weights)
                 distance, rank_value = _geometry(validation_x, validation_frame)
                 rows.append({"architecture": architecture, "readout_population_id": readout_name, "depth": depth, "input_mode": mode, "input_size": len(input_a) + (len(input_b) if input_b is not None else 0), "readout_size": len(indices), "effective_rank": rank_value, "within_position_candidate_distance": distance, **{f"validation_{key}": value for key, value in metrics.items()}})
+        for memmap in memmaps.values():
+            memmap.flush()
+        del memmap, features, train_x, validation_x
+        del memmaps
+        gc.collect()
         for path in cache_dir.glob("depth_*.float32"):
             path.unlink()
         cache_dir.rmdir()
