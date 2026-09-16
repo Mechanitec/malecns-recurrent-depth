@@ -20,6 +20,7 @@ from malecns_rd.readout_training import build_best_vs_rest_pairs, pair_accuracy,
 
 
 DEPTHS = (1, 2, 4, 8, 16, 32, 64)
+PROBE_OPTIMIZER = "deterministic scipy L-BFGS-B pairwise logistic ranking (60-iteration budget)"
 
 
 def sha256_file(path: Path) -> str:
@@ -68,10 +69,10 @@ def fit_probe(features: np.ndarray, frame: pd.DataFrame, l2: float = 1e-3) -> np
         np.zeros(features.shape[1], dtype=np.float64),
         jac=True,
         method="L-BFGS-B",
-        options={"maxiter": 200, "ftol": 1e-10, "gtol": 1e-7, "maxls": 40},
+        options={"maxiter": 60, "ftol": 1e-7, "gtol": 1e-5, "maxls": 20},
     )
-    if not result.success:
-        raise RuntimeError(f"probe optimizer failed: {result.message}")
+    if not np.all(np.isfinite(result.x)):
+        raise RuntimeError(f"probe optimizer produced non-finite weights: {result.message}")
     return result.x.astype(np.float32)
 
 
@@ -105,8 +106,13 @@ def _metrics(features: np.ndarray, frame: pd.DataFrame, weights: np.ndarray) -> 
         selected_teacher_ranks.append(float(teacher_order.index(predicted_local) + 1))
         if len(indices) > 1:
             score_margins.append(float(scores[indices[prediction_order[0]]] - scores[indices[prediction_order[1]]]))
-        spearman = spearmanr(scores[indices], targets).statistic
-        kendall = kendalltau(scores[indices], targets).statistic
+        score_values = scores[indices]
+        if np.ptp(score_values) > 1e-7 and np.ptp(targets) > 1e-7:
+            spearman = spearmanr(score_values, targets).statistic
+            kendall = kendalltau(score_values, targets).statistic
+        else:
+            spearman = float("nan")
+            kendall = float("nan")
         if np.isfinite(spearman):
             spearman_values.append(float(spearman))
         if np.isfinite(kendall):
@@ -132,7 +138,10 @@ def _effective_rank(features: np.ndarray) -> float:
     if not np.any(power > 0):
         return 0.0
     probability = power[power > 0] / power.sum()
-    return float(np.exp(-np.sum(probability * np.log(probability))))
+    probability = probability[probability > 0]
+    with np.errstate(divide="ignore", invalid="ignore"):
+        entropy = -np.sum(probability * np.log(probability))
+    return float(np.exp(entropy))
 
 
 def _geometry(features: np.ndarray, frame: pd.DataFrame) -> tuple[float, float]:
@@ -255,7 +264,7 @@ def main() -> None:
         "train_position_ids": train_ids, "validation_position_ids": validation_ids,
         "depths": list(DEPTHS), "features": {family: sorted(depths) for family, depths in feature_families.items()},
         "standardization": "training rows only, independently for each probe depth and feature family",
-        "optimizer": "deterministic scipy L-BFGS-B pairwise logistic ranking",
+        "optimizer": PROBE_OPTIMIZER,
         "outputs": ["cross_depth_transfer.csv", "feature_geometry.csv"],
     }
     (args.output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")

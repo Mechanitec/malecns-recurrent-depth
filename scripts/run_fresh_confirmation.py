@@ -11,8 +11,20 @@ import pandas as pd
 from malecns_rd.checkpoint_agent import load_fly_agent_from_checkpoint
 from malecns_rd.chess_features import CHESS_FEATURE_DIM, HashedSensoryProjector, encode_board_move
 from malecns_rd.engine import RecurrentDepthEngine
+from malecns_rd.graph import ConnectomeGraph
 from run_mechanistic_factorial import DEPTHS, load_positions
 from run_probe_transfer import _geometry, _metrics, _standardize, fit_probe
+
+
+def _shuffle_connectome(graph: ConnectomeGraph, seed: int) -> ConnectomeGraph:
+    weights = graph.weights.copy()
+    rng = np.random.default_rng(seed)
+    for row in range(weights.shape[0]):
+        start, end = weights.indptr[row], weights.indptr[row + 1]
+        if end - start > 1:
+            weights.indices[start:end] = rng.permutation(weights.indices[start:end])
+    weights.sort_indices()
+    return ConnectomeGraph(body_ids=graph.body_ids.copy(), weights=weights)
 
 
 def main() -> None:
@@ -27,6 +39,7 @@ def main() -> None:
     parser.add_argument("--selection", type=Path, default=Path("results/population_study/final_selection.json"))
     parser.add_argument("--output", type=Path, default=Path("results/population_study"))
     parser.add_argument("--batch-positions", type=int, default=2)
+    parser.add_argument("--shuffle-seed", type=int, default=9001)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     positions = load_positions(args.corpus)
@@ -44,12 +57,14 @@ def main() -> None:
     selected_input = str(selection.get("selected_input_population_id", "input_baseline_a"))
     selected_readout = str(selection.get("selected_readout_population_id", "readout_baseline_a"))
     architectures = [("baseline_a", "input_baseline_a", "readout_baseline_a"), ("population_v2", selected_input, selected_readout), ("matched_random_central", "input_random_central_brain", "readout_random_central_brain"), ("matched_random_whole", "input_random_whole_brain", "readout_random_whole_brain")]
+    architectures.append(("shuffled_connectome", selected_input, selected_readout))
     architectures = [(name, input_name, readout_name) for name, input_name, readout_name in architectures if (input_name == "h_bio_1" or input_name in manifests) and readout_name in manifests]
     loaded = load_fly_agent_from_checkpoint(args.checkpoint, annotations_path=args.annotations, neurotransmitters_path=args.neurotransmitters, connectome_weights_path=args.weights, sensory_indices_path=args.sensory_indices)
     base = loaded.agent
     if not isinstance(base.engine, RecurrentDepthEngine):
         raise RuntimeError("fresh confirmation requires the rate checkpoint")
     graph = base.engine.graph
+    shuffled_graph = _shuffle_connectome(graph, args.shuffle_seed)
     settings = {"fanout": base.projector.fanout, "seed": base.projector.seed, "amplitude": base.projector.amplitude}
     row_map = {(str(row.position_id), str(row.move_uci)): index for index, row in frame.iterrows()}
     output_rows = []
@@ -64,6 +79,13 @@ def main() -> None:
         output_rows.append({"interface": name, "input_population_id": name, "readout_population_id": name, "depth": 0, "effective_rank": rank_value, "within_position_candidate_distance": distance, **{f"validation_{key}": value for key, value in metrics.items()}})
     for name, input_name, readout_name in architectures:
         dual_hbio = input_name == "h_bio_1"
+        active_engine = RecurrentDepthEngine(
+            shuffled_graph if name == "shuffled_connectome" else graph,
+            leak=base.engine.leak,
+            recurrent_gain=base.engine.recurrent_gain,
+            input_gain=base.engine.input_gain,
+            activation=base.engine.activation,
+        )
         if dual_hbio:
             input_indices = np.asarray(manifests["input_mb_kenyon_cells"]["indices"], dtype=np.int64)
             context_indices = np.asarray(manifests["input_fan_shaped_body"]["indices"], dtype=np.int64)
@@ -92,7 +114,7 @@ def main() -> None:
                         blocks.append(projector.project(feature_vector))
                 sensory_blocks.append(np.column_stack(blocks))
                 keys.extend((str(position["position_id"]), move.uci()) for move in moves)
-            trajectory = base.engine.run_batch_trajectory(np.concatenate(sensory_blocks, axis=1), depths=DEPTHS, clamp_sensory=True, observe=False)
+            trajectory = active_engine.run_batch_trajectory(np.concatenate(sensory_blocks, axis=1), depths=DEPTHS, clamp_sensory=True, observe=False)
             rows = np.asarray([row_map[key] for key in keys], dtype=np.int64)
             for depth in DEPTHS:
                 features[depth][rows] = trajectory.snapshots[depth][readout_indices, :].T

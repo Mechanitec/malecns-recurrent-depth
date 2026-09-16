@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 
 from run_mechanistic_factorial import DEPTHS, load_positions
-from run_probe_transfer import _geometry, _metrics, _standardize, fit_probe
+from run_probe_transfer import PROBE_OPTIMIZER, _geometry, _metrics, _standardize, fit_probe
 
 
 def main() -> None:
@@ -52,7 +52,7 @@ def main() -> None:
             geometry_rows.append({"population_id": name, "depth": depth, "effective_rank": rank_value, "within_position_candidate_distance": distance, "candidate_dependent_fraction": float(np.mean(np.std(validation_x, axis=0) > 1e-6))})
     pd.DataFrame(result_rows).to_csv(args.output / "brain_region_decoding_atlas.csv", index=False)
     pd.DataFrame(geometry_rows).to_csv(args.output / "region_information_by_depth.csv", index=False)
-    metadata = {"status": "complete", "positions": len(positions), "candidate_rows": len(frame), "readout_populations": len(manifests), "union_readout_neurons": len(union), "depths": list(DEPTHS), "input_population": "Population Baseline A", "probe": "train-only standardized L-BFGS-B pairwise ranking", "source": "merged activation shards"}
+    metadata = {"status": "complete", "positions": len(positions), "candidate_rows": len(frame), "readout_populations": len(manifests), "union_readout_neurons": len(union), "depths": list(DEPTHS), "input_population": "Population Baseline A", "probe": f"train-only standardized {PROBE_OPTIMIZER}", "source": "merged activation shards"}
     (args.output / "brain_region_decoding_metadata.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(metadata, indent=2))
 

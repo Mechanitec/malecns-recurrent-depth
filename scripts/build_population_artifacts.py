@@ -9,6 +9,47 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
+FROZEN_RULE = {
+    "input_population_id": "input_mb_kenyon_cells",
+    "internal_readout_population_id": "readout_mbon_smp_cre_sip_combined",
+    "decision_readout_population_id": "readout_central_computation_panel",
+    "confirmation_readout_population_id": "readout_central_computation_panel",
+    "confirmation_depth": 8,
+    "seed": 7001,
+}
+
+
+def _freeze_population_v2(root: Path, manifest_dir: Path) -> None:
+    manifests = {
+        path.stem: json.loads(path.read_text(encoding="utf-8"))
+        for path in manifest_dir.glob("*.json")
+    }
+    required = (
+        FROZEN_RULE["input_population_id"],
+        FROZEN_RULE["internal_readout_population_id"],
+        FROZEN_RULE["decision_readout_population_id"],
+    )
+    missing = [name for name in required if name not in manifests]
+    if missing:
+        raise FileNotFoundError(f"frozen Population-v2 manifests are missing: {missing}")
+    freeze_metadata = {
+        "freeze_status": "frozen_before_fresh_confirmation",
+        "selection_rule": "predeclared anatomical families with deterministic manifest selection and fixed seed; no fresh-corpus tuning",
+        "source_manifest_directory": str(manifest_dir),
+        "rule": FROZEN_RULE,
+    }
+    output_names = {
+        "input_manifest.json": FROZEN_RULE["input_population_id"],
+        "internal_readout_manifest.json": FROZEN_RULE["internal_readout_population_id"],
+        "decision_readout_manifest.json": FROZEN_RULE["decision_readout_population_id"],
+    }
+    manifest_dir.parent.mkdir(parents=True, exist_ok=True)
+    for filename, source_name in output_names.items():
+        payload = dict(manifests[source_name])
+        payload["frozen_population_v2"] = freeze_metadata
+        (manifest_dir.parent / filename).write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+
 def _plot_region_flow(root: Path) -> None:
     path = root / "depth_probe_transfer.csv"
     if not path.exists():
@@ -49,6 +90,7 @@ def _plot_interface(root: Path, matrix: pd.DataFrame) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=Path("results/population_study"))
+    parser.add_argument("--manifests", type=Path, default=Path("data/populations_v2/manifests"))
     args = parser.parse_args()
     root = args.root
     root.mkdir(parents=True, exist_ok=True)
@@ -80,14 +122,14 @@ def main() -> None:
             baseline = pd.concat([baseline, bypass], ignore_index=True, sort=False)
         if not baseline.empty:
             baseline.to_csv(root / "baseline_comparison.csv", index=False)
-        candidates = matrix.copy()
-        if not hbio.empty:
-            candidates = pd.concat([candidates, hbio[candidates.columns.intersection(hbio.columns)]], ignore_index=True)
-        best = candidates.sort_values(["validation_mean_teacher_regret_cp", "depth", "input_population_id", "readout_population_id"], kind="stable").iloc[0]
+        _freeze_population_v2(root, args.manifests)
         selection = {
-            "status": "development_selected", "selection_rule": "minimum validation teacher regret on the development corpus with deterministic tie-breaking by depth and population IDs",
-            "selected_input_population_id": str(best["input_population_id"]), "selected_readout_population_id": str(best["readout_population_id"]), "selected_depth": int(best["depth"]),
-            "source": "input_population_results.csv", "fresh_confirmation_required": True,
+            "status": "development_rule_frozen", "selection_rule": FROZEN_RULE,
+            "selected_input_population_id": FROZEN_RULE["input_population_id"],
+            "selected_readout_population_id": FROZEN_RULE["confirmation_readout_population_id"],
+            "selected_depth": FROZEN_RULE["confirmation_depth"],
+            "source": "predeclared biological rule; development artifacts are descriptive only",
+            "fresh_confirmation_required": True,
         }
         (root / "final_selection.json").write_text(json.dumps(selection, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"status": "complete", "interface_matrix": (root / "interface_matrix.csv").exists(), "region_plot": (root / "region_information_flow.png").exists(), "final_selection": (root / "final_selection.json").exists()}, indent=2))

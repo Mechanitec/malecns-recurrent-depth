@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import gc
 import json
 from collections import deque
 from pathlib import Path
@@ -72,7 +73,14 @@ def main() -> None:
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
 
-    positions = load_positions(args.corpus)[:args.limit_positions]
+    all_positions = load_positions(args.corpus)
+    if args.limit_positions < len(all_positions):
+        per_split = args.limit_positions // 2
+        screen = [position for position in all_positions if position["source_split"] == "dev_screen"]
+        confirm = [position for position in all_positions if position["source_split"] == "dev_confirm"]
+        positions = screen[:per_split] + confirm[: args.limit_positions - per_split]
+    else:
+        positions = all_positions
     frame, train_mask, validation_mask = _frame(args.corpus, positions)
     train_frame = frame.loc[train_mask].reset_index(drop=True)
     validation_frame = frame.loc[validation_mask].reset_index(drop=True)
@@ -137,6 +145,11 @@ def main() -> None:
                     "within_position_candidate_distance": distance, "effective_rank": rank_value,
                     **{f"validation_{key}": value for key, value in metrics.items()},
                 })
+        for memmap in memmaps.values():
+            memmap.flush()
+        del memmap, features, train_x, validation_x
+        del memmaps
+        gc.collect()
         for path in cache_dir.glob("depth_*.float32"):
             path.unlink()
         cache_dir.rmdir()
