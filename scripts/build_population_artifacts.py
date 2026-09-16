@@ -56,7 +56,6 @@ def main() -> None:
     matrix = pd.DataFrame()
     if input_path.exists():
         matrix = pd.read_csv(input_path)
-        matrix.to_csv(root / "interface_matrix.csv", index=False)
     hbio_path = root / "h_bio_1_results.csv"
     hbio = pd.DataFrame()
     if hbio_path.exists():
@@ -64,10 +63,21 @@ def main() -> None:
         hbio = hbio.rename(columns={"architecture": "input_population_id", "readout_population_id": "readout_population_id"})
         hbio["input_population_id"] = "h_bio_1"
         hbio.to_csv(root / "h_bio_1_results.csv", index=False)
+    interface = matrix.copy()
+    if not hbio.empty:
+        interface = pd.concat([interface, hbio], ignore_index=True, sort=False)
+    if not interface.empty:
+        interface.to_csv(root / "interface_matrix.csv", index=False)
     _plot_region_flow(root)
-    _plot_interface(root, matrix)
+    _plot_interface(root, interface)
     if not matrix.empty:
         baseline = matrix[matrix["input_population_id"] == "input_baseline_a"].copy()
+        bypass_path = root / "bypass_baseline_results.csv"
+        if bypass_path.exists():
+            bypass = pd.read_csv(bypass_path)
+            bypass["comparison_family"] = "bypass"
+            baseline["comparison_family"] = "MaleCNS"
+            baseline = pd.concat([baseline, bypass], ignore_index=True, sort=False)
         if not baseline.empty:
             baseline.to_csv(root / "baseline_comparison.csv", index=False)
         candidates = matrix.copy()
