@@ -1,0 +1,1281 @@
+graph_index,body_id,role,superclass,class,subclass,type,flywire_type,hemibrain_type,manc_type,in_degree,out_degree,weighted_in_strength,weighted_out_strength,reciprocal_edge,input_reach_depth,output_reverse_distance
+38,10047,baseline_readout,cb_motor,nan,pm,MNx02,CB0904,nan,nan,150,0,1.0,0.0,0,1,0
+137,10151,baseline_readout,descending_neuron,nan,xl,DNge103,DNge103,nan,DNxl123,249,256,1.0000001192092896,4.816025257110596,1,2,0
+146,10162,baseline_readout,descending_neuron,nan,xn,DNp20,DNp20,DNp20,DNp20,91,16,1.0,0.07273093611001968,1,1,0
+147,10163,baseline_readout,descending_neuron,nan,fl,DNge036,DNge036,nan,DNfl042,305,196,1.0,2.9535176753997803,1,2,0
+204,10223,baseline_readout,descending_neuron,nan,xn,DNpe056,DNpe056,PVLP146,DNxn168,533,473,1.0,6.429538726806641,1,1,0
+243,10264,baseline_readout,descending_neuron,nan,ut,DNp31,DNp31,DNp31,DNp31,763,363,1.0,3.914055585861206,1,1,0
+259,10281,baseline_readout,descending_neuron,nan,xl,DNg108,DNg108,nan,DNg108,588,902,1.0,5.52728796005249,1,1,0
+273,10295,baseline_readout,descending_neuron,nan,xl,DNg34,DNg34,nan,DNg34,311,0,1.0,0.0,0,1,0
+338,10366,baseline_readout,descending_neuron,nan,lt,DNp59,DNp59,CL247,DNp59,437,455,1.0,7.1297125816345215,1,2,0
+384,10417,baseline_readout,descending_neuron,nan,lt,DNp103,DNp103,PVLP119,DNp103,1323,452,1.0,3.839050769805908,1,1,0
+446,10482,baseline_readout,descending_neuron,nan,xl,DNg35,DNg35,nan,DNg35,742,297,1.0000001192092896,3.019627571105957,1,1,0
+482,10520,baseline_readout,descending_neuron,nan,xl,DNg74_b,DNg74_b,nan,DNg74,349,755,1.0,4.7766876220703125,1,2,0
+514,10552,baseline_readout,descending_neuron,nan,xn,DNp29,DNp29,NPFP1,DNp29,310,0,1.0,0.0,0,2,0
+523,10562,baseline_readout,descending_neuron,nan,xn,DNp26,DNp26,DNp26,DNp26,478,197,1.0,1.7651644945144653,1,1,0
+543,10582,baseline_readout,descending_neuron,nan,xl,DNge040,DNge040,nan,DNxl111,174,217,1.0000001192092896,2.0366008281707764,1,2,0
+545,10584,baseline_readout,descending_neuron,nan,lt,DNp06,DNp06,DNp06,DNp06,832,447,1.0,5.000262260437012,1,1,0
+616,10664,baseline_readout,descending_neuron,nan,ut,DNp33,DNp33,SAD095,DNp33,131,149,1.0000001192092896,3.32441782951355,1,2,0
+632,10680,baseline_readout,descending_neuron,nan,xn,DNp48,DNp48,SMP462,DNp48,327,523,1.0,10.365934371948242,1,2,0
+662,10711,baseline_readout,descending_neuron,nan,xn,DNb07,DNb07,PS067,DNb07,225,298,1.0,4.743163108825684,1,2,0
+680,10732,baseline_readout,descending_neuron,nan,xn,DNpe056,DNpe056,PVLP146,DNxn168,594,488,1.0,6.733627796173096,1,1,0
+704,10760,baseline_readout,descending_neuron,nan,xl,DNa01,DNa01,VES006,DNa01,402,311,1.0,3.1064088344573975,1,2,0
+725,10783,baseline_readout,descending_neuron,nan,xl,DNp09,DNp09,DNp09,DNp09,496,317,0.9999999403953552,4.118839263916016,1,1,0
+785,10846,baseline_readout,descending_neuron,nan,xn,DNge107,DNge107,nan,DNxn125,406,225,1.0,2.836122751235962,1,1,0
+794,10856,baseline_readout,descending_neuron,nan,xl,DNge129,DNge129,nan,DNxl120,409,493,1.0,8.374046325683594,1,2,0
+902,10975,baseline_readout,descending_neuron,nan,it,DNa03,DNa03,DNa03,DNa03,412,248,1.0000001192092896,1.9576728343963623,1,1,0
+970,11048,baseline_readout,descending_neuron,nan,fl,DNge068,DNge068,nan,DNfl041,119,102,0.9999999403953552,1.2146469354629517,1,2,0
+979,11057,baseline_readout,descending_neuron,nan,xn,DNbe004,DNbe004,PS066,DNxn095,578,337,1.0,3.613119602203369,1,2,0
+1052,11137,baseline_readout,descending_neuron,nan,lt,DNp04,DNp04,DNp04,DNp04,307,392,1.0,2.5672607421875,1,1,0
+1168,11259,baseline_readout,descending_neuron,nan,xn,DNp68,DNp68,CL138,DNp68,411,317,0.9999999403953552,3.1663155555725098,1,2,0
+1269,11365,baseline_readout,descending_neuron,nan,xl,DNbe007,DNbe007,VES042,DNxl082,366,300,1.0,1.5300326347351074,1,2,0
+1346,11442,baseline_readout,efferent_descending,nan,nan,DNg28,DNg28,nan,nan,31,0,1.0000001192092896,0.0,0,2,0
+1361,11458,baseline_readout,descending_neuron,nan,xl,DNge043,DNge043,hb1499778528,DNxl012,245,139,1.0,0.900956392288208,1,1,0
+1369,11466,baseline_readout,descending_neuron,nan,xl,DNge149,DNge149,nan,DNxl126,423,0,1.0,0.0,0,2,0
+1392,11491,baseline_readout,descending_neuron,nan,xl,DNde005,DNde005,VES028,DNxl098,229,248,0.9999999403953552,2.2736096382141113,1,2,0
+1400,11500,baseline_readout,descending_neuron,nan,xl,DNge043,DNge043,hb1499778528,DNxl012,253,128,1.0,0.8008818030357361,1,1,0
+1428,11529,baseline_readout,cb_motor,nan,am,GNG652,CB0723,nan,nan,216,0,0.9999998807907104,0.0,0,1,0
+1535,11647,baseline_readout,descending_neuron,nan,xl,DNpe006,DNpe006,CL330,DNxl102,112,405,1.0,6.493899822235107,1,1,0
+1550,11662,baseline_readout,descending_neuron,nan,xn,DNp24,DNp24,DNp24,DNp24,54,68,0.9999999403953552,1.8277056217193604,1,2,0
+1581,11693,baseline_readout,descending_neuron,nan,xn,DNd03,DNd03,nan,DNd03,299,1330,1.0,9.620272636413574,1,2,0
+1692,11814,baseline_readout,descending_neuron,nan,ut,DNa04,DNa04,PS015,DNa04,381,306,1.0,4.783538818359375,1,1,0
+1737,11859,baseline_readout,descending_neuron,nan,xn,DNpe050,DNpe050,CL341,DNxn183,282,287,0.9999999403953552,4.559510231018066,1,2,0
+1756,11881,baseline_readout,descending_neuron,nan,xl,DNge023,DNge023,nan,DNxl124,243,255,0.9999999403953552,2.0269670486450195,1,2,0
+1804,11931,baseline_readout,descending_neuron,nan,xl,DNd04,DNd04,nan,DNd04,324,671,0.9999999403953552,4.539176940917969,1,2,0
+1807,11934,baseline_readout,cb_motor,nan,nm,GNG650,CB0835,nan,nan,308,0,1.0,0.0,0,2,0
+1823,11951,baseline_readout,descending_neuron,nan,xl,DNg38,DNg38,nan,DNg38,211,247,1.0000001192092896,2.0972843170166016,1,2,0
+1941,12075,baseline_readout,descending_neuron,nan,xl,DNb08,DNb08,VES083,DNb08,330,223,0.9999999403953552,1.700244426727295,1,2,0
+1950,12085,baseline_readout,descending_neuron,nan,xn,DNge136,DNge136,nan,DNxn179,303,525,1.0,3.2781472206115723,1,2,0
+2074,12218,baseline_readout,descending_neuron,nan,xn,DNpe031,DNpe031,PVLP116,DNxn186,424,531,1.0000001192092896,4.717263698577881,1,2,0
+2079,12223,baseline_readout,descending_neuron,nan,xn,DNpe027,DNpe027,PS166,DNxn167,249,176,0.9999998807907104,1.159721851348877,1,1,0
+2194,12348,baseline_readout,descending_neuron,nan,xn,MDN,MDN,MDN,MDN,341,190,1.0,1.4156379699707031,1,1,0
+2218,12374,baseline_readout,descending_neuron,nan,xn,DNge140,DNge140,nan,DNxn185,257,428,1.0,2.7547848224639893,1,1,0
+2251,12407,baseline_readout,descending_neuron,nan,xn,DNge136,DNge136,nan,DNxn179,281,589,1.0,3.5190019607543945,1,2,0
+2265,12422,baseline_readout,descending_neuron,nan,fl,DNge100,DNge100,nan,DNfl020,161,106,1.0000001192092896,0.6324486136436462,1,1,0
+2414,12581,baseline_readout,descending_neuron,nan,xl,DNge069,DNge069,nan,DNxl034,92,162,0.9999999403953552,1.525736689567566,1,2,0
+2450,12620,baseline_readout,descending_neuron,nan,xn,DNp44,DNp44,DNp44,DNp44,63,236,1.0,3.6228280067443848,1,2,0
+2512,12687,baseline_readout,descending_neuron,nan,nt,DNge113,DNge113,nan,DNnt001,84,71,0.9999999403953552,0.4141494035720825,1,2,0
+2575,12753,baseline_readout,descending_neuron,nan,xl,DNpe003,DNpe003,"VES069,VES081",DNxl075,143,126,1.0000001192092896,0.7759582996368408,1,1,0
+2583,12762,baseline_readout,descending_neuron,nan,xn,DNp41,DNp41,hb1344695030,DNp41,106,137,1.0,2.3349568843841553,0,1,0
+2661,12845,baseline_readout,cb_motor,nan,am,GNG133,CB0873,nan,nan,177,0,1.0,0.0,0,2,0
+2683,12869,baseline_readout,descending_neuron,nan,fl,DNge098,DNge098,nan,DNfl027,110,151,1.0000001192092896,2.903623342514038,1,2,0
+2805,12995,baseline_readout,descending_neuron,nan,xl,DNde003,DNde003,LAL106,DNxl067,223,162,1.0,0.8924010992050171,1,2,0
+2894,13092,baseline_readout,descending_neuron,nan,xn,DNp60,DNp60,CL139,DNp60,131,209,1.0,3.0707390308380127,1,2,0
+2930,13130,baseline_readout,descending_neuron,nan,xl,DNg105,DNg105,nan,DNg105,503,466,0.9999998807907104,3.375084161758423,1,2,0
+3048,13257,baseline_readout,descending_neuron,nan,xn,DNp25,DNp25,DNp25,DNp25,118,85,0.9999998807907104,1.0872681140899658,1,2,0
+3211,13432,baseline_readout,descending_neuron,nan,ad,DNg66,DNg66,nan,DNg66,216,0,1.0000001192092896,0.0,0,1,0
+3283,13514,baseline_readout,descending_neuron,nan,xl,DNae008,DNae008,PS012,DNxl056,155,181,0.9999999403953552,1.3096305131912231,1,2,0
+3383,13625,baseline_readout,descending_neuron,nan,xn,DNge137,DNge137,nan,DNxn126,103,192,1.0,1.7229351997375488,1,2,0
+3390,13633,baseline_readout,descending_neuron,nan,xl,DNg43,DNg43,nan,DNg43,191,394,1.0,3.922778367996216,1,2,0
+3628,13891,baseline_readout,descending_neuron,nan,lt,DNg106,DNg106,nan,DNg106,82,99,1.0,0.6142616868019104,1,2,0
+3683,13952,baseline_readout,descending_neuron,nan,xl,DNg63,DNg63,nan,DNg63,169,204,1.0,1.7433301210403442,1,1,0
+3754,14029,baseline_readout,descending_neuron,nan,xn,DNp65,DNp65,nan,DNp65,66,115,0.9999998807907104,2.8012356758117676,1,2,0
+3828,14114,baseline_readout,descending_neuron,nan,xl,DNg69,DNg69,nan,DNg69,196,67,1.0,0.5326898694038391,1,2,0
+3935,14234,baseline_readout,descending_neuron,nan,xl,DNg64,DNg64,nan,DNg64,160,145,1.0,1.009223461151123,1,2,0
+3937,14237,baseline_readout,cb_motor,nan,pm,MN12D,CB0914/CB0915,nan,nan,57,0,1.0,0.0,0,2,0
+3946,14249,baseline_readout,descending_neuron,nan,fl,DNge077,DNge077,nan,DNfl025,118,140,0.9999999403953552,0.551677942276001,1,2,0
+3959,14264,baseline_readout,descending_neuron,nan,xl,DNde003,DNde003,LAL107,DNxl067,203,172,1.0,0.9540998935699463,1,2,0
+3960,14265,baseline_readout,descending_neuron,nan,xn,DNge133,DNge133,nan,DNxn127,192,246,1.0,1.1571204662322998,1,1,0
+3966,14271,baseline_readout,descending_neuron,nan,xn,DNae006,DNae006,PS045,DNxn118,140,132,1.0,0.9783047437667847,1,2,0
+4017,14328,baseline_readout,descending_neuron,nan,xn,DNpe040,DNpe040,CL320,DNxn130,276,276,1.0000001192092896,2.589712381362915,1,2,0
+4335,14686,baseline_readout,descending_neuron,nan,xn,DNg11,DNg11,nan,DNg11,86,60,1.0000001192092896,1.501943588256836,0,1,0
+4443,14804,baseline_readout,descending_neuron,nan,xl,DNg63,DNg63,nan,DNg63,184,175,0.9999999403953552,1.6949183940887451,1,2,0
+4535,14907,baseline_readout,cb_motor,nan,pm,MN13,CB0836,nan,nan,52,0,1.0,0.0,0,2,0
+5091,15530,baseline_readout,cb_motor,nan,pm,MN1,CB0720,nan,nan,54,6,1.0,0.008578510954976082,0,2,0
+5225,15681,baseline_readout,descending_neuron,nan,nt,DNge113,DNge113,nan,DNnt001,90,68,1.0,0.3527989387512207,1,1,0
+5369,15835,baseline_readout,descending_neuron,nan,xn,DNp25,DNp25,DNp25,DNp25,72,61,1.0,0.6818596720695496,1,2,0
+6144,16703,baseline_readout,descending_neuron,nan,it,DNpe033,DNpe033,SMP289,DNit004,109,110,1.0000001192092896,1.6541537046432495,1,2,0
+6152,16712,baseline_readout,descending_neuron,nan,ut,DNb03,DNb03,DNb03,DNb03,73,108,1.0,2.7539541721343994,1,2,0
+6169,16731,baseline_readout,descending_neuron,nan,xn,DNg94,DNg94,nan,DNg94,80,126,0.9999999403953552,2.271247148513794,1,1,0
+6178,16741,baseline_readout,descending_neuron,nan,fl,DNge019,DNge019,nan,DNfl003,86,120,0.9999999403953552,1.5050877332687378,1,2,0
+6272,16850,baseline_readout,descending_neuron,nan,xn,DNg23,DNg23,nan,DNg23,75,126,1.0000001192092896,1.5080558061599731,1,2,0
+6277,16856,baseline_readout,descending_neuron,nan,xn,DNge134,DNge134,nan,DNxn073,52,63,0.9999998807907104,0.43755221366882324,1,2,0
+6598,17211,baseline_readout,descending_neuron,nan,fl,DNge174,DNge174,nan,DNfl047,100,117,1.0000001192092896,0.6823703646659851,1,2,0
+6735,17367,baseline_readout,descending_neuron,nan,xn,DNp65,DNp65,nan,DNp65,73,96,1.0,2.305013418197632,1,2,0
+6850,17495,baseline_readout,cb_motor,nan,pm,MN7,CB0762,nan,nan,37,0,0.9999999403953552,0.0,0,2,0
+7794,18556,baseline_readout,descending_neuron,nan,ut,DNg03,DNg03,nan,DNg03,25,49,1.0,0.45698603987693787,1,2,0
+8460,19296,baseline_readout,cb_motor,nan,pm,MNx01,MNx01,nan,nan,96,128,1.0,1.5801177024841309,1,2,0
+8601,19455,baseline_readout,descending_neuron,nan,nt,DNg12_h,DNg12_d,nan,DNnt013,89,68,1.0,0.8003251552581787,1,2,0
+8812,19691,baseline_readout,descending_neuron,nan,ut,DNge110,DNge110,nan,DNut044,49,118,1.0,1.2731616497039795,1,2,0
+9054,19960,baseline_readout,descending_neuron,nan,ut,DNa07,DNa07,DNa07,DNa07,131,192,1.0,1.076287865638733,1,1,0
+9136,20054,baseline_readout,descending_neuron,nan,ut,DNge091,DNge091,nan,DNxn117,77,112,1.0,1.7042169570922852,1,1,0
+9251,20185,baseline_readout,descending_neuron,nan,ut,DNg36_a,DNg36_a,nan,DNg36,47,88,1.0,1.2250887155532837,1,1,0
+9297,20234,baseline_readout,descending_neuron,nan,ut,DNge175,DNg06_a,nan,DNut057,156,141,0.9999999403953552,1.0789257287979126,1,2,0
+9543,20518,baseline_readout,cb_motor,nan,pm,CEM,CEM,nan,nan,15,0,1.0,0.0,0,2,0
+9909,20923,baseline_readout,descending_neuron,nan,ut,DNg110,"DNg06_b,DNg06_c",nan,DNg110,103,69,1.0000001192092896,0.33144423365592957,1,2,0
+9943,20962,baseline_readout,descending_neuron,nan,ut,DNg02_f,DNg02_f,nan,DNg02,161,84,1.0,0.3832818567752838,1,2,0
+10227,21278,baseline_readout,descending_neuron,nan,it,DNg106,DNg106,nan,DNg106,78,111,1.0000001192092896,1.2955741882324219,1,1,0
+10895,22024,baseline_readout,descending_neuron,nan,ut,DNge181,DNge091,nan,DNut048,73,84,1.0,0.6066575050354004,1,2,0
+10945,22080,baseline_readout,descending_neuron,nan,nt,DNg12_g,DNg12_b,nan,DNnt013,57,51,1.0,0.50612872838974,1,2,0
+11049,22190,baseline_readout,descending_neuron,nan,fl,DNg12_e,DNg12_e,nan,DNg12,78,90,1.0,0.8735111355781555,1,2,0
+11245,22404,baseline_readout,descending_neuron,nan,ut,DNg02_a,DNg02_a,nan,DNg02,93,77,1.0,0.3071461021900177,1,2,0
+11385,22564,baseline_readout,descending_neuron,nan,fl,DNg12_e,DNg12_e,nan,DNg12,89,67,0.9999999403953552,0.4649730920791626,1,1,0
+12577,23892,baseline_readout,descending_neuron,nan,ut,DNge095,DNge095,nan,DNut064,77,74,0.9999999403953552,0.5215822458267212,1,2,0
+12722,24058,baseline_readout,descending_neuron,nan,ut,DNge014,DNge014,nan,DNut050,99,98,1.0,0.6798732876777649,0,2,0
+13727,25188,baseline_readout,descending_neuron,nan,ut,DNg08,"DNg08_a,DNg08_b",nan,DNg08,62,117,0.9999999403953552,1.6895596981048584,0,2,0
+13971,25461,baseline_readout,descending_neuron,nan,ut,DNg08,"DNg08_a,DNg08_b",nan,DNg08,60,93,1.0,0.9653225541114807,0,2,0
+14040,25535,baseline_readout,descending_neuron,nan,ut,DNp17,DNp17,DNp16/17,DNp17,33,59,1.0,1.0317637920379639,1,2,0
+14569,26137,baseline_readout,cb_motor,nan,pm,MNx02,CB0904,nan,nan,90,0,0.9999999403953552,0.0,0,2,0
+14907,26512,baseline_readout,descending_neuron,nan,ut,DNg07,DNg07,nan,DNg07,54,70,1.0,0.688060462474823,1,2,0
+14978,26591,baseline_readout,descending_neuron,nan,ut,DNg07,DNg07,nan,DNg07,67,89,0.9999999403953552,0.7148399353027344,1,2,0
+15016,26636,baseline_readout,descending_neuron,nan,ad,DNp58,DNp58,hb1791391565,DNp58,92,130,0.9999998807907104,4.3537678718566895,1,2,0
+15730,27437,baseline_readout,descending_neuron,nan,ut,DNg07,DNg07,nan,DNg07,53,89,1.0,0.6955589652061462,0,2,0
+16051,27792,baseline_readout,descending_neuron,nan,ut,DNge093,DNge093,nan,DNut054,68,76,1.0,0.7696175575256348,1,1,0
+16639,28450,baseline_readout,descending_neuron,nan,xl,DNge153,DNge153,nan,DNxl118,223,264,1.0,10.536054611206055,1,1,0
+17269,29158,baseline_readout,descending_neuron,nan,nt,DNge085,DNge085,nan,DNnt011,68,61,0.9999999403953552,1.371726632118225,0,1,0
+17295,29188,baseline_readout,descending_neuron,nan,ut,DNge108,"DNge108,DNge118",nan,DNut065,65,72,1.0,1.0140612125396729,0,1,0
+18853,30957,baseline_readout,descending_neuron,nan,ut,DNpe015,DNpe015,nan,DNut046,41,48,1.0,0.6924088597297668,1,2,0
+19144,31298,baseline_readout,descending_neuron,nan,fl,DNge009,DNge024,nan,DNfl014,34,48,1.0,0.25459787249565125,1,2,0
+19749,31987,baseline_readout,descending_neuron,nan,ut,DNpe015,DNpe015,nan,DNut046,50,54,0.9999999403953552,1.0420812368392944,1,2,0
+19844,32092,baseline_readout,cb_motor,nan,pm,MN7,CB0762,nan,nan,50,0,1.0,0.0,0,2,0
+20510,32852,baseline_readout,cb_motor,nan,pm,CEM,CEM,nan,nan,8,0,1.0,0.0,0,2,0
+21373,33829,baseline_readout,descending_neuron,nan,fl,DNg83,DNg83,nan,DNg83,108,109,1.0,3.2609879970550537,1,1,0
+21787,34292,baseline_readout,descending_neuron,nan,nt,DNge087,DNge087,nan,DNnt010,65,51,1.0,0.6803097724914551,1,1,0
+22097,34649,baseline_readout,descending_neuron,nan,nt,DNge179,DNge071,nan,DNnt026,48,42,0.9999999403953552,0.5181697607040405,1,1,0
+22827,35469,baseline_readout,descending_neuron,nan,fl,DNge009,DNge009,nan,DNfl014,37,48,1.0,0.21963074803352356,1,2,0
+25474,38465,baseline_readout,descending_neuron,nan,xn,DNge089,DNge089,nan,DNxn013,39,71,1.0000001192092896,0.5528725385665894,0,2,0
+26439,39558,baseline_readout,descending_neuron,nan,nt,DNpe057,DNpe009,PS226,DNnt012,36,33,1.0,0.45075103640556335,0,2,0
+30934,44659,baseline_readout,descending_neuron,nan,nt,DNg10,DNg10,nan,DNg10,50,50,1.0,0.4698885381221771,1,1,0
+34193,48408,baseline_readout,descending_neuron,nan,xn,DNg12_b,DNg12_b,nan,DNxn139,31,44,1.0,0.27738556265830994,0,2,0
+40326,55546,baseline_readout,descending_neuron,nan,lt,DNg01_c,DNg01,nan,DNg01,67,62,1.0,0.4586513340473175,1,2,0
+40356,55579,baseline_readout,descending_neuron,nan,xn,nan,nan,nan,nan,8,53,0.9999999403953552,1.1123647689819336,1,2,0
+49967,67107,baseline_readout,descending_neuron,nan,xn,DNg18_b,DNg18_b,nan,DNxn106,43,53,0.9999999403953552,0.6028881669044495,1,2,0
+76300,101002,baseline_readout,cb_motor,nan,pm,MNx01,MNx01,nan,nan,96,140,1.0,1.5700109004974365,1,2,0
+115851,186380,baseline_readout,descending_neuron,nan,xl,DNge144,DNge144,nan,DNxl081,96,139,1.0,0.7677152752876282,1,2,0
+118520,203146,baseline_readout,descending_neuron,nan,xn,DNg06,DNg110_a,nan,DNg06,68,73,0.9999999403953552,0.637787401676178,1,2,0
+120029,217516,baseline_readout,descending_neuron,nan,nt,DNpe009,DNpe009,"PS222,PS226",DNnt014,52,33,1.0,0.41274285316467285,0,2,0
+120883,230783,baseline_readout,descending_neuron,nan,xl,DNg97,DNg97,nan,DNg97,567,489,0.9999999403953552,4.24185037612915,1,1,0
+121811,259442,baseline_readout,descending_neuron,nan,ut,DNpe015,DNpe015,nan,DNut046,49,58,0.9999999403953552,0.8226332664489746,1,2,0
+124482,512751,baseline_readout,descending_neuron,nan,fl,DNge105,DNge105,nan,DNfl035,166,144,0.9999999403953552,0.593165397644043,1,1,0
+124540,512877,baseline_readout,cb_motor,nan,pm,MNx01,MNx01,nan,nan,93,163,0.9999999403953552,2.7242379188537598,1,2,0
+124768,513296,baseline_readout,descending_neuron,nan,ut,DNb03,DNb03,DNb03,DNb03,54,99,1.0,2.872241258621216,1,2,0
+125160,514025,baseline_readout,descending_neuron,nan,lt,DNg106,DNg106,nan,DNg106,31,145,1.0000001192092896,1.166152000427246,1,2,0
+125448,514485,baseline_readout,descending_neuron,nan,lt,DNg106,DNg106,nan,DNg106,99,133,1.0,0.8155504465103149,1,1,0
+126428,516170,baseline_readout,descending_neuron,nan,xl,DNa13,DNa13,LAL041,DNa13,418,327,1.0,2.629624843597412,1,1,0
+126862,516904,baseline_readout,descending_neuron,nan,xl,DNde007,DNde007,nan,DNxl094,70,121,1.0,1.8146058320999146,1,2,0
+127390,517830,baseline_readout,descending_neuron,nan,ut,DNge030,DNge030,nan,DNut051,130,155,0.9999999403953552,1.6802806854248047,1,1,0
+127688,518309,baseline_readout,descending_neuron,nan,xl,DNpe007,DNpe007,hb1343489608,DNxl083,215,248,1.0,1.8268650770187378,1,1,0
+127892,518650,baseline_readout,cb_motor,nan,pm,MN4b,CB0871,nan,nan,55,0,1.0,0.0,0,2,0
+128518,519715,baseline_readout,descending_neuron,nan,xl,DNbe002,DNbe002,nan,DNxl106,190,337,1.0,2.3982203006744385,1,2,0
+129684,522345,baseline_readout,descending_neuron,nan,xn,DNpe037,DNpe037,CL338,DNxn113,275,279,1.0,1.9901199340820312,1,1,0
+130343,524146,baseline_readout,descending_neuron,nan,xn,"DNp51,DNpe019","DNp51,DNpe019",PS296,"DNp51,DNxn136",210,138,1.0,1.1513429880142212,1,2,0
+130513,524470,baseline_readout,descending_neuron,nan,ut,DNbe001,DNbe001,PS103,DNut040,841,358,0.9999999403953552,3.5557050704956055,1,1,0
+140686,556329,baseline_readout,descending_neuron,nan,xl,DNge104,DNge104,nan,DNxl132,928,876,1.0000001192092896,98.6849365234375,1,1,0
+140765,556793,baseline_readout,descending_neuron,nan,xn,DNge111,DNge111,nan,DNit005,88,105,0.9999999403953552,0.7273887991905212,1,1,0
+141761,574147,baseline_readout,descending_neuron,nan,ut,DNg36_a,DNg36_a,nan,DNg36,47,78,0.9999999403953552,1.1496272087097168,1,1,0
+141771,575082,baseline_readout,descending_neuron,nan,xn,DNpe021,DNpe021,CL307,DNxn163,436,483,1.0,7.117757797241211,1,1,0
+142649,800290,baseline_readout,vnc_motor,nan,hl,Pleural remotor/abductor MN,nan,nan,Pleural remotor/abductor MN,222,0,1.0,0.0,0,2,0
+142893,800606,baseline_readout,vnc_motor,nan,wm,MNwm35,nan,nan,MNwm35,541,0,1.0,0.0,0,1,0
+142973,800719,baseline_readout,vnc_efferent,nan,nan,EN00B001,nan,nan,EN00B001,141,0,1.0,0.0,0,2,0
+143012,800776,baseline_readout,vnc_motor,nan,ml,Pleural remotor/abductor MN,nan,nan,Pleural remotor/abductor MN,335,0,0.9999999403953552,0.0,0,2,0
+143071,800851,baseline_readout,vnc_motor,nan,hl,Sternotrochanter MN,nan,nan,Sternotrochanter MN,427,0,1.0,0.0,0,1,0
+143436,801335,baseline_readout,vnc_motor,nan,hl,MNhl59,nan,nan,MNhl59,413,0,1.0,0.0,0,1,0
+143578,801521,baseline_readout,vnc_efferent,nan,nan,EN00B002,nan,nan,EN00B002,70,0,1.0,0.0,0,2,0
+143757,801761,baseline_readout,vnc_motor,nan,ml,Sternal posterior rotator MN,nan,nan,Sternal posterior rotator MN,338,0,1.0,0.0,0,1,0
+144050,802164,baseline_readout,vnc_motor,nan,ad,MNad14,nan,nan,MNad14,170,0,1.0,0.0,0,1,0
+144228,802407,baseline_readout,vnc_motor,nan,ml,Sternotrochanter MN,nan,nan,Sternotrochanter MN,343,0,1.0,0.0,0,1,0
+144418,802659,baseline_readout,vnc_motor,nan,hm,MNhm03,nan,nan,MNhm03,270,0,1.0000001192092896,0.0,0,2,0
+144510,802781,baseline_readout,vnc_motor,nan,nm,MNnm08,nan,nan,MNnm08,200,0,1.0000001192092896,0.0,0,2,0
+144528,802806,baseline_readout,vnc_motor,nan,hm,MNhm03,nan,nan,MNhm03,300,1,1.0,0.0015349193708971143,0,1,0
+144549,802837,baseline_readout,vnc_motor,nan,wm,ps2 MN,nan,nan,ps2 MN,428,1,1.0,0.0012642224319279194,1,2,0
+144614,802923,baseline_readout,vnc_motor,nan,nm,MNnm03,nan,nan,MNnm03,233,0,0.9999999403953552,0.0,0,1,0
+144655,802978,baseline_readout,vnc_efferent,nan,nan,nan,nan,nan,nan,121,0,0.9999999403953552,0.0,0,2,0
+144681,803010,baseline_readout,vnc_motor,nan,ad,MNad17,nan,nan,MNad17,58,2,0.9999999403953552,0.042276736348867416,0,2,0
+144713,803047,baseline_readout,vnc_motor,nan,ad,MNad15,nan,nan,MNad15,216,0,1.0000001192092896,0.0,0,2,0
+144924,803310,baseline_readout,vnc_motor,nan,hm,MNhm43,nan,nan,MNhm43,274,1,1.0,0.014440433122217655,0,1,0
+145223,803704,baseline_readout,vnc_motor,nan,ml,Sternal posterior rotator MN,nan,nan,Sternal posterior rotator MN,273,0,1.0000001192092896,0.0,0,1,0
+145371,803891,baseline_readout,vnc_motor,nan,wm,hg2 MN,nan,nan,hg2 MN,334,3,1.0,0.008952667936682701,1,1,0
+145482,804023,baseline_readout,vnc_motor,nan,ad,MNad61,nan,nan,MNad61,155,0,1.0,0.0,0,2,0
+145550,804107,baseline_readout,vnc_motor,nan,wm,iii3 MN,nan,nan,iii3 MN,217,0,0.9999999403953552,0.0,0,1,0
+145603,804173,baseline_readout,vnc_motor,nan,ad,MNad10,nan,nan,MNad10,183,0,1.0000001192092896,0.0,0,1,0
+145673,804257,baseline_readout,vnc_motor,nan,fl,Ti extensor MN,nan,nan,Ti extensor MN,178,0,1.0000001192092896,0.0,0,2,0
+145787,804405,baseline_readout,vnc_motor,nan,ml,Ti flexor MN,nan,nan,Ti flexor MN,192,0,1.0,0.0,0,1,0
+146144,804847,baseline_readout,vnc_motor,nan,hl,MNhl88,nan,nan,MNhl88,159,0,1.0,0.0,0,2,0
+146318,805067,baseline_readout,vnc_motor,nan,ad,MNad08,nan,nan,MNad08,197,0,1.0,0.0,0,2,0
+146471,805255,baseline_readout,vnc_motor,nan,ad,MNad32,nan,nan,MNad32,196,0,1.0,0.0,0,2,0
+146529,805326,baseline_readout,vnc_motor,nan,ad,MNad32,nan,nan,MNad32,196,0,0.9999998807907104,0.0,0,1,0
+146991,805879,baseline_readout,vnc_motor,nan,ad,MNad17,nan,nan,MNad17,7,56,1.0000001192092896,2.9644243717193604,1,3,0
+147099,806014,baseline_readout,vnc_motor,nan,ad,MNad46,nan,nan,MNad46,152,0,1.0,0.0,0,2,0
+147219,806161,baseline_readout,vnc_motor,nan,ad,MNad24,nan,nan,MNad24,142,0,0.9999999403953552,0.0,0,1,0
+147588,806599,baseline_readout,vnc_motor,nan,fl,Acc. ti flexor MN,nan,nan,Acc. ti flexor MN,224,4,1.0,0.043391719460487366,1,1,0
+147747,806779,baseline_readout,vnc_motor,nan,ad,MNad09,nan,nan,MNad09,109,0,1.0000001192092896,0.0,0,2,0
+147794,806837,baseline_readout,vnc_motor,nan,ad,MNad47,nan,nan,MNad47,132,0,0.9999999403953552,0.0,0,2,0
+147999,807075,baseline_readout,vnc_motor,nan,ad,MNad02,nan,nan,MNad02,119,0,0.9999999403953552,0.0,0,2,0
+148318,807464,baseline_readout,vnc_motor,nan,ad,MNad02,nan,nan,MNad02,144,0,1.0000001192092896,0.0,0,2,0
+148603,807799,baseline_readout,vnc_motor,nan,wm,"DVMn 2a, b",nan,nan,"DVMn 2a, b",186,0,1.0,0.0,0,2,0
+148690,807906,baseline_readout,vnc_motor,nan,fl,Tr extensor MN,nan,nan,Tr extensor MN,162,0,0.9999999403953552,0.0,0,2,0
+148859,808101,baseline_readout,vnc_motor,nan,ad,MNad01,nan,nan,MNad01,120,0,1.0000001192092896,0.0,0,2,0
+149143,808456,baseline_readout,vnc_efferent,nan,nan,nan,nan,nan,nan,84,0,0.9999999403953552,0.0,0,2,0
+149242,808572,baseline_readout,vnc_motor,nan,ad,MNad57,nan,nan,MNad57,53,0,0.9999999403953552,0.0,0,2,0
+149646,809055,baseline_readout,vnc_motor,nan,hl,MNhl88,nan,nan,MNhl88,158,0,1.0,0.0,0,2,0
+150091,809582,baseline_readout,vnc_efferent,nan,nan,ENXXX226,nan,nan,ENXXX226,75,0,1.0,0.0,0,2,0
+150814,810460,baseline_readout,vnc_motor,nan,hm,hiii2 MN,nan,nan,hiii2 MN,96,0,1.0000001192092896,0.0,0,1,0
+151569,811414,baseline_readout,vnc_efferent,nan,nan,EN00B016,nan,nan,EN00B016,98,0,1.0,0.0,0,2,0
+152178,812186,baseline_readout,vnc_motor,nan,ad,MNad09,nan,nan,MNad09,81,0,1.0,0.0,0,2,0
+152757,812899,baseline_readout,vnc_motor,nan,hl,MNhl87,nan,nan,MNhl87,91,0,1.0000001192092896,0.0,0,1,0
+153356,813658,baseline_readout,vnc_efferent,nan,nan,EN21X001,nan,nan,EN21X001,105,0,1.0,0.0,0,2,0
+154443,815075,baseline_readout,vnc_motor,nan,ad,MNad17,nan,nan,MNad17,48,0,0.9999999403953552,0.0,0,2,0
+154456,815097,baseline_readout,vnc_motor,nan,hl,ltm MN,nan,nan,ltm MN,57,6,1.0,0.02709740400314331,1,2,0
+154537,815205,baseline_readout,vnc_motor,nan,ad,MNad03,nan,nan,MNad03,60,0,0.9999998807907104,0.0,0,1,0
+156255,817835,baseline_readout,vnc_motor,nan,ad,"MNad18,MNad27",nan,nan,"MNad18,MNad27",29,0,0.9999998807907104,0.0,0,2,0
+156481,818287,baseline_readout,vnc_efferent,nan,nan,ENXXX226,nan,nan,ENXXX226,32,0,1.0000001192092896,0.0,0,2,0
+156599,818527,baseline_readout,vnc_efferent,nan,nan,EN00B026,nan,nan,EN00B026,42,0,1.0,0.0,0,2,0
+156812,818993,baseline_readout,vnc_efferent,nan,nan,EN00B026,nan,nan,EN00B026,38,0,1.0,0.0,0,2,0
+156987,819446,baseline_readout,vnc_efferent,nan,nan,ENXXX226,nan,nan,ENXXX226,35,0,1.0,0.0,0,2,0
+157005,819487,baseline_readout,vnc_efferent,nan,nan,ENXXX226,nan,nan,ENXXX226,40,0,1.0,0.0,0,2,0
+157142,819869,baseline_readout,vnc_motor,nan,fl,Acc. ti flexor MN,nan,nan,Acc. ti flexor MN,102,0,1.0,0.0,0,2,0
+157306,820484,baseline_readout,vnc_efferent,nan,nan,ENXXX226,nan,nan,ENXXX226,25,0,1.0,0.0,0,2,0
+157725,822945,baseline_readout,vnc_motor,nan,hl,Ti flexor MN,nan,nan,Ti flexor MN,44,1,1.0000001192092896,0.0005162622546777129,1,2,0
+157772,823281,baseline_readout,vnc_motor,nan,fl,Tr flexor MN,nan,nan,Tr flexor MN,28,0,1.0,0.0,0,2,0
+157877,824689,baseline_readout,vnc_motor,nan,ml,ltm MN,nan,nan,ltm MN,12,0,1.0,0.0,0,2,0
+157908,824997,baseline_readout,vnc_motor,nan,ml,ltm MN,nan,nan,ltm MN,22,0,0.9999999403953552,0.0,0,2,0
+158265,833140,baseline_readout,vnc_motor,nan,fl,Acc. ti flexor MN,nan,nan,Acc. ti flexor MN,17,0,0.9999999403953552,0.0,0,3,0
+158295,834952,baseline_readout,vnc_motor,nan,nm,"MNnm07,MNnm12",nan,nan,"MNnm07,MNnm12",115,0,1.0,0.0,0,1,0
+158342,840530,baseline_readout,vnc_motor,nan,ml,Tr extensor MN,nan,nan,Tr extensor MN,49,0,1.0,0.0,0,2,0
+158441,852881,baseline_readout,vnc_motor,nan,hl,nan,nan,nan,nan,7,0,1.0,0.0,0,2,0
+158479,860084,baseline_readout,vnc_motor,nan,fl,ltm MN,nan,nan,ltm MN,28,0,0.9999999403953552,0.0,0,2,0
+158572,896719,baseline_readout,vnc_motor,nan,hl,Acc. tr flexor MN,nan,nan,Acc. tr flexor MN,21,0,1.0,0.0,0,2,0
+159054,903484,baseline_readout,vnc_efferent,nan,ad,EN00B003,nan,nan,EN00B003,293,0,1.0,0.0,0,2,0
+159425,904657,baseline_readout,vnc_motor,nan,ml,Sternotrochanter MN,nan,nan,Sternotrochanter MN,548,0,0.9999999403953552,0.0,0,1,0
+159615,905145,baseline_readout,vnc_motor,nan,ml,Fe reductor MN,nan,nan,Fe reductor MN,155,0,1.0000001192092896,0.0,0,1,0
+159717,905421,baseline_readout,vnc_motor,nan,ml,Pleural remotor/abductor MN,nan,nan,Pleural remotor/abductor MN,312,0,1.0,0.0,0,1,0
+159732,905487,baseline_readout,vnc_motor,nan,ml,ltm MN,nan,nan,ltm MN,61,0,1.0,0.0,0,2,0
+159892,905928,baseline_readout,vnc_motor,nan,hl,Tr flexor MN,nan,nan,Tr flexor MN,251,0,1.0,0.0,0,1,0
+160705,908762,baseline_readout,vnc_motor,nan,hl,Ti flexor MN,nan,nan,Ti flexor MN,20,4,1.0,0.055436015129089355,1,2,0
+161052,909643,baseline_readout,vnc_efferent,nan,nan,nan,nan,nan,nan,91,0,1.0,0.0,0,2,0
+161066,909713,baseline_readout,vnc_motor,nan,fl,Acc. ti flexor MN,nan,nan,Acc. ti flexor MN,15,3,0.9999999403953552,0.018054291605949402,0,2,0
+161169,910095,baseline_readout,vnc_motor,nan,ml,Tr flexor MN,nan,nan,Tr flexor MN,170,0,1.0000001192092896,0.0,0,2,0
+162496,934091,baseline_readout,vnc_motor,nan,fl,Tergopleural/Pleural promotor MN,nan,nan,Tergopleural/Pleural promotor MN,152,0,0.9999999403953552,0.0,0,2,0
+162678,936838,baseline_readout,vnc_efferent,nan,nan,nan,nan,nan,nan,97,0,1.0,0.0,0,2,0
+163533,451851712,baseline_readout,efferent_descending,nan,nan,DNg28,DNg28,nan,nan,18,0,1.0,0.0,0,2,0
+164151,1050013311,baseline_readout,vnc_motor,nan,hl,Ti flexor MN,nan,nan,Ti flexor MN,14,0,1.0000001192092896,0.0,0,2,0
+164161,1050046221,baseline_readout,vnc_motor,nan,ml,MNml80,nan,nan,MNml80,198,2,0.9999998807907104,0.00266863196156919,1,2,0
+164222,1050272154,baseline_readout,vnc_motor,nan,hl,nan,nan,nan,nan,51,0,1.0000001192092896,0.0,0,2,0
+164238,1050380236,baseline_readout,vnc_motor,nan,fl,Ta depressor MN,nan,nan,Ta depressor MN,1,0,1.0,0.0,0,3,0
+164252,1050493413,baseline_readout,vnc_motor,nan,hl,Sternal posterior rotator MN,nan,nan,Sternal posterior rotator MN,106,0,1.0,0.0,0,2,0
+164260,1050607195,baseline_readout,vnc_motor,nan,ml,Fe reductor MN,nan,nan,Fe reductor MN,36,0,0.9999999403953552,0.0,0,2,0
+164266,1050660827,baseline_readout,vnc_motor,nan,fl,Ta depressor MN,nan,nan,Ta depressor MN,18,0,1.0,0.0,0,2,0
+208,10229,baseline_sensory,visual_projection,nan,nan,LoVP102,LTe26,nan,nan,1057,432,1.0,7.451927185058594,1,0,2
+294,10318,baseline_sensory,visual_centrifugal,nan,nan,MeVC4b,cM16,PS129,nan,221,1056,1.0,25.28990364074707,1,0,2
+367,10398,baseline_sensory,visual_projection,nan,nan,LT1d,LT1d,nan,nan,1238,241,1.0,6.668975353240967,1,0,2
+627,10675,baseline_sensory,visual_projection,nan,nan,LT66,LT66,LT66,nan,956,236,0.9999999403953552,1.4624172449111938,1,0,1
+637,10685,baseline_sensory,visual_projection,nan,nan,LoVP101,LTe21,nan,nan,769,495,0.9999998807907104,5.903578758239746,1,0,1
+1020,11102,baseline_sensory,visual_centrifugal,nan,nan,PVLP046,cM19,PVLP046,nan,96,243,1.0000001192092896,0.9844396114349365,1,0,1
+1578,11690,baseline_sensory,visual_projection,nan,nan,MeVP29,MTe28,nan,nan,384,238,0.9999999403953552,3.2767462730407715,1,0,1
+1736,11858,baseline_sensory,visual_centrifugal,nan,nan,MeVC21,cM08a,nan,nan,159,98,1.0,0.8383622169494629,1,0,2
+2300,12458,baseline_sensory,visual_projection,nan,nan,LC10a,LC10a,nan,nan,161,83,1.0000001192092896,0.4720265865325928,1,0,2
+2303,12461,baseline_sensory,visual_projection,nan,nan,MeVP9,MTe01b,MC66,nan,266,119,0.9999999403953552,1.0223321914672852,1,0,1
+2488,12662,baseline_sensory,visual_projection,nan,nan,MeVPMe4,MeMe_e06,nan,nan,181,308,1.0,7.268375873565674,1,0,2
+2650,12833,baseline_sensory,visual_projection,nan,nan,LoVP92,nan,nan,nan,200,67,1.0,0.26308196783065796,1,0,2
+3475,13726,baseline_sensory,visual_projection,nan,nan,LPLC2,LPLC2,LPLC2,nan,327,113,0.9999998807907104,0.49135205149650574,1,0,1
+3572,13830,baseline_sensory,visual_projection,nan,nan,LT52,LT52,LT52,nan,507,415,1.0,4.784327507019043,1,0,2
+3644,13909,baseline_sensory,visual_projection,nan,nan,LPLC4,LPLC4,LPLC4,nan,266,92,0.9999998807907104,0.4116504192352295,1,0,1
+3854,14142,baseline_sensory,visual_projection,nan,nan,MeVP46,MTe16,nan,nan,117,67,1.0000001192092896,1.6252541542053223,1,0,2
+4770,15168,baseline_sensory,visual_projection,nan,nan,LT74,LT74,LT74,nan,195,97,1.0000001192092896,0.37719014286994934,1,0,2
+5020,15447,baseline_sensory,visual_projection,nan,nan,MeVP48,MTe31,nan,nan,162,94,1.0,0.6562053561210632,1,0,1
+5528,16017,baseline_sensory,visual_projection,nan,nan,aMe5,aMe5,nan,nan,73,46,1.0,0.45362094044685364,1,0,2
+5784,16305,baseline_sensory,visual_projection,nan,nan,LT60,LT60,LT60,nan,302,213,1.0,2.7625880241394043,1,0,2
+5858,16390,baseline_sensory,visual_projection,nan,nan,LT63,LT63,LT63,nan,382,271,1.0,2.2113592624664307,1,0,1
+6118,16674,baseline_sensory,visual_projection,nan,nan,aMe10,aMe10,aMe10,nan,114,114,1.0,2.316967010498047,1,0,2
+6263,16840,baseline_sensory,visual_projection,nan,nan,LoVP57,LTe06,nan,nan,186,113,1.0,1.1969267129898071,1,0,2
+6404,16996,baseline_sensory,visual_projection,nan,nan,LT69,LT69,LT69,nan,198,131,1.0,0.9916914105415344,1,0,2
+6459,17059,baseline_sensory,visual_projection,nan,nan,LPLC2,LPLC2,LPLC2,nan,230,90,0.9999999403953552,0.3161346912384033,1,0,1
+6647,17270,baseline_sensory,visual_projection,nan,nan,LC4,LC4,LC4,nan,259,92,0.9999999403953552,0.23933462798595428,1,0,2
+7204,17883,baseline_sensory,visual_projection,nan,nan,MeVP17,MTe08,nan,nan,129,233,0.9999998807907104,0.9134716391563416,1,0,2
+7259,17945,baseline_sensory,visual_projection,nan,nan,LLPC4,LLPC4,nan,nan,139,78,1.0,0.4692922532558441,1,0,1
+7502,18224,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,37,51,1.0,0.28148171305656433,1,0,2
+7716,18462,baseline_sensory,visual_projection,nan,nan,aMe5,aMe5,aMe5,nan,138,79,1.0,0.8323863744735718,1,0,2
+7772,18531,baseline_sensory,visual_centrifugal,nan,nan,PVLP046,cM19,PVLP046,nan,37,50,1.0000001192092896,0.2385047823190689,1,0,2
+7815,18579,baseline_sensory,visual_projection,nan,nan,MeVP8,MTe01b,MC66,nan,207,103,1.0,1.0153663158416748,1,0,1
+7914,18686,baseline_sensory,visual_projection,nan,nan,MeVPMe9,MeMe_e01,nan,nan,12,165,1.0,3.823146104812622,1,0,2
+7951,18727,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,LLPC1,nan,112,55,1.0000001192092896,0.17310141026973724,1,0,1
+8536,19382,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,62,50,0.9999998807907104,0.6866418123245239,1,0,2
+8595,19449,baseline_sensory,visual_projection,nan,nan,MeVPMe9,MeMe_e01,nan,nan,46,223,1.0,5.002774715423584,0,0,1
+8903,19794,baseline_sensory,visual_projection,nan,nan,LC4,LC4,LC4,nan,332,98,1.0,0.27821579575538635,1,0,1
+9302,20240,baseline_sensory,visual_projection,nan,nan,LPLC2,LPLC2,LPLC2,nan,275,108,0.9999999403953552,0.4362894892692566,1,0,1
+9864,20872,baseline_sensory,visual_projection,nan,nan,LPLC4,LPLC4,LPLC4,nan,238,95,0.9999998211860657,0.5206573605537415,1,0,1
+10069,21105,baseline_sensory,cb_sensory,gustatory,pharyngeal sensillum,PhG1a,PhG1a,nan,nan,42,85,1.0,1.8145129680633545,1,0,2
+10109,21151,baseline_sensory,visual_projection,nan,nan,LC4,LC4,LC4,nan,291,98,1.0,0.24664577841758728,1,0,1
+10124,21169,baseline_sensory,visual_projection,nan,nan,LT68,LT68,LT68,nan,92,118,1.0,1.7086601257324219,1,0,2
+10411,21483,baseline_sensory,visual_projection,nan,nan,LPLC4,LPLC4,LPLC4,nan,350,97,0.9999999403953552,0.43572384119033813,1,0,1
+10673,21780,baseline_sensory,visual_projection,nan,nan,LoVP76,LC10f,LC10,nan,150,169,1.0,1.583225131034851,1,0,1
+10794,21914,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,162,89,1.0,0.5036166310310364,1,0,2
+11041,22181,baseline_sensory,visual_projection,nan,nan,LC11,LC11,LC11,nan,369,182,1.0000001192092896,1.1400697231292725,1,0,2
+11113,22260,baseline_sensory,visual_projection,nan,nan,LPLC1,LPLC1,LPLC1,nan,234,83,1.0000001192092896,0.33596938848495483,1,0,1
+11174,22325,baseline_sensory,visual_centrifugal,nan,nan,LPT111,cLP02,LT71,nan,36,166,1.0,1.880722165107727,1,0,2
+11612,22810,baseline_sensory,visual_projection,nan,nan,MeVP4,MTe52,MC62,nan,126,123,1.0,0.9276028275489807,1,0,2
+11880,23116,baseline_sensory,visual_projection,nan,nan,LPLC1,LPLC1,LPLC1,nan,408,106,1.0,0.3419317603111267,1,0,1
+11961,23209,baseline_sensory,cb_sensory,gustatory,pharyngeal sensillum,PhG11,PhG11,nan,nan,17,95,1.0,2.3383445739746094,1,0,2
+12103,23363,baseline_sensory,visual_projection,nan,nan,LC17,LC17,LC17,nan,130,68,0.9999999403953552,0.191457599401474,1,0,2
+12293,23584,baseline_sensory,visual_projection,nan,nan,LC15,LC15,LC15,nan,69,78,1.0,0.3895634114742279,1,0,2
+12603,23919,baseline_sensory,visual_projection,nan,nan,LPLC2,LPLC2,LPLC2,nan,230,95,1.0,0.304585337638855,1,0,1
+12663,23989,baseline_sensory,visual_projection,nan,nan,LC10a,LC10a,nan,nan,116,69,1.0000001192092896,0.43082547187805176,1,0,2
+12907,24264,baseline_sensory,visual_projection,nan,nan,LoVP76,LC10f,LC10,nan,148,153,1.0,2.3087010383605957,1,0,2
+13168,24566,baseline_sensory,visual_projection,nan,nan,MeVP4,MTe52,MC62,nan,134,149,1.0000001192092896,1.1360024213790894,1,0,2
+13300,24710,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,109,100,1.0,0.7027320861816406,1,0,2
+13521,24954,baseline_sensory,visual_projection,nan,nan,LC17,LC17,LC17,nan,217,107,1.0,0.3207264244556427,1,0,2
+13616,25067,baseline_sensory,visual_projection,nan,nan,LC10a,LC10a,nan,nan,130,86,0.9999999403953552,0.5502656698226929,1,0,2
+13757,25224,baseline_sensory,visual_projection,nan,nan,LoVP10,LC45,nan,nan,30,26,1.0000001192092896,0.34525296092033386,1,0,3
+13890,25372,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,LLPC1,nan,166,72,1.0,0.28868940472602844,1,0,1
+14006,25497,baseline_sensory,visual_projection,nan,nan,LPLC2,LPLC2,LPLC2,nan,286,88,1.0,0.2384558767080307,1,0,1
+14108,25611,baseline_sensory,visual_projection,nan,nan,LC6,LC6,LC6,nan,74,66,0.9999999403953552,0.2898508906364441,1,0,1
+14767,26352,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,140,72,1.0,0.30835390090942383,1,0,2
+15220,26864,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,4,14,0.9999999403953552,0.6841951012611389,1,0,3
+15234,26880,baseline_sensory,visual_projection,nan,nan,LPLC1,LPLC1,LPLC1,nan,291,79,1.0,0.3115517497062683,1,0,1
+15438,27112,baseline_sensory,visual_projection,nan,nan,LC17,LC17,LC17,nan,124,54,1.0000001192092896,0.15072548389434814,1,0,2
+15482,27165,baseline_sensory,visual_projection,nan,nan,LC11,LC11,LC11,nan,354,121,1.0,0.5428882241249084,1,0,2
+15866,27591,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,81,73,0.9999999403953552,0.4686644971370697,1,0,2
+15894,27621,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,127,67,0.9999998807907104,0.41906067728996277,1,0,2
+16468,28256,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,112,70,1.0000001192092896,0.35448411107063293,1,0,2
+16572,28375,baseline_sensory,visual_projection,nan,nan,LC36,LC36,nan,nan,58,80,1.0,0.6005834937095642,1,0,1
+16663,28476,baseline_sensory,visual_projection,nan,nan,LC22,LC22,LC22,nan,193,86,1.0,0.38261571526527405,1,0,1
+16685,28500,baseline_sensory,visual_projection,nan,nan,LC19,LC19,nan,nan,153,62,0.9999999403953552,0.28272926807403564,1,0,1
+17008,28868,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,LLPC1,nan,183,77,0.9999998807907104,0.3265436589717865,1,0,1
+17017,28877,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,91,60,0.9999998807907104,0.333189994096756,1,0,2
+17109,28983,baseline_sensory,visual_projection,nan,nan,LC11,LC11,LC11,nan,276,101,0.9999999403953552,0.5881313681602478,1,0,2
+17180,29061,baseline_sensory,visual_projection,nan,nan,LC11,LC11,LC11,nan,344,133,0.9999999403953552,0.6516757011413574,1,0,2
+17462,29383,baseline_sensory,visual_projection,nan,nan,LPLC1,LPLC1,LPLC1,nan,341,91,0.9999999403953552,0.32953187823295593,1,0,1
+17677,29618,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,84,79,1.0,0.5771231651306152,1,0,2
+18062,30041,baseline_sensory,visual_projection,nan,nan,LPLC2,LPLC2,LPLC2,nan,229,77,0.9999999403953552,0.20905239880084991,1,0,1
+18099,30087,baseline_sensory,visual_projection,nan,nan,LC4,LC4,LC4,nan,224,80,1.0,0.20653186738491058,1,0,2
+18241,30255,baseline_sensory,visual_projection,nan,nan,LC25,LC25,LC25,nan,127,94,1.0000001192092896,0.44091296195983887,1,0,2
+18374,30408,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,147,73,1.0000001192092896,0.4246317446231842,1,0,2
+18440,30485,baseline_sensory,visual_projection,nan,nan,MeVP14,MTe05,nan,nan,40,56,1.000000238418579,0.7755827307701111,1,0,2
+18454,30499,baseline_sensory,visual_projection,nan,nan,LC10a,LC10a,nan,nan,102,58,1.0,0.3563042879104614,1,0,2
+18580,30645,baseline_sensory,visual_centrifugal,nan,nan,LPT111,cLP02,LT71,nan,24,138,0.9999999403953552,1.003114938735962,0,0,2
+18777,30867,baseline_sensory,visual_projection,nan,nan,LC29,LC29,LC29,nan,56,38,1.0000001192092896,0.316428005695343,1,0,1
+18966,31084,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,109,70,0.9999998807907104,0.2682729661464691,1,0,2
+19705,31941,baseline_sensory,visual_projection,nan,nan,LC10a,LC10a,nan,nan,92,71,0.9999998807907104,0.45909449458122253,1,0,2
+19758,31999,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,124,58,1.0,0.3191140294075012,1,0,2
+19842,32090,baseline_sensory,visual_projection,nan,nan,LC10a,LC10a,nan,nan,95,65,1.0000001192092896,0.5261728167533875,1,0,2
+20201,32495,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,101,91,1.0,0.6183962821960449,1,0,2
+20214,32508,baseline_sensory,visual_projection,nan,nan,LPLC4,LPLC4,LPLC4,nan,116,83,1.0000001192092896,0.44395145773887634,1,0,1
+20227,32522,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,112,90,0.9999998807907104,0.5639775991439819,1,0,2
+20281,32585,baseline_sensory,visual_projection,nan,nan,LC17,LC17,LC17,nan,173,94,0.9999999403953552,0.25899994373321533,1,0,2
+20300,32606,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,LLPC1,nan,136,70,1.0,0.3804622292518616,1,0,1
+20681,33048,baseline_sensory,visual_projection,nan,nan,LC10a,LC10a,nan,nan,113,78,1.0,0.48444467782974243,1,0,2
+20835,33222,baseline_sensory,visual_projection,nan,nan,LC17,LC17,LC17,nan,180,91,1.0,0.23676934838294983,1,0,2
+20869,33260,baseline_sensory,visual_projection,nan,nan,Nod3,Nod3,nan,nan,660,244,1.0,3.5644595623016357,1,0,1
+20996,33399,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,80,69,1.0000001192092896,0.3117454946041107,1,0,2
+21216,33650,baseline_sensory,visual_projection,nan,nan,LC17,LC17,LC17,nan,203,107,1.0,0.3547326326370239,1,0,2
+21284,33728,baseline_sensory,visual_projection,nan,nan,MeVP4,MTe52,MC62,nan,177,156,0.9999999403953552,1.2498692274093628,1,0,2
+21448,33913,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,72,59,1.0000001192092896,0.3802456557750702,1,0,2
+22264,34840,baseline_sensory,visual_projection,nan,nan,MeVP10,MTe03,nan,nan,30,34,1.0,0.2883630096912384,1,0,2
+22298,34877,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,LLPC1,nan,164,59,0.9999999403953552,0.20765019953250885,1,0,1
+22413,35006,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,62,71,1.0000001192092896,0.4400463402271271,1,0,2
+22670,35294,baseline_sensory,visual_projection,nan,nan,LPLC2,LPLC2,LPLC2,nan,179,71,1.0000001192092896,0.172750785946846,1,0,1
+22787,35426,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,4,17,1.0,1.2481491565704346,1,0,2
+22918,35570,baseline_sensory,visual_projection,nan,nan,MeVP3,MTe54,MC62,nan,94,92,1.0000001192092896,1.0289438962936401,1,0,2
+23011,35674,baseline_sensory,visual_projection,nan,nan,LC10c-2,LC10c,nan,nan,36,32,1.0,0.330884724855423,1,0,2
+23124,35802,baseline_sensory,visual_projection,nan,nan,LC13,LC13,LC13,nan,78,36,1.0,0.23863373696804047,1,0,2
+23391,36107,baseline_sensory,visual_projection,nan,nan,LC17,LC17,LC17,nan,166,83,0.9999999403953552,0.20748965442180634,1,0,2
+23421,36143,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,50,62,1.0,0.40181273221969604,1,0,2
+23427,36150,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,81,65,1.0,0.4388525187969208,1,0,2
+23670,36415,baseline_sensory,visual_centrifugal,nan,nan,LPT113,cLP01,nan,nan,21,89,0.9999998807907104,0.6705780625343323,0,0,2
+23728,36481,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,107,62,0.9999999403953552,0.26320844888687134,1,0,2
+23997,36794,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,114,61,1.0000001192092896,0.2436792254447937,1,0,2
+24052,36862,baseline_sensory,visual_projection,nan,nan,LC17,LC17,LC17,nan,154,77,1.0,0.1901421695947647,1,0,2
+24461,37316,baseline_sensory,visual_projection,nan,nan,LC10a,LC10a,nan,nan,86,65,1.0,0.45297372341156006,1,0,2
+24590,37465,baseline_sensory,visual_projection,nan,nan,LPT28,LPT28,nan,nan,543,182,0.9999999403953552,2.3400542736053467,1,0,2
+24621,37503,baseline_sensory,visual_projection,nan,nan,LC6,LC6,LC6,nan,72,84,1.0,0.3432296812534332,1,0,2
+24744,37638,baseline_sensory,visual_projection,nan,nan,LC16,LC16,LC16,nan,91,69,1.0,0.4693683385848999,1,0,2
+24906,37828,baseline_sensory,visual_centrifugal,nan,nan,LPT113,cLP01,nan,nan,26,98,1.0,0.7580433487892151,0,0,2
+25066,38000,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,LLPC1,nan,133,75,0.9999999403953552,0.35321494936943054,1,0,1
+25295,38258,baseline_sensory,visual_projection,nan,nan,LC11,LC11,LC11,nan,244,118,1.0,0.6687046885490417,1,0,2
+25586,38591,baseline_sensory,visual_projection,nan,nan,LC17,LC17,LC17,nan,163,99,0.9999998807907104,0.37724530696868896,1,0,2
+25627,38639,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,37,55,0.9999998807907104,0.44380438327789307,1,0,2
+25758,38789,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,89,62,1.0,0.7032543420791626,1,0,2
+26785,39947,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,LLPC1,nan,130,54,1.0,0.30190640687942505,1,0,1
+27040,40240,baseline_sensory,visual_projection,nan,nan,MeVP3,MTe54,MC62,nan,132,57,1.0,0.6005774140357971,0,0,2
+27295,40531,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,2,13,1.0,0.7817429900169373,1,0,3
+27418,40675,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,40,62,1.0,0.3612174987792969,1,0,2
+27503,40766,baseline_sensory,visual_projection,nan,nan,LC43,LC43,LC43,nan,59,68,1.0,0.6135708689689636,1,0,2
+28162,41506,baseline_sensory,visual_projection,nan,nan,LLPC3,LLPC3,LLPC3,nan,83,65,0.9999999403953552,0.3166339695453644,1,0,1
+28373,41751,baseline_sensory,visual_projection,nan,nan,LC16,LC16,LC16,nan,64,47,1.0000001192092896,0.32338231801986694,1,0,2
+28431,41814,baseline_sensory,visual_projection,nan,nan,LC15,LC15,LC15,nan,112,93,1.0000001192092896,0.35431209206581116,1,0,2
+28462,41848,baseline_sensory,visual_projection,nan,nan,MeVP10,MTe03,nan,nan,78,61,1.0000001192092896,0.5664300322532654,1,0,2
+28501,41893,baseline_sensory,visual_projection,nan,nan,LPC1,LPC1,LPC1,nan,80,57,0.9999999403953552,0.2286081165075302,1,0,2
+28510,41902,baseline_sensory,visual_projection,nan,nan,LC16,LC16,LC16,nan,89,84,1.0000001192092896,0.5695801377296448,1,0,2
+28617,42028,baseline_sensory,cb_sensory,gustatory,pharyngeal sensillum,PhG15,PhG15,nan,nan,20,74,0.9999999403953552,1.084307312965393,1,0,2
+28743,42165,baseline_sensory,visual_centrifugal,nan,nan,LT70,LT70,LT70,nan,29,95,0.9999998807907104,0.6186074018478394,1,0,2
+28985,42437,baseline_sensory,visual_projection,nan,nan,LC30,LCe02,"LC25,LC26,LC26,LC25,LC24",nan,32,18,0.9999998807907104,0.16599109768867493,1,0,2
+29262,42754,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,107,80,1.0,0.4002719819545746,1,0,2
+29632,43184,baseline_sensory,visual_projection,nan,nan,MeTu4a,MeTu4a,"MC61,MC64",nan,94,70,0.9999999403953552,1.4506406784057617,1,0,2
+29977,43566,baseline_sensory,visual_projection,nan,nan,LC10c-1,LC10c,nan,nan,107,78,1.0,0.38099679350852966,1,0,2
+29990,43579,baseline_sensory,visual_projection,nan,nan,LLPC3,LLPC3,LLPC3,nan,71,42,1.0,0.1900925189256668,1,0,2
+30244,43875,baseline_sensory,visual_projection,nan,nan,LLPC3,LLPC3,LLPC3,nan,65,53,1.0,0.25634828209877014,1,0,1
+30254,43885,baseline_sensory,visual_projection,nan,nan,MeTu3c,MeTu3c,"MC61,MC64",nan,68,29,1.0000001192092896,0.40384942293167114,1,0,3
+30338,43984,baseline_sensory,visual_projection,nan,nan,LPT100,LPTe01,nan,nan,149,54,1.0,0.4080928862094879,1,0,2
+30405,44058,baseline_sensory,visual_projection,nan,nan,LLPC2,LLPC2,"LLPC2a,LLPC2b,LLPC2c,LLPC2d",nan,89,46,0.9999999403953552,0.2435203194618225,1,0,2
+30430,44086,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,78,57,1.0,0.5651671886444092,1,0,2
+30453,44114,baseline_sensory,visual_centrifugal,nan,nan,LPT112,cLP01,nan,nan,14,49,1.0,0.29976025223731995,0,0,2
+30671,44360,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,123,98,1.0000001192092896,0.4095872640609741,1,0,2
+30830,44542,baseline_sensory,visual_projection,nan,nan,LPC1,LPC1,LPC1,nan,111,63,1.0000001192092896,0.3122967779636383,1,0,1
+30880,44600,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,65,41,1.0000001192092896,0.16732949018478394,1,0,2
+31189,44950,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,97,67,1.0000001192092896,0.7683550715446472,1,0,2
+31513,45329,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,72,80,1.0,0.5156671404838562,1,0,2
+31734,45579,baseline_sensory,visual_projection,nan,nan,LC10a,LC10a,nan,nan,69,55,0.9999999403953552,0.4524906873703003,1,0,2
+32370,46293,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM6v,ORN_VM6v,ORN_VC5,nan,28,67,0.9999999403953552,0.8946654796600342,1,0,2
+32495,46440,baseline_sensory,cb_sensory,mechanosensory,nan,TPMN2,TPMN2,nan,nan,12,52,1.0000001192092896,0.8926377296447754,1,0,2
+32704,46679,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,48,71,1.0,0.65484219789505,1,0,2
+32929,46945,baseline_sensory,visual_projection,nan,nan,LC10c-1,LC10c,nan,nan,83,72,1.0,0.41709104180336,1,0,2
+32944,46962,baseline_sensory,visual_projection,nan,nan,LC16,LC16,LC16,nan,95,79,1.0000001192092896,0.4067104756832123,1,0,2
+33318,47394,baseline_sensory,visual_projection,nan,nan,LLPC3,LLPC3,LLPC3,nan,141,75,0.9999999403953552,0.4689529836177826,1,0,2
+33463,47558,baseline_sensory,visual_projection,nan,nan,MeVPMe9,MeMe_e01,nan,nan,12,76,0.9999999403953552,1.547247052192688,1,0,2
+33569,47685,baseline_sensory,visual_projection,nan,nan,LLPC3,LLPC3,LLPC3,nan,94,56,1.0,0.2545410096645355,1,0,2
+33610,47729,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,53,45,0.9999998807907104,0.19225355982780457,1,0,2
+33765,47912,baseline_sensory,visual_projection,nan,nan,LC24,LC24,LC24,nan,28,29,1.0,0.1978452056646347,0,0,2
+33995,48176,baseline_sensory,visual_projection,nan,nan,MeTu4a,MeTu4a,"MC61,MC64",nan,93,52,0.9999999403953552,1.1259926557540894,1,0,2
+34078,48276,baseline_sensory,visual_projection,nan,nan,LC21,LC21,LC21,nan,98,95,1.0,0.5377278923988342,1,0,2
+34320,48546,baseline_sensory,visual_projection,nan,nan,LC20a,LC20a,nan,nan,145,93,1.0,0.8941083550453186,1,0,2
+34594,48864,baseline_sensory,visual_projection,nan,nan,MeTu3b,MeTu3b,"MC61,MC64",nan,72,41,0.9999998211860657,0.4646473526954651,1,0,2
+34923,49251,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,LLPC1,nan,91,62,1.0,0.3417554795742035,1,0,1
+35039,49383,baseline_sensory,visual_projection,nan,nan,MeTu3a,MeTu3a,"MC61,MC64",nan,63,50,0.9999999403953552,1.2093744277954102,1,0,3
+35094,49449,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,96,73,0.9999999403953552,0.8672956824302673,1,0,2
+35275,49658,baseline_sensory,visual_projection,nan,nan,LC10c-1,LC10c,nan,nan,92,64,1.0000001192092896,0.428529292345047,1,0,2
+35497,49918,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,99,54,1.0,0.5957793593406677,1,0,2
+35517,49940,baseline_sensory,visual_projection,nan,nan,LLPC2,LLPC2,"LLPC2a,LLPC2b,LLPC2c,LLPC2d",nan,123,42,1.0000001192092896,0.1801837831735611,1,0,2
+35607,50044,baseline_sensory,cb_sensory,mechanosensory,pharyngeal sensillum,aPhM1,aPhM1,nan,nan,9,32,1.0,0.44568589329719543,1,0,2
+35879,50368,baseline_sensory,visual_projection,nan,nan,LC31a,LC31a,nan,nan,211,88,0.9999999403953552,0.23829282820224762,1,0,1
+36020,50531,baseline_sensory,visual_projection,nan,nan,LC16,LC16,LC16,nan,67,62,0.9999999403953552,0.3396502733230591,1,0,2
+36107,50627,baseline_sensory,visual_projection,nan,nan,LC28,LC28a,"LC28a,LC28b",nan,145,103,1.0,0.7251437902450562,1,0,2
+36167,50693,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,67,62,0.9999998807907104,0.3324669301509857,1,0,2
+36350,50902,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,108,60,0.9999999403953552,0.6063039898872375,1,0,2
+36541,51128,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,55,61,1.0000001192092896,0.5153831839561462,1,0,1
+36545,51133,baseline_sensory,visual_projection,nan,nan,LC13,LC13,LC13,nan,65,46,1.0,0.24712346494197845,1,0,2
+36715,51331,baseline_sensory,visual_projection,nan,nan,LoVP4,LC28b,"LC28a,LC28b",nan,28,28,1.0,0.17484749853610992,0,0,2
+37008,51681,baseline_sensory,visual_projection,nan,nan,LLPC2,LLPC2,"LLPC2a,LLPC2b,LLPC2c,LLPC2d",nan,85,43,1.0,0.1534813493490219,1,0,2
+37213,51922,baseline_sensory,visual_projection,nan,nan,MeTu3c,MeTu3c,"MC61,MC64",nan,105,37,1.0,0.503273606300354,1,0,2
+37820,52632,baseline_sensory,visual_projection,nan,nan,LC17,LC17,LC17,nan,152,64,1.0000001192092896,0.18941909074783325,1,0,2
+37835,52648,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,66,54,0.9999999403953552,0.22339564561843872,1,0,2
+37871,52689,baseline_sensory,visual_projection,nan,nan,LC11,LC11,LC11,nan,169,103,1.0,0.6400972604751587,1,0,2
+37950,52786,baseline_sensory,visual_projection,nan,nan,LC21,LC21,LC21,nan,81,98,1.0,0.4328066110610962,1,0,2
+38124,52990,baseline_sensory,visual_projection,nan,nan,LPC1,LPC1,LPC1,nan,57,37,1.0,0.24467363953590393,1,0,1
+38199,53078,baseline_sensory,visual_projection,nan,nan,LC40,LC40,LC40a,nan,100,76,1.0,0.5675491690635681,1,0,1
+38684,53643,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,54,60,1.0,0.27816447615623474,1,0,2
+38987,53986,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,98,58,1.0000001192092896,0.6838629841804504,1,0,2
+39598,54692,baseline_sensory,visual_projection,nan,nan,LC44,LC44,LC44,nan,40,78,1.0,0.5917739272117615,1,0,2
+39654,54758,baseline_sensory,visual_projection,nan,nan,LC13,LC13,LC13,nan,52,44,0.9999999403953552,0.2792055010795593,1,0,2
+39671,54778,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,68,62,1.0,0.3174811601638794,1,0,2
+39700,54812,baseline_sensory,visual_projection,nan,nan,LPC1,LPC1,LPC1,nan,89,56,0.9999999403953552,0.28615662455558777,1,0,2
+39757,54876,baseline_sensory,visual_projection,nan,nan,LC20b,LC20b,nan,nan,93,80,0.9999999403953552,1.0828275680541992,1,0,2
+39869,55006,baseline_sensory,visual_projection,nan,nan,LPC1,LPC1,LPC1,nan,84,65,0.9999998807907104,0.28127574920654297,1,0,2
+40068,55238,baseline_sensory,visual_projection,nan,nan,LPC1,LPC1,LPC1,nan,81,47,1.0,0.2681465446949005,1,0,2
+40238,55447,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,76,67,1.0000001192092896,0.37707585096359253,1,0,2
+40275,55489,baseline_sensory,visual_projection,nan,nan,MeTu4a,MeTu4a,"MC61,MC64",nan,90,65,1.0000001192092896,0.8796310424804688,1,0,2
+40325,55545,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,48,61,1.0,0.43898195028305054,1,0,2
+40403,55634,baseline_sensory,visual_projection,nan,nan,LC31a,LC31a,nan,nan,205,69,1.0000001192092896,0.18181411921977997,1,0,1
+40658,55940,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,65,55,1.0,0.2032517045736313,1,0,2
+40829,56139,baseline_sensory,visual_projection,nan,nan,MeTu3c,MeTu3c,"MC61,MC64",nan,48,39,1.0000001192092896,0.596327006816864,1,0,2
+40898,56220,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,59,58,1.0000001192092896,0.24387314915657043,1,0,2
+41366,56795,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,50,57,1.0,0.27077704668045044,1,0,2
+41951,57492,baseline_sensory,visual_projection,nan,nan,MeTu3c,MeTu3c,"MC61,MC64",nan,77,35,1.0,0.376572847366333,1,0,2
+42097,57655,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,campaniform sensilla,"SApp09,SApp22",nan,nan,"SApp09,SApp22",9,36,1.0,0.27989453077316284,0,0,2
+42188,57757,baseline_sensory,visual_projection,nan,nan,MeVP11,MTe50,nan,nan,32,38,1.0000001192092896,0.33061477541923523,1,0,2
+42256,57836,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,66,46,1.0,0.6453590989112854,1,0,2
+42333,57925,baseline_sensory,visual_projection,nan,nan,MeVP6,MTe01a,MC66,nan,72,37,1.0,0.38269978761672974,1,0,2
+42745,58400,baseline_sensory,visual_projection,nan,nan,MeTu2a,MeTu2a,"MC61,MC64",nan,23,20,1.0000001192092896,0.36218923330307007,1,0,2
+42856,58528,baseline_sensory,visual_projection,nan,nan,MeTu3c,MeTu3c,"MC61,MC64",nan,70,33,0.9999999403953552,0.3736988604068756,1,0,3
+42982,58682,baseline_sensory,visual_projection,nan,nan,MeTu2b,MeTu2b,"MC61,MC64",nan,60,23,0.9999999403953552,0.7192039489746094,1,0,3
+43307,59059,baseline_sensory,visual_projection,nan,nan,LLPC2,LLPC2,"LLPC2a,LLPC2b,LLPC2c,LLPC2d",nan,113,39,1.0,0.12683013081550598,1,0,1
+43624,59438,baseline_sensory,visual_projection,nan,nan,LC10c-2,LC10c,nan,nan,66,56,1.0,0.37668439745903015,1,0,2
+43653,59472,baseline_sensory,visual_projection,nan,nan,MeVP6,MTe01a,MC66,nan,75,34,1.0000001192092896,0.40841206908226013,1,0,2
+44197,60142,baseline_sensory,visual_projection,nan,nan,MeTu4c,MeTu4c,"MC61,MC64",nan,45,52,0.9999998807907104,0.4515579640865326,1,0,2
+44256,60211,baseline_sensory,visual_projection,nan,nan,LC31a,LC31a,nan,nan,149,59,0.9999999403953552,0.1699948012828827,1,0,1
+44479,60483,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,56,54,1.0,0.3393089473247528,1,0,2
+44531,60548,baseline_sensory,visual_projection,nan,nan,MeTu2a,MeTu2a,"MC61,MC64",nan,26,20,0.9999999403953552,0.515127956867218,1,0,3
+44612,60649,baseline_sensory,visual_projection,nan,nan,LoVP44,LTe57,PLP147,nan,132,95,0.9999999403953552,1.2202284336090088,1,0,2
+44816,60891,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,LLPC1,nan,111,49,1.0,0.2136034369468689,1,0,1
+45012,61130,baseline_sensory,visual_projection,nan,nan,LC25,LC25,LC25,nan,73,46,1.0000001192092896,0.19487275183200836,0,0,2
+45036,61155,baseline_sensory,visual_projection,nan,nan,MeTu3c,MeTu3c,"MC61,MC64",nan,64,38,0.9999999403953552,0.5252746939659119,1,0,2
+45147,61286,baseline_sensory,visual_projection,nan,nan,MeTu3c,MeTu3c,"MC61,MC64",nan,49,31,1.0,0.6615738868713379,1,0,2
+45424,61627,baseline_sensory,visual_projection,nan,nan,LC10c-2,LC10c,nan,nan,42,41,1.0,0.22186632454395294,1,0,2
+45697,61952,baseline_sensory,visual_projection,nan,nan,LC10c-2,LC10c,nan,nan,69,41,1.0,0.23516029119491577,1,0,2
+45781,62053,baseline_sensory,visual_projection,nan,nan,LoVP21,"LTe49a,LTe49b,LTe49d,LTe49e,LTe49f",IB088,nan,84,59,1.0,0.41209113597869873,1,0,2
+45955,62264,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,5,5,1.0,1.6810643672943115,1,0,4
+46114,62455,baseline_sensory,visual_projection,nan,nan,LC15,LC15,LC15,nan,91,81,1.0,0.43797940015792847,1,0,2
+46117,62458,baseline_sensory,visual_projection,nan,nan,MeVP2,MTe02,nan,nan,60,36,1.0,0.514073371887207,1,0,3
+46205,62565,baseline_sensory,visual_projection,nan,nan,MeTu2a,MeTu2a,"MC61,MC64",nan,33,18,1.0,0.45471450686454773,1,0,3
+46258,62627,baseline_sensory,visual_projection,nan,nan,MeTu2b,MeTu2b,"MC61,MC64",nan,49,17,0.9999999403953552,0.4309399724006653,1,0,3
+46513,62934,baseline_sensory,visual_projection,nan,nan,LoVP5,LC28b,"LC28a,LC28b",nan,59,43,0.9999999403953552,0.2365836650133133,1,0,2
+46697,63155,baseline_sensory,visual_projection,nan,nan,MeVP12,MTe04,nan,nan,31,47,0.9999999403953552,0.45599862933158875,1,0,2
+46727,63193,baseline_sensory,visual_projection,nan,nan,MeVP10,MTe03,nan,nan,67,49,0.9999999403953552,0.4386870861053467,1,0,2
+47005,63535,baseline_sensory,visual_projection,nan,nan,LC29,LC29,LC29,nan,60,37,1.0,0.2519489824771881,1,0,1
+47173,63727,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,57,73,1.0,0.46740925312042236,1,0,2
+47648,64308,baseline_sensory,visual_projection,nan,nan,MeTu4c,MeTu4c,"MC61,MC64",nan,36,49,1.0,0.46716123819351196,1,0,2
+48021,64750,baseline_sensory,visual_projection,nan,nan,MeVP2,MTe02,nan,nan,51,35,1.0,0.48580583930015564,1,0,2
+48455,65278,baseline_sensory,visual_projection,nan,nan,LC10c-1,LC10c,nan,nan,60,51,1.0,0.34290680289268494,1,0,2
+48556,65389,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,49,62,0.9999999403953552,0.20111894607543945,1,0,2
+48798,65682,baseline_sensory,visual_projection,nan,nan,MeTu3c,MeTu3c,"MC61,MC64",nan,66,33,1.0,0.43600159883499146,1,0,2
+49304,66298,baseline_sensory,visual_projection,nan,nan,LLPC3,LLPC3,LLPC3,nan,53,36,1.0,0.13978151977062225,1,0,1
+49363,66370,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,47,57,0.9999997615814209,0.2585279941558838,1,0,2
+49844,66953,baseline_sensory,visual_projection,nan,nan,MeTu2b,MeTu2b,"MC61,MC64",nan,46,12,1.0000001192092896,0.39399608969688416,1,0,3
+50812,68158,baseline_sensory,visual_projection,nan,nan,LPC1,LPC1,LPC1,nan,60,40,0.9999999403953552,0.15262897312641144,1,0,1
+51361,68827,baseline_sensory,visual_projection,nan,nan,LoVP32,LTe01,nan,nan,126,64,1.0000001192092896,0.4995826482772827,1,0,2
+51624,69159,baseline_sensory,visual_projection,nan,nan,MeTu4f,MeTu4c,nan,nan,29,44,1.0,0.4589623808860779,1,0,2
+51754,69324,baseline_sensory,visual_projection,nan,nan,LC10e,LC10e,nan,nan,83,42,0.9999998807907104,0.16674207150936127,1,0,2
+52374,70080,baseline_sensory,visual_projection,nan,nan,LPC1,LPC1,LPC1,nan,83,47,1.0,0.26964130997657776,1,0,1
+52657,70425,baseline_sensory,visual_projection,nan,nan,LC26,LC26,LC26,nan,54,58,1.0000001192092896,0.586919367313385,1,0,2
+52723,70511,baseline_sensory,visual_projection,nan,nan,MeTu4f,MeTu4c,nan,nan,22,45,1.0,0.5309768319129944,1,0,2
+53373,71311,baseline_sensory,visual_projection,nan,nan,LC16,LC16,LC16,nan,55,60,0.9999998807907104,0.4041629135608673,1,0,2
+53831,71872,baseline_sensory,visual_projection,nan,nan,MeTu3c,MeTu3c,"MC61,MC64",nan,85,31,0.9999999403953552,0.5113441348075867,1,0,2
+53922,71984,baseline_sensory,cb_sensory,mechanosensory,pharyngeal sensillum,aPhM1,aPhM1,nan,nan,15,31,1.0,0.8253477811813354,1,0,1
+54018,72107,baseline_sensory,visual_projection,nan,nan,MeVP2,MTe02,nan,nan,67,34,1.0,0.4276755154132843,1,0,2
+54138,72257,baseline_sensory,visual_projection,nan,nan,LoVP19,LC46,LC46a,nan,34,23,1.0,0.0672592744231224,1,0,2
+54723,72995,baseline_sensory,visual_projection,nan,nan,LC10c-1,LC10c,nan,nan,44,40,1.0,0.25381332635879517,1,0,2
+55098,73462,baseline_sensory,visual_projection,nan,nan,LC10c-1,LC10c,nan,nan,61,45,0.9999999403953552,0.3053165078163147,1,0,2
+55350,73799,baseline_sensory,visual_projection,nan,nan,LPT100,LPTe01,nan,nan,53,32,1.0000001192092896,0.09410423040390015,1,0,2
+55634,74144,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,92,76,1.0,0.3003745377063751,1,0,2
+56009,74599,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,61,62,1.0,0.20002862811088562,1,0,2
+56072,74689,baseline_sensory,visual_projection,nan,nan,MeTu4b,MeTu4b,"MC61,MC64",nan,22,15,0.9999999403953552,0.2998011112213135,0,0,2
+56317,74989,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,87,68,0.9999998211860657,0.2775268256664276,1,0,2
+56990,75803,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,79,48,0.9999999403953552,0.5564620494842529,1,0,2
+57208,76065,baseline_sensory,visual_projection,nan,nan,LPC1,LPC1,LPC1,nan,80,55,1.0,0.25162649154663086,1,0,2
+57515,76432,baseline_sensory,visual_projection,nan,nan,MeTu4b,MeTu4b,"MC61,MC64",nan,18,15,1.0,0.20985256135463715,1,0,3
+58567,77753,baseline_sensory,visual_projection,nan,nan,MeTu4e,MeTu4a,nan,nan,41,15,1.0,0.21140620112419128,1,0,3
+58898,78179,baseline_sensory,visual_projection,nan,nan,LoVP12,LCe04,LC9,nan,18,23,1.0,0.13153299689292908,0,0,2
+59617,79084,baseline_sensory,visual_projection,nan,nan,LC13,LC13,LC13,nan,56,31,0.9999998807907104,0.17676763236522675,1,0,2
+59911,79462,baseline_sensory,visual_projection,nan,nan,LC10e,LC10e,nan,nan,41,28,1.0,0.16276906430721283,0,0,2
+60060,79652,baseline_sensory,visual_projection,nan,nan,LPC1,LPC1,LPC1,nan,64,46,1.0,0.20004284381866455,1,0,2
+60470,80160,baseline_sensory,visual_projection,nan,nan,LC6,LC6,LC6,nan,65,69,1.0,0.32451674342155457,1,0,1
+60791,80565,baseline_sensory,cb_sensory,mechanosensory,auditory,JO-A1,JO-A1,nan,nan,13,61,1.0,0.6350099444389343,1,0,2
+60904,80722,baseline_sensory,visual_projection,nan,nan,LC15,LC15,LC15,nan,88,74,1.0,0.2824292480945587,1,0,2
+61363,81261,baseline_sensory,ol_sensory,visual,nan,R8d,R8,nan,nan,2,14,0.9999999403953552,1.1619127988815308,1,0,3
+61652,81624,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,79,76,1.0,0.37978267669677734,1,0,2
+61886,81929,baseline_sensory,cb_sensory,olfactory,nan,ORN_DL2v,ORN_DL2v,ORN_DL2v,nan,34,98,1.0000001192092896,1.090606451034546,1,0,2
+62206,82328,baseline_sensory,cb_sensory,olfactory,nan,ORN_DP1m,ORN_DP1m,ORN_DP1m,nan,52,107,1.0,1.1086602210998535,1,0,2
+62226,82353,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,campaniform sensilla,SApp20,nan,nan,SApp20,17,41,1.0000001192092896,0.3457837402820587,1,0,1
+62233,82361,baseline_sensory,cb_sensory,mechanosensory,auditory,JO-B1_a,JO-B1_a,nan,nan,23,31,1.0,0.4330682158470154,1,0,2
+62413,82574,baseline_sensory,visual_projection,nan,nan,LoVP2,LCe01a,"LC25,LC26,LC24",nan,49,42,1.0,0.31513574719429016,1,0,2
+62419,82581,baseline_sensory,visual_projection,nan,nan,LC24,LC24,LC24,nan,50,44,1.0,0.23860327899456024,1,0,2
+62697,82923,baseline_sensory,visual_projection,nan,nan,LC10c-1,LC10c,nan,nan,45,32,0.9999999403953552,0.22294208407402039,1,0,2
+62955,83255,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,campaniform sensilla,SApp13,nan,nan,SApp13,8,86,1.0,1.3485958576202393,1,0,1
+63267,83653,baseline_sensory,visual_projection,nan,nan,MeTu4a,MeTu4a,"MC61,MC64",nan,75,55,1.0000001192092896,0.8424662351608276,1,0,2
+63457,83897,baseline_sensory,visual_projection,nan,nan,MeTu4c,MeTu4c,"MC61,MC64",nan,46,46,1.0,0.4858262240886688,1,0,2
+63654,84139,baseline_sensory,visual_projection,nan,nan,LC20b,LC20b,nan,nan,111,76,1.0,1.4480130672454834,1,0,2
+63705,84205,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1v,ORN_VA1v,ORN_VA1v,nan,22,51,1.0000001192092896,0.6319908499717712,1,0,2
+64151,84761,baseline_sensory,visual_projection,nan,nan,aMe5,aMe5,nan,nan,38,32,1.0,0.3250736892223358,0,0,2
+64227,84862,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,54,63,1.0,0.367559015750885,1,0,2
+64321,84975,baseline_sensory,visual_projection,nan,nan,LLPC3,LLPC3,LLPC3,nan,78,50,0.9999999403953552,0.2844838500022888,1,0,1
+64424,85103,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,62,39,1.0000001192092896,0.39659571647644043,1,0,2
+64585,85318,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,61,43,1.0,0.5301539301872253,1,0,2
+64700,85474,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,75,59,1.0,0.25135675072669983,1,0,2
+64959,85817,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,71,73,0.9999999403953552,0.22813022136688232,1,0,2
+65190,86123,baseline_sensory,visual_projection,nan,nan,LC10e,LC10e,nan,nan,40,36,1.0000001192092896,0.23582743108272552,1,0,2
+65708,86798,baseline_sensory,visual_projection,nan,nan,MeTu4e,MeTu4a,nan,nan,26,11,1.0,0.15238043665885925,1,0,2
+65742,86844,baseline_sensory,visual_projection,nan,nan,LLPC3,LLPC3,LLPC3,nan,75,43,1.0,0.25125980377197266,1,0,2
+66020,87221,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,63,69,0.9999998211860657,0.30043622851371765,1,0,2
+67560,89261,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,44,58,1.0,0.2662733197212219,1,0,2
+67627,89347,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,campaniform sensilla,"SApp09,SApp22",nan,nan,"SApp09,SApp22",19,26,0.9999999403953552,0.2659004330635071,1,0,1
+68342,90306,baseline_sensory,visual_projection,nan,nan,LPT100,LPTe01,nan,nan,46,36,1.0,0.13654476404190063,1,0,2
+69643,92045,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-unclear,nan,nan,nan,16,32,1.0000001192092896,0.3109476864337921,1,0,1
+70377,93011,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,46,72,0.9999999403953552,0.24063287675380707,1,0,2
+70777,93520,baseline_sensory,visual_projection,nan,nan,LC24,LC24,LC24,nan,38,32,1.0000001192092896,0.20617319643497467,1,0,2
+71304,94219,baseline_sensory,visual_projection,nan,nan,LC13,LC13,LC13,nan,43,34,1.0,0.22768375277519226,1,0,2
+71482,94454,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,54,50,0.9999998807907104,0.23222053050994873,1,0,2
+71486,94460,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,4,4,1.0000001192092896,0.608781099319458,1,0,4
+71957,95098,baseline_sensory,visual_projection,nan,nan,MeTu3b,MeTu3b,"MC61,MC64",nan,52,23,1.0,0.25403115153312683,1,0,3
+72244,95480,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,LLPC1,nan,44,42,1.0,0.21010872721672058,1,0,1
+72855,96296,baseline_sensory,visual_projection,nan,nan,LC39a,LC39,nan,nan,127,74,1.0,0.48815974593162537,1,0,2
+73182,96763,baseline_sensory,visual_projection,nan,nan,LC30,LCe02,"LC25,LC26,LC26,LC25,LC24",nan,21,18,1.0000001192092896,0.11959748715162277,1,0,2
+73699,97438,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,40,56,1.0,0.3192179501056671,1,0,2
+74071,97950,baseline_sensory,cb_sensory,mechanosensory,nan,BM_Vib,BM_Vib,nan,nan,24,73,1.0000001192092896,6.297053337097168,1,0,1
+74277,98254,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,4,1.0,0.3801548182964325,1,0,4
+74546,98631,baseline_sensory,visual_projection,nan,nan,LC24,LC24,LC24,nan,34,30,1.0,0.1176471933722496,1,0,2
+74858,99076,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,4,6,1.0,0.7602643370628357,1,0,4
+74906,99141,baseline_sensory,visual_projection,nan,nan,LC24,LC24,LC24,nan,31,35,0.9999999403953552,0.1832776963710785,1,0,2
+75725,100230,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,nan,nan,81,41,1.0,0.29789862036705017,1,0,1
+76138,100772,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,4,17,1.0,0.8650853633880615,1,0,3
+76430,101178,baseline_sensory,visual_projection,nan,nan,LLPC2,LLPC2,"LLPC2a,LLPC2b,LLPC2c,LLPC2d",nan,77,24,1.0000001192092896,0.1311192512512207,1,0,2
+77792,103072,baseline_sensory,visual_projection,nan,nan,LC17,LC17,LC17,nan,160,101,0.9999999403953552,0.4002910852432251,1,0,2
+78312,103784,baseline_sensory,visual_projection,nan,nan,LC10e,LC10e,nan,nan,27,30,1.0,0.2517396807670593,1,0,2
+78996,104699,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,4,3,1.0,0.37580233812332153,1,0,4
+80102,106223,baseline_sensory,visual_projection,nan,nan,LC27,LC27,LC27,nan,69,32,0.9999999403953552,0.18441404402256012,1,0,2
+80332,106548,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.3167703449726105,0,0,4
+80684,107061,baseline_sensory,ol_sensory,visual,nan,R7d,R7,nan,nan,3,28,1.0,0.8767676949501038,1,0,3
+80726,107120,baseline_sensory,visual_projection,nan,nan,LPC2,LPC2,LPC2,nan,49,62,0.9999999403953552,0.44459840655326843,1,0,2
+81260,107847,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-CL,JO-CL,nan,nan,17,36,1.0,0.24163185060024261,1,0,2
+86410,115098,baseline_sensory,visual_projection,nan,nan,LPC2,LPC2,LPC2,nan,67,65,0.9999999403953552,0.5477421283721924,1,0,2
+86895,115809,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,haltere,SApp,nan,nan,nan,11,120,1.0,1.8232148885726929,1,0,1
+87571,116809,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.5276024341583252,1,0,3
+88155,117649,baseline_sensory,cb_sensory,olfactory,nan,ORN_VC1,ORN_VC1,ORN_VC1,nan,25,60,1.0,0.6938382983207703,1,0,3
+88738,118493,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,2,3,1.0,0.36517152190208435,1,0,4
+88942,118789,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,3,4,1.0,0.7696726322174072,1,0,4
+89528,119683,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,2,3,1.0,0.7807202935218811,1,0,4
+90176,120682,baseline_sensory,visual_projection,nan,nan,LoVP13,LCe03,nan,nan,32,14,1.0000001192092896,0.0938149243593216,0,0,2
+90291,120855,baseline_sensory,visual_projection,nan,nan,LPC1,LPC1,LPC1,nan,52,46,1.0,0.1825905442237854,1,0,2
+91512,122679,baseline_sensory,visual_projection,nan,nan,LC20a,LC20a,nan,nan,88,58,0.9999999403953552,0.882363498210907,1,0,2
+91538,122717,baseline_sensory,cb_sensory,olfactory,nan,ORN_DP1m,ORN_DP1m,ORN_DP1m,nan,56,122,1.0,1.0659104585647583,1,0,3
+91575,122769,baseline_sensory,cb_sensory,olfactory,nan,ORN_DC3,ORN_DC3,ORN_DC3,nan,21,69,0.9999998807907104,0.6611469984054565,1,0,2
+92650,124447,baseline_sensory,cb_sensory,mechanosensory,nan,TPMN1,TPMN1,nan,nan,13,52,1.0,0.8802471160888672,1,0,2
+92696,124505,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,haltere,SApp,nan,nan,nan,20,109,1.0,1.097999095916748,1,0,2
+92843,124730,baseline_sensory,visual_projection,nan,nan,MeVPLo2,MTe07,nan,nan,81,67,1.0,0.7678066492080688,1,0,2
+93523,125825,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,campaniform sensilla,"SApp09,SApp22",nan,nan,"SApp09,SApp22",12,38,1.0,0.26437562704086304,1,0,1
+93599,125942,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,campaniform sensilla,SApp08,nan,nan,SApp08,10,47,1.0,0.4472997486591339,0,0,1
+93838,126313,baseline_sensory,cb_sensory,olfactory,nan,ORN_DA1,ORN_DA1,ORN_DA1,nan,18,68,1.0,0.7050504684448242,1,0,2
+94680,127710,baseline_sensory,visual_projection,nan,nan,LC30,LCe02,"LC25,LC26,LC26,LC25,LC24",nan,46,19,1.0000001192092896,0.18188700079917908,1,0,2
+94788,127894,baseline_sensory,cb_sensory,hygrosensory,nan,HRN_VP5,HRN_VP5,HRN_VP5,nan,17,43,1.0,1.2373956441879272,1,0,2
+94970,128178,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,4,1.0,0.6936867237091064,0,0,4
+95065,128338,baseline_sensory,visual_projection,nan,nan,LC21,LC21,LC21,nan,128,101,1.0000001192092896,0.6358978748321533,1,0,2
+95165,128517,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,3,4,1.0,0.7746993899345398,1,0,4
+95370,128834,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,haltere,SApp,nan,nan,nan,15,137,1.0,1.9931666851043701,1,0,1
+95622,129239,baseline_sensory,visual_projection,nan,nan,LC10d,LC10d,nan,nan,140,63,1.0000001192092896,0.36570030450820923,1,0,2
+95694,129353,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,108,70,1.0,0.3186779022216797,1,0,2
+96000,129858,baseline_sensory,visual_projection,nan,nan,LoVP13,LCe03,nan,nan,30,18,0.9999999403953552,0.11283274739980698,0,0,2
+96071,129973,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1v,ORN_VA1v,ORN_VA1v,nan,16,36,0.9999998211860657,0.45154136419296265,1,0,2
+96202,130185,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,5,0.0,0.4046555161476135,0,0,4
+96656,130964,baseline_sensory,visual_projection,nan,nan,LoVP12,LCe04,LC9,nan,16,25,1.0000001192092896,0.08105086535215378,0,0,1
+97072,131623,baseline_sensory,visual_projection,nan,nan,MeVP6,MTe01a,MC66,nan,97,58,1.0000001192092896,1.1494392156600952,1,0,1
+97592,132483,baseline_sensory,visual_projection,nan,nan,LoVP83,LTe43,AOTU044,nan,58,56,1.0,0.44678178429603577,1,0,2
+97597,132497,baseline_sensory,cb_sensory,olfactory,nan,ORN_DA1,ORN_DA1,ORN_DA1,nan,30,56,0.9999998807907104,0.630775511264801,1,0,2
+98717,134402,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,2,2,1.0,0.21461276710033417,0,0,4
+98794,134560,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,2,3,1.0,0.3061664402484894,0,0,4
+98889,134754,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.3596116304397583,1,0,4
+99189,135305,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,chordotonal organ,SApp23,nan,nan,SApp23,2,40,1.0,0.42140576243400574,0,0,2
+99342,135599,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,2,4,1.0,0.6439071893692017,1,0,4
+99444,135790,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,39,56,1.0000001192092896,0.18400388956069946,1,0,2
+99909,136648,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,4,1.0,0.31070658564567566,1,0,4
+100463,137713,baseline_sensory,visual_centrifugal,nan,nan,LPT111,cLP02,LT71,nan,6,40,1.0,0.3261408507823944,0,0,2
+100464,137717,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,4,5,1.0,0.7159097194671631,1,0,4
+100985,138690,baseline_sensory,visual_projection,nan,nan,MeTu2a,MeTu2a,"MC61,MC64",nan,24,17,0.9999998807907104,0.43714475631713867,1,0,3
+101254,139202,baseline_sensory,visual_projection,nan,nan,LoVP12,LCe04,LC9,nan,17,16,1.0,0.02523825503885746,1,0,1
+101665,140047,baseline_sensory,visual_projection,nan,nan,LC20a,LC20a,nan,nan,124,73,1.0000001192092896,0.8971406817436218,1,0,2
+101832,140381,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.22969385981559753,1,0,4
+102377,141509,baseline_sensory,visual_projection,nan,nan,LC10b,LC10b,nan,nan,83,20,1.0,0.13811132311820984,1,0,2
+103220,143239,baseline_sensory,visual_projection,nan,nan,LC31a,LC31a,nan,nan,152,64,1.0,0.16178713738918304,1,0,1
+103281,143352,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,3,0.0,0.31840798258781433,0,0,4
+103378,143534,baseline_sensory,cb_sensory,mechanosensory,nan,nan,"BM_dOcci,BM_dPoOr",nan,nan,15,31,0.9999998807907104,0.5327883362770081,1,0,1
+104070,144982,baseline_sensory,cb_sensory,mechanosensory,nan,TPMN1,TPMN1,nan,nan,12,53,1.0,0.5286824703216553,1,0,2
+104474,145847,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA2,ORN_VA2,ORN_VA2,nan,16,23,1.0,0.26177170872688293,1,0,3
+104719,146396,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,2,3,1.0,0.6916771531105042,1,0,4
+105753,148806,baseline_sensory,visual_projection,nan,nan,LoVP13,LCe03,nan,nan,38,21,1.0000001192092896,0.09928516298532486,1,0,2
+106055,149517,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,3,19,1.0,0.6781842112541199,1,0,3
+106191,149854,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-B2,JO-B2,nan,nan,9,38,1.0,0.653119683265686,1,0,2
+106360,150265,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,haltere,SApp,nan,nan,nan,12,50,1.0000001192092896,0.31637805700302124,0,0,1
+106709,151170,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,2,12,1.0,0.9873689413070679,1,0,3
+106817,151450,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,2,3,1.0,0.2929484248161316,1,0,4
+107126,152241,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,3,18,1.0,0.9172857999801636,1,0,3
+107139,152273,baseline_sensory,ol_sensory,visual,nan,R7d,R7,nan,nan,6,26,1.0,1.2347368001937866,1,0,3
+107582,153443,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,3,0.0,0.2327551245689392,0,0,4
+107742,153860,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,3,0.0,0.41257625818252563,0,0,4
+107832,154123,baseline_sensory,ol_sensory,visual,nan,R7d,R7,nan,nan,4,24,1.0,1.0822383165359497,1,0,3
+108000,154593,baseline_sensory,cb_sensory,olfactory,nan,ORN_VC5,ORN_VC5,ORN_VC3m,nan,29,65,1.0,0.7434551119804382,1,0,2
+108077,154811,baseline_sensory,ol_sensory,visual,nan,R8p,R8,nan,nan,3,14,1.0,0.9759699106216431,1,0,3
+108188,155099,baseline_sensory,visual_projection,nan,nan,MeVP1,MTe51,MC62,nan,32,37,1.0000001192092896,0.2692899703979492,1,0,2
+108212,155167,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,3,0.0,0.2310428023338318,0,0,4
+108242,155227,baseline_sensory,cb_sensory,olfactory,nan,ORN_V,ORN_V,ORN_V,nan,32,42,1.0,0.992710530757904,1,0,2
+108915,157249,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,4,1.0,0.4287058115005493,0,0,4
+108921,157265,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,nan,nan,54,38,0.9999998807907104,0.21873396635055542,1,0,1
+109139,157933,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1v,ORN_VA1v,ORN_VA1v,nan,3,21,1.0,0.05446188151836395,1,0,2
+109354,158563,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,haltere,SApp,nan,nan,nan,8,53,1.0000001192092896,0.42196935415267944,1,0,2
+109913,160256,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,3,13,1.0,0.6818332672119141,1,0,3
+110377,161795,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1v,ORN_VA1v,ORN_VA1v,nan,8,18,1.0000001192092896,0.05358210206031799,1,0,2
+110452,162110,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,5,21,1.0,0.6386470794677734,1,0,2
+110622,162684,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-EV1,JO-EV1,nan,nan,20,54,0.9999998807907104,0.5993049144744873,1,0,2
+110763,163229,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.2242220640182495,1,0,4
+110856,163519,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1v,ORN_VA1v,ORN_VA1v,nan,7,23,1.0,0.18286004662513733,1,0,2
+110873,163586,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.2856183350086212,0,0,4
+110900,163662,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,4,16,1.0,0.662695050239563,1,0,3
+111304,165121,baseline_sensory,cb_sensory,olfactory,nan,ORN_VL1,ORN_VL1,ORN_VL1,nan,15,45,0.9999998807907104,0.6576533913612366,1,0,2
+111312,165150,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,3,0.0,0.634255051612854,0,0,4
+111418,165585,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,3,16,1.0,0.5501192808151245,1,0,3
+111554,166035,baseline_sensory,cb_sensory,mechanosensory,nan,BM_Vib,BM_Vib,nan,nan,15,59,1.0,0.7606583833694458,1,0,1
+111598,166193,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,5,16,0.9999999403953552,0.5122079849243164,1,0,3
+111625,166309,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.21384099125862122,1,0,4
+111667,166473,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,3,13,1.0,0.7035793662071228,1,0,3
+112118,168233,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA6,ORN_VA6,ORN_VA6,nan,22,79,1.0,1.0462727546691895,1,0,2
+112160,168415,baseline_sensory,cb_sensory,olfactory,nan,ORN_DC4,ORN_DC4,ORN_DC4,nan,35,88,1.0000001192092896,0.6513541340827942,1,0,2
+112217,168674,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1v,ORN_VA1v,ORN_VA1v,nan,10,19,1.0000001192092896,0.1538970172405243,1,0,2
+112500,169810,baseline_sensory,visual_projection,nan,nan,MeVP15,MTe06,nan,nan,42,39,1.0000001192092896,0.5547290444374084,1,0,2
+112586,170186,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,3,14,1.0,0.9232435822486877,1,0,3
+112616,170322,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA2,ORN_VA2,ORN_VA2,nan,31,57,1.0,0.8251712322235107,1,0,3
+112680,170543,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,3,12,1.0,1.0574275255203247,1,0,3
+112713,170722,baseline_sensory,visual_projection,nan,nan,LoVP9,LCe09,nan,nan,20,14,0.9999999403953552,0.268233984708786,1,0,3
+112756,170932,baseline_sensory,visual_projection,nan,nan,MeTu4d,MeTu4d,"MC61,MC64",nan,4,22,1.0,0.3296746015548706,0,0,3
+112821,171199,baseline_sensory,visual_projection,nan,nan,LC10c-1,LC10c,nan,nan,64,84,1.0000001192092896,0.5280767679214478,1,0,2
+112832,171254,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,5,20,1.0,0.7234830856323242,1,0,3
+112905,171550,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1v,ORN_VA1v,ORN_VA1v,nan,25,49,1.0,1.07517671585083,1,0,2
+113097,172452,baseline_sensory,visual_projection,nan,nan,LC27,LC27,nan,nan,57,36,1.0000001192092896,0.36492982506752014,1,0,2
+113135,172632,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA7l,ORN_VA7l,ORN_VA7l,nan,20,36,1.0,0.44826391339302063,1,0,2
+113210,172949,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,3,9,1.0,0.6272143125534058,1,0,3
+113242,173091,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA5,ORN_VA5,ORN_VA5,nan,10,23,1.0,0.10240495204925537,1,0,2
+113286,173272,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,2,21,1.0,0.6304288506507874,1,0,3
+113321,173462,baseline_sensory,cb_sensory,gustatory,labellar bristle,LB1a,"LB1a,LB1d",nan,nan,13,48,1.0,1.2093620300292969,1,0,1
+113396,173838,baseline_sensory,cb_sensory,olfactory,nan,ORN_DA3,ORN_DA3,ORN_DA3,nan,9,19,1.0,0.35754722356796265,1,0,3
+113464,174117,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.2482299506664276,1,0,4
+113527,174365,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,3,10,1.0,0.5035700798034668,1,0,3
+113592,174598,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,5,23,1.0,0.7384055256843567,1,0,3
+113689,175019,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,2,17,1.0,0.6369823217391968,1,0,3
+113704,175115,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,2,13,1.0,0.9430667757987976,1,0,3
+113746,175286,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,4,15,0.9999999403953552,0.6660951972007751,1,0,2
+113756,175330,baseline_sensory,cb_sensory,olfactory,nan,ORN_VL1,ORN_VL1,ORN_VL1,nan,4,26,1.0,0.33431756496429443,1,0,2
+113791,175488,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,2,3,1.0,0.39332151412963867,0,0,4
+113850,175753,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,4,17,1.0,1.1114624738693237,1,0,3
+113890,175941,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,6,17,1.0,0.6534370183944702,1,0,3
+114084,176950,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,4,14,1.0,1.1115634441375732,1,0,2
+114269,177875,baseline_sensory,visual_projection,nan,nan,LC27,LC27,nan,nan,38,32,1.0,0.16683553159236908,1,0,2
+114575,179481,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,4,13,1.0,0.6926213502883911,1,0,3
+114709,180167,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,3,16,1.0,0.5596368908882141,1,0,3
+114799,180675,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.3362824618816376,0,0,4
+114893,181227,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,3,0.0,0.22595056891441345,0,0,4
+115149,182613,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.36756858229637146,1,0,4
+115221,183019,baseline_sensory,ol_sensory,visual,nan,R8p,R8,nan,nan,5,16,1.0,0.7844054698944092,1,0,3
+115229,183081,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,2,3,1.0,0.42175570130348206,0,0,4
+115307,183486,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,5,21,1.0,0.7654785513877869,1,0,3
+115339,183646,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,5,17,1.0,0.893078088760376,1,0,2
+115427,184154,baseline_sensory,visual_projection,nan,nan,MeTu1,MeTu1,"MC61,MC64",nan,65,39,1.0,0.41694480180740356,1,0,2
+115559,184747,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,3,9,1.0,0.4123894274234772,1,0,3
+115832,186286,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,2,19,1.0,1.0243796110153198,1,0,3
+115982,187169,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,2,13,1.0,1.1025861501693726,1,0,3
+116055,187660,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,5,19,1.0,1.027413249015808,1,0,2
+116125,188047,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,3,16,1.0,0.9066221714019775,1,0,3
+116141,188126,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,5,16,0.9999999403953552,0.701915979385376,1,0,3
+116184,188343,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA4,ORN_VA4,ORN_VA4,nan,19,47,1.0,0.5059303641319275,1,0,2
+116194,188390,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,2,4,1.0,0.41142261028289795,1,0,4
+116241,188713,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,2,11,1.0,0.7816431522369385,1,0,3
+116477,190066,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,3,12,1.0,0.9417860507965088,1,0,3
+116684,191248,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,3,12,1.0,0.716414749622345,1,0,2
+116784,191734,baseline_sensory,cb_sensory,olfactory,nan,ORN_DM6,ORN_DM6,ORN_DM6,nan,28,55,0.9999998807907104,0.5869079828262329,1,0,3
+116910,192467,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.305469274520874,0,0,4
+116942,192634,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,3,17,1.0,0.8716079592704773,1,0,3
+117157,193940,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,haltere,SApp,nan,nan,nan,11,73,1.0,0.8019222021102905,1,0,1
+117434,195515,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,2,14,1.0,1.3078312873840332,1,0,3
+117536,196143,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM1,ORN_VM1,ORN_VM1,nan,22,41,0.9999999403953552,0.8253099322319031,1,0,2
+117590,196526,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,4,14,1.0,0.8672612905502319,1,0,2
+117632,196849,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,2,9,1.0,0.4569467604160309,1,0,3
+117719,197373,baseline_sensory,visual_projection,nan,nan,LoVP9,LCe09,nan,nan,22,8,0.9999999403953552,0.1341952532529831,0,0,3
+117740,197503,baseline_sensory,ol_sensory,visual,nan,R8p,R8,nan,nan,3,14,1.0,1.1423671245574951,1,0,3
+118028,199510,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,2,0.0,0.3314446210861206,0,0,4
+118080,199879,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,3,19,1.0,1.6647766828536987,1,0,3
+118106,200064,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,4,12,1.0,0.3329068422317505,1,0,3
+118141,200329,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,5,20,1.0,0.7054066061973572,1,0,3
+118292,201419,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA3,ORN_VA3,ORN_VA3,nan,12,24,1.0,0.05158327519893646,1,0,3
+118312,201551,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,1,13,1.0,1.693268895149231,1,0,3
+118483,202873,baseline_sensory,ol_sensory,visual,nan,R7d,R7,nan,nan,3,32,1.0,1.5784492492675781,1,0,3
+118507,203010,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,2,12,1.0,0.9314414262771606,1,0,3
+118578,203654,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1v,ORN_VA1v,ORN_VA1v,nan,14,34,1.0,0.6562741994857788,1,0,2
+118851,205838,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,2,15,1.0,0.7093169093132019,1,0,3
+118916,206395,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,4,8,1.0,0.41615357995033264,1,0,3
+119018,207430,baseline_sensory,cb_sensory,olfactory,nan,ORN_DM1,ORN_DM1,ORN_DM1,nan,32,61,1.0,0.6154559850692749,1,0,3
+119079,207918,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM1,ORN_VM1,ORN_VM1,nan,18,51,1.0000001192092896,0.6480966806411743,1,0,2
+119164,208719,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,8,20,1.0,0.16303370893001556,1,0,1
+119176,208886,baseline_sensory,cb_sensory,olfactory,nan,ORN_DC3,ORN_DC3,ORN_DC3,nan,21,62,0.9999998807907104,0.730318546295166,1,0,2
+119219,209290,baseline_sensory,cb_sensory,olfactory,nan,ORN_DL1,ORN_DL1,ORN_DL1,nan,34,45,1.0,0.726619303226471,1,0,3
+119255,209574,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,4,19,0.9999998807907104,0.6271710991859436,1,0,3
+119279,209795,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,3,14,1.0,0.5863503813743591,1,0,3
+119369,210576,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,6,18,1.0,0.6079937815666199,1,0,3
+119477,211538,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,3,0.0,0.31213927268981934,0,0,4
+119483,211580,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,2,22,1.0,1.2571402788162231,1,0,3
+119530,212067,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,2,0.0,0.23151758313179016,0,0,4
+119540,212138,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,2,18,1.0,0.957340657711029,1,0,3
+119583,212640,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,7,18,1.0,0.12354803085327148,1,0,1
+119634,213216,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM1,ORN_VM1,ORN_VM1,nan,17,44,1.0,0.6957253217697144,1,0,2
+119647,213319,baseline_sensory,cb_sensory,olfactory,nan,ORN_DM2,ORN_DM2,ORN_DM2,nan,31,50,1.0,0.6228121519088745,1,0,3
+119793,214794,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1d,ORN_VA1d,ORN_VA1d,nan,13,31,1.0,0.39961016178131104,1,0,2
+119855,215355,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA6,ORN_VA6,ORN_VA6,nan,14,47,1.000000238418579,0.5633810758590698,1,0,2
+119886,215681,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,4,14,0.9999999403953552,0.49581295251846313,1,0,3
+119913,215957,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA7m,ORN_VA7m,ORN_VA7m,nan,22,47,1.0,1.7168214321136475,1,0,3
+119927,216121,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM5v,ORN_VM5v,ORN_VM5v,nan,34,59,1.0,0.6479679942131042,1,0,2
+120005,217227,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,4,18,1.0,0.6713756918907166,1,0,3
+120081,218171,baseline_sensory,cb_sensory,olfactory,nan,ORN_DA2,ORN_DA2,ORN_DA2,nan,4,28,1.0,0.24939770996570587,1,0,2
+120097,218397,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,4,16,1.0,0.750973105430603,1,0,2
+120240,220199,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,2,1.0,0.14216147363185883,0,0,4
+120283,220921,baseline_sensory,cb_sensory,olfactory,nan,ORN_DM5,ORN_DM5,ORN_DM5,nan,17,37,1.0000001192092896,0.8742775917053223,1,0,3
+120327,221481,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,4,16,1.0,0.6881581544876099,1,0,3
+120328,221500,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,3,12,1.0,1.1690980195999146,1,0,3
+120333,221558,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,2,0.0,0.12651748955249786,0,0,4
+120395,222516,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,4,13,0.9999999403953552,0.4217350482940674,1,0,3
+120408,222691,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,3,16,1.0,0.6717491745948792,1,0,3
+120446,223132,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,4,16,1.0,1.073690414428711,1,0,3
+120501,223871,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,4,19,1.0,1.3815803527832031,1,0,3
+120517,224031,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM4,ORN_VM4,ORN_VM4,nan,5,33,1.0,1.3945521116256714,1,0,2
+120536,224304,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,2,9,1.0,0.4962318539619446,1,0,3
+120577,224899,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,3,16,1.0,1.3145350217819214,1,0,3
+120611,225582,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM1,ORN_VM1,ORN_VM1,nan,15,44,1.0,0.6882571578025818,1,0,2
+120655,226310,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,4,11,1.0,0.9985732436180115,1,0,3
+120712,227264,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.22595790028572083,1,0,3
+120750,228104,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,2,0.0,0.21430593729019165,0,0,4
+120789,228767,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,2,16,1.0,0.5543817281723022,1,0,3
+120916,231386,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,3,13,1.0,0.7815704345703125,1,0,3
+120942,231925,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,6,16,1.0,0.48407265543937683,1,0,1
+120971,232730,baseline_sensory,cb_sensory,gustatory,labellar bristle,LB1e,LB1e,nan,nan,4,15,1.0,0.11850709468126297,1,0,2
+121001,233513,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,4,7,1.0,0.16916094720363617,0,0,1
+121009,233658,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,3,12,1.0,1.3304458856582642,1,0,3
+121117,236542,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,2,15,1.0,0.7926739454269409,1,0,3
+121232,239956,baseline_sensory,cb_sensory,olfactory,nan,ORN_V,ORN_V,ORN_V,nan,28,39,1.0,0.44958242774009705,1,0,2
+121249,240534,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,3,15,1.0,0.6598159670829773,1,0,3
+121255,240706,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,2,14,1.0,0.3769151568412781,1,0,3
+121366,243859,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM5d,ORN_VM5d,ORN_VM5d,nan,7,28,0.9999999403953552,0.515256404876709,1,0,3
+121392,244586,baseline_sensory,cb_sensory,olfactory,nan,ORN_V,ORN_V,ORN_V,nan,11,25,1.0,0.21341681480407715,1,0,2
+121434,245841,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,3,13,0.9999999403953552,0.4792211055755615,1,0,3
+121438,246079,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM5d,ORN_VM5d,ORN_VM5d,nan,15,39,0.9999998807907104,0.4063200056552887,1,0,3
+121455,246608,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,2,0.0,0.18953227996826172,0,0,4
+121467,246941,baseline_sensory,cb_sensory,olfactory,nan,ORN_VC3,ORN_VC3,ORN_VC3l,nan,10,42,0.9999998807907104,0.375286340713501,1,0,2
+121468,246970,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,7,14,1.0000001192092896,0.18170638382434845,1,0,2
+121511,248280,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,chordotonal organ,SApp23,nan,nan,SApp23,8,40,0.9999998807907104,0.46842160820961,1,0,2
+121518,248455,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,3,0.0,0.31634044647216797,0,0,4
+121588,250880,baseline_sensory,cb_sensory,olfactory,nan,ORN_VL2a,ORN_VL2a,ORN_VL2a,nan,5,19,1.0,0.01162209827452898,1,0,2
+121593,250964,baseline_sensory,cb_sensory,olfactory,nan,ORN_DA1,ORN_DA1,ORN_DA1,nan,25,76,1.0,1.5508880615234375,1,0,2
+121634,252406,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,2,0.0,0.09379519522190094,0,0,4
+121635,252435,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,2,15,1.0,0.668524980545044,1,0,3
+121661,253311,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,2,9,1.0,0.3872922956943512,1,0,3
+121675,253695,baseline_sensory,cb_sensory,mechanosensory,nan,BM_vOcci_vPoOr,BM_vOcci_vPoOr,nan,nan,3,12,1.0,0.55916428565979,1,0,1
+121692,254620,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,2,13,1.0,1.1850683689117432,1,0,3
+121706,255309,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,2,15,1.0,0.7195501327514648,1,0,3
+121754,257495,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,2,9,1.0,0.6073403358459473,1,0,3
+121797,258945,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM5d,ORN_VM5d,ORN_VM5d,nan,5,25,1.0,0.049662698060274124,1,0,2
+121822,259825,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,1,8,1.0,0.417239248752594,1,0,3
+121858,261509,baseline_sensory,cb_sensory,olfactory,nan,ORN_DL4,ORN_DL4,ORN_DL4,nan,2,14,1.0,0.13218460977077484,1,0,3
+121897,263136,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,3,14,1.0,0.7163824439048767,1,0,3
+121902,263350,baseline_sensory,cb_sensory,olfactory,nan,ORN_DM3,ORN_DM3,ORN_DM3,nan,10,26,1.0000001192092896,0.6466165781021118,1,0,3
+121936,265416,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-EV1,JO-EV1,nan,nan,17,65,1.0000001192092896,0.873836874961853,1,0,1
+121949,266098,baseline_sensory,cb_sensory,olfactory,nan,ORN_DM3,ORN_DM3,ORN_DM3,nan,7,21,1.0,0.43752551078796387,1,0,3
+122010,268967,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,2,14,1.0,0.5310754179954529,1,0,3
+122031,270194,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1d,ORN_VA1d,ORN_VA1d,nan,2,20,1.0,0.03196743503212929,1,0,2
+122076,272501,baseline_sensory,ol_sensory,visual,nan,R8p,R8,nan,nan,3,16,1.0,1.2856247425079346,1,0,3
+122091,273402,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM5d,ORN_VM5d,ORN_VM5d,nan,19,63,1.0000001192092896,0.5898364782333374,1,0,2
+122114,274238,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,3,10,1.0,0.5879647731781006,1,0,3
+122159,276829,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-EV1,JO-EV1,nan,nan,14,70,1.0,0.7465353012084961,1,0,2
+122187,278749,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,4,9,1.0,0.19326625764369965,1,0,2
+122192,279099,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,2,7,1.0,1.0572879314422607,1,0,2
+122223,281037,baseline_sensory,cb_sensory,olfactory,nan,ORN_VL1,ORN_VL1,ORN_VL1,nan,9,33,1.0000001192092896,0.24859467148780823,1,0,2
+122287,284701,baseline_sensory,cb_sensory,gustatory,taste peg,claw_tpGRN,claw_tpGRN,nan,nan,12,30,0.9999999403953552,0.7657667398452759,1,0,2
+122292,284978,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,0,17,0.0,0.020624272525310516,0,0,1
+122335,287508,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,3,15,1.0,0.6538618206977844,1,0,3
+122359,289180,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,2,4,1.0,0.005228863097727299,0,0,2
+122397,291562,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,3,12,1.0,0.019948851317167282,0,0,1
+122428,293891,baseline_sensory,cb_sensory,mechanosensory,nan,BM_MaPa,BM_MaPa,nan,nan,12,39,1.0,0.6421076655387878,1,0,1
+122630,308997,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,2,6,1.0,0.0036859335377812386,0,0,2
+122633,309407,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1d,ORN_VA1d,ORN_VA1d,nan,1,15,1.0,0.014877495355904102,1,0,2
+122635,309593,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,0,5,0.0,0.03156214952468872,0,0,2
+122682,314582,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,3,16,1.0,0.5710321068763733,1,0,3
+122707,317842,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,2,15,1.0,0.8167065382003784,1,0,3
+122779,324669,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-EV1,JO-EV1,nan,nan,18,67,0.9999999403953552,1.0156702995300293,1,0,1
+122828,330394,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-ED1,JO-ED1,nan,nan,10,41,1.0,0.5806958675384521,1,0,2
+122857,333642,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,0,4,0.0,0.004757289309054613,0,0,2
+122954,345140,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,2,2,1.0,0.16007080674171448,1,0,4
+122985,349549,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,2,14,1.0,0.7014175653457642,1,0,3
+123016,354053,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM3,ORN_VM3,ORN_VM3,nan,3,15,1.0,0.06179329380393028,1,0,3
+123059,359586,baseline_sensory,cb_sensory,olfactory,nan,ORN_VL1,ORN_VL1,ORN_VL1,nan,8,27,1.0,0.4778226315975189,1,0,3
+123092,363983,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1v,ORN_VA1v,ORN_VA1v,nan,39,60,0.9999998807907104,0.8915091156959534,1,0,2
+123108,366857,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-EV2,JO-EV2,nan,nan,13,56,0.9999999403953552,0.5222251415252686,1,0,1
+123110,367820,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,1,10,1.0,0.2836199104785919,0,0,2
+123123,369808,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,2,8,1.0,0.36732327938079834,1,0,3
+123255,393825,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1d,ORN_VA1d,ORN_VA1d,nan,1,16,1.0,0.08960211277008057,1,0,2
+123258,394013,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,4,11,1.0000001192092896,0.019357023760676384,1,0,1
+123327,407498,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,2,9,1.0,0.6267346143722534,1,0,3
+123377,418026,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,5,23,1.0,1.0397975444793701,1,0,1
+123405,423427,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,2,6,1.0,0.00381095870397985,0,0,2
+123412,424522,baseline_sensory,ol_sensory,visual,nan,R8p,R8,nan,nan,3,12,1.0,1.0053263902664185,1,0,3
+123420,426031,baseline_sensory,cb_sensory,olfactory,nan,ORN_VC4,ORN_VC4,ORN_VC4,nan,8,16,1.0,0.05293206870555878,1,0,2
+123441,429544,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,1,11,1.0,0.012685212306678295,1,0,1
+123449,430916,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,1,13,1.0,0.16106507182121277,1,0,2
+123455,432605,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,nan,nan,nan,0,12,0.0,1.0080845355987549,0,0,2
+123475,436108,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM4,ORN_VM4,ORN_VM4,nan,2,26,1.0,0.19735918939113617,1,0,2
+123498,441612,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,3,12,1.0,0.04222875088453293,1,0,2
+123566,461326,baseline_sensory,cb_sensory,olfactory,nan,ORN_VL1,ORN_VL1,ORN_VL1,nan,3,23,1.0,0.11190195381641388,0,0,2
+123573,463132,baseline_sensory,cb_sensory,olfactory,nan,ORN_DM2,ORN_DM2,ORN_DM2,nan,24,47,0.9999999403953552,0.7381806969642639,1,0,3
+123599,471375,baseline_sensory,cb_sensory,olfactory,nan,ORN_DL1,ORN_DL1,ORN_DL1,nan,0,15,0.0,0.012836053036153316,0,0,3
+123608,473822,baseline_sensory,ol_sensory,visual,nan,R8p,R8,nan,nan,1,10,1.0,1.276652455329895,1,0,3
+123622,479194,baseline_sensory,cb_sensory,olfactory,nan,ORN_DL4,ORN_DL4,ORN_DL4,nan,1,10,1.0,0.010260534472763538,1,0,3
+123652,486852,baseline_sensory,cb_sensory,olfactory,nan,ORN_DM4,ORN_DM4,ORN_DM4,nan,15,19,0.9999999403953552,0.2364753782749176,1,0,3
+123683,497471,baseline_sensory,cb_sensory,olfactory,nan,ORN_DM2,ORN_DM2,ORN_DM2,nan,12,28,0.9999999403953552,0.2836809456348419,1,0,3
+123688,499904,baseline_sensory,cb_sensory,olfactory,nan,ORN_DM5,ORN_DM5,ORN_DM5,nan,13,33,1.0000001192092896,0.36118361353874207,1,0,3
+123784,500125,baseline_sensory,ol_sensory,visual,nan,R7_unclear,R7,nan,nan,3,5,1.0,0.5125395655632019,1,0,3
+123788,500135,baseline_sensory,ol_sensory,visual,nan,R7R8_unclear,nan,nan,nan,4,3,1.0,0.15477605164051056,1,0,3
+123797,500146,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,2,4,1.0,0.22656333446502686,1,0,3
+124161,512173,baseline_sensory,visual_projection,nan,nan,LoVP26,LTe65,PS273,nan,90,78,1.0,0.9356051683425903,1,0,2
+124519,512836,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM7v,ORN_VM7v,ORN_VM7v,nan,15,27,1.0000001192092896,0.2311677187681198,1,0,2
+124600,512971,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,LLPC1,nan,93,42,0.9999999403953552,0.23260125517845154,1,0,1
+124714,513213,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,35,58,1.0,0.34579581022262573,1,0,2
+124806,513348,baseline_sensory,visual_projection,nan,nan,LLPC3,LLPC3,LLPC3,nan,59,46,1.0,0.2125144898891449,1,0,2
+124950,513646,baseline_sensory,cb_sensory,gustatory,pharyngeal sensillum,PhG16,PhG16,nan,nan,10,72,1.0000001192092896,1.2821093797683716,1,0,2
+125381,514380,baseline_sensory,visual_projection,nan,nan,LC22,LC22,LC22,nan,84,52,1.0000001192092896,0.22200794517993927,1,0,1
+125529,514630,baseline_sensory,visual_projection,nan,nan,MeTu3c,MeTu3c,"MC61,MC64",nan,70,29,1.0,0.5533363223075867,1,0,2
+126105,515653,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,43,52,1.0,0.25130173563957214,1,0,2
+126677,516607,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,campaniform sensilla,SApp08,nan,nan,SApp08,10,69,1.0,0.5966796278953552,0,0,1
+126859,516900,baseline_sensory,visual_projection,nan,nan,LC9,LC9,LC9,nan,33,54,1.0,0.39488643407821655,1,0,2
+126929,517015,baseline_sensory,visual_projection,nan,nan,LC21,LC21,LC21,nan,122,111,0.9999998807907104,0.7679007649421692,1,0,2
+127139,517346,baseline_sensory,visual_projection,nan,nan,MeVP14,MTe05,nan,nan,33,34,1.0,0.45375609397888184,1,0,2
+127154,517372,baseline_sensory,visual_projection,nan,nan,LC6,LC6,LC6,nan,69,59,0.9999998807907104,0.2121497541666031,1,0,1
+127186,517452,baseline_sensory,visual_centrifugal,nan,nan,LoVC25,cL01,nan,nan,103,125,0.9999999403953552,0.8806535005569458,1,0,2
+127187,517453,baseline_sensory,visual_centrifugal,nan,nan,LoVC25,cL01,nan,nan,100,120,1.0,0.6237185597419739,1,0,2
+127258,517582,baseline_sensory,visual_projection,nan,nan,LC18,LC18,LC18,nan,62,82,0.9999999403953552,0.42253759503364563,1,0,2
+127424,517892,baseline_sensory,visual_projection,nan,nan,LoVP_unclear,nan,nan,nan,71,44,1.0000001192092896,0.5423372983932495,1,0,2
+127497,517989,baseline_sensory,visual_projection,nan,nan,MeTu3c,MeTu3c,"MC61,MC64",nan,54,28,1.0,0.37798255681991577,1,0,2
+127597,518150,baseline_sensory,visual_projection,nan,nan,LC24,LC24,LC24,nan,52,43,1.0,0.34123262763023376,1,0,2
+127944,518732,baseline_sensory,visual_projection,nan,nan,LC31a,LC31a,nan,nan,246,72,0.9999999403953552,0.17867302894592285,1,0,1
+128016,518837,baseline_sensory,visual_projection,nan,nan,MeVP1,MTe51,MC62,nan,24,44,1.0000001192092896,0.2782910168170929,1,0,2
+129097,520700,baseline_sensory,visual_projection,nan,nan,MeTu2b,MeTu2b,"MC61,MC64",nan,61,18,1.0,0.420926034450531,1,0,3
+129129,520799,baseline_sensory,visual_projection,nan,nan,LC11,LC11,LC11,nan,318,120,1.0,0.7023414969444275,1,0,2
+129181,520908,baseline_sensory,cb_sensory,olfactory,nan,ORN_VC2,ORN_VC2,ORN_VC2,nan,23,45,1.0000001192092896,0.5508129596710205,1,0,2
+129348,521270,baseline_sensory,visual_projection,nan,nan,MeTu4c,MeTu4c,"MC61,MC64",nan,75,61,1.0,0.5748475193977356,1,0,2
+129416,521423,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM7d,ORN_VM7d,ORN_VM7d,nan,23,68,1.0000001192092896,0.613650381565094,1,0,2
+129520,521607,baseline_sensory,visual_projection,nan,nan,LC13,LC13,LC13,nan,66,34,1.0,0.25790178775787354,1,0,2
+129772,522746,baseline_sensory,cb_sensory,gustatory,labellar bristle,LB1c,LB1c,nan,nan,23,66,0.9999999403953552,1.0741509199142456,1,0,1
+130117,523689,baseline_sensory,visual_projection,nan,nan,LC17,LC17,LC17,nan,171,98,0.9999999403953552,0.3526785671710968,1,0,2
+131136,525713,baseline_sensory,visual_centrifugal,nan,nan,LPT116,cLP03,nan,nan,32,84,1.0,0.5999338030815125,1,0,2
+131311,526151,baseline_sensory,sensory_ascending,gustatory,leg bristle,LgAG2,nan,nan,SAch01,15,29,1.0,0.5915543437004089,1,0,1
+131633,526999,baseline_sensory,visual_projection,nan,nan,LPLC1,LPLC1,LPLC1,nan,316,95,1.0,0.37077558040618896,1,0,1
+131640,527009,baseline_sensory,visual_projection,nan,nan,LT63,LT63,LT63,nan,352,227,1.0,1.8959087133407593,1,0,1
+131678,527122,baseline_sensory,visual_projection,nan,nan,LC13,LC13,LC13,nan,39,32,0.9999998807907104,0.1925726681947708,1,0,2
+131784,527362,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM6v,ORN_VM6v,ORN_VC5,nan,25,53,1.0000001192092896,0.9269728660583496,1,0,2
+132639,530374,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,LLPC1,nan,108,56,1.0,0.2179844230413437,1,0,1
+132979,531019,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-ED1,JO-ED1,nan,nan,14,46,1.0,0.67813640832901,1,0,2
+133128,531312,baseline_sensory,visual_projection,nan,nan,LLPC2,LLPC2,"LLPC2a,LLPC2b,LLPC2c,LLPC2d",nan,72,32,1.0000001192092896,0.13940241932868958,1,0,1
+134146,533458,baseline_sensory,visual_projection,nan,nan,LoVP21,"LTe49a,LTe49b,LTe49d,LTe49e,LTe49f",IB088,nan,77,68,0.9999999403953552,0.5911287069320679,1,0,2
+134176,533520,baseline_sensory,visual_projection,nan,nan,MeTu3c,MeTu3c,"MC61,MC64",nan,78,37,1.0,0.42887699604034424,1,0,2
+134464,534097,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-ED2_a,JO-ED2_a,nan,nan,13,98,0.9999998807907104,1.3147755861282349,1,0,1
+134465,534098,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-EV6,JO-EV6,nan,nan,12,63,1.0000001192092896,0.46740636229515076,1,0,1
+134604,534340,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,3,0.0,0.2561313807964325,0,0,4
+134793,534800,baseline_sensory,visual_projection,nan,nan,LC26,LC26,LC26,nan,79,57,0.9999998807907104,0.7737014293670654,1,0,2
+135359,536217,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-EV2,JO-EV2,nan,nan,22,77,1.0,1.086747169494629,1,0,1
+135992,539005,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA6,ORN_VA6,ORN_VA6,nan,26,79,1.0,1.2564494609832764,1,0,2
+136241,539626,baseline_sensory,visual_projection,nan,nan,MeTu4a,MeTu4a,"MC61,MC64",nan,69,51,1.0,0.8665303587913513,1,0,2
+136265,539720,baseline_sensory,visual_projection,nan,nan,LC16,LC16,LC16,nan,61,43,1.0,0.2734876871109009,1,0,2
+136404,540247,baseline_sensory,visual_projection,nan,nan,LC16,LC16,LC16,nan,55,48,0.9999999403953552,0.2999870777130127,1,0,2
+136669,541766,baseline_sensory,visual_projection,nan,nan,LC12,LC12,LC12,nan,67,66,1.0000001192092896,0.3820946216583252,1,0,2
+136810,542140,baseline_sensory,cb_sensory,olfactory,nan,ORN_DL1,ORN_DL1,ORN_DL1,nan,17,47,1.0,0.5530915856361389,1,0,3
+138350,545986,baseline_sensory,visual_projection,nan,nan,LoVP7,LCe05,nan,nan,27,16,1.0,0.12913040816783905,0,0,2
+138481,546316,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,0,4,0.0,0.5290343165397644,0,0,4
+139792,550863,baseline_sensory,cb_sensory,olfactory,nan,ORN_DL1,ORN_DL1,ORN_DL1,nan,26,44,1.0000001192092896,0.7847585082054138,1,0,2
+139975,551421,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,4,18,1.0,0.5997577905654907,1,0,3
+140053,551814,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,2,12,1.0,1.4184571504592896,1,0,3
+140086,551928,baseline_sensory,visual_projection,nan,nan,LLPC3,LLPC3,LLPC3,nan,55,44,1.0,0.17314952611923218,1,0,2
+140299,552981,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.31185540556907654,0,0,4
+140329,553205,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,5,16,1.0,0.8255124688148499,1,0,3
+140894,557984,baseline_sensory,visual_centrifugal,nan,nan,LoVC25,cL01,nan,nan,42,111,1.0,0.7310738563537598,1,0,1
+140895,557985,baseline_sensory,visual_centrifugal,nan,nan,LoVC25,cL01,nan,nan,12,106,1.0000001192092896,0.513741135597229,1,0,1
+141342,564200,baseline_sensory,ol_sensory,visual,nan,R8p,R8,nan,nan,4,12,1.0,0.9455240964889526,1,0,3
+141438,565953,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-B3,JO-B3,nan,nan,7,37,1.0,0.4982506036758423,1,0,2
+141485,566967,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM5v,ORN_VM5v,ORN_VM5v,nan,27,58,0.9999999403953552,0.5778668522834778,1,0,2
+141531,568032,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-DP,JO-DP,nan,nan,9,25,0.9999999403953552,0.20943811535835266,0,0,2
+141764,574283,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,8,9,0.9999999403953552,0.007946912199258804,1,0,1
+141926,579979,baseline_sensory,visual_projection,nan,nan,LPT100,LPTe01,nan,nan,107,40,1.0,0.32556411623954773,1,0,2
+142142,580777,baseline_sensory,visual_projection,nan,nan,LLPC1,LLPC1,nan,nan,95,60,1.0,0.31345507502555847,1,0,1
+142413,590508,baseline_sensory,cb_sensory,olfactory,nan,ORN_DA1,ORN_DA1,ORN_DA1,nan,10,45,1.0,0.2654069662094116,1,0,2
+143865,801906,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,campaniform sensilla,SNpp31,nan,nan,SNpp31,31,199,1.0,2.1838200092315674,1,0,2
+143905,801957,baseline_sensory,vnc_sensory,unknown_sensory,wing,SNxx25,nan,nan,SNxx25,13,77,1.0,1.5788753032684326,1,0,2
+143908,801960,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,campaniform sensilla,SNpp30,nan,nan,SNpp30,59,271,0.9999999403953552,1.9764066934585571,1,0,2
+144022,802125,baseline_sensory,vnc_sensory,unknown_sensory,leg,SNxx29,nan,nan,SNxx29,13,81,1.0,1.164474606513977,1,0,2
+145645,804221,baseline_sensory,vnc_sensory,unknown_sensory,leg,SNxx30,nan,nan,SNxx30,7,76,1.0000001192092896,1.904078722000122,1,0,1
+145694,804287,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,33,103,1.0,0.7624574303627014,1,0,1
+146042,804718,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta33,nan,nan,SNta33,54,123,0.9999999403953552,1.4111663103103638,1,0,1
+146709,805534,baseline_sensory,vnc_sensory,chemosensory,abdomen,SNch01,nan,nan,SNch01,16,74,1.0,1.3957768678665161,1,0,1
+147030,805931,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx06,nan,nan,SNxx06,29,74,1.0,1.6608772277832031,1,0,1
+147156,806080,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,hair plate,SNpp52,nan,nan,SNpp52,4,142,1.0,1.1002271175384521,1,0,1
+147196,806127,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG3,nan,nan,SNch05,13,43,1.0,0.9748703241348267,1,0,1
+147275,806226,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,hair plate,SNpp45,nan,nan,SNpp45,13,92,0.9999999403953552,0.9297438859939575,1,0,1
+147736,806766,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta07,nan,nan,SNta07,40,115,1.0,1.0857179164886475,1,0,1
+147808,806853,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,leg,SNppxx,nan,nan,SNppxx,15,91,1.0000001192092896,1.2336678504943848,1,0,1
+147811,806856,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG6,nan,nan,SNch15,20,33,1.0000001192092896,1.0631543397903442,1,0,2
+147863,806918,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,hair plate,SNpp45,nan,nan,SNpp45,13,71,1.0,0.5191172361373901,1,0,1
+148203,807329,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta29,nan,nan,SNta29,5,46,1.0,0.10551130026578903,1,0,2
+148228,807356,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta11,nan,nan,SNta11,47,100,1.0,0.9719662070274353,1,0,1
+148249,807380,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta29,nan,nan,SNta29,23,110,0.9999999403953552,0.8424147367477417,1,0,2
+148334,807482,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta18,nan,nan,SNta18,26,74,1.0000001192092896,0.48429879546165466,1,0,1
+148394,807550,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx14,nan,nan,SNxx14,37,80,1.0,0.9548318386077881,1,0,2
+148543,807730,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx14,nan,nan,SNxx14,56,99,0.9999998807907104,0.9022511839866638,1,0,1
+148575,807767,baseline_sensory,vnc_sensory,unknown_sensory,leg,SNxx29,nan,nan,SNxx29,15,63,1.0,0.8915386199951172,1,0,2
+148686,807900,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp39,nan,nan,SNpp39,9,50,1.0,1.1717305183410645,1,0,2
+148840,808077,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp50,nan,nan,SNpp50,6,71,1.0,0.6830348968505859,1,0,1
+148845,808082,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp40,nan,nan,SNpp40,14,88,1.0000001192092896,1.9763792753219604,1,0,2
+149181,808502,baseline_sensory,sensory_ascending,mechanosensory_proprioceptive,haltere,SApp,nan,nan,nan,15,152,1.0,1.9089040756225586,1,0,1
+149218,808544,baseline_sensory,vnc_sensory,mechanosensory_tactile,leg,SNta20,nan,nan,SNta20,14,79,1.0,0.8129944205284119,1,0,1
+149246,808576,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp41,nan,nan,SNpp41,18,56,1.0,0.5968162417411804,1,0,2
+149259,808591,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta11,nan,nan,SNta11,35,98,1.0,0.9956636428833008,1,0,1
+149392,808745,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,"SNta11,SNta14",nan,nan,"SNta11,SNta14",33,107,0.9999999403953552,0.8504492044448853,1,0,2
+149400,808754,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta04,nan,nan,SNta04,30,82,1.0,0.8861801028251648,1,0,2
+149611,809010,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta03,nan,nan,SNta03,17,55,1.0,0.7595945000648499,1,0,1
+149683,809102,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp41,nan,nan,SNpp41,12,54,0.9999999403953552,0.5333993434906006,1,0,1
+149888,809352,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG5,nan,nan,SNch16,16,23,1.0,1.0905492305755615,1,0,2
+149906,809377,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,hair plate,SNpp19,nan,nan,SNpp19,2,93,1.0,1.1536169052124023,1,0,1
+149953,809426,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta18,nan,nan,SNta18,27,92,1.0000001192092896,0.9038552045822144,1,0,1
+149958,809432,baseline_sensory,vnc_sensory,unknown_sensory,leg,SNxx33,nan,nan,SNxx33,9,59,0.9999999403953552,0.8177406787872314,1,0,1
+149962,809437,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,campaniform sensilla,SNpp38,nan,nan,SNpp38,28,63,1.0000001192092896,0.502425491809845,1,0,2
+149975,809451,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx07,nan,nan,SNxx07,26,46,0.9999999403953552,0.8938565850257874,1,0,2
+149985,809462,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta03,nan,nan,SNta03,17,63,1.0,0.85993492603302,1,0,1
+150008,809488,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta38,nan,nan,SNta38,9,45,1.0,0.38955792784690857,1,0,2
+150010,809490,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta29,nan,nan,SNta29,17,91,1.0,0.6994589567184448,1,0,2
+150093,809584,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx23,nan,nan,SNxx23,14,63,1.0,0.7974292039871216,1,0,2
+150140,809636,baseline_sensory,vnc_sensory,unknown_sensory,leg,SNxx33,nan,nan,SNxx33,9,55,1.0,0.7308511137962341,1,0,1
+150143,809639,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta21,nan,nan,SNta21,13,73,1.0,0.6061863899230957,1,0,2
+150178,809682,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta03,nan,nan,SNta03,17,63,1.0,0.6486131548881531,1,0,1
+150255,809773,baseline_sensory,vnc_sensory,mechanosensory_tactile,leg,SNta32,nan,nan,SNta32,16,53,1.0,0.8005104660987854,1,0,1
+150325,809861,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG1a,nan,nan,SNch05,11,39,1.0,1.5154229402542114,1,0,2
+150353,809893,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,nan,nan,nan,nan,34,81,0.9999998807907104,0.8192622065544128,1,0,2
+150477,810040,baseline_sensory,vnc_sensory,mechanosensory_tactile,leg,nan,nan,nan,nan,12,55,1.0,0.6870571374893188,1,0,1
+150486,810050,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta07,nan,nan,SNta07,26,79,1.0,0.5531569719314575,1,0,1
+150697,810321,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx20,nan,nan,SNxx20,3,46,1.0,0.9693396091461182,1,0,1
+150804,810449,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,nan,nan,nan,nan,16,47,1.0,0.46552377939224243,1,0,2
+150825,810474,baseline_sensory,vnc_sensory,chemosensory,abdomen,SNch01,nan,nan,SNch01,7,56,1.0,0.47713708877563477,1,0,2
+150851,810504,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta30,nan,nan,SNta30,18,90,1.0,1.1422260999679565,1,0,2
+150915,810585,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta33,nan,nan,SNta33,12,41,1.0,0.6761614680290222,1,0,1
+151028,810733,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta04,nan,nan,SNta04,21,75,1.0,0.6544013619422913,1,0,2
+151109,810832,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx14,nan,nan,SNxx14,44,129,1.0,1.0669288635253906,1,0,1
+151236,810990,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,campaniform sensilla,"SNpp29,SNpp63",nan,nan,"SNpp29,SNpp63",14,47,1.0,0.3268093764781952,1,0,2
+151506,811331,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta11,nan,nan,SNta11,20,61,1.0,0.5774007439613342,1,0,1
+151509,811334,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta04,nan,nan,SNta04,23,79,1.0,0.617156445980072,1,0,2
+151697,811577,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta43,nan,nan,SNta43,14,56,1.0000001192092896,0.6695821285247803,1,0,2
+151705,811585,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta26,nan,nan,SNta26,8,70,1.0,0.3644427955150604,1,0,2
+151746,811641,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG1a,nan,nan,SNch05,20,49,1.0,1.5399212837219238,1,0,2
+151812,811728,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta11,nan,nan,SNta11,24,80,0.9999999403953552,0.7908617258071899,1,0,2
+151914,811855,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta43,nan,nan,SNta43,12,61,1.0000001192092896,0.5825908780097961,1,0,2
+151931,811875,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,haltere,SNpp34,nan,nan,SNpp34,16,23,0.9999999403953552,0.2220776081085205,1,0,1
+151961,811915,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta21,nan,nan,SNta21,13,56,1.0000001192092896,0.8667005300521851,1,0,2
+151981,811941,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG4,nan,nan,SNch02,36,68,1.0,1.308361291885376,1,0,2
+152027,812001,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG1a,nan,nan,SNch05,15,45,1.0,1.0063207149505615,1,0,2
+152238,812257,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG1a,nan,nan,SNch05,19,43,1.0,2.319892168045044,1,0,2
+152432,812491,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta29,nan,nan,SNta29,12,53,0.9999999403953552,0.3732915222644806,1,0,2
+152553,812639,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx02,nan,nan,SNxx02,17,51,1.0,0.9830306172370911,1,0,2
+152579,812670,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,18,63,1.0000001192092896,0.625354528427124,1,0,2
+152632,812731,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx02,nan,nan,SNxx02,17,51,0.9999999403953552,0.9229522943496704,1,0,2
+152708,812834,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta03,nan,nan,SNta03,15,46,1.0000001192092896,0.7471004128456116,1,0,1
+152777,812923,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta04,nan,nan,SNta04,41,74,1.0,0.8730560541152954,1,0,2
+152899,813071,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx02,nan,nan,SNxx02,18,56,1.0,0.7477443814277649,1,0,2
+152941,813129,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta29,nan,nan,SNta29,10,44,1.0,1.1441433429718018,1,0,2
+152948,813136,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx14,nan,nan,SNxx14,29,73,1.0,0.8011918067932129,1,0,1
+153006,813225,baseline_sensory,vnc_sensory,mechanosensory_tactile,notum,"SNta02,SNta09",nan,nan,"SNta02,SNta09",26,62,1.0,0.6657370924949646,1,0,2
+153071,813303,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,nan,nan,nan,nan,35,56,0.9999999403953552,0.571346640586853,1,0,2
+153114,813354,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta20,nan,nan,SNta20,19,72,0.9999999403953552,0.7642795443534851,1,0,1
+153122,813368,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx04,nan,nan,SNxx04,20,31,0.9999999403953552,0.7175798416137695,1,0,2
+153135,813381,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta44,nan,nan,SNta44,16,73,1.0000001192092896,0.47059881687164307,1,0,2
+153153,813402,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG4,nan,nan,SNch02,31,63,1.0000001192092896,1.1928026676177979,1,0,2
+153274,813551,baseline_sensory,vnc_sensory,mechanosensory_tactile,notum,"SNta02,SNta09",nan,nan,"SNta02,SNta09",13,51,1.0,0.46162107586860657,1,0,2
+153341,813640,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta38,nan,nan,SNta38,7,60,1.0,0.3969946503639221,1,0,2
+153460,813785,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG1a,nan,nan,SNch05,13,40,0.9999999403953552,1.1575634479522705,1,0,2
+153502,813837,baseline_sensory,vnc_sensory,mechanosensory_tactile,notum,"SNta02,SNta09",nan,nan,"SNta02,SNta09",19,67,1.0,0.507892370223999,1,0,2
+153539,813885,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta11,nan,nan,SNta11,30,65,1.0000001192092896,0.634304940700531,1,0,1
+153619,813995,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta04,nan,nan,SNta04,42,65,1.0,0.6885628700256348,1,0,2
+153782,814196,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta18,nan,nan,SNta18,31,60,0.9999999403953552,0.6646313667297363,1,0,2
+153791,814205,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx22,nan,nan,SNxx22,11,39,0.9999999403953552,0.4443807601928711,1,0,2
+153805,814221,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp56,nan,nan,SNpp56,6,29,1.0,0.45601144433021545,1,0,2
+153863,814293,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta11,nan,nan,SNta11,21,82,1.0,0.7172530293464661,1,0,2
+153890,814324,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,14,63,1.0,0.7063062191009521,1,0,2
+153954,814415,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,12,38,1.0000001192092896,0.7450172901153564,1,0,2
+153962,814425,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta45,nan,nan,SNta45,12,54,1.0,0.5768953561782837,1,0,2
+154037,814525,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG3,nan,nan,SNch09,12,45,0.9999999403953552,0.7136439085006714,1,0,1
+154061,814557,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG1a,nan,nan,SNch05,21,50,1.0,1.795210838317871,1,0,2
+154114,814624,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta29,nan,nan,SNta29,21,71,0.9999998807907104,0.6297995448112488,1,0,1
+154125,814642,baseline_sensory,vnc_sensory,mechanosensory_tactile,notum,"SNta02,SNta09",nan,nan,"SNta02,SNta09",32,68,1.0,0.7884694933891296,1,0,2
+154161,814688,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx14,nan,nan,SNxx14,34,63,1.0000001192092896,1.0177313089370728,1,0,2
+154177,814708,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,abdomen,SNpp01,nan,nan,SNpp01,8,42,1.0,0.7325512170791626,1,0,2
+154191,814728,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta21,nan,nan,SNta21,11,45,1.0000001192092896,0.3931956887245178,1,0,2
+154217,814764,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx11,nan,nan,SNxx11,15,40,1.0,0.2186661809682846,1,0,2
+154257,814822,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta32,nan,nan,SNta32,13,41,0.9999998807907104,0.7308493852615356,1,0,1
+154302,814883,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta43,nan,nan,SNta43,15,54,0.9999998807907104,0.4847238063812256,1,0,1
+154304,814885,baseline_sensory,vnc_sensory,mechanosensory_tactile,notum,"SNta02,SNta09",nan,nan,"SNta02,SNta09",28,53,1.0,0.5119113922119141,1,0,2
+154354,814948,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta42,nan,nan,SNta42,14,48,1.0000001192092896,0.5214329361915588,1,0,2
+154444,815077,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,"SNta04,SNta11",nan,nan,"SNta04,SNta11",28,56,1.0,0.7942109107971191,1,0,1
+154466,815111,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta29,nan,nan,SNta29,7,45,1.0,0.44593870639801025,1,0,1
+154490,815147,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta41,nan,nan,SNta41,12,46,1.0,0.43824243545532227,1,0,1
+154491,815148,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta11,nan,nan,SNta11,18,56,1.0,0.464211642742157,1,0,1
+154495,815153,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,14,54,1.0,0.37421950697898865,1,0,2
+154521,815186,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta11,nan,nan,SNta11,21,53,1.0,0.3647465109825134,1,0,1
+154531,815197,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,"SNta19,SNta37",nan,nan,"SNta19,SNta37",20,60,1.0,0.27388226985931396,1,0,1
+154621,815329,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,leg,SNppxx,nan,nan,SNppxx,3,27,1.0,0.1662195920944214,0,0,2
+154642,815365,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,14,57,1.0,0.4484100043773651,1,0,2
+154644,815368,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta34,nan,nan,SNta34,12,43,1.0,0.27735111117362976,1,0,2
+154645,815369,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,15,59,1.0,0.7556987404823303,1,0,2
+154646,815371,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG4,nan,nan,SNch02,25,52,1.0,1.1607944965362549,1,0,2
+154671,815410,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG4,nan,nan,SNch02,26,52,1.0,0.9547258615493774,1,0,2
+154723,815483,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,leg,nan,nan,nan,nan,4,21,1.0,0.45466455817222595,0,0,2
+154751,815521,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx04,nan,nan,SNxx04,22,44,0.9999999403953552,0.5231055617332458,1,0,2
+154770,815549,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta33,nan,nan,SNta33,20,48,1.0000001192092896,0.8048198223114014,1,0,1
+154897,815725,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,"SNta28,SNta44",nan,nan,"SNta28,SNta44",14,58,1.0,0.4071319103240967,1,0,2
+154917,815749,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG4,nan,nan,SNch11,6,17,1.0,2.145994186401367,1,0,2
+154954,815796,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta35,nan,nan,SNta35,13,46,1.0,0.48601585626602173,1,0,1
+154980,815827,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,campaniform sensilla,"SApp02,SApp03",nan,nan,"SApp02,SApp03",7,41,1.0,0.5602919459342957,1,0,2
+155051,815930,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG2,nan,nan,SNch12,26,40,0.9999999403953552,1.1771206855773926,1,0,2
+155055,815937,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,16,59,1.0000001192092896,0.5025860071182251,1,0,1
+155121,816028,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx14,nan,nan,SNxx14,19,50,1.0,0.4578676223754883,1,0,2
+155254,816217,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,8,49,1.0,1.2950390577316284,1,0,2
+155262,816234,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,hair plate,SNpp45,nan,nan,SNpp45,11,60,1.0,0.8501690626144409,1,0,2
+155297,816285,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG2,nan,nan,nan,18,27,1.0,0.9920532703399658,1,0,2
+155316,816312,baseline_sensory,vnc_sensory,mechanosensory_tactile,notum,"SNta02,SNta09",nan,nan,"SNta02,SNta09",21,52,1.0000001192092896,0.4382174611091614,1,0,2
+155327,816328,baseline_sensory,vnc_sensory,unknown_sensory,leg,SNxx33,nan,nan,SNxx33,12,39,0.9999999403953552,0.6971805691719055,1,0,2
+155329,816330,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx22,nan,nan,SNxx22,11,39,0.9999999403953552,0.4727296531200409,1,0,2
+155347,816362,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp41,nan,nan,SNpp41,7,51,0.9999999403953552,0.42192983627319336,1,0,1
+155366,816390,baseline_sensory,vnc_sensory,mechanosensory_tactile,notum,"SNta02,SNta09",nan,nan,"SNta02,SNta09",14,48,1.0,0.5209999084472656,1,0,2
+155465,816549,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx04,nan,nan,SNxx04,23,44,0.9999998807907104,0.5287022590637207,1,0,2
+155492,816593,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG2,nan,nan,SNch12,36,41,1.0,0.9476935267448425,1,0,2
+155510,816622,baseline_sensory,vnc_sensory,mechanosensory_tactile,notum,"SNta02,SNta09",nan,nan,"SNta02,SNta09",25,49,1.0,0.6000155806541443,1,0,2
+155512,816626,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG3,nan,nan,SNch09,9,18,1.0,0.9833540320396423,1,0,1
+155535,816665,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp56,nan,nan,SNpp56,4,38,1.0,0.43715575337409973,1,0,2
+155552,816689,baseline_sensory,vnc_sensory,mechanosensory_tactile,leg,SNta27,nan,nan,SNta27,6,47,1.0,0.41676974296569824,1,0,2
+155561,816702,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,abdomen,SNpp02,nan,nan,SNpp02,6,34,1.0,0.28335511684417725,1,0,2
+155597,816764,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp42,nan,nan,SNpp42,7,35,0.9999999403953552,0.35953056812286377,1,0,2
+155602,816772,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx03,nan,nan,SNxx03,22,41,1.0000001192092896,0.5906632542610168,1,0,1
+155605,816778,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG2,nan,nan,SNch12,29,33,1.0,0.5837377309799194,1,0,2
+155655,816857,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta32,nan,nan,SNta32,12,34,1.0000001192092896,1.5941863059997559,1,0,2
+155674,816883,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,"SNta02,SNta09",nan,nan,"SNta02,SNta09",21,50,1.0,0.4852684736251831,1,0,2
+155689,816910,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx03,nan,nan,SNxx03,27,40,1.0,0.6373074650764465,1,0,2
+155782,817057,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG7,nan,nan,nan,4,17,1.0,1.7281779050827026,1,0,2
+155846,817182,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,nan,nan,nan,nan,16,41,1.0,0.4968385100364685,1,0,1
+155870,817218,baseline_sensory,vnc_sensory,nan,taste bristle,SNch10,nan,nan,SNch10,9,52,0.9999999403953552,0.9406207799911499,1,0,2
+155879,817233,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta27,nan,nan,SNta27,14,44,1.0000001192092896,0.18847081065177917,1,0,2
+155996,817408,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta41,nan,nan,SNta41,8,45,1.0,0.4392140805721283,1,0,2
+156002,817417,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG1,nan,nan,SNch03,31,41,1.0,0.6822634935379028,1,0,2
+156007,817425,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG1,nan,nan,SNch03,30,44,1.0000001192092896,0.8204917311668396,1,0,2
+156025,817455,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG2,nan,nan,SNch12,27,32,1.0,0.8468328714370728,1,0,2
+156046,817497,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG1,nan,nan,SNch03,36,36,0.9999998807907104,0.5348222255706787,1,0,2
+156163,817680,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp51,nan,nan,SNpp51,4,50,1.0,0.8524604439735413,1,0,1
+156173,817697,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,leg,SNppxx,nan,nan,SNppxx,2,26,1.0,1.5467301607131958,1,0,2
+156188,817721,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx03,nan,nan,SNxx03,16,34,1.0000001192092896,0.3697720766067505,1,0,2
+156279,817873,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG2,nan,nan,nan,9,17,1.0,0.7547925114631653,1,0,2
+156290,817891,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta30,nan,nan,SNta30,7,32,1.0,0.18596725165843964,1,0,2
+156302,817909,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx04,nan,nan,SNxx04,20,29,1.0,0.783092200756073,1,0,2
+156307,817919,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta41,nan,nan,SNta41,8,23,1.0,0.7137924432754517,1,0,2
+156315,817934,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG3,nan,nan,SNch07,16,28,1.0,0.9364338517189026,1,0,1
+156342,817988,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG1,nan,nan,SNch03,25,38,1.0,0.5839110612869263,1,0,2
+156421,818158,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,nan,nan,nan,nan,14,28,1.0000001192092896,1.0527567863464355,1,0,1
+156480,818285,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta43,nan,nan,SNta43,6,35,1.0000001192092896,0.2599756419658661,1,0,2
+156497,818321,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,campaniform sensilla,SApp08,nan,nan,SApp08,5,29,1.0,0.14562056958675385,0,0,2
+156511,818346,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,nan,nan,nan,nan,29,79,1.0000001192092896,1.0590016841888428,1,0,1
+156634,818585,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx03,nan,nan,SNxx03,11,34,0.9999999403953552,0.7917282581329346,1,0,2
+156644,818605,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta44,nan,nan,SNta44,6,47,0.9999999403953552,0.3652142882347107,1,0,2
+156685,818693,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx03,nan,nan,SNxx03,11,29,1.0,0.570163369178772,1,0,2
+156693,818714,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp40,nan,nan,SNpp40,12,97,1.0,2.0828075408935547,1,0,2
+156694,818716,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta28,nan,nan,SNta28,5,44,1.0,0.49879196286201477,1,0,2
+156847,819074,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta26,nan,nan,SNta26,2,42,1.0,0.15887737274169922,0,0,2
+156907,819240,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta40,nan,nan,SNta40,2,14,1.0,0.32294797897338867,0,0,2
+156934,819314,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta20,nan,nan,SNta20,10,64,1.0,0.501607358455658,1,0,2
+156953,819353,baseline_sensory,vnc_sensory,unknown_sensory,leg,nan,nan,nan,nan,3,11,1.0,0.09782592207193375,0,0,2
+156990,819449,baseline_sensory,vnc_sensory,unknown_sensory,leg,SNxxxx,nan,nan,SNxxxx,0,21,0.0,0.2889264225959778,0,0,2
+157031,819542,baseline_sensory,vnc_sensory,unknown_sensory,mechanosensory bristle,SNta41,nan,nan,SNta41,4,11,1.0,0.35546937584877014,1,0,2
+157054,819594,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG3,nan,nan,SNch09,6,18,1.0,0.13999101519584656,1,0,1
+157074,819648,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx04,nan,nan,SNxx04,8,20,1.0000001192092896,0.28456705808639526,1,0,2
+157075,819650,baseline_sensory,vnc_sensory,mechanosensory_tactile,leg,SNta32,nan,nan,SNta32,8,29,1.0,0.7391995191574097,1,0,1
+157121,819807,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,nan,nan,nan,nan,9,25,1.0,1.773802399635315,1,0,2
+157149,819891,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta45,nan,nan,SNta45,6,21,1.0,0.06669867038726807,1,0,2
+157268,820346,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta42,nan,nan,SNta42,7,42,1.0000001192092896,0.16421593725681305,1,0,2
+157338,820620,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG3,nan,nan,SNch05,0,11,0.0,0.519934356212616,0,0,2
+157366,820746,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta38,nan,nan,SNta38,1,25,1.0,0.055600862950086594,0,0,2
+157374,820767,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG2,nan,nan,SNxxxx,10,20,0.9999999403953552,0.7089889049530029,1,0,2
+157433,821004,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG1a,nan,nan,SNch05,4,22,1.0,0.5645315051078796,1,0,2
+157449,821076,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta30,nan,nan,SNta30,0,17,0.0,0.027274208143353462,0,0,2
+157450,821080,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta35,nan,nan,SNta35,3,18,1.0,0.38080060482025146,1,0,2
+157512,821358,baseline_sensory,vnc_sensory,unknown_sensory,mechanosensory bristle,SNta41,nan,nan,SNta41,2,8,1.0,0.24708379805088043,0,0,2
+157560,821678,baseline_sensory,vnc_sensory,unknown_sensory,mechanosensory bristle,SNta29,nan,nan,SNta29,0,11,0.0,0.03831476718187332,0,0,2
+157631,822227,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,1,32,1.0,0.10688827186822891,0,0,2
+157709,822804,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta42,nan,nan,SNta42,4,20,1.0,0.2509091794490814,1,0,2
+157715,822850,baseline_sensory,vnc_sensory,mechanosensory_tactile,leg,SNta20,nan,nan,SNta20,3,43,1.0,0.1922190636396408,1,0,2
+157742,823060,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx01,nan,nan,SNxx01,14,32,1.0,0.5210177302360535,1,0,2
+157781,823433,baseline_sensory,sensory_ascending,unknown_sensory,abdomen,SAxx01,nan,nan,SAxx01,3,29,1.0,0.8418526649475098,1,0,2
+157782,823459,baseline_sensory,vnc_sensory,mechanosensory_tactile,leg,SNta29,nan,nan,SNta29,0,16,0.0,0.36642447113990784,0,0,2
+157789,823557,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,0,16,0.0,0.025673046708106995,0,0,2
+157840,824134,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta39,nan,nan,SNta39,2,6,1.0,0.013606003485620022,0,0,2
+157841,824165,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta28,nan,nan,SNta28,0,26,0.0,0.0949493944644928,0,0,2
+157871,824567,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta35,nan,nan,SNta35,1,25,1.0,0.0980328842997551,0,0,2
+157886,824777,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx03,nan,nan,SNxx03,3,9,1.0,0.45620197057724,1,0,2
+157897,824909,baseline_sensory,vnc_sensory,unknown_sensory,mechanosensory bristle,SNta30,nan,nan,SNta30,2,4,1.0,0.018674645572900772,0,0,2
+157918,825184,baseline_sensory,vnc_sensory,nan,taste bristle,SNch10,nan,nan,SNch10,11,43,1.0000001192092896,1.016592264175415,1,0,2
+158100,828483,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,leg,nan,nan,nan,nan,2,24,1.0,0.14933301508426666,1,0,2
+158103,828496,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,leg,SNppxx,nan,nan,SNppxx,2,22,1.0,0.2851387858390808,1,0,2
+158104,828560,baseline_sensory,vnc_sensory,unknown_sensory,leg,nan,nan,nan,nan,12,45,1.0,1.8041107654571533,1,0,2
+158118,828813,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta21,nan,nan,SNta21,1,19,1.0,0.16670840978622437,0,0,2
+158142,829420,baseline_sensory,vnc_sensory,unknown_sensory,mechanosensory bristle,SNta29,nan,nan,SNta29,3,11,1.0,0.03999742120504379,1,0,2
+158144,829493,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,"SNta27,SNta28",nan,nan,"SNta27,SNta28",1,27,1.0,0.2323504090309143,1,0,2
+158169,829880,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta20,nan,nan,SNta20,1,15,1.0,0.031085116788744926,0,0,2
+158224,831358,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,1,11,1.0,0.5189252495765686,0,0,2
+158239,832048,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG7,nan,nan,nan,1,5,1.0,0.01598670519888401,1,0,2
+158242,832136,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta20,nan,nan,SNta20,4,30,1.0,0.6766091585159302,1,0,2
+158268,833287,baseline_sensory,vnc_sensory,mechanosensory_tactile,leg,SNta37,nan,nan,SNta37,0,5,0.0,0.010449448600411415,0,0,2
+158287,834571,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta42,nan,nan,SNta42,2,25,1.0,0.20106281340122223,0,0,1
+158289,834651,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG2,nan,nan,SNch06,8,10,0.9999999403953552,0.26049843430519104,1,0,2
+158310,836986,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx03,nan,nan,SNxx03,31,57,1.0,2.151226758956909,1,0,2
+158331,839470,baseline_sensory,vnc_sensory,unknown_sensory,leg,SNxxxx,nan,nan,SNxxxx,0,2,0.0,0.009069092571735382,0,0,2
+158345,840733,baseline_sensory,vnc_sensory,unknown_sensory,mechanosensory bristle,SNta29,nan,nan,SNta29,0,10,0.0,0.04289453476667404,0,0,2
+158356,841125,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta34,nan,nan,SNta34,1,19,1.0,0.03514736518263817,1,0,2
+158377,843622,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG7,nan,nan,SNch15,6,12,1.0,0.12480487674474716,1,0,2
+158461,856129,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,leg,SNpp55,nan,nan,SNpp55,7,35,1.0,0.35903793573379517,1,0,2
+158528,873450,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta29,nan,nan,SNta29,2,50,1.0,0.20677600800991058,0,0,2
+158558,890169,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG6,nan,nan,SNch15,10,23,1.0,0.25565922260284424,1,0,2
+158922,903122,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta29,nan,nan,SNta29,15,96,1.0000001192092896,0.8906157612800598,1,0,1
+158943,903173,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta18,nan,nan,SNta18,33,83,1.0000001192092896,0.7965652346611023,1,0,2
+159319,904201,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta14,nan,nan,SNta14,25,92,1.0,0.8697918057441711,1,0,1
+159412,904600,baseline_sensory,vnc_sensory,unknown_sensory,leg,nan,nan,nan,nan,0,10,0.0,0.029557393863797188,0,0,2
+159436,904682,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta38,nan,nan,SNta38,14,65,0.9999999403953552,0.7799490690231323,1,0,2
+159488,904824,baseline_sensory,vnc_sensory,gustatory,wing bristle,WG4,nan,nan,SNch02,39,73,0.9999999403953552,1.7138326168060303,1,0,2
+159660,905242,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp47,nan,nan,SNpp47,16,53,0.9999998807907104,0.7561786770820618,1,0,2
+159803,905668,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp39,nan,nan,SNpp39,5,22,1.0,0.6911413073539734,1,0,2
+159930,906069,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG1a,nan,nan,SNch05,13,46,0.9999999403953552,0.9283976554870605,1,0,2
+159934,906074,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta12,nan,nan,SNta12,22,64,1.0000001192092896,0.6416629552841187,1,0,2
+160073,906511,baseline_sensory,vnc_sensory,gustatory,leg bristle,LgLG3,nan,nan,"SNch07,SNch09",16,37,1.0,0.6940249800682068,1,0,1
+160142,906816,baseline_sensory,vnc_sensory,mechanosensory_tactile,leg,nan,nan,nan,nan,7,30,1.0,0.20956620573997498,1,0,2
+160522,908238,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,44,128,1.0000001192092896,1.4504139423370361,1,0,1
+160627,908603,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp51,nan,nan,SNpp51,8,84,1.0,0.8926595449447632,1,0,1
+160715,908783,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta11,nan,nan,SNta11,36,100,1.0,0.7747817039489746,1,0,2
+160883,909199,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,SNxx19,nan,nan,SNxx19,4,56,1.0,0.5586451292037964,1,0,2
+160903,909240,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp50,nan,nan,SNpp50,11,71,1.0,0.6036515831947327,1,0,2
+160906,909243,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta29,nan,nan,SNta29,6,73,1.0,0.28758230805397034,1,0,2
+160922,909274,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta20,nan,nan,SNta20,25,74,1.0,0.9356694221496582,1,0,1
+160992,909449,baseline_sensory,vnc_sensory,mechanosensory_tactile,notum,"SNta02,SNta09",nan,nan,"SNta02,SNta09",17,52,0.9999999403953552,0.5551676750183105,1,0,2
+161576,911799,baseline_sensory,vnc_sensory,unknown_sensory,leg,SNxx33,nan,nan,SNxx33,5,56,1.0,0.31252917647361755,1,0,2
+161677,912259,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta04,nan,nan,SNta04,28,57,1.0,0.6034632921218872,1,0,2
+161695,912309,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,chordotonal organ,SNpp58,nan,nan,SNpp58,7,58,1.0,1.073791742324829,1,0,2
+161712,912350,baseline_sensory,vnc_sensory,mechanosensory_tactile,notum,"SNta02,SNta09",nan,nan,"SNta02,SNta09",22,79,1.0000001192092896,0.7007595896720886,1,0,2
+161794,912826,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,campaniform sensilla,SNpp24,nan,nan,SNpp24,22,26,0.9999999403953552,0.4830014407634735,1,0,2
+161859,913292,baseline_sensory,vnc_sensory,mechanosensory_tactile,leg,SNta34,nan,nan,SNta34,5,38,1.0,0.19104868173599243,1,0,1
+161941,914493,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta37,nan,nan,SNta37,11,55,1.0,0.39545661211013794,1,0,2
+161949,914538,baseline_sensory,vnc_sensory,unknown_sensory,abdomen,nan,nan,nan,nan,14,22,1.000000238418579,0.3118916153907776,1,0,2
+161982,914838,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta41,nan,nan,SNta41,2,15,1.0,0.19920536875724792,1,0,2
+162064,917934,baseline_sensory,cb_sensory,gustatory,pharyngeal sensillum,PhG1a,PhG1a,nan,nan,37,86,0.9999998807907104,1.614210605621338,1,0,2
+162066,918029,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM5d,ORN_VM5d,ORN_VM5d,nan,14,41,1.0,0.6647807359695435,1,0,3
+162100,919429,baseline_sensory,cb_sensory,gustatory,labellar bristle,LB1e,LB1e,nan,nan,4,10,1.0,0.4706488847732544,1,0,2
+162146,921618,baseline_sensory,cb_sensory,olfactory,nan,ORN_DL4,ORN_DL4,ORN_DL4,nan,2,13,1.0,0.6410694122314453,1,0,3
+162179,923024,baseline_sensory,cb_sensory,gustatory,nan,LB4b,LB3,nan,nan,8,48,0.9999998807907104,0.9772131443023682,1,0,1
+162191,923464,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA1d,ORN_VA1d,ORN_VA1d,nan,3,15,1.0,0.07189834862947464,1,0,2
+162236,925497,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA3,ORN_VA3,ORN_VA3,nan,8,20,1.0000001192092896,0.0775686725974083,1,0,2
+162334,928982,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.34187227487564087,1,0,4
+162412,931570,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-DA,JO-DA,nan,nan,9,24,1.0,0.31688395142555237,1,0,1
+162663,936687,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta32,nan,nan,SNta32,4,40,1.0000001192092896,0.23034188151359558,1,0,1
+162807,940850,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,4,10,1.0,0.44528430700302124,0,0,3
+162809,940946,baseline_sensory,ol_sensory,visual,nan,R7y,R7,nan,nan,0,9,0.0,0.3125600814819336,0,0,3
+162871,944698,baseline_sensory,cb_sensory,mechanosensory,nan,nan,"BM_dOcci,BM_dPoOr",nan,nan,10,29,1.0000001192092896,0.7061585783958435,1,0,1
+162933,953016,baseline_sensory,ol_sensory,visual,nan,R1-R6,R1-6,nan,nan,1,3,1.0,0.23962579667568207,1,0,4
+162983,954509,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA6,ORN_VA6,ORN_VA6,nan,11,22,1.0,0.10230393707752228,1,0,2
+163021,956071,baseline_sensory,cb_sensory,olfactory,nan,ORN_VA2,ORN_VA2,ORN_VA2,nan,21,44,1.0,0.8444772362709045,1,0,2
+163081,106383624,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,0,4,0.0,0.11382769793272018,0,0,3
+163085,107511965,baseline_sensory,cb_sensory,mechanosensory,nan,BM_vOcci_vPoOr,BM_vOcci_vPoOr,nan,nan,1,4,1.0,1.006446361541748,0,0,1
+163086,107589294,baseline_sensory,ol_sensory,visual,nan,R8p,R8,nan,nan,0,11,0.0,0.8916953802108765,0,0,3
+163136,125318610,baseline_sensory,ol_sensory,visual,nan,R7p,R7,nan,nan,2,6,1.0,0.209741473197937,1,0,3
+163147,127863962,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,1,3,1.0,0.00295281782746315,0,0,2
+163166,137801097,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-B3,JO-B3,nan,nan,7,20,1.0,0.060001567006111145,0,0,2
+163178,143552024,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,1,5,1.0,0.008069868199527264,0,0,2
+163184,145088940,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-EV3,JO-EV3,nan,nan,2,25,1.0,0.14188890159130096,1,0,1
+163192,147687811,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,2,10,1.0,0.5390726327896118,1,0,3
+163247,190913874,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,1,11,1.0,1.0309587717056274,0,0,2
+163292,222873418,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-EV1,JO-EV1,nan,nan,0,5,0.0,0.029833510518074036,0,0,2
+163299,235503501,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-ED2_a,JO-ED2_a,nan,nan,0,2,0.0,0.002414473332464695,0,0,3
+163306,237424260,baseline_sensory,ol_sensory,visual,nan,R8y,R8,nan,nan,1,9,1.0,0.7683891654014587,1,0,3
+163336,261473814,baseline_sensory,cb_sensory,olfactory,nan,ORN_VL1,ORN_VL1,ORN_VL1,nan,2,10,1.0,0.048038288950920105,0,0,3
+163345,273896622,baseline_sensory,cb_sensory,olfactory,nan,ORN_DL3,ORN_DL3,ORN_DL3,nan,2,11,1.0,0.29703933000564575,0,0,3
+163384,308077970,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-EV2,JO-EV2,nan,nan,3,28,1.0,0.21725577116012573,1,0,2
+163474,388968038,baseline_sensory,cb_sensory,gustatory,labellar bristle,LB4a,LB4a,nan,nan,5,20,1.0,0.38538026809692383,1,0,2
+163477,390052493,baseline_sensory,cb_sensory,hygrosensory,nan,HRN_VP4,HRN_VP4,HRN_VP4,nan,1,9,1.0,0.07610617578029633,1,0,2
+163484,397076641,baseline_sensory,ol_sensory,visual,nan,R8_unclear,R8,nan,nan,1,8,1.0,0.22419962286949158,1,0,3
+163496,411645324,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,5,11,1.0,0.007594813592731953,1,0,2
+163531,451788176,baseline_sensory,cb_sensory,olfactory,nan,ORN_VM6l,ORN_VM6l,ORN_VC5,nan,7,14,1.0,0.19217927753925323,1,0,3
+163583,505688557,baseline_sensory,cb_sensory,olfactory,nan,ORN_V,ORN_V,ORN_V,nan,4,19,1.0,0.24751846492290497,1,0,2
+163587,509196674,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,0,4,0.0,0.0032797756139189005,0,0,2
+163603,520157875,baseline_sensory,cb_sensory,olfactory,nan,ORN_VL2p,ORN_VL2p,ORN_VL2p,nan,14,49,0.9999998807907104,0.1470407247543335,1,0,2
+163716,640220032,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,1,5,1.0,0.005197477526962757,0,0,2
+163725,649610769,baseline_sensory,cb_sensory,olfactory,nan,ORN_DM5,ORN_DM5,ORN_DM5,nan,5,9,1.0,0.06644700467586517,1,0,2
+163770,694421624,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,3,6,1.0,0.5045493841171265,0,0,2
+163777,701436290,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-EV3,JO-EV3,nan,nan,2,33,1.0,0.2780197560787201,1,0,2
+163806,729814188,baseline_sensory,cb_sensory,olfactory,nan,ORN_DL4,ORN_DL4,ORN_DL4,nan,6,23,1.0,0.2689611613750458,1,0,3
+163842,766547228,baseline_sensory,cb_sensory,gustatory,labellar bristle,LB3b,LB3,nan,nan,2,12,1.0,0.07912273705005646,1,0,2
+163909,828816343,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,3,12,1.0,1.1223512887954712,1,0,1
+163937,848326281,baseline_sensory,cb_sensory,olfactory,nan,ORN_DC1,ORN_DC1,ORN_DC1,nan,10,26,1.0,0.14737936854362488,1,0,2
+163971,884064233,baseline_sensory,cb_sensory,olfactory,nan,ORN_DA3,ORN_DA3,ORN_DA3,nan,3,17,1.0,0.4384969472885132,1,0,3
+163998,908685148,baseline_sensory,cb_sensory,olfactory,nan,ORN_DL1,ORN_DL1,ORN_DL1,nan,18,30,1.0,0.9567803144454956,1,0,3
+164014,919015263,baseline_sensory,cb_sensory,gustatory,labellar bristle,LB2a,LB2a-b,nan,nan,8,45,1.0,1.0852090120315552,1,0,1
+164035,945623062,baseline_sensory,cb_sensory,olfactory,nan,ORN_DL1,ORN_DL1,ORN_DL1,nan,17,33,0.9999999403953552,0.5799574255943298,1,0,3
+164104,1004255645,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,1,5,1.0,0.0024989903904497623,1,0,1
+164134,1028199187,baseline_sensory,cb_sensory,mechanosensory,nan,BM_InOm,BM_InOm,nan,nan,0,3,0.0,0.008978718891739845,0,0,2
+164146,1039063503,baseline_sensory,cb_sensory,mechanosensory,wind_gravity,JO-unclear,nan,nan,nan,0,1,0.0,0.0006377550889737904,0,0,2
+164213,1050229344,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta44,nan,nan,SNta44,0,16,0.0,0.03806203603744507,0,0,2
+164536,1068978878,baseline_sensory,vnc_sensory,unknown_sensory,leg,SNxxxx,nan,nan,SNxxxx,1,3,1.0,0.004637241363525391,0,0,2
+164545,1073128028,baseline_sensory,vnc_sensory,mechanosensory_tactile,mechanosensory bristle,SNta40,nan,nan,SNta40,0,14,0.0,0.03734337538480759,0,0,2
+164554,1078099767,baseline_sensory,vnc_sensory,mechanosensory_proprioceptive,campaniform sensilla,SNpp53,nan,nan,SNpp53,11,14,1.0000001192092896,0.18480022251605988,1,0,2

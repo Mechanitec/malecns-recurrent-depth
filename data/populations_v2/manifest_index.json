@@ -1,0 +1,237 @@
+{
+  "status": "complete",
+  "graph_neurons": 164620,
+  "seed": 7001,
+  "manifest_count": 38,
+  "manifests": [
+    {
+      "population_id": "readout_mb_kenyon_cells",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_mb_kenyon_cells.json"
+    },
+    {
+      "population_id": "input_mb_kenyon_cells",
+      "role": "input",
+      "actual_count": 1024,
+      "path": "data\\populations_v2\\manifests\\input_mb_kenyon_cells.json"
+    },
+    {
+      "population_id": "readout_mbon",
+      "role": "readout",
+      "actual_count": 97,
+      "path": "data\\populations_v2\\manifests\\readout_mbon.json"
+    },
+    {
+      "population_id": "readout_dan_modulatory_mb",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_dan_modulatory_mb.json"
+    },
+    {
+      "population_id": "readout_smp",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_smp.json"
+    },
+    {
+      "population_id": "input_smp",
+      "role": "input",
+      "actual_count": 1024,
+      "path": "data\\populations_v2\\manifests\\input_smp.json"
+    },
+    {
+      "population_id": "readout_cre",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_cre.json"
+    },
+    {
+      "population_id": "input_cre",
+      "role": "input",
+      "actual_count": 387,
+      "path": "data\\populations_v2\\manifests\\input_cre.json"
+    },
+    {
+      "population_id": "readout_sip",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_sip.json"
+    },
+    {
+      "population_id": "input_sip",
+      "role": "input",
+      "actual_count": 518,
+      "path": "data\\populations_v2\\manifests\\input_sip.json"
+    },
+    {
+      "population_id": "readout_fan_shaped_body",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_fan_shaped_body.json"
+    },
+    {
+      "population_id": "input_fan_shaped_body",
+      "role": "input",
+      "actual_count": 610,
+      "path": "data\\populations_v2\\manifests\\input_fan_shaped_body.json"
+    },
+    {
+      "population_id": "readout_hdelta_family",
+      "role": "readout",
+      "actual_count": 189,
+      "path": "data\\populations_v2\\manifests\\readout_hdelta_family.json"
+    },
+    {
+      "population_id": "readout_fc",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_fc.json"
+    },
+    {
+      "population_id": "readout_pfn",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_pfn.json"
+    },
+    {
+      "population_id": "input_pfn",
+      "role": "input",
+      "actual_count": 457,
+      "path": "data\\populations_v2\\manifests\\input_pfn.json"
+    },
+    {
+      "population_id": "readout_pfr",
+      "role": "readout",
+      "actual_count": 44,
+      "path": "data\\populations_v2\\manifests\\readout_pfr.json"
+    },
+    {
+      "population_id": "input_pfr",
+      "role": "input",
+      "actual_count": 44,
+      "path": "data\\populations_v2\\manifests\\input_pfr.json"
+    },
+    {
+      "population_id": "readout_pfl",
+      "role": "readout",
+      "actual_count": 52,
+      "path": "data\\populations_v2\\manifests\\readout_pfl.json"
+    },
+    {
+      "population_id": "input_pfl",
+      "role": "input",
+      "actual_count": 52,
+      "path": "data\\populations_v2\\manifests\\input_pfl.json"
+    },
+    {
+      "population_id": "readout_epg",
+      "role": "readout",
+      "actual_count": 50,
+      "path": "data\\populations_v2\\manifests\\readout_epg.json"
+    },
+    {
+      "population_id": "readout_delta7",
+      "role": "readout",
+      "actual_count": 42,
+      "path": "data\\populations_v2\\manifests\\readout_delta7.json"
+    },
+    {
+      "population_id": "readout_pb_eb_associated",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_pb_eb_associated.json"
+    },
+    {
+      "population_id": "readout_central_complex",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_central_complex.json"
+    },
+    {
+      "population_id": "input_central_complex",
+      "role": "input",
+      "actual_count": 1024,
+      "path": "data\\populations_v2\\manifests\\input_central_complex.json"
+    },
+    {
+      "population_id": "readout_lal",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_lal.json"
+    },
+    {
+      "population_id": "input_lal",
+      "role": "input",
+      "actual_count": 721,
+      "path": "data\\populations_v2\\manifests\\input_lal.json"
+    },
+    {
+      "population_id": "readout_descending",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_descending.json"
+    },
+    {
+      "population_id": "input_descending",
+      "role": "input",
+      "actual_count": 1024,
+      "path": "data\\populations_v2\\manifests\\input_descending.json"
+    },
+    {
+      "population_id": "readout_vnc_motor_efferent",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_vnc_motor_efferent.json"
+    },
+    {
+      "population_id": "readout_visual_projection",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_visual_projection.json"
+    },
+    {
+      "population_id": "input_visual_projection",
+      "role": "input",
+      "actual_count": 1024,
+      "path": "data\\populations_v2\\manifests\\input_visual_projection.json"
+    },
+    {
+      "population_id": "readout_baseline_a",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_baseline_a.json"
+    },
+    {
+      "population_id": "input_baseline_a",
+      "role": "input",
+      "actual_count": 1024,
+      "path": "data\\populations_v2\\manifests\\input_baseline_a.json"
+    },
+    {
+      "population_id": "readout_random_whole_brain",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_random_whole_brain.json"
+    },
+    {
+      "population_id": "readout_random_central_brain",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_random_central_brain.json"
+    },
+    {
+      "population_id": "input_random_whole_brain",
+      "role": "input",
+      "actual_count": 1024,
+      "path": "data\\populations_v2\\manifests\\input_random_whole_brain.json"
+    },
+    {
+      "population_id": "input_random_central_brain",
+      "role": "input",
+      "actual_count": 1024,
+      "path": "data\\populations_v2\\manifests\\input_random_central_brain.json"
+    }
+  ],
+  "baseline_manifest_preserved": true
+}
