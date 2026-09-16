@@ -64,6 +64,19 @@ def main() -> None:
         definitions.append((f"readout_{family.lower()}", "readout", indices, args.readout_count, 7001, f"atlas family: {family}"))
         if family in input_families:
             definitions.append((f"input_{family.lower()}", "input", indices, args.input_count, 17001, f"atlas family input: {family}"))
+    combined_families = {
+        "FB_combined": ("fan_shaped_body", "hDelta_family"),
+        "FC_PFN_PFR_combined": ("FC", "PFN", "PFR"),
+        "SMP_CRE_SIP_combined": ("SMP", "CRE", "SIP"),
+        "MBON_SMP_CRE_SIP_combined": ("MBON", "SMP", "CRE", "SIP"),
+        "central_computation_panel": ("fan_shaped_body", "FC", "PFN", "PFR", "PFL"),
+        "EPG_Delta7_PB_EB_attractor": ("EPG", "Delta7", "PB_EB_associated"),
+        "LAL_descending_combined": ("LAL", "descending"),
+    }
+    for name, members in combined_families.items():
+        candidates = np.unique(np.concatenate([family_indices[member] for member in members if member in family_indices]))
+        if len(candidates):
+            definitions.append((f"readout_{name.lower()}", "readout", candidates, args.readout_count, 27001, f"combined atlas families: {', '.join(members)}"))
     definitions.extend([
         ("readout_baseline_a", "readout", baseline_readout, len(baseline_readout), 7, "existing Population Baseline A indices"),
         ("input_baseline_a", "input", baseline_sensory, len(baseline_sensory), 7, "existing Population Baseline A indices"),

@@ -1,5 +1,6 @@
 param(
-    [int]$ShardCount = 4
+    [int]$ShardCount = 4,
+    [string]$ShardRoot = 'results/population_study/shards_v2'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -22,7 +23,7 @@ function Invoke-Step {
 while ($true) {
     $complete = 0
     for ($index = 0; $index -lt $ShardCount; $index++) {
-        $metadataPath = Join-Path $results ('shards\shard_{0:D3}\activation_shard_metadata.json' -f ($index * 64))
+        $metadataPath = Join-Path $root (Join-Path $ShardRoot ('shard_{0:D3}\activation_shard_metadata.json' -f ($index * 64)))
         if (Test-Path -LiteralPath $metadataPath) {
             $metadata = Get-Content -LiteralPath $metadataPath -Raw | ConvertFrom-Json
             if ($metadata.status -eq 'complete') { $complete++ }
@@ -33,7 +34,7 @@ while ($true) {
     Start-Sleep -Seconds 60
 }
 
-Invoke-Step 'merge activation shards' @('scripts/merge_population_activation_shards.py','--corpus','data/chess_development_corpus_v1.csv','--manifests','data/populations_v2/manifests','--shards','results/population_study/shards','--output','results/population_study/_activation_cache','--limit-positions','256')
+Invoke-Step 'merge activation shards' @('scripts/merge_population_activation_shards.py','--corpus','data/chess_development_corpus_v1.csv','--manifests','data/populations_v2/manifests','--shards',$ShardRoot,'--output','results/population_study/_activation_cache','--limit-positions','256')
 Invoke-Step 'fit brain-region decoding atlas' @('scripts/fit_brain_region_decoding.py','--corpus','data/chess_development_corpus_v1.csv','--manifests','data/populations_v2/manifests','--cache','results/population_study/_activation_cache','--output','results/population_study')
 Invoke-Step 'depth probe transfer' @('scripts/run_depth_probe_transfer_population.py','--corpus','data/chess_development_corpus_v1.csv','--manifests','data/populations_v2/manifests','--cache','results/population_study/_activation_cache','--output','results/population_study')
 Invoke-Step 'bypass baselines' @('scripts/run_bypass_baselines.py','--checkpoint','results/training/v1_depth16_rate_large/readout_checkpoint.npz','--annotations','data/body-annotations-male-cns-v1.0-minconf-0.5.feather','--neurotransmitters','data/body-neurotransmitters-male-cns-v1.0.feather','--weights','data/connectome-weights-male-cns-v1.0-minconf-0.5.feather','--sensory-indices','data/chess_sensory_indices.npy','--corpus','data/chess_development_corpus_v1.csv','--output','results/population_study')
