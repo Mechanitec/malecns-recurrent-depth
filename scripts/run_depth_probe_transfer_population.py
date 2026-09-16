@@ -141,6 +141,15 @@ def main() -> None:
             for row in transfer_rows[-len(DEPTHS):]:
                 row["winner_switch_frequency_across_test_depth"] = switches
 
+    switch_by_population = (
+        pd.DataFrame(transfer_rows)
+        .groupby("population_id")["winner_switch_frequency_across_test_depth"]
+        .mean()
+        .to_dict()
+    )
+    for row in information_rows:
+        row["winner_switch_frequency_across_test_depth"] = float(switch_by_population[row["population_id"]])
+
     info = pd.DataFrame(information_rows)
     for name in names:
         subset = info[info["population_id"] == name].sort_values("depth")
