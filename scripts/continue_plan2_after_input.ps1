@@ -36,6 +36,15 @@ function Invoke-Step {
         Write-Log "SKIP $Name (already complete)"
         return
     }
+    $phaseScript = [System.IO.Path]::GetFileName($Arguments[0])
+    while (Get-CimInstance Win32_Process -Filter "Name='python.exe'" | Where-Object { $_.CommandLine -match [regex]::Escape($phaseScript) }) {
+        Write-Log "WAIT $Name (phase already running)"
+        Start-Sleep -Seconds $PollSeconds
+        if (Test-CompleteMetadata $CompletionMetadata) {
+            Write-Log "SKIP $Name (parallel run complete)"
+            return
+        }
+    }
     Write-Log "START $Name"
     & $python @Arguments *>> $log
     if ($LASTEXITCODE -ne 0) {
