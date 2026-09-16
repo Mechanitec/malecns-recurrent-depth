@@ -44,7 +44,7 @@ def main() -> None:
     selected_input = str(selection.get("selected_input_population_id", "input_baseline_a"))
     selected_readout = str(selection.get("selected_readout_population_id", "readout_baseline_a"))
     architectures = [("baseline_a", "input_baseline_a", "readout_baseline_a"), ("population_v2", selected_input, selected_readout), ("matched_random_central", "input_random_central_brain", "readout_random_central_brain"), ("matched_random_whole", "input_random_whole_brain", "readout_random_whole_brain")]
-    architectures = [(name, input_name, readout_name) for name, input_name, readout_name in architectures if input_name in manifests and readout_name in manifests]
+    architectures = [(name, input_name, readout_name) for name, input_name, readout_name in architectures if (input_name == "h_bio_1" or input_name in manifests) and readout_name in manifests]
     loaded = load_fly_agent_from_checkpoint(args.checkpoint, annotations_path=args.annotations, neurotransmitters_path=args.neurotransmitters, connectome_weights_path=args.weights, sensory_indices_path=args.sensory_indices)
     base = loaded.agent
     if not isinstance(base.engine, RecurrentDepthEngine):
@@ -54,9 +54,15 @@ def main() -> None:
     row_map = {(str(row.position_id), str(row.move_uci)): index for index, row in frame.iterrows()}
     output_rows = []
     for name, input_name, readout_name in architectures:
-        input_indices = np.asarray(manifests[input_name]["indices"], dtype=np.int64)
+        dual_hbio = input_name == "h_bio_1"
+        if dual_hbio:
+            input_indices = np.asarray(manifests["input_mb_kenyon_cells"]["indices"], dtype=np.int64)
+            context_indices = np.asarray(manifests["input_fan_shaped_body"]["indices"], dtype=np.int64)
+        else:
+            input_indices = np.asarray(manifests[input_name]["indices"], dtype=np.int64)
         readout_indices = np.asarray(manifests[readout_name]["indices"], dtype=np.int64)
         projector = HashedSensoryProjector(graph.n_neurons, input_indices, **settings)
+        context_projector = HashedSensoryProjector(graph.n_neurons, context_indices, **settings) if dual_hbio else None
         features = {depth: np.empty((len(frame), len(readout_indices)), dtype=np.float32) for depth in DEPTHS}
         for start in range(0, len(positions), args.batch_positions):
             batch = positions[start:start + args.batch_positions]
@@ -64,7 +70,18 @@ def main() -> None:
             keys = []
             for position in batch:
                 moves = sorted(position["board"].legal_moves, key=lambda move: move.uci())
-                sensory_blocks.append(np.column_stack([projector.project(encode_board_move(position["board"], move)) for move in moves]))
+                blocks = []
+                for move in moves:
+                    features = encode_board_move(position["board"], move)
+                    if dual_hbio:
+                        left = features.copy()
+                        right = features.copy()
+                        left[1::2] = 0.0
+                        right[0::2] = 0.0
+                        blocks.append(projector.project(left) + context_projector.project(right))
+                    else:
+                        blocks.append(projector.project(features))
+                sensory_blocks.append(np.column_stack(blocks))
                 keys.extend((str(position["position_id"]), move.uci()) for move in moves)
             trajectory = base.engine.run_batch_trajectory(np.concatenate(sensory_blocks, axis=1), depths=DEPTHS, clamp_sensory=True, observe=False)
             rows = np.asarray([row_map[key] for key in keys], dtype=np.int64)
