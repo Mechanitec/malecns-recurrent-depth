@@ -23,7 +23,6 @@ def _shuffle_connectome(graph: ConnectomeGraph, seed: int) -> ConnectomeGraph:
         start, end = weights.indptr[row], weights.indptr[row + 1]
         if end - start > 1:
             weights.indices[start:end] = rng.permutation(weights.indices[start:end])
-    weights.sort_indices()
     return ConnectomeGraph(body_ids=graph.body_ids.copy(), weights=weights)
 
 
