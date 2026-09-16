@@ -184,6 +184,22 @@ The strongest completed evidence is that the original frozen v1 system has a wea
 
 The canceled work does not justify selecting a new gain, input mode, adaptive policy, decoder, or biological-specificity conclusion. Existing v1 artifacts remain preserved for a future restart.
 
+## Plan 2 execution: neuron population study
+
+Plan 2 is being executed on PR #9 in the isolated branch `plan2-neuron-population-study-v2`.
+
+Completed preparation and preflight:
+
+- Phase 0 built `results/population_study/malecns_region_atlas.csv` and `.json` from the filtered MaleCNS annotations. The atlas contains the requested MB/Kenyon, MBON, SMP/CRE/SIP, FB, hDelta, FC/PFN/PFR/PFL, central-complex, LAL, descending, motor/efferent and visual families.
+- Phase 1 audited Population Baseline A and recorded graph distances, degree properties and activation diagnostics.
+- Phase 2 created deterministic, hashed input/readout manifests under `data/populations_v2/manifests/`. Manifest indices were corrected to use the filtered graph index order rather than raw annotation-row indices.
+- A new 256-position, 64-source-group confirmatory corpus was generated with a different seed and Stockfish 19 at 10,000 nodes. It contains 7,571 legal-move rows and separate source-group screen/confirm splits.
+- The full test suite passed with 55 tests after the Plan 2 preparation changes.
+
+Phase 3 is running as four contiguous 64-position extract-only shards. Each shard uses the full 164,620-neuron, 10,227,924-edge MaleCNS graph at depths 1, 2, 4, 8, 16, 32 and 64. The shard caches will be merged with position and candidate-row count validation before probes are fitted.
+
+The first full single-process attempt exposed and fixed two reproducibility defects before valid results were accepted: local rather than global candidate-row offsets, and raw annotation indices used where filtered graph indices were required. No Phase 3 scientific result is claimed until the merged cache and probe outputs complete.
+
 ## Relevant commits
 
 | Commit | Purpose |
