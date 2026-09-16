@@ -2,7 +2,7 @@
   "status": "complete",
   "graph_neurons": 164620,
   "seed": 7001,
-  "manifest_count": 38,
+  "manifest_count": 45,
   "manifests": [
     {
       "population_id": "readout_mb_kenyon_cells",
@@ -195,6 +195,48 @@
       "role": "input",
       "actual_count": 1024,
       "path": "data\\populations_v2\\manifests\\input_visual_projection.json"
+    },
+    {
+      "population_id": "readout_fb_combined",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_fb_combined.json"
+    },
+    {
+      "population_id": "readout_fc_pfn_pfr_combined",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_fc_pfn_pfr_combined.json"
+    },
+    {
+      "population_id": "readout_smp_cre_sip_combined",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_smp_cre_sip_combined.json"
+    },
+    {
+      "population_id": "readout_mbon_smp_cre_sip_combined",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_mbon_smp_cre_sip_combined.json"
+    },
+    {
+      "population_id": "readout_central_computation_panel",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_central_computation_panel.json"
+    },
+    {
+      "population_id": "readout_epg_delta7_pb_eb_attractor",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_epg_delta7_pb_eb_attractor.json"
+    },
+    {
+      "population_id": "readout_lal_descending_combined",
+      "role": "readout",
+      "actual_count": 256,
+      "path": "data\\populations_v2\\manifests\\readout_lal_descending_combined.json"
     },
     {
       "population_id": "readout_baseline_a",
