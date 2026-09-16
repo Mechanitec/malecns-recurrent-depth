@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "graph_neurons": 164620,
+  "graph_edges": 10227924,
+  "scc_count": 6965,
+  "outputs": [
+    "graph_predictors.csv"
+  ],
+  "modeling": "descriptive development-set association; no inferential claim"
+}

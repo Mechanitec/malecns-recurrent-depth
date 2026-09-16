@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "positions": 256,
+  "candidate_rows": 7496,
+  "readout_populations": 30,
+  "union_readout_neurons": 5262,
+  "depths": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "input_population": "Population Baseline A",
+  "probe": "train-only standardized deterministic scipy L-BFGS-B pairwise logistic ranking (60-iteration budget)",
+  "source": "merged activation shards"
+}

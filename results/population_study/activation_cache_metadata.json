@@ -1,0 +1,93 @@
+{
+  "status": "complete",
+  "positions": 256,
+  "candidate_rows": 7496,
+  "union_readout_neurons": 5262,
+  "depths": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "shards": [
+    {
+      "status": "complete",
+      "mode": "extract_only",
+      "position_start": 0,
+      "position_end": 64,
+      "positions": 64,
+      "candidate_rows": 1883,
+      "union_readout_neurons": 5262,
+      "depths": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "input_population": "Population Baseline A"
+    },
+    {
+      "status": "complete",
+      "mode": "extract_only",
+      "position_start": 64,
+      "position_end": 128,
+      "positions": 64,
+      "candidate_rows": 1751,
+      "union_readout_neurons": 5262,
+      "depths": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "input_population": "Population Baseline A"
+    },
+    {
+      "status": "complete",
+      "mode": "extract_only",
+      "position_start": 128,
+      "position_end": 192,
+      "positions": 64,
+      "candidate_rows": 1924,
+      "union_readout_neurons": 5262,
+      "depths": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "input_population": "Population Baseline A"
+    },
+    {
+      "status": "complete",
+      "mode": "extract_only",
+      "position_start": 192,
+      "position_end": 256,
+      "positions": 64,
+      "candidate_rows": 1938,
+      "union_readout_neurons": 5262,
+      "depths": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "input_population": "Population Baseline A"
+    }
+  ]
+}

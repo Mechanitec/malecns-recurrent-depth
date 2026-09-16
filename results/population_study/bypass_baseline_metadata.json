@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "positions": 256,
+  "candidate_rows": 7496,
+  "representations": [
+    "raw_encoder",
+    "projected_sensory"
+  ],
+  "outputs": [
+    "bypass_baseline_results.csv"
+  ]
+}
