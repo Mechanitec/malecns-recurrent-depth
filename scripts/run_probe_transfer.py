@@ -9,6 +9,7 @@ from pathlib import Path
 import chess
 import numpy as np
 import pandas as pd
+from scipy.stats import kendalltau, spearmanr
 from scipy.optimize import minimize
 from scipy.special import expit
 
@@ -85,18 +86,42 @@ def _metrics(features: np.ndarray, frame: pd.DataFrame, weights: np.ndarray) -> 
     scores = features @ weights
     pair_features, _ = build_best_vs_rest_pairs(features, frame)
     teacher_regrets = []
+    top3_hits = []
+    selected_teacher_ranks = []
+    spearman_values = []
+    kendall_values = []
+    score_margins = []
     for _, group in frame.groupby("position_id", sort=False):
         indices = group.index.to_numpy(dtype=np.int64)
         moves = group["move_uci"].astype(str).to_numpy()
         targets = group["teacher_target"].to_numpy(dtype=np.float64)
         teacher_cp = group["teacher_cp"].to_numpy(dtype=np.float64)
         best_local = sorted(range(len(indices)), key=lambda j: (-targets[j], moves[j]))[0]
-        predicted_local = sorted(range(len(indices)), key=lambda j: (-float(scores[indices[j]]), moves[j]))[0]
+        prediction_order = sorted(range(len(indices)), key=lambda j: (-float(scores[indices[j]]), moves[j]))
+        predicted_local = prediction_order[0]
         teacher_regrets.append(float(teacher_cp[best_local] - teacher_cp[predicted_local]))
+        top3_hits.append(float(best_local in prediction_order[:3]))
+        teacher_order = sorted(range(len(indices)), key=lambda j: (-targets[j], moves[j]))
+        selected_teacher_ranks.append(float(teacher_order.index(predicted_local) + 1))
+        if len(indices) > 1:
+            score_margins.append(float(scores[indices[prediction_order[0]]] - scores[indices[prediction_order[1]]]))
+        spearman = spearmanr(scores[indices], targets).statistic
+        kendall = kendalltau(scores[indices], targets).statistic
+        if np.isfinite(spearman):
+            spearman_values.append(float(spearman))
+        if np.isfinite(kendall):
+            kendall_values.append(float(kendall))
     return {
         "pair_accuracy": pair_accuracy(pair_features, weights),
         "top1_accuracy": top1_accuracy(features, frame, weights),
+        "top3_accuracy": float(np.mean(top3_hits)) if top3_hits else float("nan"),
         "mean_teacher_regret_cp": float(np.mean(teacher_regrets)) if teacher_regrets else float("nan"),
+        "mean_selected_teacher_rank": float(np.mean(selected_teacher_ranks)) if selected_teacher_ranks else float("nan"),
+        "mean_spearman": float(np.mean(spearman_values)) if spearman_values else float("nan"),
+        "mean_kendall": float(np.mean(kendall_values)) if kendall_values else float("nan"),
+        "mean_score_margin": float(np.mean(score_margins)) if score_margins else float("nan"),
+        "near_zero_unit_fraction": float(np.mean(np.abs(features) < 1e-6)) if features.size else float("nan"),
+        "saturated_unit_fraction": float(np.mean(np.abs(features) >= 3.0)) if features.size else float("nan"),
     }
 
 
