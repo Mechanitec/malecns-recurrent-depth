@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 
 from run_mechanistic_factorial import DEPTHS, load_positions
-from run_probe_transfer import PROBE_OPTIMIZER, _geometry, _metrics, _standardize, fit_probe
+from run_probe_transfer import PROBE_OPTIMIZER, _geometry_metrics, _metrics, _standardize, fit_probe
 
 
 def main() -> None:
@@ -46,10 +46,11 @@ def main() -> None:
             train_x, _ = _standardize(features[train_mask], features[train_mask])
             _, validation_x = _standardize(features[train_mask], features[validation_mask])
             weights = fit_probe(train_x, train_frame)
+            train_metrics = _metrics(train_x, train_frame, weights)
             metrics = _metrics(validation_x, validation_frame, weights)
-            distance, rank_value = _geometry(validation_x, validation_frame)
-            result_rows.append({"population_id": name, "anatomical_family": payload["anatomical_family"], "population_role": payload["role"], "population_size": payload["actual_count"], "depth": depth, **{f"validation_{key}": value for key, value in metrics.items()}, "effective_rank": rank_value, "within_position_candidate_distance": distance, "mean_train_feature_std": float(np.mean(np.std(train_x, axis=0))), "mean_validation_score_margin_proxy": float(np.std(validation_x @ weights))})
-            geometry_rows.append({"population_id": name, "depth": depth, "effective_rank": rank_value, "within_position_candidate_distance": distance, "candidate_dependent_fraction": float(np.mean(np.std(validation_x, axis=0) > 1e-6))})
+            geometry = _geometry_metrics(validation_x, validation_frame)
+            result_rows.append({"population_id": name, "anatomical_family": payload["anatomical_family"], "population_role": payload["role"], "population_size": payload["actual_count"], "depth": depth, **{f"validation_{key}": value for key, value in metrics.items()}, **{f"train_{key}": value for key, value in train_metrics.items()}, "train_validation_pair_accuracy_gap": train_metrics["pair_accuracy"] - metrics["pair_accuracy"], "train_validation_top1_accuracy_gap": train_metrics["top1_accuracy"] - metrics["top1_accuracy"], "train_validation_regret_gap_cp": metrics["mean_teacher_regret_cp"] - train_metrics["mean_teacher_regret_cp"], **geometry, "mean_train_feature_std": float(np.mean(np.std(train_x, axis=0))), "mean_validation_score_margin_proxy": float(np.std(validation_x @ weights))})
+            geometry_rows.append({"population_id": name, "depth": depth, **geometry, "candidate_dependent_fraction": float(np.mean(np.std(validation_x, axis=0) > 1e-6))})
     pd.DataFrame(result_rows).to_csv(args.output / "brain_region_decoding_atlas.csv", index=False)
     pd.DataFrame(geometry_rows).to_csv(args.output / "region_information_by_depth.csv", index=False)
     metadata = {"status": "complete", "positions": len(positions), "candidate_rows": len(frame), "readout_populations": len(manifests), "union_readout_neurons": len(union), "depths": list(DEPTHS), "input_population": "Population Baseline A", "probe": f"train-only standardized {PROBE_OPTIMIZER}", "source": "merged activation shards"}

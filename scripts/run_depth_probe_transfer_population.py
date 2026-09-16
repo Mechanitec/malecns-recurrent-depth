@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 
 from run_mechanistic_factorial import DEPTHS, load_positions
-from run_probe_transfer import _geometry, _metrics, _standardize, fit_probe
+from run_probe_transfer import _geometry_metrics, _metrics, _standardize, fit_probe
 
 
 PRIORITY = (
@@ -95,17 +95,22 @@ def main() -> None:
             standardized[depth], _ = _standardize(raw[train_mask], raw[train_mask])
             validation = _standardize(raw[train_mask], raw[validation_mask])[1]
             validation_by_depth[depth] = validation
-            distance, rank_value = _geometry(validation, validation_frame)
             self_depth_weights = fit_probe(standardized[depth], train_frame)
+            train_metrics = _metrics(standardized[depth], train_frame, self_depth_weights)
             self_depth_metrics = _metrics(validation, validation_frame, self_depth_weights)
+            geometry = _geometry_metrics(validation, validation_frame)
             depth_index = DEPTHS.index(depth)
             previous_depth = DEPTHS[depth_index - 1] if depth_index else None
             information_rows.append({
                 "population_id": name, "anatomical_family": payload["anatomical_family"],
                 "depth": depth, "population_size": payload["actual_count"],
-                "effective_rank": rank_value, "within_position_candidate_distance": distance,
+                **geometry,
                 "cka_to_depth_1": None,
                 **{f"validation_{key}": value for key, value in self_depth_metrics.items()},
+                **{f"train_{key}": value for key, value in train_metrics.items()},
+                "train_validation_pair_accuracy_gap": train_metrics["pair_accuracy"] - self_depth_metrics["pair_accuracy"],
+                "train_validation_top1_accuracy_gap": train_metrics["top1_accuracy"] - self_depth_metrics["top1_accuracy"],
+                "train_validation_regret_gap_cp": self_depth_metrics["mean_teacher_regret_cp"] - train_metrics["mean_teacher_regret_cp"],
                 "state_norm_mean": float(np.linalg.norm(validation, axis=1).mean()),
                 "delta_norm_mean": float(np.linalg.norm(validation - validation_by_depth[previous_depth], axis=1).mean()) if previous_depth is not None else 0.0,
                 "saturation_fraction": float(np.mean(np.abs(validation) >= 3.0)),

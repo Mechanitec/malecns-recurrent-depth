@@ -131,26 +131,54 @@ def _metrics(features: np.ndarray, frame: pd.DataFrame, weights: np.ndarray) -> 
     }
 
 
-def _effective_rank(features: np.ndarray) -> float:
+def _spectral_metrics(features: np.ndarray) -> tuple[float, float]:
     centered = features - features.mean(axis=0, keepdims=True)
     singular = np.linalg.svd(centered, full_matrices=False, compute_uv=False)
     power = singular * singular
     if not np.any(power > 0):
-        return 0.0
+        return 0.0, 0.0
     probability = power[power > 0] / power.sum()
     probability = probability[probability > 0]
     with np.errstate(divide="ignore", invalid="ignore"):
         entropy = -np.sum(probability * np.log(probability))
-    return float(np.exp(entropy))
+    total = float(power.sum())
+    denominator = float(np.dot(power, power))
+    participation_ratio = total * total / denominator if denominator > 0 else 0.0
+    return float(np.exp(entropy)), participation_ratio
 
 
-def _geometry(features: np.ndarray, frame: pd.DataFrame) -> tuple[float, float]:
-    distances = []
+def _effective_rank(features: np.ndarray) -> float:
+    return _spectral_metrics(features)[0]
+
+
+def _participation_ratio(features: np.ndarray) -> float:
+    return _spectral_metrics(features)[1]
+
+
+def _geometry_metrics(features: np.ndarray, frame: pd.DataFrame) -> dict[str, float]:
+    within_distances = []
+    centroids = []
     for _, group in frame.groupby("position_id", sort=False):
         x = features[group.index.to_numpy(dtype=np.int64)].astype(np.float64)
         if len(x) > 1:
-            distances.append(float(np.mean(np.linalg.norm(x[:, None] - x[None, :], axis=2))))
-    return float(np.mean(distances)) if distances else float("nan"), _effective_rank(features)
+            within_distances.append(float(np.mean(np.linalg.norm(x[:, None] - x[None, :], axis=2))))
+        centroids.append(x.mean(axis=0))
+    between_distance = float("nan")
+    if len(centroids) > 1:
+        centers = np.asarray(centroids)
+        between_distance = float(np.mean(np.linalg.norm(centers[:, None] - centers[None, :], axis=2)))
+    effective_rank, participation_ratio = _spectral_metrics(features)
+    return {
+        "within_position_candidate_distance": float(np.mean(within_distances)) if within_distances else float("nan"),
+        "between_position_state_distance": between_distance,
+        "effective_rank": effective_rank,
+        "participation_ratio": participation_ratio,
+    }
+
+
+def _geometry(features: np.ndarray, frame: pd.DataFrame) -> tuple[float, float]:
+    metrics = _geometry_metrics(features, frame)
+    return metrics["within_position_candidate_distance"], metrics["effective_rank"]
 
 
 def main() -> None:
