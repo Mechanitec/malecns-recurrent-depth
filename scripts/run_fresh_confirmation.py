@@ -81,15 +81,15 @@ def main() -> None:
                 moves = sorted(position["board"].legal_moves, key=lambda move: move.uci())
                 blocks = []
                 for move in moves:
-                    features = encode_board_move(position["board"], move)
+                    feature_vector = encode_board_move(position["board"], move)
                     if dual_hbio:
-                        left = features.copy()
-                        right = features.copy()
+                        left = feature_vector.copy()
+                        right = feature_vector.copy()
                         left[1::2] = 0.0
                         right[0::2] = 0.0
                         blocks.append(projector.project(left) + context_projector.project(right))
                     else:
-                        blocks.append(projector.project(features))
+                        blocks.append(projector.project(feature_vector))
                 sensory_blocks.append(np.column_stack(blocks))
                 keys.extend((str(position["position_id"]), move.uci()) for move in moves)
             trajectory = base.engine.run_batch_trajectory(np.concatenate(sensory_blocks, axis=1), depths=DEPTHS, clamp_sensory=True, observe=False)
