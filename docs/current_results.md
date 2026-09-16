@@ -12,6 +12,27 @@ This document summarizes the current evidence on `main`. It is a living results 
 - Recurrent depths tested: `1, 2, 4, 8, 16, 32, 64`.
 - Controls: original, degree-preserving topology shuffle, transmitter-sign shuffle, recurrent weights attenuated to 5%.
 
+## Plan 2 population-study status
+
+The open Plan 2 work extends the baseline with a MaleCNS-specific interface
+study. The verified atlas currently covers 164,620 neurons, 10,227,924 graph
+edges and 6,965 strongly connected components. It records the actual MaleCNS
+annotation filters used for mushroom-body, central-complex, fan-shaped-body,
+FC/PFN/PFR/PFL, LAL/descending and related candidate families.
+
+The baseline audit and brain-region decoding phases are complete on the
+development corpus. The cross-depth transfer output contains 588 rows for 12
+priority readout populations across 49 train/test depth pairs. The companion
+information-flow table contains 84 rows for those populations across the seven
+requested depths and includes representation similarity, state geometry,
+winner switching, saturation and train-validation gap diagnostics.
+
+Input-population, H-BIO-1 and population-size scaling sweeps are executed as
+long-running development analyses. Their final CSV and metadata files are
+required before reporting a population-selection result. Population-v2
+selection and fresh held-out confirmation must remain downstream of those
+development analyses.
+
 ## Exploratory 8-position depth result
 
 Current original-graph metrics from `results/sweep_full_8pos_v2/depth_sweep/metrics.csv`:

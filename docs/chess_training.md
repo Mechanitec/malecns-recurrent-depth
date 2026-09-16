@@ -14,6 +14,16 @@ The current objective is best-vs-rest pairwise logistic ranking loss.
 
 The v1 depth-16 rate checkpoint is operational and is the frozen baseline used in the first recurrent-depth experiment.
 
+## Plan 2 interface study
+
+The Plan 2 study keeps this checkpoint frozen while varying the biological
+interface into the fixed MaleCNS graph. Development analyses first compare
+natural brain-region readouts, then compare biologically motivated input
+populations, the predeclared H-BIO-1 architecture, population sizes and random
+selection seeds. The current region-decoding and cross-depth reports are
+complete; the remaining development sweeps must finish before Population-v2 is
+frozen or a fresh confirmation corpus is evaluated.
+
 However, its training history shows weak learning:
 
 - pairwise logistic loss remains near `ln(2) ~= 0.6931`;

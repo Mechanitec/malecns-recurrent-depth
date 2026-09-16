@@ -1,0 +1,35 @@
+{
+  "status": "complete",
+  "corpus": "data\\chess_development_corpus_v1.csv",
+  "candidate_rows": 7496,
+  "populations": [
+    "readout_fan_shaped_body",
+    "readout_hdelta_family",
+    "readout_pfn",
+    "readout_pfr",
+    "readout_pfl",
+    "readout_mbon",
+    "readout_smp",
+    "readout_cre",
+    "readout_sip",
+    "readout_central_complex",
+    "readout_lal",
+    "readout_baseline_a"
+  ],
+  "depths": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "train_split": "dev_screen",
+  "validation_split": "dev_confirm",
+  "standardization": "training rows only",
+  "outputs": [
+    "depth_probe_transfer.csv",
+    "region_information_by_depth.csv"
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "status": "complete",
+  "population_id": "Population Baseline A",
+  "sensory_count": 1024,
+  "readout_count": 256,
+  "graph_neurons": 164620,
+  "graph_edges": 10227924,
+  "family_distances": {
+    "MB_Kenyon_cells": {
+      "count": 4064,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      }
+    },
+    "MBON": {
+      "count": 97,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      }
+    },
+    "DAN_modulatory_MB": {
+      "count": 344,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.0,
+        "median": null
+      }
+    },
+    "SMP": {
+      "count": 2286,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.9466316710411199,
+        "median": 2.0
+      }
+    },
+    "CRE": {
+      "count": 387,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      }
+    },
+    "SIP": {
+      "count": 518,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.9922779922779923,
+        "median": 2.0
+      }
+    },
+    "fan_shaped_body": {
+      "count": 610,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.940983606557377,
+        "median": 2.0
+      }
+    },
+    "hDelta_family": {
+      "count": 189,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 3.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      }
+    },
+    "FC": {
+      "count": 277,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 3.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      }
+    },
+    "PFN": {
+      "count": 457,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 3.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.9978118161925602,
+        "median": 2.0
+      }
+    },
+    "PFR": {
+      "count": 44,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.36363636363636365,
+        "median": 2.0
+      }
+    },
+    "PFL": {
+      "count": 52,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.9615384615384616,
+        "median": 1.0
+      }
+    },
+    "EPG": {
+      "count": 50,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      }
+    },
+    "Delta7": {
+      "count": 42,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 3.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      }
+    },
+    "PB_EB_associated": {
+      "count": 427,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.892271662763466,
+        "median": 2.0
+      }
+    },
+    "central_complex": {
+      "count": 2950,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.9627118644067797,
+        "median": 2.0
+      }
+    },
+    "LAL": {
+      "count": 721,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.9778085991678225,
+        "median": 1.0
+      }
+    },
+    "descending": {
+      "count": 1330,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.9699248120300752,
+        "median": 1.0
+      }
+    },
+    "VNC_motor_efferent": {
+      "count": 817,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 0.9975520195838433,
+        "median": 2.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.22888616891064872,
+        "median": 1.0
+      }
+    },
+    "visual_projection": {
+      "count": 9765,
+      "baseline_sensory_to_family": {
+        "reachable_fraction": 1.0,
+        "median": 1.0
+      },
+      "family_to_baseline_readout": {
+        "reachable_fraction": 0.9428571428571428,
+        "median": 2.0
+      }
+    }
+  },
+  "activation_positions": 8,
+  "activation_candidate_rows": 215,
+  "outputs": [
+    "baseline_population_audit.csv",
+    "baseline_activation_by_depth.csv",
+    "baseline_population_summary.json"
+  ]
+}
