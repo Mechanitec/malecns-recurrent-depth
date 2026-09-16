@@ -58,6 +58,7 @@ def main() -> None:
         matrix = pd.read_csv(input_path)
         matrix.to_csv(root / "interface_matrix.csv", index=False)
     hbio_path = root / "h_bio_1_results.csv"
+    hbio = pd.DataFrame()
     if hbio_path.exists():
         hbio = pd.read_csv(hbio_path)
         hbio = hbio.rename(columns={"architecture": "input_population_id", "readout_population_id": "readout_population_id"})
@@ -69,7 +70,10 @@ def main() -> None:
         baseline = matrix[matrix["input_population_id"] == "input_baseline_a"].copy()
         if not baseline.empty:
             baseline.to_csv(root / "baseline_comparison.csv", index=False)
-        best = matrix.sort_values(["validation_mean_teacher_regret_cp", "depth"]).iloc[0]
+        candidates = matrix.copy()
+        if not hbio.empty:
+            candidates = pd.concat([candidates, hbio[candidates.columns.intersection(hbio.columns)]], ignore_index=True)
+        best = candidates.sort_values(["validation_mean_teacher_regret_cp", "depth", "input_population_id", "readout_population_id"], kind="stable").iloc[0]
         selection = {
             "status": "development_selected", "selection_rule": "minimum validation teacher regret on the development corpus with deterministic tie-breaking by depth and population IDs",
             "selected_input_population_id": str(best["input_population_id"]), "selected_readout_population_id": str(best["readout_population_id"]), "selected_depth": int(best["depth"]),
