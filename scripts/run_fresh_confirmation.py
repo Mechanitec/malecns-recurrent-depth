@@ -53,6 +53,15 @@ def main() -> None:
     settings = {"fanout": base.projector.fanout, "seed": base.projector.seed, "amplitude": base.projector.amplitude}
     row_map = {(str(row.position_id), str(row.move_uci)): index for index, row in frame.iterrows()}
     output_rows = []
+    raw = np.vstack([encode_board_move(position["board"], move) for position in positions for move in sorted(position["board"].legal_moves, key=lambda move: move.uci())]).astype(np.float32)
+    projected = np.vstack([base.projector.project(encode_board_move(position["board"], move))[base.projector.sensory_indices] for position in positions for move in sorted(position["board"].legal_moves, key=lambda move: move.uci())]).astype(np.float32)
+    for name, features in (("raw_encoder", raw), ("projected_sensory", projected)):
+        train_x, _ = _standardize(features[train_mask], features[train_mask])
+        _, validation_x = _standardize(features[train_mask], features[validation_mask])
+        weights = fit_probe(train_x, train_frame)
+        metrics = _metrics(validation_x, validation_frame, weights)
+        distance, rank_value = _geometry(validation_x, validation_frame)
+        output_rows.append({"interface": name, "input_population_id": name, "readout_population_id": name, "depth": 0, "effective_rank": rank_value, "within_position_candidate_distance": distance, **{f"validation_{key}": value for key, value in metrics.items()}})
     for name, input_name, readout_name in architectures:
         dual_hbio = input_name == "h_bio_1"
         if dual_hbio:
