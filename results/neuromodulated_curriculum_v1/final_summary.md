@@ -31,3 +31,9 @@ mates      944        190              152                    38
 
 - Required artifacts present: `True`.
 - Plot artifacts present: `True`.
+
+## Control comparison and interpretation
+
+The frozen and shuffled-teaching-signal controls completed with the same exact KC-to-MBON plastic-edge scope. Relative to the frozen control, the primary condition improved movement top-1 accuracy by 25.0 percentage points, but endgame median regret was unchanged, tactical top-1 accuracy was 6.0 percentage points lower, and the D8 mate metric was unchanged. The shuffled control was stronger than the primary condition on movement and mate D8 metrics. The complete comparison is in `results/plan3_control_comparison/control_comparison.md`.
+
+Therefore, this run does not meet the Plan 3 threshold for a promising overall result. It supports only a narrow movement-stage signal and should be treated as a negative or inconclusive proof-of-concept for chess transfer through this plasticity rule. The primary run remained biologically bounded: no more than 0.34% of plastic edges reached either weight bound at any checkpoint.
