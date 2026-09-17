@@ -44,8 +44,10 @@ def main() -> None:
     mbon = manifest(args.mbon_manifest)
     state = select_kc_mbon_edges(graph, np.asarray(kc["indices"], dtype=np.int64), np.asarray(mbon["indices"], dtype=np.int64))
     rows = []
-    in_degree = np.diff(graph.weights.tocsc().indptr)
-    out_degree = np.diff(graph.weights.tocsr().indptr)
+    # The graph stores rows as posts and columns as pres.  CSR row counts are
+    # therefore incoming degree; CSC column counts are outgoing degree.
+    in_degree = np.diff(graph.weights.tocsr().indptr)
+    out_degree = np.diff(graph.weights.tocsc().indptr)
     for offset, post, pre, weight in zip(state.edge_offsets, state.post_indices, state.pre_indices, state.original_weights):
         rows.append({
             "edge_offset": int(offset),

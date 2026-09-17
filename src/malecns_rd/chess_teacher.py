@@ -96,6 +96,21 @@ class StockfishTeacher:
     def close(self) -> None:
         self._engine.quit()
 
+    def best_move(self, board) -> tuple[object, float, int | None] | None:
+        """Return the engine's best move, score, and mate distance for a board."""
+        if board.is_game_over(claim_draw=True):
+            return None
+        info = self._engine.analyse(board, self._chess.engine.Limit(nodes=self.nodes))
+        pv = info.get("pv") or []
+        score = info.get("score")
+        if not pv or score is None:
+            return None
+        pov_score = score.pov(board.turn)
+        cp = pov_score.score(mate_score=self.mate_score_cp)
+        if cp is None:
+            return None
+        return pv[0], float(cp), pov_score.mate()
+
     def __enter__(self):
         return self
 

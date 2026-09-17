@@ -1,17 +1,23 @@
 {
   "status": "complete",
   "seed": 3101,
-  "source_teacher_corpus": "data\\teacher_dataset_v1.csv",
+  "source_teacher_corpus": "C:\\15. Project Shakhsi\\Research\\3. AI\\maleCNS-recurrent-depth\\data\\teacher_dataset_v1.csv",
   "source_teacher_corpus_sha256": "593191c99231b8a86569db5619436f89ebf144db88f1468b3aa437212b446251",
   "stages": {
-    "movement": 4433,
+    "movement": 4465,
     "endgames": 2079,
     "tactics": 3234,
-    "mates": 874
+    "mates": 944
   },
   "split_policy": "movement and synthetic endgames use deterministic counts; teacher stages use shuffled position groups",
   "evaluation_corpus_consumed": false,
   "endgame_labels": "stockfish",
+  "mate_pv_expansion": {
+    "roots_with_positive_mate_2_or_3": 11,
+    "intermediate_positions_added": 70
+  },
+  "mate_pv_stockfish": "C:\\Users\\Zatoichi\\AppData\\Local\\Microsoft\\WinGet\\Links\\stockfish.exe",
+  "mate_pv_nodes": 20000,
   "outputs": [
     "movement.csv",
     "endgames.csv",
@@ -25,17 +31,17 @@
     },
     "executable": "C:\\Users\\Zatoichi\\AppData\\Local\\Microsoft\\WinGet\\Links\\stockfish.exe",
     "executable_sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
-    "nodes": 200,
+    "nodes": 20000,
     "threads": 1,
     "hash_mb": 128,
     "mate_score_cp": 100000,
     "target_scale_cp": 400.0
   },
-  "labelled_fen_count": 596,
+  "labelled_fen_count": 188,
   "labelled_files_sha256": {
-    "movement": "b50f7d3c462d1a601009b978dd02a1dddf950972c4344114943b80b674d26325",
-    "endgames": "95ef7b122b3e344a0e5a277de47c0a91a6d7866ce5e4d1ab6b0843e7a47c647f",
-    "tactics": "15c4858edd2ceb4136a80fcbd69a5dc59062af8c88a3d32e5e3910803a36db8c",
-    "mates": "187a17b19fefa57b61b8f00c18f491ec329f91448d2831b085fa76e663634f09"
+    "movement": "defa5abcc4232c4be63f73b09fea4a474db772b498f2627c3ea2635e9946b17a",
+    "endgames": "bf55ea5312bb154d6dbf0a4a4776731dd6dc4ce11739afe7ab7ef3be775400f5",
+    "tactics": "acea1cf4ad100f7ab5f964073db4c429b6d9cba67d2d79d32eab5eb078a5c72d",
+    "mates": "a32b0a1029b25086e5f063a497a28f70a06a90432b96cae9bf63ab7f1bc96b50"
   }
 }

@@ -17,6 +17,7 @@ def main() -> None:
     parser.add_argument("--stockfish", type=Path, required=True)
     parser.add_argument("--nodes", type=int, default=2_000)
     parser.add_argument("--threads", type=int, default=1)
+    parser.add_argument("--refresh", action="store_true", help="relabel all endgame and mate candidates")
     args = parser.parse_args()
 
     stages = ["movement", "endgames", "tactics", "mates"]
@@ -26,6 +27,9 @@ def main() -> None:
         missing_fens.update(frame.loc[frame["teacher_cp"].isna(), "fen"].astype(str))
         if "mate_distance" in frame.columns:
             missing_fens.update(frame.loc[(frame["stage"] == "mates") & frame["mate_distance"].isna(), "fen"].astype(str))
+    if args.refresh:
+        for stage in ("endgames", "mates"):
+            missing_fens.update(frames[stage]["fen"].astype(str))
     labels: dict[tuple[str, str], tuple[float, float, int, int | None]] = {}
     with StockfishTeacher(str(args.stockfish), nodes=args.nodes, threads=args.threads) as teacher:
         teacher_metadata = teacher.metadata()

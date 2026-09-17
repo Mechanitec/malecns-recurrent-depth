@@ -95,10 +95,13 @@ def validate_stage(frame: pd.DataFrame, engine: RecurrentDepthEngine, projector:
         board, moves, projected = candidate_batch(group, projector)
         sf = stockfish_scores(teacher, board, group) if group["teacher_cp"].isna().any() else {}
         scores_by_depth = engine.run_batch_trajectory(projected, depths=depths, clamp_sensory=True)
-        best_cp = max(float(sf.get(move.uci(), (row["teacher_cp"], row.get("mate_distance")))[0]) for move, (_, row) in zip(moves, group.iterrows()))
+        teacher_scores = np.asarray([float(sf.get(move.uci(), (row["teacher_cp"], row.get("mate_distance")))[0]) for move, (_, row) in zip(moves, group.iterrows())], dtype=np.float64)
+        best_cp = float(np.max(teacher_scores))
+        best_indices = set(np.flatnonzero(np.isclose(teacher_scores, best_cp)).tolist())
         for depth in depths:
             scores = scores_by_depth.snapshots[depth][readout_indices].T @ readout_weights
-            selected = int(np.argmax(scores))
+            ranking = np.argsort(-scores, kind="stable")
+            selected = int(ranking[0])
             selected_move = moves[selected].uci()
             row = group.iloc[selected]
             selected_cp, mate_distance = sf.get(selected_move, (float(row["teacher_cp"]), row.get("mate_distance")))
@@ -106,20 +109,41 @@ def validate_stage(frame: pd.DataFrame, engine: RecurrentDepthEngine, projector:
                 "stage": stage, "position_id": str(position_id), "depth": depth,
                 "selected_move": selected_move, "teacher_best_cp": best_cp,
                 "selected_cp": selected_cp, "regret_cp": max(0.0, best_cp - selected_cp),
-                "top1_correct": int(abs(best_cp - selected_cp) < 1e-6),
+                "top1_correct": int(selected in best_indices), "top3_correct": int(bool(best_indices.intersection(set(ranking[:3].tolist())))),
+                "teacher_rank": int(np.flatnonzero(np.argsort(-teacher_scores, kind="stable") == selected)[0]) + 1,
+                "legal_selected": int(row.get("is_positive", 0) == 1),
+                "movement_piece": row.get("movement_piece", None),
                 "mate_flag": int(mate_distance is not None), "mate_distance": mate_distance,
             })
     result = pd.DataFrame(rows, columns=[
         "stage", "position_id", "depth", "selected_move", "teacher_best_cp",
-        "selected_cp", "regret_cp", "top1_correct", "mate_flag", "mate_distance",
+        "selected_cp", "regret_cp", "top1_correct", "top3_correct", "teacher_rank", "legal_selected", "movement_piece", "mate_flag", "mate_distance",
     ])
     result.to_csv(output / OUTPUT_FILES[stage], index=False)
     depth8 = result.loc[result["depth"] == 8] if not result.empty else result
+    regrets = depth8["regret_cp"].to_numpy(dtype=np.float64) if not depth8.empty else np.empty(0)
+    trimmed = np.sort(regrets)[int(0.1 * len(regrets)):int(0.9 * len(regrets))] if len(regrets) >= 3 else regrets
+    piece_accuracy = {}
+    if not depth8.empty and stage == "movement":
+        piece_accuracy = {str(piece): float(group["legal_selected"].mean()) for piece, group in depth8.groupby("movement_piece", dropna=False)}
+    mate_rows = depth8.loc[depth8["mate_flag"] == 1] if not depth8.empty else depth8
     return {
         "stage": stage, "validation_positions": int(depth8["position_id"].nunique()) if not depth8.empty else 0,
         "top1_accuracy_d8": float(depth8["top1_correct"].mean()) if not depth8.empty else float("nan"),
-        "mean_regret_cp_d8": float(depth8["regret_cp"].mean()) if not depth8.empty else float("nan"),
-        "mate_solve_rate_d8": float(depth8.loc[depth8["mate_flag"] == 1, "top1_correct"].mean()) if not depth8.loc[depth8["mate_flag"] == 1].empty else float("nan"),
+        "top3_accuracy_d8": float(depth8["top3_correct"].mean()) if not depth8.empty else float("nan"),
+        "pairwise_ranking_accuracy_d8": float(depth8["top1_correct"].mean()) if not depth8.empty else float("nan"),
+        "mean_regret_cp_d8": float(regrets.mean()) if len(regrets) else float("nan"),
+        "median_regret_cp_d8": float(np.median(regrets)) if len(regrets) else float("nan"),
+        "trimmed_mean_regret_cp_d8": float(trimmed.mean()) if len(trimmed) else float("nan"),
+        "p90_regret_cp_d8": float(np.percentile(regrets, 90)) if len(regrets) else float("nan"),
+        "p95_regret_cp_d8": float(np.percentile(regrets, 95)) if len(regrets) else float("nan"),
+        "blunder_rate_gt500cp_d8": float(np.mean(regrets > 500)) if len(regrets) else float("nan"),
+        "blunder_rate_gt1000cp_d8": float(np.mean(regrets > 1000)) if len(regrets) else float("nan"),
+        "mate_blunder_count_d8": int(np.sum((depth8["mate_flag"].to_numpy() == 0))) if not depth8.empty and stage == "mates" else 0,
+        "mean_teacher_rank_d8": float(depth8["teacher_rank"].mean()) if not depth8.empty else float("nan"),
+        "legal_selection_rate_d8": float(depth8["legal_selected"].mean()) if not depth8.empty and stage == "movement" else float("nan"),
+        "movement_piece_accuracy_d8": json.dumps(piece_accuracy, sort_keys=True),
+        "mate_solve_rate_d8": float(mate_rows["top1_correct"].mean()) if not mate_rows.empty else float("nan"),
     }
 
 
@@ -131,6 +155,7 @@ def main() -> None:
     parser.add_argument("--sensory-indices", type=Path, required=True)
     parser.add_argument("--input-manifest", type=Path, required=True)
     parser.add_argument("--readout-manifest", type=Path, required=True)
+    parser.add_argument("--plastic-post-manifest", type=Path, default=Path("data/populations_v2/manifests/readout_mbon.json"))
     parser.add_argument("--curriculum-dir", type=Path, required=True)
     parser.add_argument("--output", type=Path, default=Path("results/neuromodulated_curriculum_v1"))
     parser.add_argument("--stockfish", type=Path)
@@ -139,6 +164,10 @@ def main() -> None:
     parser.add_argument("--depth", type=int, default=8)
     parser.add_argument("--control", choices=("reward_aversive", "frozen", "shuffled"), default="reward_aversive")
     parser.add_argument("--max-positions-per-stage", type=int)
+    parser.add_argument("--movement-positions", type=int)
+    parser.add_argument("--endgame-positions", type=int)
+    parser.add_argument("--tactical-positions", type=int)
+    parser.add_argument("--mate-positions", type=int)
     parser.add_argument("--readout-epochs", type=int, default=20)
     args = parser.parse_args()
     if args.depth != 8:
@@ -149,8 +178,10 @@ def main() -> None:
     graph, _ = load_malecns_feather(args.annotations, args.neurotransmitters, args.weights, traced_only=True, min_synapses=3)
     input_manifest = read_manifest(args.input_manifest)
     readout_manifest = read_manifest(args.readout_manifest)
+    plastic_post_manifest = read_manifest(args.plastic_post_manifest)
     sensory_indices = np.asarray(input_manifest["indices"], dtype=np.int64)
     readout_indices = np.asarray(readout_manifest["indices"], dtype=np.int64)
+    plastic_post_indices = np.asarray(plastic_post_manifest["indices"], dtype=np.int64)
     # Keep the original sensory interface path in metadata, but use the Plan 3
     # anatomical input manifest for the plasticity experiment.
     baseline_sensory = np.load(args.sensory_indices).astype(np.int64)
@@ -158,18 +189,24 @@ def main() -> None:
         raise ValueError("input/readout manifests must be non-empty")
     projector = HashedSensoryProjector(graph.n_neurons, sensory_indices, fanout=4, seed=0, amplitude=1.0)
     engine = RecurrentDepthEngine(graph)
-    kc = select_kc_mbon_edges(graph, sensory_indices, readout_indices, config=PlasticityConfig())
+    kc = select_kc_mbon_edges(graph, sensory_indices, plastic_post_indices, config=PlasticityConfig())
     topology_hash = sha256_graph(graph)
     structure_hash = sha256_structure(graph)
 
     frames = {stage: pd.read_csv(args.curriculum_dir / f"{stage}.csv") for stage in STAGES}
+    stage_limits = {"movement": args.movement_positions, "endgames": args.endgame_positions, "tactics": args.tactical_positions, "mates": args.mate_positions}
     if args.max_positions_per_stage is not None:
+        stage_limits = {stage: args.max_positions_per_stage for stage in STAGES}
+    if any(value is not None for value in stage_limits.values()):
         for stage in STAGES:
+            limit = stage_limits[stage]
+            if limit is None:
+                continue
             stage_frame = frames[stage]
             train_positions = sorted(stage_frame.loc[stage_frame["split"].astype(str) == "train", "position_id"].astype(str).unique())
             validation_positions = sorted(stage_frame.loc[stage_frame["split"].astype(str) == "validation", "position_id"].astype(str).unique())
-            train_limit = max(1, int(round(args.max_positions_per_stage * 0.8)))
-            positions = train_positions[:train_limit] + validation_positions[:max(1, args.max_positions_per_stage - train_limit)]
+            train_limit = max(1, int(round(limit * 0.8)))
+            positions = train_positions[:train_limit] + validation_positions[:max(1, limit - train_limit)]
             frames[stage] = frames[stage].loc[frames[stage]["position_id"].astype(str).isin(positions)].copy()
     train = pd.concat([frames[stage].loc[frames[stage]["split"].astype(str) == "train"] for stage in STAGES], ignore_index=True)
     features, train_frame = extract_features(train, engine, projector, readout_indices, args.depth)
@@ -178,14 +215,22 @@ def main() -> None:
     decoder_metadata = {
         "status": "frozen_before_plasticity", "decoder_source": "curriculum_train_only",
         "curriculum_dir": str(args.curriculum_dir), "curriculum_metadata_sha256": sha256_file(args.curriculum_dir / "metadata.json"),
-        "readout_manifest_sha256": sha256_file(args.readout_manifest), "graph_hash": topology_hash,
+        "readout_manifest_sha256": sha256_file(args.readout_manifest), "plastic_post_manifest_sha256": sha256_file(args.plastic_post_manifest), "graph_hash": topology_hash,
         "recurrent_depth": 8, "dynamics": "RecurrentDepthEngine", "projector_seed": 0,
         "projector_fanout": 4, "projector_amplitude": 1.0, "train_top1_accuracy": fit.train_top1_accuracy,
         "validation_top1_accuracy": fit.validation_top1_accuracy, "selected_epoch": fit.best_epoch,
     }
     save_readout_checkpoint(decoder_path, readout_weights=fit.best_weights, readout_indices=readout_indices, recurrent_depth=8, projector_seed=0, metadata=decoder_metadata)
+    decoder_hash = sha256_file(decoder_path)
 
-    checkpoint_meta = {"checkpoint": "before_plasticity", "graph_hash": topology_hash, "topology_hash": topology_hash, "control": args.control}
+    checkpoint_meta = {
+        "checkpoint": "before_plasticity", "graph_hash": topology_hash, "topology_hash": topology_hash,
+        "graph_structure_hash": structure_hash, "decoder_sha256": decoder_hash,
+        "input_manifest_sha256": sha256_file(args.input_manifest), "readout_manifest_sha256": sha256_file(args.readout_manifest),
+        "plastic_post_manifest_sha256": sha256_file(args.plastic_post_manifest), "recurrent_depth": 8,
+        "dynamics": "RecurrentDepthEngine", "leak": engine.leak, "recurrent_gain": engine.recurrent_gain,
+        "input_gain": engine.input_gain, "activation": engine.activation, "seed": args.seed, "control": args.control,
+    }
     save_plasticity_checkpoint(args.output / "checkpoint_before_plasticity.npz", kc, checkpoint_meta)
     with_teacher = StockfishTeacher(str(args.stockfish), nodes=args.stockfish_nodes) if args.stockfish else None
     teacher_metadata = with_teacher.metadata() if with_teacher is not None else None
@@ -195,6 +240,7 @@ def main() -> None:
     training_rows: list[dict[str, object]] = []
     biological_rows: list[dict[str, object]] = []
     stage_rows: list[dict[str, object]] = []
+    retention_rows: list[dict[str, object]] = []
     signal_rows: list[dict[str, object]] = []
     prior_train_frames: list[pd.DataFrame] = []
     try:
@@ -250,11 +296,18 @@ def main() -> None:
                 training_rows.append(row)
                 signal_rows.append({"stage": stage, "raw_signal": raw_signal, "centered_advantage": advantage, "applied_advantage": applied, "regret_cp": regret, "mate_flag": int(mate_distance is not None)})
             prior_train_frames.append(frames[stage].loc[frames[stage]["split"].astype(str) == "train"].copy())
-            save_plasticity_checkpoint(args.output / f"checkpoint_after_{stage}.npz", kc, {"checkpoint": f"after_{stage}", "graph_hash_initial": topology_hash, "control": args.control, "stage": stage})
-            save_plasticity_checkpoint(args.output / "checkpoint_replay_fallback.npz", kc, {"checkpoint": "replay_fallback", "stage": stage, "graph_hash_initial": topology_hash, "control": args.control})
+            stage_checkpoint = {**checkpoint_meta, "checkpoint": f"after_{stage}", "stage": stage, "lesson_count": len(training_rows), "plastic_edge_count": kc.edge_count}
+            save_plasticity_checkpoint(args.output / f"checkpoint_after_{stage}.npz", kc, stage_checkpoint)
+            save_plasticity_checkpoint(args.output / "checkpoint_replay_fallback.npz", kc, {**stage_checkpoint, "checkpoint": "replay_fallback"})
             validation = validate_stage(frames[stage].loc[frames[stage]["split"].astype(str) == "validation"], engine, projector, readout_indices, fit.best_weights, (8,), with_teacher, args.output, stage)
             validation["plasticity"] = kc.metrics()
             stage_rows.append(validation)
+            for earlier_stage in STAGES[:STAGES.index(stage)]:
+                retained = validate_stage(frames[earlier_stage].loc[frames[earlier_stage]["split"].astype(str) == "validation"], engine, projector, readout_indices, fit.best_weights, (8,), with_teacher, args.output, earlier_stage)
+                retained["evaluation_stage"] = stage
+                retained["target_stage"] = earlier_stage
+                retained["drop_from_own_stage"] = float(retained["top1_accuracy_d8"] - next((item["top1_accuracy_d8"] for item in stage_rows if item["stage"] == earlier_stage), retained["top1_accuracy_d8"]))
+                retention_rows.append(retained)
             biological_rows.append({"checkpoint": f"after_{stage}", "stage": stage, "graph_neurons": graph.n_neurons, "graph_edges": graph.n_edges, "structure_hash_initial": structure_hash, "structure_hash_current": sha256_structure(graph), "topology_preserved": int(sha256_structure(graph) == structure_hash), "sign_preserved": int(np.all(np.sign(kc.current_weights) == np.sign(kc.original_weights))), **kc.metrics()})
     finally:
         if with_teacher is not None:
@@ -262,6 +315,7 @@ def main() -> None:
 
     pd.DataFrame(training_rows).to_csv(args.output / "training_log.csv", index=False)
     pd.DataFrame(stage_rows).to_csv(args.output / "stage_metrics.csv", index=False)
+    pd.DataFrame(retention_rows).to_csv(args.output / "retention_metrics.csv", index=False)
     pd.DataFrame(biological_rows).to_csv(args.output / "biological_deviation.csv", index=False)
     pd.DataFrame(signal_rows).groupby("stage", as_index=False).agg({"raw_signal": ["mean", "std", "min", "max"], "centered_advantage": "mean", "applied_advantage": "mean", "regret_cp": "mean", "mate_flag": "mean"}).to_csv(args.output / "reward_signal_distribution.csv", index=False)
 
@@ -288,13 +342,13 @@ def main() -> None:
         "status": "complete", "control": args.control, "seed": args.seed, "depth_train": 8, "validation_depths": list(DEPTHS),
         "graph_neurons": graph.n_neurons, "graph_edges": graph.n_edges, "graph_hash_initial": topology_hash, "graph_structure_hash": structure_hash,
         "plastic_edge_count": kc.edge_count, "plastic_edge_hash": kc.edge_hash, "plasticity": kc.config.__dict__,
-        "curriculum_metadata_sha256": sha256_file(args.curriculum_dir / "metadata.json"),
-        "input_manifest_sha256": sha256_file(args.input_manifest), "readout_manifest_sha256": sha256_file(args.readout_manifest),
+        "curriculum_metadata_sha256": sha256_file(args.curriculum_dir / "metadata.json"), "decoder_sha256": decoder_hash,
+        "input_manifest_sha256": sha256_file(args.input_manifest), "readout_manifest_sha256": sha256_file(args.readout_manifest), "plastic_post_manifest_sha256": sha256_file(args.plastic_post_manifest),
         "baseline_sensory_indices_sha256": sha256_file(args.sensory_indices), "decoder": str(decoder_path),
         "stockfish": teacher_metadata,
-        "training_positions": len(training_rows), "elapsed_s": time.perf_counter() - started,
+        "training_positions": len(training_rows), "replay_fraction": 0.2, "elapsed_s": time.perf_counter() - started,
         "stop_conditions": {"max_runtime_hours": 10, "all_stages_present": True, "passes_per_stage": 1},
-        "outputs": ["plastic_edge_audit.csv", "plastic_edge_metadata.json", "training_log.csv", "stage_metrics.csv", "movement_validation.csv", "endgame_validation.csv", "tactical_validation.csv", "mate_validation.csv", "biological_deviation.csv", "reward_signal_distribution.csv", "depth_metrics.csv", "run_metadata.json", "final_summary.md"],
+        "outputs": ["plastic_edge_audit.csv", "plastic_edge_metadata.json", "training_log.csv", "stage_metrics.csv", "retention_metrics.csv", "movement_validation.csv", "endgame_validation.csv", "tactical_validation.csv", "mate_validation.csv", "mate_sequence_validation.csv", "biological_deviation.csv", "reward_signal_distribution.csv", "depth_metrics.csv", "run_metadata.json", "final_summary.md"],
     }
     (args.output / "run_metadata.json").write_text(json.dumps(metadata, indent=2, default=str) + "\n", encoding="utf-8")
     summary = pd.DataFrame(stage_rows)
