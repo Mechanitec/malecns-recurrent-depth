@@ -1,0 +1,4 @@
+stage,position_id,depth,selected_move,teacher_best_cp,selected_cp,regret_cp,top1_correct,mate_flag,mate_distance
+endgames,endgames_0320,8,b6b2,694.0,694.0,0.0,1,1,
+endgames,endgames_0321,8,a8a7,465.0,465.0,0.0,1,1,
+endgames,endgames_0322,8,a2b2,588.0,588.0,0.0,1,1,

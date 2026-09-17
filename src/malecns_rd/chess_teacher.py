@@ -45,6 +45,7 @@ class TeacherCandidate:
     split: str = "train"
     side_to_move: str = ""
     legal_move_count: int = 0
+    mate_distance: int | None = None
 
 
 class StockfishTeacher:
@@ -101,7 +102,7 @@ class StockfishTeacher:
     def __exit__(self, exc_type, exc, tb):
         self.close()
 
-    def _score_info(self, board, info) -> tuple[str, float] | None:
+    def _score_info(self, board, info) -> tuple[str, float, int | None] | None:
         pv = info.get("pv") or []
         if not pv:
             return None
@@ -109,24 +110,28 @@ class StockfishTeacher:
         score = info.get("score")
         if score is None:
             return None
-        cp = score.pov(board.turn).score(mate_score=self.mate_score_cp)
+        pov_score = score.pov(board.turn)
+        cp = pov_score.score(mate_score=self.mate_score_cp)
         if cp is None:
             return None
-        return move.uci(), float(cp)
+        return move.uci(), float(cp), pov_score.mate()
 
-    def evaluate_position(self, board, *, position_id: str) -> list[TeacherCandidate]:
-        legal = sorted(list(board.legal_moves), key=lambda m: m.uci())
+    def evaluate_position(self, board, *, position_id: str, candidate_moves=None) -> list[TeacherCandidate]:
+        all_legal = sorted(list(board.legal_moves), key=lambda m: m.uci())
+        legal = all_legal if candidate_moves is None else sorted(list(candidate_moves), key=lambda m: m.uci())
+        if any(move not in board.legal_moves for move in legal):
+            raise ValueError("candidate_moves must be legal in the supplied board")
         if len(legal) < 2:
             return []
         limit = self._chess.engine.Limit(nodes=self.nodes)
         infos = self._engine.analyse(board, limit, multipv=len(legal), root_moves=legal)
         if isinstance(infos, dict):
             infos = [infos]
-        scores: dict[str, float] = {}
+        scores: dict[str, tuple[float, int | None]] = {}
         for info in infos:
             parsed = self._score_info(board, info)
             if parsed is not None:
-                scores[parsed[0]] = parsed[1]
+                scores[parsed[0]] = (parsed[1], parsed[2])
 
         # Some engines/builds can return fewer MultiPV entries than requested.
         # Fill any gaps with a root-move-constrained evaluation.
@@ -137,9 +142,9 @@ class StockfishTeacher:
             info = self._engine.analyse(board, limit, root_moves=[move])
             parsed = self._score_info(board, info)
             if parsed is not None:
-                scores[uci] = parsed[1]
+                scores[uci] = (parsed[1], parsed[2])
 
-        ranked = sorted(scores.items(), key=lambda item: (-item[1], item[0]))
+        ranked = sorted(scores.items(), key=lambda item: (-item[1][0], item[0]))
         if len(ranked) < 2:
             return []
         best_uci = ranked[0][0]
@@ -149,11 +154,12 @@ class StockfishTeacher:
                 position_id=str(position_id),
                 fen=fen,
                 move_uci=uci,
-                teacher_cp=cp,
-                teacher_target=centipawn_to_target(cp, scale_cp=self.target_scale_cp),
+                teacher_cp=cp[0],
+                teacher_target=centipawn_to_target(cp[0], scale_cp=self.target_scale_cp),
                 is_best=int(uci == best_uci),
                 side_to_move="white" if board.turn else "black",
-                legal_move_count=len(legal),
+                legal_move_count=len(all_legal),
+                mate_distance=cp[1],
             )
             for uci, cp in ranked
         ]

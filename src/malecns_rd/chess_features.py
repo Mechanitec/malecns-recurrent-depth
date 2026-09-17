@@ -18,16 +18,10 @@ def _require_chess():
     return chess
 
 
-def encode_board_move(board, move) -> np.ndarray:
-    """Encode a board plus one candidate legal move as a fixed float vector.
-
-    This is deliberately chess-generic rather than MaleCNS-specific. A separate
-    projector maps this vector onto whichever sensory neurons are chosen for an
-    experiment, allowing the chess interface to remain frozen across connectome
-    and recurrent-depth comparisons.
-    """
+def _encode_board_move(board, move, *, require_legal: bool) -> np.ndarray:
+    """Encode a board plus one candidate move as a fixed float vector."""
     chess = _require_chess()
-    if move not in board.legal_moves:
+    if require_legal and move not in board.legal_moves:
         raise ValueError("candidate move must be legal in the supplied board")
 
     x = np.zeros(CHESS_FEATURE_DIM, dtype=np.float32)
@@ -80,6 +74,22 @@ def encode_board_move(board, move) -> np.ndarray:
     x[offset + 1] = float(board.is_castling(move))
     x[offset + 2] = float(board.is_en_passant(move))
     return x
+
+
+def encode_board_move(board, move) -> np.ndarray:
+    """Encode a board plus one candidate legal move as a fixed float vector.
+
+    This is deliberately chess-generic rather than MaleCNS-specific. A separate
+    projector maps this vector onto whichever sensory neurons are chosen for an
+    experiment, allowing the chess interface to remain frozen across connectome
+    and recurrent-depth comparisons.
+    """
+    return _encode_board_move(board, move, require_legal=True)
+
+
+def encode_board_move_unchecked(board, move) -> np.ndarray:
+    """Encode a legal or deliberately invalid candidate for movement lessons."""
+    return _encode_board_move(board, move, require_legal=False)
 
 
 class HashedSensoryProjector:

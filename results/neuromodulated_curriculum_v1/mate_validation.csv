@@ -1,0 +1,4 @@
+stage,position_id,depth,selected_move,teacher_best_cp,selected_cp,regret_cp,top1_correct,mate_flag,mate_distance
+mates,1023,8,e1f1,-99997.0,-99999.0,2.0,0,1,-1.0
+mates,1086,8,e4d5,99999.0,-806.0,100805.0,0,1,
+mates,1093,8,g6h6,-698.0,-99998.0,99300.0,0,1,-2.0

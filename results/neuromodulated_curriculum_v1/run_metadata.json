@@ -1,0 +1,64 @@
+{
+  "status": "complete",
+  "control": "reward_aversive",
+  "seed": 3101,
+  "depth_train": 8,
+  "validation_depths": [
+    4,
+    8,
+    16
+  ],
+  "graph_neurons": 164620,
+  "graph_edges": 10227924,
+  "graph_hash_initial": "8ff97e70d9ca061e01c575ec5349505d82aa637be9d5e83f62c2e7f8f0ae5555",
+  "graph_structure_hash": "6700c7ed5c8e08ce517272cfde166c8dd1fdb866860f623e4e5c72f88b22f207",
+  "plastic_edge_count": 379,
+  "plastic_edge_hash": "14a2be794a2b843795ba9a5e732d20ca4cb95a1adedbdccbde93966e0e5cd08c",
+  "plasticity": {
+    "learning_rate": 0.002,
+    "homeostasis": 0.0002,
+    "reward_baseline_decay": 0.95,
+    "min_weight_ratio": 0.5,
+    "max_weight_ratio": 2.0
+  },
+  "curriculum_metadata_sha256": "486fea0caa05027b8a1272fe5b7b4ade5a7beb4d5df346482091342e9cc2d145",
+  "input_manifest_sha256": "abd11db644051518119dbf7dbae48d3868e90b273d78830f47a49d3f045fb4a3",
+  "readout_manifest_sha256": "a586406887d6167861f8c24093a32478b276692485656f9b73b6653a24e905e7",
+  "baseline_sensory_indices_sha256": "3184ffdff7cc11243af0443cb7348027f2bd08cc390a7723ef8da3524b6a7706",
+  "decoder": "results\\neuromodulated_curriculum_v1\\frozen_decoder_checkpoint.npz",
+  "stockfish": {
+    "engine": {
+      "name": "Stockfish 19",
+      "author": "the Stockfish developers (see AUTHORS file)"
+    },
+    "executable": "C:\\Users\\Zatoichi\\AppData\\Local\\Microsoft\\WinGet\\Links\\stockfish.exe",
+    "executable_sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+    "nodes": 200,
+    "threads": 1,
+    "hash_mb": 128,
+    "mate_score_cp": 100000,
+    "target_scale_cp": 400.0
+  },
+  "training_positions": 69,
+  "elapsed_s": 723.4650128999492,
+  "stop_conditions": {
+    "max_runtime_hours": 10,
+    "all_stages_present": true,
+    "passes_per_stage": 1
+  },
+  "outputs": [
+    "plastic_edge_audit.csv",
+    "plastic_edge_metadata.json",
+    "training_log.csv",
+    "stage_metrics.csv",
+    "movement_validation.csv",
+    "endgame_validation.csv",
+    "tactical_validation.csv",
+    "mate_validation.csv",
+    "biological_deviation.csv",
+    "reward_signal_distribution.csv",
+    "depth_metrics.csv",
+    "run_metadata.json",
+    "final_summary.md"
+  ]
+}

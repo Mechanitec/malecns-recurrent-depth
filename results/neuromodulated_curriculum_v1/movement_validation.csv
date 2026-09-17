@@ -1,0 +1,4 @@
+stage,position_id,depth,selected_move,teacher_best_cp,selected_cp,regret_cp,top1_correct,mate_flag,mate_distance
+movement,movement_0360,8,a4a5,100.0,100.0,0.0,1,1,
+movement,movement_0361,8,g1h3,100.0,100.0,0.0,1,1,
+movement,movement_0362,8,b4a5,100.0,100.0,0.0,1,1,
