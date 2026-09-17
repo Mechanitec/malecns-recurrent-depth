@@ -43,11 +43,20 @@ def main() -> None:
             "train_positions": int(frame.loc[frame["split"].astype(str) == "train", "position_id"].nunique()),
             "validation_positions": int(frame.loc[frame["split"].astype(str) == "validation", "position_id"].nunique()),
         }
+
+    mate_coverage = {
+        str(distance): int(count)
+        for distance, count in dict(mate_metadata.get("by_mate_distance", {})).items()
+    }
+    mate_coverage_complete = all(int(mate_coverage.get(str(distance), 0)) > 0 for distance in (1, 2, 3))
+
     files_present = {name: (args.output / name).is_file() for name in REQUIRED + PLOTS}
     metadata.update({
         "status": "complete",
         "curriculum": curriculum,
         "mate_sequence_evaluation": mate_metadata,
+        "mate_sequence_coverage": mate_coverage,
+        "mate_sequence_coverage_complete_1_2_3": mate_coverage_complete,
         "required_artifacts_present": all(files_present[name] for name in REQUIRED),
         "plot_artifacts_present": all(files_present[name] for name in PLOTS),
         "artifact_presence": files_present,
@@ -63,7 +72,8 @@ def main() -> None:
         f"- Training updates: `{metadata.get('training_positions')}`; elapsed: `{metadata.get('elapsed_s'):.1f} s`.",
         f"- Plastic edges: `{metadata.get('plastic_edge_count')}`; topology preserved: `{bool(int(biological['topology_preserved'].all()))}`; signs preserved: `{bool(int(biological['sign_preserved'].all()))}`.",
         f"- Sequential mate evaluation: `{mate_metadata.get('positions_evaluated')}` positive-mate validation positions; solve rate `{mate_metadata.get('aggregate_solve_rate')}`.",
-        "- The mate result is descriptive, not a claim of general chess strength; the available positive mate validation set is small.",
+        f"- Mate-distance coverage: `{mate_coverage}`; complete mate-in-1/2/3 coverage: `{mate_coverage_complete}`.",
+        "- The mate result is descriptive, not a claim of general chess strength. A strong mate-learning claim requires nonzero held-out sequential coverage for mate-in-1, mate-in-2, and mate-in-3.",
         "",
         "## Stage metrics",
         "",
@@ -79,7 +89,12 @@ def main() -> None:
         f"- Plot artifacts present: `{metadata['plot_artifacts_present']}`.",
     ]
     (args.output / "final_summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(json.dumps({"status": "complete", "required_artifacts_present": metadata["required_artifacts_present"], "plot_artifacts_present": metadata["plot_artifacts_present"]}, indent=2))
+    print(json.dumps({
+        "status": "complete",
+        "mate_sequence_coverage_complete_1_2_3": mate_coverage_complete,
+        "required_artifacts_present": metadata["required_artifacts_present"],
+        "plot_artifacts_present": metadata["plot_artifacts_present"],
+    }, indent=2))
 
 
 if __name__ == "__main__":
