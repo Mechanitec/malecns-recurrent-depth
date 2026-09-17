@@ -1,6 +1,6 @@
 """Localized reward-modulated plasticity for the Plan 3 pilot.
 
-The implementation changes only existing selected edges.  It keeps the sparse
+The implementation changes only existing selected edges. It keeps the sparse
 graph structure and the sign of every selected synapse fixed while storing a
 bounded log-ratio relative to the original connectome weight.
 """
@@ -9,6 +9,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import hashlib
 import json
+import math
 from pathlib import Path
 
 import numpy as np
@@ -31,6 +32,48 @@ class PlasticityConfig:
             raise ValueError("reward_baseline_decay must be in (0, 1)")
         if not 0.0 < self.min_weight_ratio <= 1.0 <= self.max_weight_ratio:
             raise ValueError("weight ratios must satisfy 0 < min <= 1 <= max")
+
+
+def teaching_signal(stage: str, regret_cp: float, *, is_positive: bool | None = None) -> float:
+    """Return the predeclared Plan 3 teaching signal for one selected candidate.
+
+    Movement lessons are a legality task and therefore use the direct target
+    specified by the curriculum: legal -> +1 and illegal -> -1. Ordinary chess
+    stages use the bounded centipawn-regret mapping from ``plan3.md``.
+    """
+    if stage == "movement":
+        if is_positive is None:
+            raise ValueError("movement teaching signal requires is_positive")
+        return 1.0 if bool(is_positive) else -1.0
+    regret = max(0.0, float(regret_cp))
+    return 1.0 - 2.0 * math.tanh(regret / 400.0)
+
+
+def pairwise_ranking_accuracy(predicted_scores: np.ndarray, teacher_scores: np.ndarray) -> float:
+    """Return concordance across all teacher-ordered candidate pairs.
+
+    Teacher ties are ignored. Predicted ties count as half correct so that the
+    metric is well-defined for degenerate readouts instead of duplicating top-1
+    accuracy as the original pilot implementation did.
+    """
+    predicted = np.asarray(predicted_scores, dtype=np.float64)
+    teacher = np.asarray(teacher_scores, dtype=np.float64)
+    if predicted.ndim != 1 or teacher.shape != predicted.shape:
+        raise ValueError("predicted_scores and teacher_scores must be matching vectors")
+    correct = 0.0
+    total = 0
+    for left in range(len(teacher)):
+        for right in range(left + 1, len(teacher)):
+            teacher_delta = teacher[left] - teacher[right]
+            if np.isclose(teacher_delta, 0.0):
+                continue
+            predicted_delta = predicted[left] - predicted[right]
+            total += 1
+            if np.isclose(predicted_delta, 0.0):
+                correct += 0.5
+            elif predicted_delta * teacher_delta > 0.0:
+                correct += 1.0
+    return float(correct / total) if total else float("nan")
 
 
 @dataclass
