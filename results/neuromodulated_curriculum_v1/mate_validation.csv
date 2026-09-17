@@ -1,0 +1,10 @@
+position_id,root_mate_distance,fly_side,fly_moves,expected_plies,forced_mate_preserved_fraction,solved,terminal_checkmate,lost_reason
+1692,1,black,1,1,0.0,0,0,forced_mate_lost_after_fly_move
+2319,2,black,1,3,0.0,0,0,forced_mate_lost_after_fly_move
+2319_pv1,1,black,1,1,0.0,0,0,forced_mate_lost_after_fly_move
+2671,2,black,1,3,0.0,0,0,forced_mate_lost_after_fly_move
+2671_pv1,1,black,1,1,1.0,1,1,
+3013,1,white,1,1,0.0,0,0,forced_mate_lost_after_fly_move
+4868,1,white,1,1,0.0,0,0,forced_mate_lost_after_fly_move
+4984,2,black,1,3,0.0,0,0,forced_mate_lost_after_fly_move
+4984_pv1,1,black,1,1,0.0,0,0,forced_mate_lost_after_fly_move

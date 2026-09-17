@@ -1,0 +1,2 @@
+stage,position_id,depth,selected_move,teacher_best_cp,selected_cp,regret_cp,top1_correct,mate_flag,mate_distance
+tactics,1007,8,b5c6,745.0,574.0,171.0,0,1,

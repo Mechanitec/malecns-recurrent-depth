@@ -5,7 +5,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from malecns_rd.chess_features import CHESS_FEATURE_DIM, HashedSensoryProjector
+from malecns_rd.chess_features import CHESS_FEATURE_DIM, HashedSensoryProjector, encode_board_move, encode_board_move_unchecked
 from malecns_rd.chess_agent import FlyCandidateMoveAgent
 from malecns_rd.engine import RecurrentDepthEngine
 from malecns_rd.graph import ConnectomeGraph
@@ -32,6 +32,20 @@ def test_projector_rejects_wrong_feature_shape():
         pass
     else:
         raise AssertionError("expected ValueError")
+
+
+def test_unchecked_encoder_accepts_invalid_movement_candidate():
+    import chess
+
+    board = chess.Board()
+    move = chess.Move.from_uci("e2e5")
+    try:
+        encode_board_move(board, move)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("expected legal encoder to reject invalid move")
+    assert encode_board_move_unchecked(board, move).shape == (CHESS_FEATURE_DIM,)
 
 
 def test_multi_depth_move_ranking_matches_independent_rankings():

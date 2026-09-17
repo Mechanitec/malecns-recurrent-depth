@@ -1,0 +1,5 @@
+checkpoint,stage,graph_neurons,graph_edges,structure_hash_initial,structure_hash_current,topology_preserved,sign_preserved,update_count,rms_log_ratio,median_abs_log_ratio,p95_abs_log_ratio,fraction_changed_gt_5pct,fraction_changed_gt_10pct,fraction_lower_bound,fraction_upper_bound
+after_movement,movement,164620,10227924,6700c7ed5c8e08ce517272cfde166c8dd1fdb866860f623e4e5c72f88b22f207,6700c7ed5c8e08ce517272cfde166c8dd1fdb866860f623e4e5c72f88b22f207,1,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+after_endgames,endgames,164620,10227924,6700c7ed5c8e08ce517272cfde166c8dd1fdb866860f623e4e5c72f88b22f207,6700c7ed5c8e08ce517272cfde166c8dd1fdb866860f623e4e5c72f88b22f207,1,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+after_tactics,tactics,164620,10227924,6700c7ed5c8e08ce517272cfde166c8dd1fdb866860f623e4e5c72f88b22f207,6700c7ed5c8e08ce517272cfde166c8dd1fdb866860f623e4e5c72f88b22f207,1,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+after_mates,mates,164620,10227924,6700c7ed5c8e08ce517272cfde166c8dd1fdb866860f623e4e5c72f88b22f207,6700c7ed5c8e08ce517272cfde166c8dd1fdb866860f623e4e5c72f88b22f207,1,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

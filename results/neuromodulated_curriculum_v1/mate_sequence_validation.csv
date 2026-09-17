@@ -1,0 +1,10 @@
+position_id,root_mate_distance,ply,fly_move,fen_before_move,forced_mate_preserved,opponent_pov_mate_distance_after_move
+1692,1,1,g7g6,1nb1k1nr/1ppp1ppp/r7/p3pPq1/P5P1/N6P/2PPP3/2BQKBNR b Kk - 0 8,0,
+2319,2,1,h6g4,r1bqk2r/pp1p1pbp/n6n/1Pp1p3/P1P2p2/N6P/3PP1P1/R1BQKBNR b KQkq - 1 8,0,
+2319_pv1,1,1,h6g4,r1b1k2r/pp1p1pbp/n6n/1Pp1p3/P1P2p1q/N5PP/3PP3/R1BQKBNR b KQkq - 0 9,0,
+2671,2,1,g7g6,rn2k1nr/ppp1bppp/3p4/1N6/4p1b1/4PP1N/PPPPB1q1/R1BQK2R b kq - 2 10,0,
+2671_pv1,1,1,h4f2,rn2k1nr/ppp2ppp/3p4/1N6/4p1bb/4PP2/PPPPBNq1/R1BQK2R b kq - 4 11,1,0.0
+3013,1,1,c1d2,rn1qkbnr/p2pp1p1/1p3p2/2p3Qp/b4P1P/3PP1P1/PPP5/RNB1KBNR w KQkq - 0 8,0,
+4868,1,1,c1e3,rnbqk1n1/3p1ppr/1pp2b1p/p5N1/4p1P1/NQPP4/PP2PPRP/R1B1KB2 w Qq - 0 10,0,
+4984,2,1,g7g6,rnb1k1nr/1pppqpp1/p7/2P4p/PN2p3/5P1P/1P1PP1P1/1RBQKBNR b Kkq - 0 9,0,
+4984_pv1,1,1,h4h3,rnb1k1nr/1ppp1pp1/p7/2P4p/PN2p2q/5PPP/1P1PP3/1RBQKBNR b Kkq - 0 10,0,

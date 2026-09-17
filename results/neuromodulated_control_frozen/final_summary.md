@@ -1,0 +1,11 @@
+# Plan 3 neuromodulated curriculum
+
+```text
+   stage  validation_positions  top1_accuracy_d8  mean_regret_cp_d8  mate_solve_rate_d8                                                                                                                                                                                                                      plasticity
+movement                     2               0.5              100.0                 0.5 {'update_count': 0.0, 'rms_log_ratio': 0.0, 'median_abs_log_ratio': 0.0, 'p95_abs_log_ratio': 0.0, 'fraction_changed_gt_5pct': 0.0, 'fraction_changed_gt_10pct': 0.0, 'fraction_lower_bound': 0.0, 'fraction_upper_bound': 0.0}
+endgames                     2               0.5               96.5                 0.5 {'update_count': 0.0, 'rms_log_ratio': 0.0, 'median_abs_log_ratio': 0.0, 'p95_abs_log_ratio': 0.0, 'fraction_changed_gt_5pct': 0.0, 'fraction_changed_gt_10pct': 0.0, 'fraction_lower_bound': 0.0, 'fraction_upper_bound': 0.0}
+ tactics                     2               0.5               85.5                 0.5 {'update_count': 0.0, 'rms_log_ratio': 0.0, 'median_abs_log_ratio': 0.0, 'p95_abs_log_ratio': 0.0, 'fraction_changed_gt_5pct': 0.0, 'fraction_changed_gt_10pct': 0.0, 'fraction_lower_bound': 0.0, 'fraction_upper_bound': 0.0}
+   mates                     2               0.0            49838.5                 0.0 {'update_count': 0.0, 'rms_log_ratio': 0.0, 'median_abs_log_ratio': 0.0, 'p95_abs_log_ratio': 0.0, 'fraction_changed_gt_5pct': 0.0, 'fraction_changed_gt_10pct': 0.0, 'fraction_lower_bound': 0.0, 'fraction_upper_bound': 0.0}
+```
+
+Control: `frozen`. The decoder was fit before plasticity, and only predeclared existing KC-to-MBON edges were updated.

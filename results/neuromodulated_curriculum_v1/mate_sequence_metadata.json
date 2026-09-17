@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "evaluation": "sequential_fly_move_stockfish_best_defense",
+  "positions_evaluated": 9,
+  "by_mate_distance": {
+    "1": 6,
+    "2": 3
+  },
+  "aggregate_solve_rate": 0.1111111111111111,
+  "aggregate_preserved_fraction": 0.1111111111111111,
+  "stockfish_nodes": 20000,
+  "plasticity_checkpoint": "results\\neuromodulated_curriculum_v1\\checkpoint_after_mates.npz",
+  "readout_checkpoint": "results\\neuromodulated_curriculum_v1\\frozen_decoder_checkpoint.npz"
+}
