@@ -7,11 +7,7 @@ from pathlib import Path
 import pandas as pd
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, required=True)
-    args = parser.parse_args()
-    output = args.output
+def generate(output: Path) -> None:
     stage_order = ["movement", "endgames", "tactics", "mates"]
     metrics = pd.read_csv(output / "stage_metrics.csv")
     biological = pd.read_csv(output / "biological_deviation.csv")
@@ -81,4 +77,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    generate(args.output)

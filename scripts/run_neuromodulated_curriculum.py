@@ -281,19 +281,8 @@ def main() -> None:
                 final_depth_rows.append({"stage": stage, "position_id": str(position_id), "depth": depth, "top1_correct": int(selected_cp >= best_cp), "regret_cp": max(0.0, best_cp - selected_cp)})
             board_count += 1
     pd.DataFrame(final_depth_rows).to_csv(args.output / "depth_metrics.csv", index=False)
-    try:
-        import matplotlib.pyplot as plt
-        depth_frame = pd.DataFrame(final_depth_rows)
-        fig, ax = plt.subplots(figsize=(8, 4));
-        for stage, group in depth_frame.groupby("stage"):
-            stats = group.groupby("depth")["top1_correct"].mean(); ax.plot(stats.index, stats.values, marker="o", label=stage)
-        ax.set(xlabel="Recurrent depth", ylabel="Validation top-1", title="Plan 3 depth performance"); ax.legend(); fig.tight_layout(); fig.savefig(args.output / "learning_curve.png", dpi=140); plt.close(fig)
-        fig, ax = plt.subplots(figsize=(8, 4)); ax.hist(pd.DataFrame(training_rows)["regret_cp"], bins=20); ax.set(xlabel="Regret (cp)", ylabel="Lessons", title="Plan 3 regret distribution"); fig.tight_layout(); fig.savefig(args.output / "regret_distribution_by_stage.png", dpi=140); plt.close(fig)
-        fig, ax = plt.subplots(figsize=(8, 4)); ax.hist(kc.ratios, bins=20); ax.set(xlabel="Plastic weight ratio", ylabel="Edges", title="KC to MBON weight ratios"); fig.tight_layout(); fig.savefig(args.output / "weight_ratio_distribution.png", dpi=140); plt.close(fig)
-        for filename in ("curriculum_retention.png", "blunder_rate_by_stage.png", "mate_solve_rate.png", "biological_deviation_vs_performance.png"):
-            fig, ax = plt.subplots(figsize=(8, 4)); ax.text(0.5, 0.5, filename.removesuffix(".png"), ha="center", va="center"); ax.set_axis_off(); fig.tight_layout(); fig.savefig(args.output / filename, dpi=140); plt.close(fig)
-    except ImportError:
-        pass
+    from plot_neuromodulated_results import generate
+    generate(args.output)
 
     metadata = {
         "status": "complete", "control": args.control, "seed": args.seed, "depth_train": 8, "validation_depths": list(DEPTHS),
