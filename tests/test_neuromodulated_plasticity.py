@@ -1,9 +1,17 @@
+import math
+
 import numpy as np
+import pytest
 
 from malecns_rd.graph import ConnectomeGraph
 from malecns_rd.neuromodulated_plasticity import (
-    PlasticityConfig, apply_to_graph, load_plasticity_checkpoint,
-    save_plasticity_checkpoint, select_kc_mbon_edges,
+    PlasticityConfig,
+    apply_to_graph,
+    load_plasticity_checkpoint,
+    pairwise_ranking_accuracy,
+    save_plasticity_checkpoint,
+    select_kc_mbon_edges,
+    teaching_signal,
 )
 
 
@@ -21,7 +29,10 @@ def make_state():
 
 def test_reward_and_aversive_updates_change_only_existing_edges():
     graph, state = make_state()
-    snapshots = {1: np.array([1, 1, 0, 0], dtype=np.float32), 2: np.ones(4, dtype=np.float32)}
+    snapshots = {
+        1: np.array([1, 1, 0, 0], dtype=np.float32),
+        2: np.ones(4, dtype=np.float32),
+    }
     before = state.current_weights.copy()
     eligibility = state.eligibility_from_trajectory(snapshots)
     state.apply(1.0, eligibility)
@@ -56,3 +67,33 @@ def test_checkpoint_round_trip_is_exact(tmp_path):
     assert restored.edge_hash == state.edge_hash
     assert restored.update_count == state.update_count
     np.testing.assert_array_equal(restored.log_ratios, state.log_ratios)
+
+
+def test_movement_teaching_signal_uses_direct_legality_target():
+    assert teaching_signal("movement", 0.0, is_positive=True) == 1.0
+    assert teaching_signal("movement", 200.0, is_positive=False) == -1.0
+    with pytest.raises(ValueError):
+        teaching_signal("movement", 200.0)
+
+
+def test_chess_teaching_signal_keeps_predeclared_regret_mapping():
+    assert teaching_signal("tactics", 0.0) == pytest.approx(1.0)
+    assert teaching_signal("tactics", 200.0) == pytest.approx(
+        1.0 - 2.0 * math.tanh(0.5)
+    )
+    assert teaching_signal("tactics", 400.0) < 0.0
+
+
+def test_pairwise_ranking_accuracy_is_not_top1_accuracy_duplicate():
+    teacher = np.array([3.0, 2.0, 1.0])
+    predicted = np.array([2.0, 0.0, 1.0])
+    # Top-1 is correct, but the 2-vs-1 ordering is wrong: 2/3 pairs concordant.
+    assert pairwise_ranking_accuracy(predicted, teacher) == pytest.approx(2.0 / 3.0)
+
+
+def test_pairwise_ranking_accuracy_ignores_teacher_ties_and_half_scores_predicted_ties():
+    teacher = np.array([2.0, 2.0, 1.0])
+    predicted = np.array([1.0, 0.0, 1.0])
+    # The teacher tie (0,1) is ignored. Pair (0,2) is a prediction tie and
+    # contributes 0.5; pair (1,2) is wrong, so accuracy is 0.25.
+    assert pairwise_ranking_accuracy(predicted, teacher) == pytest.approx(0.25)
